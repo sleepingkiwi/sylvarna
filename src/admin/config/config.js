@@ -3,7 +3,10 @@
 import { metaConfigGlobal } from './sections/meta';
 import pageSettings from './sections/pageSettings';
 import homeConfig from './sections/home';
+import bespokeConfig from './sections/bespoke';
+import contactConfig from './sections/contact';
 import siteDetailsConfig from './sections/siteDetails';
+import socialAccountsConfig from './sections/socialAccounts';
 import genericContentBlocks from './sections/generic';
 
 const config = {
@@ -18,8 +21,8 @@ const config = {
 
   // logo_url: https://your-site.com/images/logo.svg,
 
-  site_url: 'https://sleeping.kiwi/sylvarna',
-  display_url: 'https://sleeping.kiwi/sylvarna',
+  site_url: 'https://reverent-brattain-99a0fb.netlify.com/',
+  display_url: 'https://reverent-brattain-99a0fb.netlify.com/',
 
   // Media files will be stored in the repo under this dir
   // however because we use cloudinary currently this is ignored
@@ -54,6 +57,8 @@ const config = {
       files: [
         // Home Page
         homeConfig,
+        bespokeConfig,
+        contactConfig,
       ], // files
     }, // END FIXED PAGES
 
@@ -97,18 +102,119 @@ const config = {
           required: false,
         },
         {
-          label: 'Hero image',
+          label: 'Hero Image and Page Title',
           name: 'hero',
-          widget: 'extraImage',
-          showDetails: true,
-          required: true,
-          hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
+          widget: 'object',
+          fields: [
+            {
+              label: 'Hero Image',
+              name: 'hero',
+              widget: 'extraImage',
+              showDetails: true,
+              required: true,
+              hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
+            },
+            {
+              label: 'Pre-Header',
+              name: 'preHeader',
+              widget: 'string',
+              required: false,
+              hint: 'smaller text that appears above the header',
+            },
+            {
+              label: 'Header',
+              name: 'header',
+              widget: 'string',
+              required: false,
+            },
+          ],
         },
         ...genericContentBlocks,
         // include general page settings
         ...pageSettings,
       ], // fields
     }, // END CUSTOM PAGES
+
+
+    /** Kitchen Styles
+     *  --------------------------------------------------------------------------------------------
+    **/
+    {
+      name: 'kitchen_styles',
+      label: 'Kitchen Styles',
+      folder: 'src/kitchenStyles',
+      slug: '{{slug}}',
+      preview_path: 'style/{{slug}}',
+      create: true,
+      description: 'Style pages. These will be automatically added to the home page carousel.',
+      fields: [
+        {
+          label: 'Custom Page',
+          name: 'genericPageInstructions',
+          widget: 'instructions',
+          instructions: 'This page can contain whatever you want!',
+          flavour: 'header',
+          required: false,
+        },
+        ...genericContentBlocks,
+        // include general page settings
+        ...pageSettings,
+      ], // fields
+    }, // END KITCHEN STYLES
+
+
+    /** Materials
+     *  --------------------------------------------------------------------------------------------
+    **/
+    {
+      name: 'materials',
+      label: 'Materials',
+      folder: 'src/materials',
+      slug: '{{slug}}',
+      preview_path: 'material/{{slug}}',
+      create: true,
+      description: 'Materials, available to be used by styles and kitchens.',
+      fields: [
+        {
+          label: 'Custom Page',
+          name: 'genericPageInstructions',
+          widget: 'instructions',
+          instructions: 'This page can contain whatever you want!',
+          flavour: 'header',
+          required: false,
+        },
+        ...genericContentBlocks,
+        // include general page settings
+        ...pageSettings,
+      ], // fields
+    }, // END Materials
+
+
+    /** Kitchens
+     *  --------------------------------------------------------------------------------------------
+    **/
+    {
+      name: 'kitchens',
+      label: 'Kitchens',
+      folder: 'src/kitchens',
+      slug: '{{slug}}',
+      preview_path: 'kitchen/{{slug}}',
+      create: true,
+      description: 'Individual kitchen pages.',
+      fields: [
+        {
+          label: 'Custom Page',
+          name: 'genericPageInstructions',
+          widget: 'instructions',
+          instructions: 'This page can contain whatever you want!',
+          flavour: 'header',
+          required: false,
+        },
+        ...genericContentBlocks,
+        // include general page settings
+        ...pageSettings,
+      ], // fields
+    }, // END KITCHENS
 
 
     /** Global Settings
@@ -164,51 +270,7 @@ const config = {
           delete: false,
           file: 'src/_data/social.json',
           fields: [
-            {
-              label: 'Details of your social media accounts',
-              name: 'socialInstructions',
-              widget: 'instructions',
-              instructions: 'These are all optional. \nIncluding your details for a service will enable the social icon for that service in the site footer.',
-              flavour: 'header',
-              required: false,
-            },
-            {
-              label: 'Your Twitter Handle',
-              name: 'twitter',
-              widget: 'string',
-              required: false,
-              hint: 'handle ony (not URL) - does not need to include the @ symbol',
-              pattern: ['^[^@].+', 'please do not include the preceding @ symbol'],
-            },
-            {
-              label: 'Your Instagram Handle',
-              name: 'instagram',
-              widget: 'string',
-              required: false,
-              hint: 'handle ony (not URL) - does not need to include the @ symbol',
-              pattern: ['^[^@].+', 'please do not include the preceding @ symbol'],
-            },
-            {
-              label: 'Full Facebook URL',
-              name: 'facebook',
-              widget: 'string',
-              required: false,
-              hint: 'should be the full URL to the Facebook profile/page you want to share',
-            },
-            {
-              label: 'Full LinkedIn URL',
-              name: 'linkedin',
-              widget: 'string',
-              required: false,
-              hint: 'should be the full URL to the LinkedIn profile/page you want to share',
-            },
-            {
-              label: 'Full Youtube URL',
-              name: 'youtube',
-              widget: 'string',
-              required: false,
-              hint: 'should be the full URL to the Youtube profile/page you want to share',
-            },
+            ...socialAccountsConfig,
           ], // fields
         }, // END SOCIAL
 
@@ -253,6 +315,26 @@ const config = {
                   required: false,
                 },
               ], // fields
+            },
+            {
+              label: 'CTA in the primary navigation',
+              name: 'navCtaInstructions',
+              widget: 'instructions',
+              instructions: 'The primary nav in the site header can optionally include a CTA link.',
+              flavour: 'vanilla',
+              required: false,
+            },
+            {
+              label: 'CTA Text',
+              name: 'ctaText',
+              widget: 'string',
+              required: false,
+            },
+            {
+              label: 'CTA Url',
+              name: 'ctaUrl',
+              widget: 'string',
+              required: false,
             },
           ], // fields
         }, // END PRIMARY NAV
