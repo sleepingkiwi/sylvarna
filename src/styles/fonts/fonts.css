@@ -1,0 +1,65 @@
+/** @font-face imports should happen here!
+ *  ------------------------------------------------------------------------------------------------
+ *  for this example we're importing multiple weights of the open source font Butler
+ *  (http://iotic.com/averia/)
+**/
+
+@font-face {
+  font-family: 'Butler';
+  src:
+    url('/fonts/Butler.woff2') format('woff2'),
+    url('/fonts/Butler.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Butler';
+  src:
+    url('/fonts/Butler-Bold.woff2') format('woff2'),
+    url('/fonts/Butler-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Butler';
+  src:
+    url('/fonts/Butler-light.woff2') format('woff2'),
+    url('/fonts/Butler-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/** font families
+ *  ------------------------------------------------------------------------------------------------
+**/
+:root {
+  /*
+  these are quite nice default families.
+  but lately I prefer just using device fonts as the fallbacks...
+  -
+  --sans-serif: Helmet, Freesans, Tahoma, Geneva, sans-serif;
+  --serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+  */
+  --sans-serif: sans-serif;
+  --serif: serif;
+
+
+  /** Site font variables
+  *  ------------------------------------------------------------------------------------------------
+  **/
+  --ff-butler: 'Butler', var(--serif);
+
+  /*
+  the named font variables above aren't used directly
+  instead we distinguish between the main (body) font and heading fonts
+  'Maven Pro' comes from Google fonts currently
+  */
+  --ff-body: 'Maven Pro', var(--sans-serif);
+  --ff-heading: var(--ff-butler);
+}

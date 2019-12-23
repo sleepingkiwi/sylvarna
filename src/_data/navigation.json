@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "text": "Styles",
+      "url": "/styles",
+      "external": false
+    },
+    {
+      "text": "Bespoke",
+      "url": "/bespoke",
+      "external": false
+    },
+    {
+      "text": "About",
+      "url": "/about",
+      "external": false
+    },
+    {
+      "text": "Contact",
+      "url": "/contact",
+      "external": false
+    }
+  ]
+}
