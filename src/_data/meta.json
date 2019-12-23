@@ -1,4 +1,18 @@
 {
   "title": "Sylvarna Kitchen Design",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "socialImage": {
+    "src": "https://res.cloudinary.com/sleepingkiwi/image/upload/v1577093468/sylvarna-demo/social.png",
+    "base": "https://res.cloudinary.com/sleepingkiwi/image/upload/",
+    "version": "v1577093468",
+    "filename": "sylvarna-demo/social.png",
+    "width": 1200,
+    "height": 630,
+    "dominant": [
+      164,
+      204,
+      228
+    ],
+    "alt": "The word social in a blue rectangle"
+  }
 }
