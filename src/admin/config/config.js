@@ -35,8 +35,8 @@ const config = {
     name: 'cloudinary',
     output_filename_only: false,
     config: {
-      cloud_name: 'sleepingkiwi',
-      api_key: '673936733892368',
+      cloud_name: 'coolguy',
+      api_key: '254768163573657',
     },
   },
 
