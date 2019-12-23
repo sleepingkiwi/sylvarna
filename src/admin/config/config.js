@@ -8,6 +8,7 @@ import contactConfig from './sections/contact';
 import siteDetailsConfig from './sections/siteDetails';
 import socialAccountsConfig from './sections/socialAccounts';
 import genericContentBlocks from './sections/generic';
+import footerRecurringConfig from './sections/footerRecurring';
 
 const config = {
   // ref https://www.netlifycms.org/docs/beta-features/#manual-initialization
@@ -21,8 +22,8 @@ const config = {
 
   // logo_url: https://your-site.com/images/logo.svg,
 
-  site_url: 'https://reverent-brattain-99a0fb.netlify.com/',
-  display_url: 'https://reverent-brattain-99a0fb.netlify.com/',
+  site_url: 'https://eloquent-shaw-bcc683.netlify.com/',
+  display_url: 'https://eloquent-shaw-bcc683.netlify.com/',
 
   // Media files will be stored in the repo under this dir
   // however because we use cloudinary currently this is ignored
@@ -273,6 +274,21 @@ const config = {
             ...socialAccountsConfig,
           ], // fields
         }, // END SOCIAL
+
+
+        /** Recurring Footer Content
+         *  ----------------------------------------------------------------------------------------
+         *  For using wherever we end up using them
+        **/
+        {
+          label: 'Footer partnerships and CTA banner',
+          name: 'footerRecurring',
+          delete: false,
+          file: 'src/_data/footerRecurring.json',
+          fields: [
+            ...footerRecurringConfig,
+          ], // fields
+        }, // END  RECURRING FOOTER CONTENT
 
 
         /** Primary Nav
