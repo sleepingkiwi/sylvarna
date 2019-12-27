@@ -2,6 +2,7 @@
  *  ------------------------------------------------------------------------------------------------
 **/
 import pageSettings from './pageSettings';
+import genericContentBlocks from './generic';
 
 const contactConfig = {
   name: 'conatct',
@@ -58,6 +59,128 @@ const contactConfig = {
           required: false,
         },
       ],
+    },
+    {
+      label: 'Contact Form Block',
+      name: 'contactInstructionsOne',
+      widget: 'instructions',
+      flavour: 'divider',
+      instructions: 'You cannot customise the form functionality itself from here but can change the text, labels and images surrounding it.',
+      required: false,
+    },
+    {
+      label: 'Form content area',
+      name: 'formContentArea',
+      widget: 'object',
+      fields: [
+        {
+          label: 'Pre-Header',
+          name: 'preHeader',
+          widget: 'string',
+          required: false,
+          hint: 'smaller text that appears above the header',
+        },
+        {
+          label: 'Header',
+          name: 'header',
+          widget: 'string',
+          required: false,
+        },
+        {
+          label: 'Text Content',
+          name: 'text',
+          widget: 'markdown',
+          required: false,
+          buttons: [
+            'bold',
+            'italic',
+            'code',
+            'link',
+            'heading-one',
+            'heading-two',
+            'heading-three',
+            'heading-four',
+            'heading-five',
+            'heading-six',
+            'quote',
+            'code-block',
+            'bulleted-list',
+            'numbered-list',
+          ],
+        },
+        {
+          label: 'Form Field Labels',
+          name: 'labels',
+          widget: 'object',
+          required: false,
+          fields: [
+            {
+              label: 'Customise Form Labels',
+              name: 'contactInstructionsLabels',
+              widget: 'instructions',
+              flavour: 'vanilla',
+              instructions: 'Completely optional, but you can overwrite the labels given to each form field here.',
+              required: false,
+            },
+            {
+              label: 'Name',
+              name: 'name',
+              default: 'Name',
+              widget: 'string',
+              required: false,
+            },
+            {
+              label: 'Email',
+              name: 'email',
+              default: 'Email',
+              widget: 'string',
+              required: false,
+            },
+            {
+              label: 'Subject',
+              name: 'subject',
+              default: 'Subject',
+              widget: 'string',
+              required: false,
+            },
+            {
+              label: 'Send Message',
+              name: 'sendMessage',
+              default: 'Send Message',
+              widget: 'string',
+              required: false,
+            },
+          ],
+        },
+        {
+          label: 'Decoration images',
+          name: 'decorationImages',
+          widget: 'list',
+          required: false,
+          hint: 'Images are lazy-loaded and organised on either side of the contact form. Recommended 6 images. Will be mixed evenly between left and right - if you upload an odd number one will be ignored.',
+          field: {
+            label: 'Image',
+            name: 'image',
+            widget: 'extraImage',
+            showDetails: true,
+          },
+        },
+      ],
+    },
+    ...genericContentBlocks,
+    {
+      label: 'Find Us Block',
+      name: 'contactInstructionsFindUs',
+      widget: 'instructions',
+      flavour: 'divider',
+      instructions: 'Address, map and contact details.',
+      required: false,
+    },
+    {
+      label: 'Find Us content area',
+      name: 'findUsContentArea',
+      widget: 'object',
+      fields: [],
     },
     // we also include all of the regular page settings!
     ...pageSettings,
