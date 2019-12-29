@@ -5,6 +5,9 @@ import pageSettings from './sections/pageSettings';
 import homeConfig from './sections/home';
 import bespokeConfig from './sections/bespoke';
 import contactConfig from './sections/contact';
+import brochureConfig from './sections/brochure';
+import materialConfig from './sections/material';
+import kitchenConfig from './sections/kitchen';
 import siteDetailsConfig from './sections/siteDetails';
 import socialAccountsConfig from './sections/socialAccounts';
 import genericContentBlocks from './sections/generic';
@@ -60,6 +63,7 @@ const config = {
         homeConfig,
         bespokeConfig,
         contactConfig,
+        brochureConfig,
       ], // files
     }, // END FIXED PAGES
 
@@ -141,9 +145,9 @@ const config = {
      *  --------------------------------------------------------------------------------------------
     **/
     {
-      name: 'kitchen_styles',
-      label: 'Kitchen Styles',
-      folder: 'src/kitchenStyles',
+      name: 'kitchen_style',
+      label: 'Kitchen Style',
+      folder: 'src/kitchenStyle',
       slug: '{{slug}}',
       preview_path: 'style/{{slug}}',
       create: true,
@@ -168,25 +172,15 @@ const config = {
      *  --------------------------------------------------------------------------------------------
     **/
     {
-      name: 'materials',
-      label: 'Materials',
-      folder: 'src/materials',
+      name: 'material',
+      label: 'Material',
+      folder: 'src/material',
       slug: '{{slug}}',
       preview_path: 'material/{{slug}}',
       create: true,
       description: 'Materials, available to be used by styles and kitchens.',
       fields: [
-        {
-          label: 'Custom Page',
-          name: 'genericPageInstructions',
-          widget: 'instructions',
-          instructions: 'This page can contain whatever you want!',
-          flavour: 'header',
-          required: false,
-        },
-        ...genericContentBlocks,
-        // include general page settings
-        ...pageSettings,
+        ...materialConfig,
       ], // fields
     }, // END Materials
 
@@ -195,25 +189,15 @@ const config = {
      *  --------------------------------------------------------------------------------------------
     **/
     {
-      name: 'kitchens',
-      label: 'Kitchens',
-      folder: 'src/kitchens',
+      name: 'kitchen',
+      label: 'Kitchen',
+      folder: 'src/kitchen',
       slug: '{{slug}}',
       preview_path: 'kitchen/{{slug}}',
       create: true,
       description: 'Individual kitchen pages.',
       fields: [
-        {
-          label: 'Custom Page',
-          name: 'genericPageInstructions',
-          widget: 'instructions',
-          instructions: 'This page can contain whatever you want!',
-          flavour: 'header',
-          required: false,
-        },
-        ...genericContentBlocks,
-        // include general page settings
-        ...pageSettings,
+        ...kitchenConfig,
       ], // fields
     }, // END KITCHENS
 
@@ -342,15 +326,17 @@ const config = {
             },
             {
               label: 'CTA Text',
-              name: 'ctaText',
+              name: 'cta',
               widget: 'string',
               required: false,
+              hint: 'CTA is optional, but recommended.',
             },
             {
-              label: 'CTA Url',
-              name: 'ctaUrl',
+              label: 'CTA Link',
+              name: 'ctaURL',
               widget: 'string',
               required: false,
+              hint: 'CTA is optional, but recommended. If you leave this field blank but provide CTA text the button will open a popup to the CTA/Brochure popup configured in the Fixed Pages menu.',
             },
           ], // fields
         }, // END PRIMARY NAV

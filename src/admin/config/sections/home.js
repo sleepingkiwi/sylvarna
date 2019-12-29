@@ -91,7 +91,7 @@ const homeConfig = {
           name: 'ctaURL',
           widget: 'string',
           required: false,
-          hint: 'CTA is optional, but recommended.',
+          hint: 'CTA is optional, but recommended. If you leave this field blank but provide CTA text the button will open a popup to the CTA/Brochure popup configured in the Fixed Pages menu.',
         },
         {
           label: 'Image',

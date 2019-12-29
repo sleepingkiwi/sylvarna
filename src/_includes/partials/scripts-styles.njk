@@ -5,10 +5,6 @@
 #}
 <link rel="preload" as="script" href="{{rev['/main.modules.js'] or '/main.modules.js'}}" crossorigin>
 
-<link rel="stylesheet" href="{{rev['/styles/main.css'] or '/styles/main.css'}}">
-
-<link href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap" rel="stylesheet">
-
 {#
   Loading polyfills for older browsers.
   -
@@ -31,3 +27,13 @@
 
   document.documentElement.className = document.documentElement.className.replace(/(^|\s)no-js(\s|$)/, ' js ');
 </script>
+
+
+{#
+  Blocking styles after inline sync scripts
+  -
+  https://csswizardry.com/2018/11/css-and-network-performance/
+#}
+<link rel="stylesheet" href="{{rev['/styles/main.css'] or '/styles/main.css'}}">
+
+<link href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap" rel="stylesheet">

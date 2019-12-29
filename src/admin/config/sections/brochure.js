@@ -4,20 +4,20 @@
 import pageSettings from './pageSettings';
 import genericContentBlocks from './generic';
 
-const contactConfig = {
-  name: 'conatct',
-  label: 'Contact',
+const brochureConfig = {
+  name: 'brochure',
+  label: 'CTA/Brochure Popup',
   delete: false,
-  file: 'src/contact.md',
+  file: 'src/brochure.md',
   slug: '{{slug}}',
   create: false,
   fields: [
     {
-      label: 'Contact Page',
-      name: 'contactPageInstructions',
+      label: 'Brochure page / CTA popup',
+      name: 'brochureInstructions',
       widget: 'instructions',
       flavour: 'header',
-      instructions: 'Content for the contact page....',
+      instructions: 'This page is designed to be shown in a popup, whilst it can be linked to directly it is more often shown as a popup without it\'s hero image/title.\nTo create a popup which opens this page simply omit the URL in any CTA you create through this CMS.',
       required: false,
     },
     {
@@ -30,7 +30,7 @@ const contactConfig = {
       label: 'Title',
       name: 'title',
       widget: 'string',
-      default: 'Contact',
+      default: 'Brochure',
     },
     {
       label: 'Hero Image and Page Title',
@@ -60,19 +60,26 @@ const contactConfig = {
         },
       ],
     },
+    ...genericContentBlocks,
     {
-      label: 'Contact Form Block',
-      name: 'contactInstructionsOne',
+      label: 'Request Brochure Block',
+      name: 'brochureInstructionsRequest',
       widget: 'instructions',
       flavour: 'divider',
-      instructions: 'You cannot customise the form functionality itself from here but can change the text, labels and images surrounding it.',
+      instructions: 'This section contains a form to request a brochure and optionally a link to an online version.',
       required: false,
     },
     {
-      label: 'Form content area',
-      name: 'formContentArea',
+      label: 'Request a Brochure',
+      name: 'requestBrochureBlock',
       widget: 'object',
       fields: [
+        {
+          label: 'Left Column Image',
+          name: 'image',
+          widget: 'extraImage',
+          showDetails: true,
+        },
         {
           label: 'Pre-Header',
           name: 'preHeader',
@@ -116,7 +123,7 @@ const contactConfig = {
           fields: [
             {
               label: 'Customise Form Labels',
-              name: 'contactInstructionsLabels',
+              name: 'brochureInstructionsLabels',
               widget: 'instructions',
               flavour: 'vanilla',
               instructions: 'Completely optional, but you can overwrite the labels given to each form field here.',
@@ -137,89 +144,34 @@ const contactConfig = {
               required: false,
             },
             {
-              label: 'Subject',
-              name: 'subject',
-              default: 'Subject',
+              label: 'Address',
+              name: 'address',
+              default: 'Address',
               widget: 'string',
               required: false,
             },
             {
-              label: 'Send Message',
-              name: 'sendMessage',
-              default: 'Send Message',
+              label: 'Request Printed Brochure',
+              name: 'requestPrintedBrochure',
+              default: 'Request Printed Brochure',
               widget: 'string',
               required: false,
             },
           ],
         },
         {
-          label: 'Decoration images',
-          name: 'decorationImages',
-          widget: 'list',
-          required: false,
-          hint: 'Images are lazy-loaded and organised on either side of the contact form. Recommended 6 images. Will be mixed evenly between left and right - if you upload an odd number one will be ignored.',
-          field: {
-            label: 'Image',
-            name: 'image',
-            widget: 'extraImage',
-            showDetails: true,
-          },
-        },
-      ],
-    },
-    ...genericContentBlocks,
-    {
-      label: 'Find Us Block',
-      name: 'contactInstructionsFindUs',
-      widget: 'instructions',
-      flavour: 'divider',
-      instructions: 'Address, map and contact details.',
-      required: false,
-    },
-    {
-      label: 'Find Us content area',
-      name: 'findUsContentArea',
-      widget: 'object',
-      fields: [
-        {
-          label: 'Pre-Header',
-          name: 'preHeader',
+          label: 'Download CTA Text',
+          name: 'cta',
           widget: 'string',
           required: false,
-          hint: 'smaller text that appears above the header',
+          hint: 'CTA is optional, but recommended.',
         },
         {
-          label: 'Header',
-          name: 'header',
-          widget: 'string',
+          label: 'Download CTA Link',
+          name: 'ctaURL',
+          widget: 'file',
           required: false,
-        },
-        {
-          label: 'Address and Telephone numbers',
-          name: 'text',
-          widget: 'markdown',
-          required: false,
-          buttons: [
-            'bold',
-            'italic',
-            'code',
-            'link',
-            'heading-one',
-            'heading-two',
-            'heading-three',
-            'heading-four',
-            'heading-five',
-            'heading-six',
-            'quote',
-            'code-block',
-            'bulleted-list',
-            'numbered-list',
-          ],
-        },
-        {
-          label: 'Map',
-          name: 'map',
-          widget: 'map',
+          hint: 'CTA is optional, but recommended. If you omit this file or the CTA Text it will not show.',
         },
       ],
     },
@@ -228,4 +180,4 @@ const contactConfig = {
   ], // fields
 };
 
-export default contactConfig;
+export default brochureConfig;
