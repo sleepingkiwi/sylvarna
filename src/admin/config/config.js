@@ -73,11 +73,11 @@ const config = {
      *  These are generic pages that can be added by CMS users
     **/
     {
-      name: 'generic_pages',
-      label: 'Custom Pages',
-      folder: 'src/pages',
+      name: 'generic_page',
+      label: 'Custom Page',
+      folder: 'src/page',
       slug: '{{slug}}',
-      preview_path: 'pages/{{slug}}',
+      preview_path: 'page/{{slug}}',
       create: true,
       description: 'Empty pages with no fixed content. You can add whatever you want by stacking content blocks.',
       fields: [
