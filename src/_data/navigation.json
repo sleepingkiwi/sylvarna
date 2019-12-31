@@ -20,5 +20,7 @@
       "url": "/contact",
       "external": false
     }
-  ]
+  ],
+  "cta": "Book an Appointment",
+  "ctaURL": "/contact"
 }
