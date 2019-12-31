@@ -17,7 +17,17 @@
       ]
     },
     "fallback": {
-      "src": "",
+      "src": "https://res.cloudinary.com/coolguy/image/upload/v1577813808/logo%20and%20branding/logo-fallback--600_egbei9.png",
+      "base": "https://res.cloudinary.com/coolguy/image/upload/",
+      "version": "v1577813808",
+      "filename": "logo%20and%20branding/logo-fallback--600_egbei9.png",
+      "width": 600,
+      "height": 236,
+      "dominant": [
+        255,
+        255,
+        255
+      ],
       "alt": "Sylvarna Kitchen Design"
     }
   },
