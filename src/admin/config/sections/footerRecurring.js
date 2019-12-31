@@ -26,17 +26,17 @@ const footerRecurringConfig = [
     required: false,
     fields: [
       {
-        label: 'Logo Image',
-        name: 'logo',
-        widget: 'extraImage',
-        showDetails: true,
-      },
-      {
         label: 'Title Text',
         name: 'title',
         widget: 'string',
         required: false,
         hint: 'Optionally show text on hover.',
+      },
+      {
+        label: 'Logo Image',
+        name: 'logo',
+        widget: 'extraImage',
+        showDetails: true,
       },
     ],
   },
