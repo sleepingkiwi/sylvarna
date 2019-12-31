@@ -1,3 +1,6 @@
+import pageSettings from './pageSettings';
+
+
 /** generic repeatable content using blocks
  *  ------------------------------------------------------------------------------------------------
 **/
@@ -170,3 +173,66 @@ const genericContentBlocks = [
 ];
 
 export default genericContentBlocks;
+
+
+/** We also export the fields for the generic page config
+ *  ------------------------------------------------------------------------------------------------
+**/
+export const genericPageConfig = [
+  {
+    label: 'Custom Page',
+    name: 'genericPageInstructions',
+    widget: 'instructions',
+    instructions: 'This page can contain whatever you want!',
+    flavour: 'header',
+    required: false,
+  },
+  {
+    label: 'Layout',
+    name: 'layout',
+    widget: 'hidden',
+    default: 'layouts/base.njk',
+  },
+  {
+    label: 'Title',
+    name: 'title',
+    widget: 'string',
+  },
+  {
+    label: 'Permalink Override (Pattern: /your-slug/index.html)',
+    name: 'permalink',
+    widget: 'string',
+    required: false,
+  },
+  {
+    label: 'Hero Image and Page Title',
+    name: 'hero',
+    widget: 'object',
+    fields: [
+      {
+        label: 'Hero Image',
+        name: 'hero',
+        widget: 'extraImage',
+        showDetails: true,
+        required: true,
+        hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
+      },
+      {
+        label: 'Pre-Header',
+        name: 'preHeader',
+        widget: 'string',
+        required: false,
+        hint: 'smaller text that appears above the header',
+      },
+      {
+        label: 'Header',
+        name: 'header',
+        widget: 'string',
+        required: false,
+      },
+    ],
+  },
+  ...genericContentBlocks,
+  // include general page settings
+  ...pageSettings,
+];

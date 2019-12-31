@@ -102,6 +102,24 @@ const kitchenConfig = [
     valueField: ['title'],
     optionsLength: 50,
   },
+  {
+    label: 'Styles Used',
+    name: 'kitchenPageInstructionsStyles',
+    widget: 'instructions',
+    instructions: 'This ties the kitchen to styles',
+    flavour: 'divider',
+    required: false,
+  },
+  {
+    label: 'Styles',
+    name: 'styles',
+    widget: 'relation',
+    collection: 'kitchenStyle',
+    multiple: true,
+    searchFields: ['title'],
+    valueField: ['title'],
+    optionsLength: 50,
+  },
   // include general page settings
   ...pageSettings,
 ];

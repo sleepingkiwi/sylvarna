@@ -1,16 +1,23 @@
-// TODO: break this into modules...
+/** Config for Netlify CMS
+ *  ------------------------------------------------------------------------------------------------
+ *  this file is broken into a series of smaller imports so that it's not just one huge object.
+ *  we import the config directly in /admin/admin.js
+ *  by using this technique we can use javascript objects rather than the default YAML which gives
+ *  greater potential for us to re-use things like the generic content blocks or the page settings
+ *  which we ant to appear on every page.
+**/
 
 import { metaConfigGlobal } from './sections/meta';
-import pageSettings from './sections/pageSettings';
 import homeConfig from './sections/home';
 import bespokeConfig from './sections/bespoke';
 import contactConfig from './sections/contact';
 import brochureConfig from './sections/brochure';
 import materialConfig from './sections/material';
 import kitchenConfig from './sections/kitchen';
+import kitchenStyleConfig from './sections/kitchenStyle';
 import siteDetailsConfig from './sections/siteDetails';
 import socialAccountsConfig from './sections/socialAccounts';
-import genericContentBlocks from './sections/generic';
+import { genericPageConfig } from './sections/generic';
 import footerRecurringConfig from './sections/footerRecurring';
 
 const config = {
@@ -81,62 +88,7 @@ const config = {
       create: true,
       description: 'Empty pages with no fixed content. You can add whatever you want by stacking content blocks.',
       fields: [
-        {
-          label: 'Custom Page',
-          name: 'genericPageInstructions',
-          widget: 'instructions',
-          instructions: 'This page can contain whatever you want!',
-          flavour: 'header',
-          required: false,
-        },
-        {
-          label: 'Layout',
-          name: 'layout',
-          widget: 'hidden',
-          default: 'layouts/base.njk',
-        },
-        {
-          label: 'Title',
-          name: 'title',
-          widget: 'string',
-        },
-        {
-          label: 'Permalink Override (Pattern: /your-slug/index.html)',
-          name: 'permalink',
-          widget: 'string',
-          required: false,
-        },
-        {
-          label: 'Hero Image and Page Title',
-          name: 'hero',
-          widget: 'object',
-          fields: [
-            {
-              label: 'Hero Image',
-              name: 'hero',
-              widget: 'extraImage',
-              showDetails: true,
-              required: true,
-              hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
-            },
-            {
-              label: 'Pre-Header',
-              name: 'preHeader',
-              widget: 'string',
-              required: false,
-              hint: 'smaller text that appears above the header',
-            },
-            {
-              label: 'Header',
-              name: 'header',
-              widget: 'string',
-              required: false,
-            },
-          ],
-        },
-        ...genericContentBlocks,
-        // include general page settings
-        ...pageSettings,
+        ...genericPageConfig,
       ], // fields
     }, // END CUSTOM PAGES
 
@@ -145,25 +97,15 @@ const config = {
      *  --------------------------------------------------------------------------------------------
     **/
     {
-      name: 'kitchen_style',
-      label: 'Kitchen Style',
+      name: 'kitchenStyle',
+      label: 'Style',
       folder: 'src/kitchenStyle',
       slug: '{{slug}}',
       preview_path: 'style/{{slug}}',
       create: true,
       description: 'Style pages. These will be automatically added to the home page carousel.',
       fields: [
-        {
-          label: 'Custom Page',
-          name: 'genericPageInstructions',
-          widget: 'instructions',
-          instructions: 'This page can contain whatever you want!',
-          flavour: 'header',
-          required: false,
-        },
-        ...genericContentBlocks,
-        // include general page settings
-        ...pageSettings,
+        ...kitchenStyleConfig,
       ], // fields
     }, // END KITCHEN STYLES
 
@@ -342,9 +284,9 @@ const config = {
         }, // END PRIMARY NAV
 
 
-        /** Header Nav
+        /** Footer Sub Nav
          *  ----------------------------------------------------------------------------------------
-         *  add content links to the header.
+         *  add content links to the footer.
         **/
         {
           label: 'Footer Sub Navigation',
