@@ -6,7 +6,7 @@
       "external": false
     },
     {
-      "text": "Bespoke haha",
+      "text": "Bespoke",
       "url": "/bespoke",
       "external": false
     },
@@ -20,5 +20,7 @@
       "url": "/contact",
       "external": false
     }
-  ]
+  ],
+  "cta": "Book an Appointment",
+  "ctaURL": "/contact"
 }
