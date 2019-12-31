@@ -1,0 +1,175 @@
+{
+  "partnerLogos": [
+    {
+      "logo": {
+        "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/quooker_gef4nh.png",
+        "base": "https://res.cloudinary.com/coolguy/image/upload/",
+        "version": "v1577815629",
+        "filename": "partner%20logos%20and%20images/quooker_gef4nh.png",
+        "width": 79,
+        "height": 19,
+        "dominant": [
+          76,
+          76,
+          76
+        ],
+        "alt": "Quooker"
+      },
+      "title": "Quooker"
+    },
+    {
+      "logo": {
+        "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/stoneham_jjw1cl.png",
+        "base": "https://res.cloudinary.com/coolguy/image/upload/",
+        "version": "v1577815629",
+        "filename": "partner%20logos%20and%20images/stoneham_jjw1cl.png",
+        "width": 122,
+        "height": 19,
+        "dominant": [
+          76,
+          76,
+          76
+        ],
+        "alt": "Stoneham"
+      },
+      "title": "Stoneham"
+    },
+    {
+      "logo": {
+        "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/neff_zxr0zs.png",
+        "base": "https://res.cloudinary.com/coolguy/image/upload/",
+        "version": "v1577815629",
+        "filename": "partner%20logos%20and%20images/neff_zxr0zs.png",
+        "width": 61,
+        "height": 19,
+        "dominant": [
+          76,
+          76,
+          76
+        ],
+        "alt": "Neff"
+      },
+      "title": "Neff"
+    },
+    {
+      "logo": {
+        "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/miele_st1l0v.png",
+        "base": "https://res.cloudinary.com/coolguy/image/upload/",
+        "version": "v1577815629",
+        "filename": "partner%20logos%20and%20images/miele_st1l0v.png",
+        "width": 80,
+        "height": 19,
+        "dominant": [
+          76,
+          76,
+          76
+        ],
+        "alt": "Miele"
+      },
+      "title": "Miele"
+    },
+    {
+      "logo": {
+        "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/mereway_phms8z.png",
+        "base": "https://res.cloudinary.com/coolguy/image/upload/",
+        "version": "v1577815629",
+        "filename": "partner%20logos%20and%20images/mereway_phms8z.png",
+        "width": 137,
+        "height": 19,
+        "dominant": [
+          76,
+          76,
+          76
+        ],
+        "alt": "Mereway Kitchens"
+      },
+      "title": "Mereway Kitchens"
+    },
+    {
+      "logo": {
+        "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/franke_lerfwf.png",
+        "base": "https://res.cloudinary.com/coolguy/image/upload/",
+        "version": "v1577815629",
+        "filename": "partner%20logos%20and%20images/franke_lerfwf.png",
+        "width": 64,
+        "height": 19,
+        "dominant": [
+          76,
+          76,
+          76
+        ],
+        "alt": "Franke"
+      },
+      "title": "Franke"
+    },
+    {
+      "logo": {
+        "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/gaggenau_ezdbcq.png",
+        "base": "https://res.cloudinary.com/coolguy/image/upload/",
+        "version": "v1577815629",
+        "filename": "partner%20logos%20and%20images/gaggenau_ezdbcq.png",
+        "width": 95,
+        "height": 19,
+        "dominant": [
+          76,
+          76,
+          76
+        ],
+        "alt": "Gaggenau"
+      },
+      "title": "Gaggenau"
+    },
+    {
+      "logo": {
+        "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/corian_fvj20o.png",
+        "base": "https://res.cloudinary.com/coolguy/image/upload/",
+        "version": "v1577815629",
+        "filename": "partner%20logos%20and%20images/corian_fvj20o.png",
+        "width": 80,
+        "height": 19,
+        "dominant": [
+          76,
+          76,
+          76
+        ],
+        "alt": "Corian"
+      },
+      "title": "Corian"
+    },
+    {
+      "logo": {
+        "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/airuno_ext5yt.png",
+        "base": "https://res.cloudinary.com/coolguy/image/upload/",
+        "version": "v1577815629",
+        "filename": "partner%20logos%20and%20images/airuno_ext5yt.png",
+        "width": 78,
+        "height": 19,
+        "dominant": [
+          76,
+          76,
+          76
+        ],
+        "alt": "Air Uno"
+      },
+      "title": "Air Uno"
+    }
+  ],
+  "ctaBackground": {
+    "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815497/stock%20images/becca-tapert-sY5RjMB1KkE-unsplash_nzlte8.jpg",
+    "base": "https://res.cloudinary.com/coolguy/image/upload/",
+    "version": "v1577815497",
+    "filename": "stock%20images/becca-tapert-sY5RjMB1KkE-unsplash_nzlte8.jpg",
+    "width": 4969,
+    "height": 3313,
+    "dominant": [
+      196,
+      196,
+      194
+    ],
+    "alt": ""
+  },
+  "ctaUrl": "/contact",
+  "ctaPreHeader": "Get in touch",
+  "ctaHeader": "Make it yours",
+  "ctaSecondaryHeader": "Call now on 01243 780 633"
+}
