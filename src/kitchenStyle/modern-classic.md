@@ -175,8 +175,8 @@ materials:
   ctaURLOne: /bespoke
   header: Materials
   materials:
-    - Marble Counters
     - Solid Oak
+    - Marble Counters
   text: >-
     Metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Id
     diam vel quam elementum pulvinar. Tincidunt ornare massa eget egestas purus.
