@@ -6,15 +6,15 @@ hero:
     alt: White marble surface
     base: 'https://res.cloudinary.com/coolguy/image/upload/'
     dominant:
-      - 228
-      - 228
-      - 228
-    filename: stock%20images/materials/henry-co-tqu0IOMaiU8-unsplash_z6pzis.jpg
-    height: 3264
+      - 229
+      - 229
+      - 229
+    filename: stock%20images/materials/henry-co-tqu0IOMaiU8-unsplash_qy6bz6.jpg
+    height: 2000
     src: >-
-      https://res.cloudinary.com/coolguy/image/upload/v1577879355/stock%20images/materials/henry-co-tqu0IOMaiU8-unsplash_z6pzis.jpg
-    version: v1577879355
-    width: 4896
+      https://res.cloudinary.com/coolguy/image/upload/v1577881497/stock%20images/materials/henry-co-tqu0IOMaiU8-unsplash_qy6bz6.jpg
+    version: v1577881497
+    width: 3000
   subHeader: >-
     Explore a range of styles and finished kitchens featuring marble counters
     below
@@ -25,13 +25,13 @@ materialInformation:
     dominant:
       - 205
       - 203
-      - 200
-    filename: stock%20images/rustic-vegan-zzMb7jacyBc-unsplash_hza6i6.jpg
-    height: 5616
+      - 201
+    filename: stock%20images/rustic-vegan-zzMb7jacyBc-unsplash_ybo6fu.jpg
+    height: 3000
     src: >-
-      https://res.cloudinary.com/coolguy/image/upload/v1577879688/stock%20images/rustic-vegan-zzMb7jacyBc-unsplash_hza6i6.jpg
-    version: v1577879688
-    width: 3744
+      https://res.cloudinary.com/coolguy/image/upload/v1577881442/stock%20images/rustic-vegan-zzMb7jacyBc-unsplash_ybo6fu.jpg
+    version: v1577881442
+    width: 2000
   header: Lorem ipsum dolor sit amet
   text: >-
     Suscipit tellus mauris a diam maecenas sed enim ut sem. Id donec ultrices
