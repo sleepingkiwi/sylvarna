@@ -48,7 +48,15 @@ kitchenInformation:
     tristique nulla aliquet enim tortor. Sed viverra tellus in hac habitasse
     platea.
   location: Dorchester
-genericContentBlocks: []
+genericContentBlocks:
+  - backgroundColour: false
+    content:
+      - quoteAttribution: Joe - Kitchen owner
+        quoteText: >-
+          ellentesque habitant morbi tristique senectus. Tincidunt arcu non
+          sodales neque sodales ut etiam sit amet.
+        type: quote
+    type: oneColumn
 materials:
   - Marble Counters
   - Solid Oak
