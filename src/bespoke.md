@@ -237,6 +237,17 @@ appliancesBlock:
     adipiscing elit. amet scelerisque metus, vel tristique justo. In Link
     aliquet interdu Pellentesque nulla odio, commodo ut tortor sed, consectetur
     fauci Maecenas ut fermentum risus, vel hendrerit ex.
+genericContentBlocks:
+  - backgroundColour: true
+    content:
+      - quoteAttribution: 'Mr & Mrs Johnson, Chichester England'
+        quoteText: ' Pellentesque nulla odio, commodo ut tortor sed, consectetur'
+        type: quote
+    type: oneColumn
+kitchensBlock:
+  hero:
+    header: Explore example kitchens
+    subHeader: By material type
 transparentHeader: true
 footerPartners: true
 footerCTA: true
