@@ -60,7 +60,21 @@ partnershipsContentArea:
       https://res.cloudinary.com/coolguy/image/upload/v1577892372/stock%20images/Screenshot_2019-11-07_at_12.38.17_porup4.png
     version: v1577892372
     width: 964
-  logos: []
+  logos:
+    - image:
+        alt: 5 Star Neff Master Partner logo
+        base: 'https://res.cloudinary.com/coolguy/image/upload/'
+        dominant:
+          - 218
+          - 221
+          - 222
+        filename: partner%20logos%20and%20images/masterpartner_5logo_fbmkwe.png
+        height: 111
+        src: >-
+          https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/masterpartner_5logo_fbmkwe.png
+        version: v1577815629
+        width: 200
+      title: 5 Star Neff Master Partner
   preHeader: Only the best
   text: >-
     Tortor condimentum lacinia quis vel eros donec ac odio. Lectus quam id leo
