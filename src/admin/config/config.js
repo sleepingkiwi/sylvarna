@@ -12,6 +12,7 @@ import homeConfig from './sections/home';
 import bespokeConfig from './sections/bespoke';
 import contactConfig from './sections/contact';
 import brochureConfig from './sections/brochure';
+import styleLandingConfig from './sections/styleLanding';
 import materialConfig from './sections/material';
 import kitchenConfig from './sections/kitchen';
 import kitchenStyleConfig from './sections/kitchenStyle';
@@ -71,6 +72,7 @@ const config = {
         bespokeConfig,
         contactConfig,
         brochureConfig,
+        styleLandingConfig,
       ], // files
     }, // END FIXED PAGES
 

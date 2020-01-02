@@ -4,11 +4,11 @@
 import pageSettings from './pageSettings';
 import genericContentBlocks from './generic';
 
-const stylesLandingConfig = {
-  name: 'stylesLanding',
+const styleLandingConfig = {
+  name: 'styleLanding',
   label: 'Styles Landing Page',
   delete: false,
-  file: 'src/styles.md',
+  file: 'src/style.md',
   slug: '{{slug}}',
   create: false,
   fields: [
@@ -65,4 +65,4 @@ const stylesLandingConfig = {
   ],
 };
 
-export default stylesLandingConfig;
+export default styleLandingConfig;
