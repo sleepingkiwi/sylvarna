@@ -147,11 +147,10 @@ findUsContentArea:
   lng: '50.8316445'
   preHeader: Find us
   text: |-
-    Sylvarna Kitchen Design Ltd\
-    Terminus Road Chichester West Sussex
-    PO19 8TX
+    Sylvarna Kitchen Design Ltd
+    Terminus Road Chichester West Sussex PO19 8TX
 
-    Tel: 01243 780633\
+    Tel: 01243 780633
     Fax: 01243 786404
 transparentHeader: true
 footerPartners: true
