@@ -135,19 +135,20 @@ genericContentBlocks:
           Order a brochure and explore our 100s of options for materials and
           suppliers
         preHeader: Make it your own
-        textAlign: left
+        textAlign: center
         type: header
       - cta: Order Brochure
+        textAlign: center
         type: cta
     type: oneColumn
 findUsContentArea:
   header: Chichester Showroom
-  map: '{"type":"Point","coordinates":[-0.790329,50.8316445]}'
+  lat: '-0.790329'
+  lng: '50.8316445'
   preHeader: Find us
   text: |-
     Sylvarna Kitchen Design Ltd\
-    Terminus Road Chichester
-    West Sussex
+    Terminus Road Chichester West Sussex
     PO19 8TX
 
     Tel: 01243 780633\
