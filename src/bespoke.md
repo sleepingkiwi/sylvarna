@@ -237,6 +237,11 @@ appliancesBlock:
     adipiscing elit. amet scelerisque metus, vel tristique justo. In Link
     aliquet interdu Pellentesque nulla odio, commodo ut tortor sed, consectetur
     fauci Maecenas ut fermentum risus, vel hendrerit ex.
+
+
+    ![Neff 5 star Master
+    Partner](https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/masterpartner_5logo_fbmkwe.png
+    "Neff 5 star Master Partner")
 genericContentBlocks:
   - backgroundColour: true
     content:
