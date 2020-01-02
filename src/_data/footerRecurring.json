@@ -1,6 +1,7 @@
 {
   "partnerLogos": [
     {
+      "title": "Quooker",
       "logo": {
         "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/quooker_gef4nh.png",
         "base": "https://res.cloudinary.com/coolguy/image/upload/",
@@ -14,10 +15,10 @@
           76
         ],
         "alt": "Quooker"
-      },
-      "title": "Quooker"
+      }
     },
     {
+      "title": "Stoneham",
       "logo": {
         "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/stoneham_jjw1cl.png",
         "base": "https://res.cloudinary.com/coolguy/image/upload/",
@@ -31,10 +32,10 @@
           76
         ],
         "alt": "Stoneham"
-      },
-      "title": "Stoneham"
+      }
     },
     {
+      "title": "Neff",
       "logo": {
         "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/neff_zxr0zs.png",
         "base": "https://res.cloudinary.com/coolguy/image/upload/",
@@ -48,10 +49,10 @@
           76
         ],
         "alt": "Neff"
-      },
-      "title": "Neff"
+      }
     },
     {
+      "title": "Miele",
       "logo": {
         "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/miele_st1l0v.png",
         "base": "https://res.cloudinary.com/coolguy/image/upload/",
@@ -65,10 +66,10 @@
           76
         ],
         "alt": "Miele"
-      },
-      "title": "Miele"
+      }
     },
     {
+      "title": "Mereway Kitchens",
       "logo": {
         "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/mereway_phms8z.png",
         "base": "https://res.cloudinary.com/coolguy/image/upload/",
@@ -82,10 +83,10 @@
           76
         ],
         "alt": "Mereway Kitchens"
-      },
-      "title": "Mereway Kitchens"
+      }
     },
     {
+      "title": "Franke",
       "logo": {
         "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/franke_lerfwf.png",
         "base": "https://res.cloudinary.com/coolguy/image/upload/",
@@ -99,10 +100,10 @@
           76
         ],
         "alt": "Franke"
-      },
-      "title": "Franke"
+      }
     },
     {
+      "title": "Gaggenau",
       "logo": {
         "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/gaggenau_ezdbcq.png",
         "base": "https://res.cloudinary.com/coolguy/image/upload/",
@@ -116,10 +117,10 @@
           76
         ],
         "alt": "Gaggenau"
-      },
-      "title": "Gaggenau"
+      }
     },
     {
+      "title": "Corian",
       "logo": {
         "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/corian_fvj20o.png",
         "base": "https://res.cloudinary.com/coolguy/image/upload/",
@@ -133,10 +134,10 @@
           76
         ],
         "alt": "Corian"
-      },
-      "title": "Corian"
+      }
     },
     {
+      "title": "Air Uno",
       "logo": {
         "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815629/partner%20logos%20and%20images/airuno_ext5yt.png",
         "base": "https://res.cloudinary.com/coolguy/image/upload/",
@@ -150,17 +151,16 @@
           76
         ],
         "alt": "Air Uno"
-      },
-      "title": "Air Uno"
+      }
     }
   ],
   "ctaBackground": {
-    "src": "https://res.cloudinary.com/coolguy/image/upload/v1577815497/stock%20images/becca-tapert-sY5RjMB1KkE-unsplash_nzlte8.jpg",
+    "src": "https://res.cloudinary.com/coolguy/image/upload/v1577881454/stock%20images/becca-tapert-sY5RjMB1KkE-unsplash_bjmmxw.jpg",
     "base": "https://res.cloudinary.com/coolguy/image/upload/",
-    "version": "v1577815497",
-    "filename": "stock%20images/becca-tapert-sY5RjMB1KkE-unsplash_nzlte8.jpg",
-    "width": 4969,
-    "height": 3313,
+    "version": "v1577881454",
+    "filename": "stock%20images/becca-tapert-sY5RjMB1KkE-unsplash_bjmmxw.jpg",
+    "width": 3000,
+    "height": 2000,
     "dominant": [
       196,
       196,
