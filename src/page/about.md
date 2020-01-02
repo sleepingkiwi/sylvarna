@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: Admin
+title: About
 hero:
   header: Sylvarna Kitchens
   hero:
