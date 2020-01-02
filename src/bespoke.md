@@ -186,7 +186,24 @@ fittingsBlock:
     aliquet interdu Pellentesque nulla odio, commodo ut tortor sed, consectetur
     fauci Maecenas ut fermentum risus, vel hendrerit ex.
 appliancesBlock:
+  header: Or choose your own
   hero:
+    header: Appliances
+    hero:
+      alt: ''
+      base: 'https://res.cloudinary.com/coolguy/image/upload/'
+      dominant:
+        - 17
+        - 21
+        - 19
+      filename: stock%20images/david-oakill-XyIdDCrOBAo-unsplash_xy37im.jpg
+      height: 2250
+      src: >-
+        https://res.cloudinary.com/coolguy/image/upload/v1577976490/stock%20images/david-oakill-XyIdDCrOBAo-unsplash_xy37im.jpg
+      version: v1577976490
+      width: 3000
+    subHeader: 'Hundreds of styles, colours and finishes to choose from'
+  leftImageOne:
     alt: ''
     base: 'https://res.cloudinary.com/coolguy/image/upload/'
     dominant:
@@ -199,6 +216,27 @@ appliancesBlock:
       https://res.cloudinary.com/coolguy/image/upload/v1577895800/stock%20images/toa-heftiba-do6ouuCdsto-unsplash_wop3u2.jpg
     version: v1577895800
     width: 3000
+  leftImageTwo:
+    alt: ''
+    base: 'https://res.cloudinary.com/coolguy/image/upload/'
+    dominant:
+      - 129
+      - 151
+      - 151
+    filename: stock%20images/latrach-med-jamil-Eb6hMEhGlKY-unsplash_gbwmue.jpg
+    height: 3000
+    src: >-
+      https://res.cloudinary.com/coolguy/image/upload/v1577895801/stock%20images/latrach-med-jamil-Eb6hMEhGlKY-unsplash_gbwmue.jpg
+    version: v1577895801
+    width: 2000
+  preHeader: Go with our suggested partners
+  text: >-
+    We can work with you to build a kitchen design completely made to measure
+    for your space. With a wide choice of materials, suppliers and partnerships
+    we have something to suit everyone. Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. amet scelerisque metus, vel tristique justo. In Link
+    aliquet interdu Pellentesque nulla odio, commodo ut tortor sed, consectetur
+    fauci Maecenas ut fermentum risus, vel hendrerit ex.
 transparentHeader: true
 footerPartners: true
 footerCTA: true
