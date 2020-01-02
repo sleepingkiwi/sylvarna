@@ -134,7 +134,7 @@ materialsBlock:
     aliquet interdu Pellentesque nulla odio, commodo ut tortor sed, consectetur
     fauci Maecenas ut fermentum risus, vel hendrerit ex.
 fittingsBlock:
-  hero:
+  backLeft:
     alt: ''
     base: 'https://res.cloudinary.com/coolguy/image/upload/'
     dominant:
@@ -147,6 +147,58 @@ fittingsBlock:
       https://res.cloudinary.com/coolguy/image/upload/v1577976114/stock%20images/materials/2019-Handle-Collection-Mix_btkesf.png
     version: v1577976114
     width: 1200
+  backRight:
+    alt: ''
+    base: 'https://res.cloudinary.com/coolguy/image/upload/'
+    dominant:
+      - 146
+      - 140
+      - 138
+    filename: stock%20images/materials/2019-Handle-Collection-Mix_btkesf.png
+    height: 1200
+    src: >-
+      https://res.cloudinary.com/coolguy/image/upload/v1577976114/stock%20images/materials/2019-Handle-Collection-Mix_btkesf.png
+    version: v1577976114
+    width: 1200
+  header: 'Silver? Brass? Black? You name it, we have it'
+  hero:
+    header: Fittings
+    hero:
+      alt: ''
+      base: 'https://res.cloudinary.com/coolguy/image/upload/'
+      dominant:
+        - 187
+        - 187
+        - 192
+      filename: stock%20images/annie-spratt-PcS2mgh_hUA-unsplash_olzlrq.jpg
+      height: 3000
+      src: >-
+        https://res.cloudinary.com/coolguy/image/upload/v1577882437/stock%20images/annie-spratt-PcS2mgh_hUA-unsplash_olzlrq.jpg
+      version: v1577882437
+      width: 1798
+    subHeader: 'Hundreds of styles, colours and finishes to choose from'
+  preHeader: 'Knobs, dials, locks'
+  text: >-
+    We can work with you to build a kitchen design completely made to measure
+    for your space. With a wide choice of materials, suppliers and partnerships
+    we have something to suit everyone. Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. amet scelerisque metus, vel tristique justo. In Link
+    aliquet interdu Pellentesque nulla odio, commodo ut tortor sed, consectetur
+    fauci Maecenas ut fermentum risus, vel hendrerit ex.
+appliancesBlock:
+  hero:
+    alt: ''
+    base: 'https://res.cloudinary.com/coolguy/image/upload/'
+    dominant:
+      - 203
+      - 162
+      - 143
+    filename: stock%20images/toa-heftiba-do6ouuCdsto-unsplash_wop3u2.jpg
+    height: 2000
+    src: >-
+      https://res.cloudinary.com/coolguy/image/upload/v1577895800/stock%20images/toa-heftiba-do6ouuCdsto-unsplash_wop3u2.jpg
+    version: v1577895800
+    width: 3000
 transparentHeader: true
 footerPartners: true
 footerCTA: true
