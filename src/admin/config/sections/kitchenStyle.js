@@ -36,7 +36,7 @@ const kitchenConfig = [
         widget: 'extraImage',
         showDetails: true,
         required: true,
-        hint: 'This image is shown at the top of this Style page. Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px.',
+        hint: 'This image is shown at the top of this Style page. Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px.',
       },
       {
         label: 'Homepage Carousel Image',
@@ -44,7 +44,7 @@ const kitchenConfig = [
         widget: 'extraImage',
         showDetails: true,
         required: false,
-        hint: 'Optionally specify a different image for the homepage carousel. If you leave this blank the hero image will be used. Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px.',
+        hint: 'Optionally specify a different image for the homepage carousel. If you leave this blank the hero image will be used. Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px.',
       },
       {
         label: 'Pre-Header',
@@ -207,7 +207,7 @@ const kitchenConfig = [
         widget: 'extraImage',
         showDetails: true,
         required: false,
-        hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px.',
+        hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px.',
       },
       {
         label: 'Quote Text',
@@ -442,11 +442,12 @@ const kitchenConfig = [
       {
         label: 'Materials Used',
         name: 'materials',
-        widget: 'relation',
+        widget: 'relationWrapped',
         collection: 'material',
+        required: false,
         multiple: true,
         searchFields: ['title'],
-        valueField: ['title'],
+        valueField: 'title',
         optionsLength: 50,
       },
     ],
@@ -470,7 +471,7 @@ const kitchenConfig = [
         widget: 'extraImage',
         showDetails: true,
         required: false,
-        hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px.',
+        hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px.',
       },
       {
         label: 'Quote Text',
@@ -506,8 +507,8 @@ const kitchenConfig = [
         name: 'hero',
         widget: 'extraImage',
         showDetails: true,
-        required: true,
-        hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px.',
+        required: false,
+        hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px.',
       },
       {
         label: 'Header',

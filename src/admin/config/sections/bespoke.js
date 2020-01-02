@@ -43,7 +43,7 @@ const bespokeConfig = {
           widget: 'extraImage',
           showDetails: true,
           required: true,
-          hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
+          hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px',
         },
         {
           label: 'Pre-Header',
@@ -182,7 +182,7 @@ const bespokeConfig = {
               widget: 'extraImage',
               showDetails: true,
               required: true,
-              hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
+              hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px',
             },
             {
               label: 'Header',
@@ -274,7 +274,7 @@ const bespokeConfig = {
               widget: 'extraImage',
               showDetails: true,
               required: true,
-              hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
+              hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px',
             },
             {
               label: 'Header',
@@ -293,14 +293,14 @@ const bespokeConfig = {
         },
         {
           label: 'Left Background Image',
-          name: 'hero',
+          name: 'backLeft',
           widget: 'extraImage',
           showDetails: true,
           required: false,
         },
         {
           label: 'Right Background Image',
-          name: 'hero',
+          name: 'backRight',
           widget: 'extraImage',
           showDetails: true,
           required: false,
@@ -380,7 +380,7 @@ const bespokeConfig = {
               widget: 'extraImage',
               showDetails: true,
               required: true,
-              hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
+              hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px',
             },
             {
               label: 'Header',
@@ -399,7 +399,7 @@ const bespokeConfig = {
         },
         {
           label: 'Left Column Image',
-          name: 'hero',
+          name: 'leftImageOne',
           widget: 'extraImage',
           showDetails: true,
           required: true,
@@ -407,7 +407,7 @@ const bespokeConfig = {
         },
         {
           label: 'Left Column Secondary Image',
-          name: 'hero',
+          name: 'leftImageTwo',
           widget: 'extraImage',
           showDetails: true,
           required: false,

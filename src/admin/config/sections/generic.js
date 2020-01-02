@@ -34,13 +34,6 @@ const contentBlockContentTypes = {
       widget: 'object',
       fields: [
         {
-          label: 'Text alignment',
-          name: 'textAlign',
-          widget: 'select',
-          options: ['left', 'center', 'right'],
-          default: 'left',
-        },
-        {
           label: 'Pre-Header',
           name: 'preHeader',
           widget: 'string',
@@ -53,13 +46,6 @@ const contentBlockContentTypes = {
           widget: 'string',
           required: false,
         },
-      ],
-    },
-    {
-      label: 'Text',
-      name: 'text',
-      widget: 'object',
-      fields: [
         {
           label: 'Text alignment',
           name: 'textAlign',
@@ -67,6 +53,13 @@ const contentBlockContentTypes = {
           options: ['left', 'center', 'right'],
           default: 'left',
         },
+      ],
+    },
+    {
+      label: 'Text',
+      name: 'text',
+      widget: 'object',
+      fields: [
         {
           label: 'Text Content',
           name: 'text',
@@ -87,6 +80,33 @@ const contentBlockContentTypes = {
             'bulleted-list',
             'numbered-list',
           ],
+        },
+        {
+          label: 'Text alignment',
+          name: 'textAlign',
+          widget: 'select',
+          options: ['left', 'center', 'right'],
+          default: 'left',
+        },
+      ],
+    },
+    {
+      label: 'Quote',
+      name: 'quote',
+      widget: 'object',
+      fields: [
+        {
+          label: 'Quote Text',
+          name: 'quoteText',
+          widget: 'string',
+          required: false,
+          hint: 'You do not need to add “” quotation marks yourself.',
+        },
+        {
+          label: 'Quote Attribution',
+          name: 'quoteAttribution',
+          widget: 'string',
+          required: false,
         },
       ],
     },
@@ -121,6 +141,14 @@ const contentBlockContentTypes = {
           widget: 'string',
           required: false,
           hint: 'If you leave this field blank but provide CTA text the button will open a popup to the CTA/Brochure popup configured in the Fixed Pages menu.',
+        },
+        {
+          label: 'Text alignment',
+          name: 'textAlign',
+          widget: 'select',
+          options: ['left', 'center', 'right'],
+          default: 'left',
+          hint: 'controls button alignment, text inside the button is always centered',
         },
       ],
     },
@@ -215,7 +243,7 @@ export const genericPageConfig = [
         widget: 'extraImage',
         showDetails: true,
         required: true,
-        hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
+        hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px',
       },
       {
         label: 'Pre-Header',

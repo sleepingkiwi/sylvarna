@@ -74,12 +74,21 @@ const kitchenConfig = [
         widget: 'list',
         showDetails: true,
         hint: 'The first image will be shown on the Style page, all others form part of a carousel in the popup.',
-        field: {
-          label: 'Image',
-          name: 'additionalImage',
-          widget: 'extraImage',
-          showDetails: true,
-        },
+        fields: [
+          {
+            label: 'Image Name',
+            name: 'name',
+            widget: 'string',
+            required: false,
+            hint: 'Just for your own reference when sorting this list!',
+          },
+          {
+            label: 'Image',
+            name: 'additionalImage',
+            widget: 'extraImage',
+            showDetails: true,
+          },
+        ],
       },
     ],
   },
@@ -95,11 +104,11 @@ const kitchenConfig = [
   {
     label: 'Materials',
     name: 'materials',
-    widget: 'relation',
+    widget: 'relationWrapped',
     collection: 'material',
     multiple: true,
     searchFields: ['title'],
-    valueField: ['title'],
+    valueField: 'title',
     optionsLength: 50,
   },
   {
@@ -113,11 +122,11 @@ const kitchenConfig = [
   {
     label: 'Styles',
     name: 'styles',
-    widget: 'relation',
+    widget: 'relationWrapped',
     collection: 'kitchenStyle',
     multiple: true,
     searchFields: ['title'],
-    valueField: ['title'],
+    valueField: 'title',
     optionsLength: 50,
   },
   // include general page settings

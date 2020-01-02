@@ -53,7 +53,7 @@ const footerRecurringConfig = [
     name: 'ctaBackground',
     widget: 'extraImage',
     showDetails: true,
-    hint: 'Minimum width of 1,920px recommended. Anything above 2,500px will be cropped to 2,500px',
+    hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px',
   },
   {
     label: 'Footer CTA link',

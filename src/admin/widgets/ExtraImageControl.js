@@ -34,7 +34,7 @@ const ExtraImageControl = window.createClass({
   imageLoadPromise: false,
 
   handleChange: function handleChange(src) {
-    console.log('changed image');
+    // console.log('changed image');
     const value = this.props.value && typeof this.props.value.toJS === 'function'
       ? this.props.value.toJS()
       : this.props.value || {};
