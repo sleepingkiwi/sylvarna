@@ -225,8 +225,8 @@ export const genericPageConfig = [
     label: 'Title',
     name: 'title',
     widget: 'string',
-    hint: 'for custom pages this also sets the URL. By default the URL will be a base level of /title. For that reason the following titles are not allowed: admin, bespoke, brochure, contact, style',
-    pattern: ['^(?!admin$)(?!bespoke$)(?!brochure$)(?!contact$)(?!style$).*', 'The following titles are not allowed: admin, bespoke, brochure, contact, style'],
+    hint: 'for custom pages this also sets the URL. By default the URL will be a base level of /title. For that reason the following titles are not allowed: admin, bespoke, brochure, contact, index, style',
+    pattern: ['^(?!admin$)(?!bespoke$)(?!brochure$)(?!contact$)(?!index$)(?!style$)(?!Admin$)(?!Bespoke$)(?!Brochure$)(?!Contact$)(?!Index$)(?!Style$).*', 'The following titles are not allowed: admin, bespoke, brochure, contact, index, style'],
   },
   {
     label: 'Permalink Override (Pattern: /your-slug/index.html)',

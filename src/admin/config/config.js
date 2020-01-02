@@ -66,6 +66,7 @@ const config = {
       name: 'pages',
       label: 'Fixed Pages',
       description: 'These are the pages required by the site that you can configure',
+      preview_path: '{{slug}}',
       files: [
         // Home Page
         homeConfig,

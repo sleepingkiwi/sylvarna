@@ -4,11 +4,11 @@
 import pageSettings from './pageSettings';
 
 const homeConfig = {
-  name: 'home',
+  name: 'index',
   label: 'Homepage',
   delete: false,
   file: 'src/index.md',
-  slug: '{{slug}}',
+  slug: 'index',
   create: false,
   fields: [
     {
