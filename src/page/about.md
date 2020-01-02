@@ -1,7 +1,6 @@
 ---
 layout: layouts/base.njk
-title: About Us
-permalink: /about/index.html
+title: About
 hero:
   header: Sylvarna Kitchens
   hero:
@@ -119,4 +118,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

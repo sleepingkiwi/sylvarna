@@ -86,7 +86,7 @@ const config = {
       label: 'Custom Page',
       folder: 'src/page',
       slug: '{{slug}}',
-      preview_path: 'page/{{slug}}',
+      preview_path: '{{slug}}',
       create: true,
       description: 'Empty pages with no fixed content. You can add whatever you want by stacking content blocks.',
       fields: [
