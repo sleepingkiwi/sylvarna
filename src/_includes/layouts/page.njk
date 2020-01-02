@@ -3,5 +3,40 @@
 {% block content %}
   <main id="main-content" class="site-main site-main--page" tabindex="-1">
     {{ content | safe }}
+
+    <pre>
+title:
+{{title | safe}}
+
+---
+
+permalink:
+{{permalink | safe}}
+
+---
+
+hero:
+{{hero | dump | safe | replace(",", ",<br>") | replace("}", "}<br>") | replace("{", "{<br>")}}
+
+---
+
+genericContentBlocks:
+{{genericContentBlocks | dump | safe | replace(",", ",<br>") | replace("}", "}<br>") | replace("{", "{<br>")}}
+
+---
+
+transparentHeader:
+{{transparentHeader | safe}}
+
+---
+
+footerPartners:
+{{footerPartners | safe}}
+
+---
+
+footerCTA:
+{{footerCTA | safe}}
+    </pre>
   </main>
 {% endblock %}

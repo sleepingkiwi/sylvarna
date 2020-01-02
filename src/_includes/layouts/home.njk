@@ -3,5 +3,35 @@
 {% block content %}
   <main id="main-content" class="site-main site-main--home" tabindex="-1">
     {{ content | safe }}
+
+    <pre>
+carousel:
+{{carousel | dump | safe | replace(",", ",<br>") | replace("}", "}<br>") | replace("{", "{<br>")}}
+
+---
+
+firstContentArea:
+{{firstContentArea | dump | safe | replace(",", ",<br>") | replace("}", "}<br>") | replace("{", "{<br>")}}
+
+---
+
+partnershipsContentArea:
+{{partnershipsContentArea | dump | safe | replace(",", ",<br>") | replace("}", "}<br>") | replace("{", "{<br>")}}
+
+---
+
+transparentHeader:
+{{transparentHeader | safe}}
+
+---
+
+footerPartners:
+{{footerPartners | safe}}
+
+---
+
+footerCTA:
+{{footerCTA | safe}}
+    </pre>
   </main>
 {% endblock %}

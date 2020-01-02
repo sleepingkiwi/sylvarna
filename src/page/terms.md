@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/page.njk
 title: Terms
 permalink: /terms/index.html
 hero:
@@ -101,4 +101,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

@@ -219,7 +219,7 @@ export const genericPageConfig = [
     label: 'Layout',
     name: 'layout',
     widget: 'hidden',
-    default: 'layouts/base.njk',
+    default: 'layouts/page.njk',
   },
   {
     label: 'Title',
