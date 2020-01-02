@@ -22,6 +22,9 @@ import ExtraImagePreview from './widgets/ExtraImagePreview';
 import InstructionsControl from './widgets/InstructionsControl';
 import RelationWrappedControl from './widgets/RelationWrappedControl';
 
+// and custom previews
+import PagePreview from './previews/PagePreview';
+
 
 /** our cms configuration as a JS object
  *  ------------------------------------------------------------------------------------------------
@@ -36,6 +39,13 @@ CMS.registerWidget('extraImage', ExtraImageControl, ExtraImagePreview);
 CMS.registerWidget('relationWrapped', RelationWrappedControl);
 CMS.registerWidget('colour', ColourControl);
 CMS.registerWidget('instructions', InstructionsControl);
+
+
+/** register preview bits
+ *  ------------------------------------------------------------------------------------------------
+**/
+CMS.registerPreviewStyle('/styles/main.css'); // TODO import rev.json if it exists to get path
+CMS.registerPreviewTemplate('generic_page', PagePreview);
 
 // console.log(CMS);
 

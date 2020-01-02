@@ -70,11 +70,12 @@
     "scripts:dev": "npm run lint:scripts && webpack --env.production=false --env.development --color ",
     "admin:prod": "webpack --env.production --env.admin --color",
     "admin:dev": "npm run lint:admin && webpack --env.production=false --env.admin --env.development --color ",
+    "admin:templates": "mkdir dist/admin && nunjucks-precompile src/_includes > dist/admin/templates.js -i '\\.(njk|css|svg)$'",
     "scripts:stats": "webpack --profile --json --env.production > compilation-stats.json",
     "serve": "light-server -c .lightserverrc",
-    "dev": "npm-run-all clean styles:dev admin:dev scripts:dev eleventy:default --parallel eleventy:watch serve --print-label",
+    "dev": "npm-run-all clean styles:dev admin:dev admin:templates scripts:dev eleventy:default --parallel eleventy:watch serve --print-label",
     "dev:debug": "DEBUG=* npm run dev",
     "start": "npm run dev",
-    "build": "run-s clean lint:alljs lint:styles styles:prod admin:prod scripts:prod rev eleventy:default --print-label"
+    "build": "run-s clean lint:alljs lint:styles styles:prod admin:prod admin:templates scripts:prod rev eleventy:default --print-label"
   }
 }

@@ -7,6 +7,11 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('src/images');
   eleventyConfig.addPassthroughCopy('src/fonts');
 
+  // for use in our previews.
+  // uses the same version as eleventy. Maybe a bit fragile...
+  // method from: https://github.com/hankchizljaw/hylia
+  eleventyConfig.addPassthroughCopy('node_modules/nunjucks/browser/nunjucks-slim.js');
+
   // transforms modify a template’s output
   // https://www.11ty.dev/docs/config/#transforms
   // choose whether to minify html output or make it pretty
