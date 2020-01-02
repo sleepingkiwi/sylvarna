@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: About
+title: Admin
 hero:
   header: Sylvarna Kitchens
   hero:
@@ -118,3 +118,4 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
+
