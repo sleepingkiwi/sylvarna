@@ -18,10 +18,95 @@ hero:
     width: 3000
   preHeader: Contact us
 formContentArea:
-  decorationImages: []
+  decorationImages:
+    - image:
+        alt: ''
+        base: 'https://res.cloudinary.com/coolguy/image/upload/'
+        dominant:
+          - 223
+          - 215
+          - 214
+        filename: stock%20images/jacek-dylag-Vve7XkiUq_Y-unsplash_jgiczh.jpg
+        height: 3000
+        src: >-
+          https://res.cloudinary.com/coolguy/image/upload/v1577885361/stock%20images/jacek-dylag-Vve7XkiUq_Y-unsplash_jgiczh.jpg
+        version: v1577885361
+        width: 2000
+      title: tap
+    - image:
+        alt: ''
+        base: 'https://res.cloudinary.com/coolguy/image/upload/'
+        dominant:
+          - 201
+          - 190
+          - 179
+        filename: stock%20images/rustic-vegan-2HSOSoTrvGA-unsplash_rk7s80.jpg
+        height: 2000
+        src: >-
+          https://res.cloudinary.com/coolguy/image/upload/v1577882568/stock%20images/rustic-vegan-2HSOSoTrvGA-unsplash_rk7s80.jpg
+        version: v1577882568
+        width: 3000
+      title: Bread on counter
+    - image:
+        alt: ''
+        base: 'https://res.cloudinary.com/coolguy/image/upload/'
+        dominant:
+          - 219
+          - 178
+          - 167
+        filename: stock%20images/becca-tapert-XQucZO9QTOY-unsplash_te7vpa.jpg
+        height: 2000
+        src: >-
+          https://res.cloudinary.com/coolguy/image/upload/v1577885354/stock%20images/becca-tapert-XQucZO9QTOY-unsplash_te7vpa.jpg
+        version: v1577885354
+        width: 3000
+      title: Pan in oven
+    - image:
+        alt: ''
+        base: 'https://res.cloudinary.com/coolguy/image/upload/'
+        dominant:
+          - 196
+          - 182
+          - 162
+        filename: stock%20images/alyson-mcphee-yWG-ndhxvqY-unsplash_hjbpe9.jpg
+        height: 1987
+        src: >-
+          https://res.cloudinary.com/coolguy/image/upload/v1577885836/stock%20images/alyson-mcphee-yWG-ndhxvqY-unsplash_hjbpe9.jpg
+        version: v1577885836
+        width: 3000
+      title: Chopping herbs
+    - image:
+        alt: ''
+        base: 'https://res.cloudinary.com/coolguy/image/upload/'
+        dominant:
+          - 201
+          - 190
+          - 179
+        filename: stock%20images/rustic-vegan-2HSOSoTrvGA-unsplash_rk7s80.jpg
+        height: 2000
+        src: >-
+          https://res.cloudinary.com/coolguy/image/upload/v1577882568/stock%20images/rustic-vegan-2HSOSoTrvGA-unsplash_rk7s80.jpg
+        version: v1577882568
+        width: 3000
+      title: Bread in oven (again)
+    - image:
+        alt: ''
+        base: 'https://res.cloudinary.com/coolguy/image/upload/'
+        dominant:
+          - 223
+          - 215
+          - 214
+        filename: stock%20images/jacek-dylag-Vve7XkiUq_Y-unsplash_jgiczh.jpg
+        height: 3000
+        src: >-
+          https://res.cloudinary.com/coolguy/image/upload/v1577885361/stock%20images/jacek-dylag-Vve7XkiUq_Y-unsplash_jgiczh.jpg
+        version: v1577885361
+        width: 2000
+      title: Tap (again)
   header: Get your dream kitchen
   labels:
     email: Email
+    message: Message
     name: Name
     sendMessage: Send Message
     subject: Subject
@@ -61,8 +146,7 @@ findUsContentArea:
   preHeader: Find us
   text: |-
     Sylvarna Kitchen Design Ltd\
-    Terminus Road
-    Chichester
+    Terminus Road Chichester
     West Sussex
     PO19 8TX
 
