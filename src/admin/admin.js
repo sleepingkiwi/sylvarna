@@ -44,7 +44,6 @@ CMS.registerWidget('instructions', InstructionsControl);
 /** register preview bits
  *  ------------------------------------------------------------------------------------------------
 **/
-CMS.registerPreviewStyle('/styles/main.css'); // TODO import rev.json if it exists to get path
 CMS.registerPreviewTemplate('generic_page', PagePreview);
 
 // console.log(CMS);

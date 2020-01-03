@@ -76,6 +76,6 @@
     "dev": "npm-run-all clean styles:dev admin:dev admin:templates scripts:dev eleventy:default --parallel eleventy:watch serve --print-label",
     "dev:debug": "DEBUG=* npm run dev",
     "start": "npm run dev",
-    "build": "run-s clean lint:alljs lint:styles styles:prod admin:prod admin:templates scripts:prod rev eleventy:default --print-label"
+    "build": "run-s clean lint:alljs lint:styles styles:prod admin:prod scripts:prod rev admin:templates eleventy:default --print-label"
   }
 }

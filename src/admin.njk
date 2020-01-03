@@ -49,5 +49,9 @@ permalink: '/admin/index.html'
   <script src="/admin/templates.js"></script>
   <!-- Include the script that builds the page and powers Netlify CMS. -->
   <script type="module" src="{{rev['/admin.modules.js'] or '/admin.modules.js'}}"></script>
+  {# register the css in the admin - needs access to rev #}
+  <script>
+    window.CMS.registerPreviewStyle('{{rev['/styles/main.css'] or '/styles/main.css'}}');
+  </script>
 </body>
 </html>
