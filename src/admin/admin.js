@@ -24,6 +24,14 @@ import RelationWrappedControl from './widgets/RelationWrappedControl';
 
 // and custom previews
 import PagePreview from './previews/PagePreview';
+import BespokePreview from './previews/BespokePreview';
+import BrochurePreview from './previews/BrochurePreview';
+import ContactPreview from './previews/ContactPreview';
+import HomePreview from './previews/HomePreview';
+import KitchenPreview from './previews/KitchenPreview';
+import MaterialPreview from './previews/MaterialPreview';
+import StylePreview from './previews/StylePreview';
+import StyleLandingPreview from './previews/StyleLandingPreview';
 
 
 /** our cms configuration as a JS object
@@ -45,6 +53,14 @@ CMS.registerWidget('instructions', InstructionsControl);
  *  ------------------------------------------------------------------------------------------------
 **/
 CMS.registerPreviewTemplate('generic_page', PagePreview);
+CMS.registerPreviewTemplate('bespoke', BespokePreview);
+CMS.registerPreviewTemplate('brochure', BrochurePreview);
+CMS.registerPreviewTemplate('contact', ContactPreview);
+CMS.registerPreviewTemplate('index', HomePreview);
+CMS.registerPreviewTemplate('kitchen', KitchenPreview);
+CMS.registerPreviewTemplate('material', MaterialPreview);
+CMS.registerPreviewTemplate('kitchenStyle', StylePreview);
+CMS.registerPreviewTemplate('styleLanding', StyleLandingPreview);
 
 // console.log(CMS);
 
