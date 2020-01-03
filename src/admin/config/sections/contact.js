@@ -5,7 +5,7 @@ import pageSettings from './pageSettings';
 import genericContentBlocks from './generic';
 
 const contactConfig = {
-  name: 'conatct',
+  name: 'contact',
   label: 'Contact',
   delete: false,
   file: 'src/contact.md',
