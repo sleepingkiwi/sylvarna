@@ -2,25 +2,25 @@
   "items": [
     {
       "text": "Styles",
-      "url": "/styles",
+      "url": "/style/",
       "external": false
     },
     {
       "text": "Bespoke",
-      "url": "/bespoke",
+      "url": "/bespoke/",
       "external": false
     },
     {
       "text": "About",
-      "url": "/about",
+      "url": "/about/",
       "external": false
     },
     {
       "text": "Contact",
-      "url": "/contact",
+      "url": "/contact/",
       "external": false
     }
   ],
   "cta": "Book an Appointment",
-  "ctaURL": "/contact"
+  "ctaURL": "/contact/"
 }

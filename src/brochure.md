@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/brochure
 title: Brochure
 hero:
   header: Order our brochure
@@ -50,4 +50,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

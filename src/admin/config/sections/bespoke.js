@@ -24,7 +24,7 @@ const bespokeConfig = {
       label: 'Layout',
       name: 'layout',
       widget: 'hidden',
-      default: 'layouts/base',
+      default: 'layouts/bespoke',
     },
     {
       label: 'Title',

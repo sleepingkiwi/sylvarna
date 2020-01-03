@@ -1,0 +1,120 @@
+/** SiteFooter
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+.SiteFooter {
+  /* the wrap inside already has left/right padding */
+  padding: var(--bsu-l) 0;
+  color: var(--colour-subtle);
+  background-color: var(--colour-background-subtle);
+  text-align: center;
+
+  & svg path {
+    fill: var(--colour-subtle);
+    transition: fill var(--time-transition) var(--ease-default);
+  }
+
+  /** general list styling for nav and social icons
+   *  ----------------------------------------------------------------------------------------------
+  **/
+  & ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  & li {
+    display: block;
+    text-transform: uppercase;
+  }
+
+  & li a {
+    display: inline-block;
+    vertical-align: top;
+    padding: var(--bsu);
+  }
+
+  & a {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: var(--colour-secondary);
+
+      & svg path {
+        fill: var(--colour-secondary);
+      }
+    }
+  }
+}
+
+
+/** Footer logo
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SiteFooter__logo {
+
+  & a {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  & .Logo > .SvgWrap,
+  & .Logo > img {
+    width: 200px; /* TODO: should we let CMS user decide this? */
+    max-width: 100%;
+  }
+}
+
+
+/** Footer nav
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SiteFooter__nav,
+.SiteFooter__sub-nav {
+
+  & li {
+
+    &::after {
+      content: '|';
+      display: inline-block;
+      vertical-align: top;
+      padding: var(--bsu) 0;
+    }
+
+    &:last-child::after {
+      content: none;
+    }
+  }
+}
+
+
+/** Social icons
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SiteFooter__social .SvgWrap {
+  width: var(--s1);
+}
+
+.SiteFooter__social li a {
+  padding-top: 0;
+}
+
+
+/** Footer sub nav
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SiteFooter__sub-nav {
+  font-size: var(--s-1);
+  margin-top: var(--bsu-s);
+
+  & li::after {
+    padding: 0;
+  }
+
+  & li a {
+    padding: 0 var(--bsu-xs);
+    text-transform: none;
+  }
+}

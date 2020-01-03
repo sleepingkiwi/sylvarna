@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/style
 title: Timeless
 hero:
   carousel:
@@ -241,4 +241,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

@@ -5,7 +5,7 @@
 **/
 
 /* scale fonts based on screen size - included as an example - remove if you want! */
-@import '_scale-fonts.css';
+/* @import '_scale-fonts.css'; */
 
 /** body defaults
  *  ------------------------------------------------------------------------------------------------
@@ -15,6 +15,9 @@ body {
   font-family: var(--ff-body);
   color: var(--colour-primary);
   background-color: var(--colour-background-body);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   /*
     Sometimes required for skinny fonts - particularly for light on dark text.
@@ -25,3 +28,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   */
 }
+
+/** if we want main content not to float centrally:
+ *  ------------------------------------------------------------------------------------------------
+**/
+/* .site-main {
+  flex: 1;
+} */

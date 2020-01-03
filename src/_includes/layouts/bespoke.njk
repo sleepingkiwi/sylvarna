@@ -1,0 +1,74 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <main id="main-content" class="site-main site-main--bespoke" tabindex="-1">
+    {{ content | safe }}
+
+    <div class="Wrap Wrap--readable">
+      <pre>
+<strong>title:</strong>
+
+{{title | safe}}
+
+---
+
+<strong>hero:</strong>
+
+{{hero | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+<strong>introductionBlock:</strong>
+
+{{introductionBlock | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>materialsBlock:</strong>
+
+{{materialsBlock | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>fittingsBlock:</strong>
+
+{{fittingsBlock | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>appliancesBlock:</strong>
+
+{{appliancesBlock | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>genericContentBlocks:</strong>
+
+{{genericContentBlocks | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>kitchensBlock:</strong>
+
+{{kitchensBlock | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>transparentHeader:</strong>
+
+{{transparentHeader | safe}}
+
+---
+
+<strong>footerPartners:</strong>
+
+{{footerPartners | safe}}
+
+---
+
+<strong>footerCTA:</strong>
+
+{{footerCTA | safe}}
+      </pre>
+    </div>
+  </main>
+{% endblock %}

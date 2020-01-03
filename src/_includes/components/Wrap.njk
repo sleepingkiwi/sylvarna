@@ -16,10 +16,11 @@
 #}
 
 {% macro Wrap(
-  flavour=''
+  flavour='',
+  flows=false
 ) %}
 {% set content = caller() %} {# ref: https://github.com/mozilla/nunjucks/issues/664 #}
-<div class="Wrap{{ ' Wrap--' if flavour }}{{ flavour }}">
+<div class="Wrap{{ ' Wrap--' if flavour }}{{ flavour }}{{ ' u-flows' if flows }}">
   {{ content }}
 </div>
 {% endmacro %}

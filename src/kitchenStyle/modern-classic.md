@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/style
 title: Modern Classic
 hero:
   carousel:
@@ -207,4 +207,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

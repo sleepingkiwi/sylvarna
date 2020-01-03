@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/contact
 title: Contact
 hero:
   header: We'd love to hear from you
@@ -159,4 +159,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

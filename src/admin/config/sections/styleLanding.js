@@ -24,7 +24,7 @@ const styleLandingConfig = {
       label: 'Layout',
       name: 'layout',
       widget: 'hidden',
-      default: 'layouts/base',
+      default: 'layouts/styleLanding',
     },
     {
       label: 'Title',

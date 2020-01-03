@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/material
 title: Solid Oak
 hero:
   hero:
@@ -69,4 +69,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

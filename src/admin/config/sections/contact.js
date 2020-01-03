@@ -24,7 +24,7 @@ const contactConfig = {
       label: 'Layout',
       name: 'layout',
       widget: 'hidden',
-      default: 'layouts/base',
+      default: 'layouts/contact',
     },
     {
       label: 'Title',

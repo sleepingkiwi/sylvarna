@@ -1,0 +1,75 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <main id="main-content" class="site-main site-main--bespoke" tabindex="-1">
+    {{ content | safe }}
+
+    <div class="Wrap Wrap--readable">
+      <pre>
+<strong>title:</strong>
+
+{{title | safe}}
+
+---
+
+<strong>hero:</strong>
+
+{{hero | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>styleBigPicture:</strong>
+
+{{styleBigPicture | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>quoteGenericOne:</strong>
+
+{{quoteGenericOne | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>styleDetails:</strong>
+
+{{styleDetails | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>materials:</strong>
+
+{{materials | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>quoteGenericTwo:</strong>
+
+{{quoteGenericTwo | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>exampleKitchens:</strong>
+
+{{exampleKitchens | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+<strong>transparentHeader:</strong>
+
+{{transparentHeader | safe}}
+
+---
+
+<strong>footerPartners:</strong>
+
+{{footerPartners | safe}}
+
+---
+
+<strong>footerCTA:</strong>
+
+{{footerCTA | safe}}
+      </pre>
+    </div>
+  </main>
+{% endblock %}

@@ -4,34 +4,42 @@
   <main id="main-content" class="site-main site-main--home" tabindex="-1">
     {{ content | safe }}
 
-    <pre>
-carousel:
-{{carousel | dump | safe | replace(",", ",<br>") | replace("}", "}<br>") | replace("{", "{<br>")}}
+    <div class="Wrap Wrap--readable">
+      <pre>
+<strong>carousel:</strong>
+
+{{carousel | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
 
 ---
 
-firstContentArea:
-{{firstContentArea | dump | safe | replace(",", ",<br>") | replace("}", "}<br>") | replace("{", "{<br>")}}
+<strong>firstContentArea:</strong>
+
+{{firstContentArea | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
 
 ---
 
-partnershipsContentArea:
-{{partnershipsContentArea | dump | safe | replace(",", ",<br>") | replace("}", "}<br>") | replace("{", "{<br>")}}
+<strong>partnershipsContentArea:</strong>
+
+{{partnershipsContentArea | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
 
 ---
 
-transparentHeader:
+<strong>transparentHeader:</strong>
+
 {{transparentHeader | safe}}
 
 ---
 
-footerPartners:
+<strong>footerPartners:</strong>
+
 {{footerPartners | safe}}
 
 ---
 
-footerCTA:
+<strong>footerCTA:</strong>
+
 {{footerCTA | safe}}
-    </pre>
+      </pre>
+    </div>
   </main>
 {% endblock %}

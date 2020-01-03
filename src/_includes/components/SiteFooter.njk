@@ -12,12 +12,13 @@
 {% from "components/Logo.njk" import Logo with context %}
 {% from "components/Nav.njk" import Nav with context %}
 {% from "components/SocialLinks.njk" import SocialLinks with context %}
+{% from "components/Wrap.njk" import Wrap with context %}
 
 {% macro SiteFooter(
   transparent = true
 ) %}
 <footer role="contentinfo" class="SiteFooter">
-  <div class="Wrap">
+  {% call Wrap(flows=true) %} {# maximum width Wrap with flow #}
     {#
       site logo or name
     #}
@@ -55,7 +56,9 @@
     #}
     {% if site.copyright %}
     <div class="SiteFooter__copyright">
-      {{ site.copyright }}
+      <small>
+        {{ site.copyright }}
+      </small>
     </div>
     {% endif %}
 
@@ -72,6 +75,6 @@
     </div>
     {% endif %}
 
-  </div>
+  {% endcall %} {# Wrap #}
 </footer>
 {% endmacro %}

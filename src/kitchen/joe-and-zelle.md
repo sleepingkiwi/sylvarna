@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/kitchen
 title: Joe and Zelle
 kitchenInformation:
   additionalImages:
@@ -68,4 +68,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

@@ -1,0 +1,81 @@
+/** SiteHeader
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+.SiteHeader {
+  /* the wrap inside already has left/right padding */
+  padding: var(--bsu) 0;
+  color: var(--colour-invert);
+
+  & .Wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+/** Header logo
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SiteHeader__logo {
+  /* padding to bump down nav if required */
+  padding-right: var(--bsu);
+
+  & .Logo > .SvgWrap,
+  & .Logo > img {
+    width: 200px; /* TODO: should we let CMS user decide this? */
+    max-width: 100%;
+  }
+}
+
+
+/** Header Nav
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SiteHeader__nav {
+  /* allow nav to grow but not logo */
+  flex: 1;
+  font-size: var(--s1);
+
+  & ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  & li {
+    display: block;
+    text-transform: uppercase;
+    flex: 1 0 auto;
+    max-width: calc(var(--s6) * 3);
+    text-align: right;
+  }
+
+  & li a {
+    display: inline-block;
+    vertical-align: top;
+    padding: var(--bsu);
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: var(--colour-secondary);
+    }
+  }
+}
+
+
+/** Colour variations for non-transparent header
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SiteHeader--opaque {
+  background-color: var(--colour-background-body);
+  color: var(--colour-primary);
+
+  & svg path {
+    fill: var(--colour-primary);
+  }
+}

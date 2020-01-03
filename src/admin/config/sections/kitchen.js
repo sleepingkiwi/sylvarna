@@ -17,7 +17,7 @@ const kitchenConfig = [
     label: 'Layout',
     name: 'layout',
     widget: 'hidden',
-    default: 'layouts/base',
+    default: 'layouts/kitchen',
   },
   {
     label: 'Title',

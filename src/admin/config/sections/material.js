@@ -17,7 +17,7 @@ const materialConfig = [
     label: 'Layout',
     name: 'layout',
     widget: 'hidden',
-    default: 'layouts/base',
+    default: 'layouts/material',
   },
   {
     label: 'Title',

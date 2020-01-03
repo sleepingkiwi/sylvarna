@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/bespoke
 title: Bespoke
 hero:
   header: Make it your own
@@ -257,4 +257,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

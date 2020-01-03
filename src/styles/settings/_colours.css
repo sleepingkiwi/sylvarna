@@ -2,22 +2,23 @@
   /** primary colours
    *  ----------------------------------------------------------------------------------------------
   **/
-  --colour-primary: #4e588e;
-  --colour-secondary: #985171;
-  --colour-highlight: #f6c450;
-  --colour-subtle: #898fb1;
+  --colour-primary: #2d2d2d;
+  --colour-secondary: #f2ab5a;
+  --colour-highlight: #f2ab5a;
+  --colour-subtle: #60737b;
+  --colour-subtler: #b3bdc1;
 
   /** inverted colours
    *  ----------------------------------------------------------------------------------------------
   **/
-  --colour-invert: #fff4e8;
+  --colour-invert: #f7f7f7;
   --colour-invert-subtle: #f7e1c9;
 
   /** backgrounds
    *  ----------------------------------------------------------------------------------------------
   **/
-  --colour-background-body: #ebeeef;
-  --colour-background-subtle: #fafdfd;
-  --colour-background-secondary: #f5ddc8;
+  --colour-background-body: #f7f7f7;
+  --colour-background-subtle: #edefef;
+  --colour-background-secondary: #b3bdc1;
   --colour-background-pop: #993434;
 }

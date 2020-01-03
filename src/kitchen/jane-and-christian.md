@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/kitchen
 title: Jane and Christian
 kitchenInformation:
   additionalImages:
@@ -67,4 +67,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

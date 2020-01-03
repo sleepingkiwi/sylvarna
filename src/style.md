@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/styleLanding
 title: Styles
 hero:
   header: Kitchen Styles
@@ -8,4 +8,3 @@ transparentHeader: false
 footerPartners: false
 footerCTA: true
 ---
-

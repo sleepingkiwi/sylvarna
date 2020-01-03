@@ -33,6 +33,9 @@
 @import 'site/components/SvgWrap.css';
 @import 'site/components/Wrap.css';
 
+@import 'site/components/SiteHeader.css';
+@import 'site/components/SiteFooter.css';
+
 
 /** Helpers & overrides
  *  ------------------------------------------------------------------------------------------------

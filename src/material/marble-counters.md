@@ -1,5 +1,5 @@
 ---
-layout: layouts/base
+layout: layouts/material
 title: Marble Counters
 hero:
   hero:
@@ -67,4 +67,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-
