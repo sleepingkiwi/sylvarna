@@ -62,6 +62,15 @@ CMS.registerPreviewTemplate('material', MaterialPreview);
 CMS.registerPreviewTemplate('kitchenStyle', StylePreview);
 CMS.registerPreviewTemplate('styleLanding', StyleLandingPreview);
 
+
+/** register styles for the preview editor
+ *  ------------------------------------------------------------------------------------------------
+ *  because file names are cache busted we make the file name available as a global in
+ *  admin.njk
+**/
+// eslint-disable-next-line no-undef
+CMS.registerPreviewStyle(_global_mainStylePath);
+
 // console.log(CMS);
 
 /** start the cms
