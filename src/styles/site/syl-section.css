@@ -1,0 +1,14 @@
+/** .syl-section
+ *  ------------------------------------------------------------------------------------------------
+ *  every block of content that shares spacing etc.
+**/
+
+.syl-section {
+  padding: var(--section-padding) 0;
+  min-height: 40vh;
+
+  /* centralise in vertical space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

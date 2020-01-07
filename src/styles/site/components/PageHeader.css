@@ -1,0 +1,56 @@
+/** Wrap component
+ *  ------------------------------------------------------------------------------------------------
+ *  just wraps content, centralised and width constrained
+**/
+
+.PageHeader {
+  position: relative;
+  z-index: var(--z-hero);
+  background-color: var(--colour-subtler);
+
+  & .HeaderText {
+    z-index: 3;
+    position: relative;
+  }
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 2;
+    opacity: 0.6;
+  }
+}
+
+.PageHeader--no-back {
+
+  &::after {
+    content: none;
+  }
+}
+
+/* overwrite top padding to be twice the normal syl-section if there's a floating header */
+.with-transparent-header .PageHeader {
+  padding-top: calc(var(--section-padding) * 1.5);
+}
+
+.PageHeader__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -24,7 +24,9 @@
   {% block head %}
   {% endblock %}
 </head>
-<body>
+<body
+  class="{{ 'with-transparent-header' if transparentHeader else 'with-opaque-header'}}"
+>
   {#
     SiteHeader
       transparentHeader is set through the cms as part of the pageSettings config that is used

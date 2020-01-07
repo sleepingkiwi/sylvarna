@@ -27,14 +27,23 @@
  *  I don't normally like utility styles (like .pad-left-sm.colour-primary)
  *  but make an exception for .u-flows which is very useful
 **/
+
+/* wide reaching or utility */
 @import 'site/site.css';
 @import 'site/utilities/flows.css';
 
+/* generic Wraps and containers */
 @import 'site/components/SvgWrap.css';
 @import 'site/components/Wrap.css';
+@import 'site/syl-section.css';
 
+/* large sections and pages */
 @import 'site/components/SiteHeader.css';
 @import 'site/components/SiteFooter.css';
+
+/* block level components */
+@import 'site/components/HeaderText.css';
+@import 'site/components/PageHeader.css';
 
 
 /** Helpers & overrides

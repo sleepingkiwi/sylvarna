@@ -1,8 +1,22 @@
+{#
+  Extend base template
+#}
 {% extends 'layouts/base.njk' %}
+
+{#
+  Import components
+#}
+{% from "components/PageHeader.njk" import PageHeader with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--brochure" tabindex="-1">
-    {{ content | safe }}
+    {{
+      PageHeader(
+        pre=hero.preHeader,
+        header=hero.header,
+        hero=hero.hero
+      )
+    }}
 
     <div class="Wrap Wrap--readable">
       <pre>

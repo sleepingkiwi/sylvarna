@@ -6,6 +6,11 @@
   /* the wrap inside already has left/right padding */
   padding: var(--bsu) 0;
   color: var(--colour-invert);
+  position: absolute;
+  z-index: var(--z-fixed-header);
+  top: 0;
+  left: 0;
+  width: 100%;
 
   & .Wrap {
     display: flex;
@@ -74,6 +79,7 @@
 .SiteHeader--opaque {
   background-color: var(--colour-background-body);
   color: var(--colour-primary);
+  position: relative;
 
   & svg path {
     fill: var(--colour-primary);
