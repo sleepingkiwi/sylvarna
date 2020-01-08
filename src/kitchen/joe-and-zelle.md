@@ -1,5 +1,6 @@
 ---
 layout: layouts/kitchen
+tags: kitchen
 title: Joe and Zelle
 kitchenInformation:
   additionalImages:

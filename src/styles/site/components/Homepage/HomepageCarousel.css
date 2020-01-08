@@ -1,0 +1,110 @@
+/** HomepageCarousel
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+.HomepageCarousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.HomepageCarousel__slide {
+  min-height: 60vh; /* taller than normal SylSections */
+  padding: 0;
+  overflow: hidden;
+  transition: opacity var(--time-transition) var(--ease-default);
+
+  & .SylSection__back {
+    transition: transform var(--time-transition) var(--ease-default);
+  }
+
+  &::after {
+    transition: opacity var(--time-transition) var(--ease-default);
+  }
+
+  &:hover {
+
+    & .SylSection__back {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      opacity: 0.7;
+    }
+  }
+
+  & a {
+    display: block;
+    padding: var(--section-padding) 0;
+    color: var(--colour-invert);
+  }
+}
+
+/* overwrite top padding to be twice the normal syl-section if there's a floating header */
+/* This is only for the first section if js is disabled. If js is enabled it should apply to all */
+.no-js .with-transparent-header .HomepageCarousel__slide:first-child a,
+.js .with-transparent-header .HomepageCarousel__slide a {
+  padding-top: calc(var(--section-padding) * 1.5);
+}
+
+.HomepageCarousel nav {
+  position: absolute;
+  z-index: var(--z-section-nav);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--bsu-s);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.js .HomepageCarousel__slide {
+  opacity: 0;
+  display: none;
+}
+
+.js .HomepageCarousel__slide.js--carousel__slide--active {
+  opacity: 1;
+  display: flex;
+}
+
+/** No Javascript styles
+ *  ------------------------------------------------------------------------------------------------
+ *  presented as blocks if there's no js
+**/
+.no-js .HomepageCarousel {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.no-js .HomepageCarousel__slide:first-child {
+  flex-basis: 100%;
+  border-bottom: var(--bsu-s) solid var(--colour-background-body);
+}
+
+/* everything but the first child */
+.no-js .HomepageCarousel__slide:nth-child(1n+2) {
+  min-height: 0;
+  margin: 0 auto;
+  flex: 1;
+  flex-basis: 50%;
+  border-bottom: var(--bsu-s) solid var(--colour-background-body);
+}
+
+/* every even numbered child after first */
+.no-js .HomepageCarousel__slide:nth-child(2n+2) {
+  border-right: var(--bsu-xs) solid var(--colour-background-body);
+}
+
+/* every odd numbered slide after the first */
+.no-js .HomepageCarousel__slide:nth-child(2n+3) {
+  border-left: var(--bsu-xs) solid var(--colour-background-body);
+}
+
+/* the last child if there are an uneven total number including the intro slide */
+.no-js .HomepageCarousel__slide:nth-child(2n+2):last-of-type {
+  flex-basis: 100%;
+  border: 0;
+}
+
+.no-js .HomepageCarousel nav {
+  display: none;
+}

@@ -20,6 +20,12 @@ const kitchenConfig = [
     default: 'layouts/style',
   },
   {
+    label: 'Tags',
+    name: 'tags',
+    widget: 'hidden',
+    default: 'style',
+  },
+  {
     label: 'Title',
     name: 'title',
     widget: 'string',
@@ -45,6 +51,14 @@ const kitchenConfig = [
         showDetails: true,
         required: false,
         hint: 'Optionally specify a different image for the homepage carousel. If you leave this blank the hero image will be used. Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px.',
+      },
+      {
+        label: 'Homepage Carousel CTA text',
+        name: 'carouselCTA',
+        widget: 'string',
+        required: false,
+        default: 'Explore',
+        hint: 'Shown underneath the style\'s title on the home page carousel.',
       },
       {
         label: 'Pre-Header',

@@ -1,0 +1,137 @@
+{#
+  HomepageCarousel
+  -
+  Homepage hero and multiple slides for the available kitchen styles.
+  This is progressively enhanced into a carousel if JS is available.
+  ---
+  CMS _data:
+    // ref: https://www.11ty.dev/docs/collections/
+    collections.style: {
+      url,
+      fileSlug,
+      data: {
+        title,
+        hero: {
+          hero,
+           ExtraImage Object
+          carousel,
+            ExtraImage Object
+            Optional // but use this one if present
+          carouselCTA,
+          preHeader,
+        }
+      }
+    }
+  ---
+  args:
+    carousel
+      Shape: {
+        hero
+        preHeader
+        header
+        cta
+        ctaURL
+      }
+  ---
+#}
+
+{# import components #}
+{% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/CTA.njk" import CTA with context %}
+{% from "components/SylSection.njk" import SylSection with context %}
+
+{% macro HomepageCarousel(
+  carousel={}
+) %}
+  <div class="HomepageCarousel js--carousel" data-active-slide="intro">
+
+    {% call SylSection(
+      class='HomepageCarousel__slide js--carousel__slide js--carousel__slide--active',
+      secondaryColour=true,
+      backgroundImage=carousel.hero,
+      id='intro'
+    ) %}
+
+      {% if carousel.cta %}
+        <a class="u-flows" href="{{ carousel.ctaURL if carousel.ctaURL else '#brochure' }}">
+      {% endif %}
+
+      {{
+        HeaderText(
+          pre=carousel.preHeader,
+          header=carousel.header,
+          priority='h1',
+          align='center'
+        )
+      }}
+
+      {% if carousel.cta %}
+        {{
+          CTA(
+            text=carousel.cta,
+            url=carousel.ctaURL,
+            align='center',
+            dummy=true
+          )
+        }}
+      {% endif %}
+
+      {% if carousel.cta %}
+        </a>
+      {% endif %}
+
+    {% endcall %} {# SylSection #}
+
+    {#
+      Slides for the kitchen styles
+    #}
+    {% for style in collections.style %}
+
+      {% call SylSection(
+        class='HomepageCarousel__slide js--carousel__slide',
+        secondaryColour=true,
+        backgroundImage=style.data.hero.carousel if style.data.hero.carousel.src else style.data.hero.hero,
+        id=style.fileSlug
+      ) %}
+
+        <a class="u-flows" href="{{ style.url }}">
+          {{
+            HeaderText(
+              pre=(style.data.hero.preHeader | default('')),
+              header=style.data.title,
+              priority='h1',
+              align='center'
+            )
+          }}
+
+          {% if style.data.hero.carouselCTA %}
+            {{
+              CTA(
+                text=style.data.hero.carouselCTA,
+                url=style.url,
+                align='center',
+                dummy=true
+              )
+            }}
+          {% endif %}
+        </a>
+
+      {% endcall %} {# SylSection #}
+
+    {% endfor %}
+
+    <nav class="js--carousel__nav">
+      <button data-action="prev" class="js--carousel__nav-link">prev</button>
+      <button data-action="next" class="js--carousel__nav-link">next</button>
+      <ul>
+        {% for style in collections.style %}
+          <li>
+            <button data-action="target" data-target="{{style.fileSlug}}" class="js--carousel__nav-link">
+              {{ style.data.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+{% endmacro %}

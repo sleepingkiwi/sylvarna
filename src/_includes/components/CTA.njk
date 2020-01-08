@@ -16,6 +16,7 @@
       String
     align='left'
       OneOf: ['left', 'right', 'center']
+    dummy=false
   ---
 #}
 
@@ -25,16 +26,25 @@
 {% macro CTA(
   text='',
   url='',
-  align='left'
+  align='left',
+  dummy=false
 ) %}
 {% if text %}
   <div
     class="CTA CTA--align-{{ align }}{{ ' js--launch-popup' if not url }}"
   >
     {% call Wrap(flavour='readable', flows=true) %} {# readable width Wrap with flow #}
-      <a href="{{ url if url else '#brochure'}}">
+      {% if dummy %}
+        <span class="CTA__a">
+      {% else %}
+        <a class="CTA__a" href="{{ url if url else '#brochure'}}">
+      {% endif %}
         {{ text }}
-      </a>
+      {% if dummy %}
+        </span>
+      {% else %}
+        </a>
+      {% endif %}
     {% endcall %} {# wrap #}
   </div>
 {% endif %}

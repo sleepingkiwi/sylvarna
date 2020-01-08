@@ -4,7 +4,7 @@
 
 .CTA {
 
-  & a {
+  & .CTA__a {
     display: inline-block;
     vertical-align: top;
     padding: var(--bsu-s) var(--bsu-l);
@@ -14,6 +14,9 @@
     font-family: var(--ff-heading);
     font-weight: bold;
     font-size: var(--s1);
+    transition:
+      color var(--time-transition) ease-in-out,
+      background var(--time-transition) ease-in-out;
 
     &:hover,
     &:focus {

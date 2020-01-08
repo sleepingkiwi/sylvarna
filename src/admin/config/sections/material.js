@@ -20,6 +20,12 @@ const materialConfig = [
     default: 'layouts/material',
   },
   {
+    label: 'Tags',
+    name: 'tags',
+    widget: 'hidden',
+    default: 'material',
+  },
+  {
     label: 'Title',
     name: 'title',
     widget: 'string',

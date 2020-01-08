@@ -1,5 +1,6 @@
 ---
 layout: layouts/page.njk
+tags: page
 title: Content Testing
 hero:
   header: A whole lot of content

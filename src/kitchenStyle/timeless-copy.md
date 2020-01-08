@@ -1,7 +1,7 @@
 ---
 layout: layouts/style
 tags: style
-title: Timeless
+title: Timeless Copy
 hero:
   carousel:
     alt: ''

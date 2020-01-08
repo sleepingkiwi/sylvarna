@@ -5,6 +5,26 @@
 .FooterCTA {
   min-height: 0; /* doesn't need to be as tall as normal SylSections */
   padding: 0;
+  overflow: hidden;
+
+  & .SylSection__back {
+    transition: transform var(--time-transition) var(--ease-default);
+  }
+
+  &::after {
+    transition: opacity var(--time-transition) var(--ease-default);
+  }
+
+  &:hover {
+
+    & .SylSection__back {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      opacity: 0.7;
+    }
+  }
 
   & a {
     display: block;

@@ -1,5 +1,6 @@
 ---
 layout: layouts/page.njk
+tags: page
 title: Terms
 permalink: /terms/index.html
 hero:

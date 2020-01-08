@@ -1,5 +1,6 @@
 ---
 layout: layouts/page.njk
+tags: page
 title: About
 hero:
   header: Sylvarna Kitchens
@@ -122,4 +123,3 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

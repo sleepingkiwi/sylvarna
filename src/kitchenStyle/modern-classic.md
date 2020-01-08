@@ -1,5 +1,6 @@
 ---
 layout: layouts/style
+tags: style
 title: Modern Classic
 hero:
   carousel:
@@ -15,6 +16,7 @@ hero:
       https://res.cloudinary.com/coolguy/image/upload/v1577883354/stock%20images/rustic-vegan-RryFk4n-vOs-unsplash--3000_tvxbo8.jpg
     version: v1577883354
     width: 3000
+  carouselCTA: Explore
   hero:
     alt: >-
       Modern kitchen with classic styling, white solid oak cabinets and double

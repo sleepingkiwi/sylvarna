@@ -1,5 +1,6 @@
 ---
 layout: layouts/material
+tags: material
 title: Solid Oak
 hero:
   hero:

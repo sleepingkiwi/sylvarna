@@ -20,6 +20,12 @@ const kitchenConfig = [
     default: 'layouts/kitchen',
   },
   {
+    label: 'Tags',
+    name: 'tags',
+    widget: 'hidden',
+    default: 'kitchen',
+  },
+  {
     label: 'Title',
     name: 'title',
     widget: 'string',

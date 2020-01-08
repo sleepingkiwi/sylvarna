@@ -42,6 +42,7 @@
 @import 'site/components/SiteHeader.css';
 @import 'site/components/SiteFooter.css';
 
+@import 'site/components/Homepage/HomepageCarousel.css';
 @import 'site/components/Homepage/HomepageMain.css';
 @import 'site/components/Homepage/HomepagePartnerships.css';
 

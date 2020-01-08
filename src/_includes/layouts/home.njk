@@ -6,23 +6,19 @@
 {#
   Import components
 #}
-{% from "components/PageHeader.njk" import PageHeader with context %}
 {% from "components/SylSection.njk" import SylSection with context %}
 {% from "components/HeaderText.njk" import HeaderText with context %}
 {% from "components/RichText.njk" import RichText with context %}
 {% from "components/InlineImage.njk" import InlineImage with context %}
 {% from "components/CTA.njk" import CTA with context %}
 {% from "components/Wrap.njk" import Wrap with context %}
+{% from "components/HomepageCarousel.njk" import HomepageCarousel with context %}
 
 
 {% block content %}
   <main id="main-content" class="site-main site-main--home" tabindex="-1">
     {{
-      PageHeader(
-        pre=carousel.preHeader,
-        header=carousel.header,
-        hero=carousel.hero
-      )
+      HomepageCarousel(carousel)
     }}
 
 

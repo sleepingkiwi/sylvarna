@@ -245,6 +245,12 @@ export const genericPageConfig = [
     default: 'layouts/page.njk',
   },
   {
+    label: 'Tags',
+    name: 'tags',
+    widget: 'hidden',
+    default: 'page',
+  },
+  {
     label: 'Title',
     name: 'title',
     widget: 'string',

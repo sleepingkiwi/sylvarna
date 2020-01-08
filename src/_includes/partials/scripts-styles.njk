@@ -14,18 +14,25 @@
 <script nomodule src="{{rev['/polyfills.js'] or '/polyfills.js'}}"></script>
 
 <script>
-  // more modern script for more modern browsers
-  function $loadjs(src, fallback) {
-    s = document.createElement('script');
-    // avoids double loading issues in Safari 10.1 which supports module but not nomodule...
-    if ('noModule' in s) s.type = 'module', s.src = src;
-    else s.src = fallback;
-    document.head.appendChild(s);
+  // we don't load any js in browsers that don't support a subset of features.
+  // for this site we use Element.closest quite a lot...
+  // https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+  if (!Element.prototype.closest) {
+    document.documentElement.className = document.documentElement.className.replace(/(^|\s)no-js(\s|$)/, ' no-js no-js--hagard');
+  } else {
+    // more modern script for more modern browsers
+    function $loadjs(src, fallback) {
+      s = document.createElement('script');
+      // avoids double loading issues in Safari 10.1 which supports module but not nomodule...
+      if ('noModule' in s) s.type = 'module', s.src = src;
+      else s.src = fallback;
+      document.head.appendChild(s);
+    }
+
+    $loadjs('{{rev['/main.modules.js'] or '/main.modules.js'}}', '{{rev['/main.js'] or '/main.js'}}');
+
+    document.documentElement.className = document.documentElement.className.replace(/(^|\s)no-js(\s|$)/, ' js ');
   }
-
-  $loadjs('{{rev['/main.modules.js'] or '/main.modules.js'}}', '{{rev['/main.js'] or '/main.js'}}');
-
-  document.documentElement.className = document.documentElement.className.replace(/(^|\s)no-js(\s|$)/, ' js ');
 </script>
 
 

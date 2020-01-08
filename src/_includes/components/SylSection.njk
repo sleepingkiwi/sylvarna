@@ -15,6 +15,9 @@
     backgroundImage={}
       ExtraImageWidget object
       Optional
+    id=''
+      String
+      Optional
   ---
 #}
 
@@ -24,7 +27,8 @@
 {% macro SylSection(
   class='',
   secondaryColour=false,
-  backgroundImage={}
+  backgroundImage={},
+  id=''
 ) %}
 {% set content = caller() %} {# ref: https://github.com/mozilla/nunjucks/issues/664 #}
 
@@ -36,6 +40,10 @@
     }} SylSection--back-{{
       'secondary' if secondaryColour else 'primary'
     }}"
+
+    {% if id %}
+      id={{id}}
+    {% endif %}
 
     {% if backgroundImage and (backgroundImage.dominant | length === 3) -%}
       style="background-color:rgb(

@@ -1,6 +1,7 @@
 ---
 layout: layouts/kitchen
 title: Jane and Christian
+tags: kitchen
 kitchenInformation:
   additionalImages:
     - additionalImage:
