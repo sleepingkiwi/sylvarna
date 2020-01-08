@@ -28,15 +28,15 @@ firstContentArea:
     alt: ''
     base: 'https://res.cloudinary.com/coolguy/image/upload/'
     dominant:
-      - 210
-      - 209
-      - 209
-    filename: stock%20images/ionut-vlad-idXQEOxhmvU-unsplash_a88idn.jpg
-    height: 3000
+      - 215
+      - 215
+      - 214
+    filename: stock%20images/Screenshot_2019-11-07_at_12.38.13_jbvc96.png
+    height: 1197
     src: >-
-      https://res.cloudinary.com/coolguy/image/upload/v1577975744/stock%20images/ionut-vlad-idXQEOxhmvU-unsplash_a88idn.jpg
-    version: v1577975744
-    width: 1853
+      https://res.cloudinary.com/coolguy/image/upload/v1578485522/stock%20images/Screenshot_2019-11-07_at_12.38.13_jbvc96.png
+    version: v1578485522
+    width: 951
   preHeader: Unlimited possibilities
   text: >-
     Dui sapien eget mi proin sed libero enim sed. Quam vulputate dignissim
