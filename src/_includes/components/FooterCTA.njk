@@ -13,11 +13,30 @@
     -
   ---
 #}
-
+{% from "components/SylSection.njk" import SylSection with context %}
+{% from "components/HeaderText.njk" import HeaderText with context %}
 
 {% macro FooterCTA(
   transparent = true
 ) %}
-<div class="FooterCTA">
+
+{% call SylSection(
+  class='FooterCTA',
+  secondaryColour=false,
+  backgroundImage=footerRecurring.ctaBackground
+) %}
+  <a href="{{ footerRecurring.ctaUrl | default('#brochure') }}">
+    {{
+      HeaderText(
+        pre=footerRecurring.ctaPreHeader,
+        header=footerRecurring.ctaHeader,
+        post=footerRecurring.ctaSecondaryHeader,
+        priority='h2',
+        align='center'
+      )
+    }}
+  </a>
+{% endcall %} {# SylSection #}
+
 </div>
 {% endmacro %}

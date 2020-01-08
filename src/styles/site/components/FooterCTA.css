@@ -3,5 +3,18 @@
 **/
 
 .FooterCTA {
-  /* the wrap inside already has left/right padding */
+  min-height: 0; /* doesn't need to be as tall as normal SylSections */
+  padding: 0;
+
+  & a {
+    display: block;
+    padding: var(--section-padding) 0;
+    color: var(--colour-invert);
+  }
+
+  & .HeaderText__post {
+    font-size: var(--s2);
+    margin-top: var(--bsu-s);
+    color: var(--colour-secondary);
+  }
 }
