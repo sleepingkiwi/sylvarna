@@ -50,7 +50,7 @@ genericContentBlocks:
   - backgroundColour: true
     content:
       - quoteAttribution: Joe Baggaley - Dorchester
-        quoteText: Here it is the fantastic quote you want to hear
+        quoteText: Here it is the fantastic quote that we think you would like to hear
         textAlign: center
         type: quote
     type: oneColumn
@@ -133,23 +133,8 @@ genericContentBlocks:
           version: v1577895800
           width: 3000
         type: image
-      - image:
-          alt: ''
-          base: 'https://res.cloudinary.com/coolguy/image/upload/'
-          dominant:
-            - 228
-            - 228
-            - 226
-          filename: stock%20images/dane-deaner-1WFXk3WJXZU-unsplash_t22qma.jpg
-          height: 3000
-          src: >-
-            https://res.cloudinary.com/coolguy/image/upload/v1577897805/stock%20images/dane-deaner-1WFXk3WJXZU-unsplash_t22qma.jpg
-          version: v1577897805
-          width: 2400
-        type: image
     type: twoColumns
 transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-

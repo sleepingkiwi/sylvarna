@@ -45,6 +45,9 @@
 /* block level components */
 @import 'site/components/HeaderText.css';
 @import 'site/components/PageHeader.css';
+@import 'site/components/RichText.css';
+@import 'site/components/QuoteText.css';
+@import 'site/components/CTA.css';
 
 
 /** Helpers & overrides

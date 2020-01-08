@@ -1,8 +1,106 @@
+{#
+  Extend base template
+#}
 {% extends 'layouts/base.njk' %}
+
+{#
+  Import components
+#}
+{% from "components/PageHeader.njk" import PageHeader with context %}
+{% from "components/SylSection.njk" import SylSection with context %}
+{% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/RichText.njk" import RichText with context %}
+{% from "components/InlineImage.njk" import InlineImage with context %}
+{% from "components/CTA.njk" import CTA with context %}
+
 
 {% block content %}
   <main id="main-content" class="site-main site-main--home" tabindex="-1">
-    {{ content | safe }}
+    {{
+      PageHeader(
+        pre=carousel.preHeader,
+        header=carousel.header,
+        hero=carousel.hero
+      )
+    }}
+
+
+    {% call SylSection(
+      class='HomepageOne',
+      secondaryColour=true
+    ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-left sylSection__columns--aligned-center u-flows">
+          <div class="SylSection__column SylSection__column--left u-flows">
+            {{
+              HeaderText(
+                pre=firstContentArea.preHeader,
+                header=firstContentArea.header,
+                priority='h2',
+                align='left'
+              )
+            }}
+            {{
+              RichText(
+                content=firstContentArea.text,
+                align='left'
+              )
+            }}
+            {{
+              CTA(
+                text=firstContentArea.cta,
+                url=firstContentArea.ctaURL,
+                align='left'
+              )
+            }}
+          </div>
+          <div class="SylSection__column SylSection__column--right u-flows">
+            {{
+              InlineImage(
+                img=firstContentArea.image
+              )
+            }}
+          </div>
+        </div>
+    {% endcall %} {# SylSection #}
+
+
+    {% call SylSection(
+      class='HomepagePartnerships',
+      secondaryColour=false
+    ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-right sylSection__columns--aligned-center u-flows">
+          <div class="SylSection__column SylSection__column--left u-flows">
+            {{
+              InlineImage(
+                img=partnershipsContentArea.image
+              )
+            }}
+          </div>
+          <div class="SylSection__column SylSection__column--right u-flows">
+            {{
+              HeaderText(
+                pre=partnershipsContentArea.preHeader,
+                header=partnershipsContentArea.header,
+                priority='h2',
+                align='left'
+              )
+            }}
+            {{
+              RichText(
+                content=partnershipsContentArea.text,
+                align='left'
+              )
+            }}
+            {{
+              CTA(
+                text=partnershipsContentArea.cta,
+                url=partnershipsContentArea.ctaURL,
+                align='left'
+              )
+            }}
+          </div>
+        </div>
+    {% endcall %} {# SylSection #}
 
     <div class="Wrap Wrap--readable">
       <pre>

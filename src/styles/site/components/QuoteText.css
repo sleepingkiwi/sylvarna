@@ -1,0 +1,41 @@
+/** Quote Text
+ *  ------------------------------------------------------------------------------------------------
+ *  big bold blockquotes
+**/
+
+.QuoteText {
+  /* quotes get different colouring */
+  color: var(--colour-subtle);
+
+  & cite {
+    font-style: normal;
+    display: block;
+    color: var(--colour-primary);
+  }
+}
+
+.SylSection--back-secondary,
+.SylSection--with-back {
+
+  & .QuoteText {
+    color: var(--colour-invert);
+
+    & cite {
+      color: var(--colour-invert);
+    }
+  }
+}
+
+.QuoteText--align-right {
+  text-align: right;
+}
+
+.QuoteText--align-center {
+  text-align: center;
+}
+
+.QuoteText__quote {
+  font-family: var(--ff-heading);
+  font-weight: bold;
+  font-size: var(--s6);
+}

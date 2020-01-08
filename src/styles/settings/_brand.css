@@ -34,4 +34,5 @@
   **/
   --radius-default: 4px;
   --radius-small: calc(var(--radius-default) * 0.5);
+  --radius-button: var(--bsu-l);
 }

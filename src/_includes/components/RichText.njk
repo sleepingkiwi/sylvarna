@@ -27,7 +27,7 @@
   {% call Wrap(flavour='readable', flows=true) %} {# readable width Wrap with flow #}
 
     {% if content %}
-      {{ content | safe }}
+      {{ content | markdownify | safe }}
     {% endif %}
 
   {% endcall %} {# wrap #}

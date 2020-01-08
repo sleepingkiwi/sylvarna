@@ -1,0 +1,30 @@
+/** Markdown text
+ *  ------------------------------------------------------------------------------------------------
+ *  we don't add very much to it!
+**/
+
+.RichText {
+
+  & img {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+.RichText--align-right {
+  text-align: right;
+
+  & img {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+.RichText--align-center {
+  text-align: center;
+
+  & img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

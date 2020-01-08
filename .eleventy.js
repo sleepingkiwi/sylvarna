@@ -1,6 +1,7 @@
 
 const htmlMinTransform = require('./src/transforms/html-min.js');
 const htmlPrettyTransform = require('./src/transforms/html-pretty.js');
+const markdownFilter = require('./src/filters/markdown.js');
 
 module.exports = (eleventyConfig) => {
   // copy these things to dist even though they are not templates!
@@ -20,6 +21,15 @@ module.exports = (eleventyConfig) => {
   // or
   // Prettify
   eleventyConfig.addTransform('htmlpretty', htmlPrettyTransform);
+
+
+  /** Filters
+   *  ----------------------------------------------------------------------------------------------
+   *  ref: https://www.11ty.dev/docs/filters/
+  **/
+  // adding a markdown filter to transform markdown in templates:
+  eleventyConfig.addFilter('markdownify', markdownFilter);
+
 
   // enable deep merging of data
   // allows overriding individual properties of an object

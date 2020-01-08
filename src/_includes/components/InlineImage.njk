@@ -34,7 +34,7 @@
   {# render nothing if there's not src #}
   {% if img.src %}
 
-    {% call Wrap(flavour='content', flows=true) %} {# content width Wrap with flow #}
+    {% call Wrap(flavour='readable', flows=true) %} {# readable width Wrap with flow #}
       {# we wrap everything in a padded image container #}
       {% call PaddedImage(
         dominant=img.dominant | default([]),
