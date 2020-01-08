@@ -41,6 +41,9 @@ genericContentBlocks:
 
 
           ![](https://res.cloudinary.com/coolguy/image/upload/v1577102523/example%20images/300by300-b_p4rcuc.png)
+
+
+          Leaving things on an image triggers saving errors...
         textAlign: center
         type: text
     type: oneColumn
