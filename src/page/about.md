@@ -22,7 +22,7 @@ hero:
 genericContentBlocks:
   - backgroundColour: true
     columnAlignment: center
-    columnWeighting: left
+    columnWeighting: even
     leftColumnContent:
       - header: Committed to quality
         preHeader: Founded in 1983
@@ -44,15 +44,15 @@ genericContentBlocks:
           alt: ''
           base: 'https://res.cloudinary.com/coolguy/image/upload/'
           dominant:
-            - 58
-            - 49
-            - 48
-          filename: stock%20images/Screenshot_2019-11-07_at_12.38.17_porup4.png
-          height: 804
+            - 193
+            - 195
+            - 194
+          filename: stock%20images/marcin-galusz-Xq0lte4P7rQ-unsplash_t8z03i.jpg
+          height: 2002
           src: >-
-            https://res.cloudinary.com/coolguy/image/upload/v1577892372/stock%20images/Screenshot_2019-11-07_at_12.38.17_porup4.png
-          version: v1577892372
-          width: 964
+            https://res.cloudinary.com/coolguy/image/upload/v1577892357/stock%20images/marcin-galusz-Xq0lte4P7rQ-unsplash_t8z03i.jpg
+          version: v1577892357
+          width: 3000
         type: image
     type: twoColumns
   - backgroundColour: false
