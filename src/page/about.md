@@ -21,6 +21,8 @@ hero:
   preHeader: About Us
 genericContentBlocks:
   - backgroundColour: true
+    columnAlignment: center
+    columnWeighting: left
     leftColumnContent:
       - header: Committed to quality
         preHeader: Founded in 1983
@@ -76,6 +78,8 @@ genericContentBlocks:
         type: header
     type: oneColumn
   - backgroundColour: false
+    columnAlignment: center
+    columnWeighting: right
     leftColumnContent:
       - image:
           alt: ''
@@ -118,3 +122,4 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
+
