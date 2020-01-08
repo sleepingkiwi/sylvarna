@@ -82,6 +82,72 @@ genericContentBlocks:
         textAlign: center
         type: cta
     type: oneColumn
+  - backgroundColour: true
+    backgroundImage:
+      alt: ''
+      base: 'https://res.cloudinary.com/coolguy/image/upload/'
+      dominant:
+        - 193
+        - 195
+        - 194
+      filename: stock%20images/marcin-galusz-Xq0lte4P7rQ-unsplash_t8z03i.jpg
+      height: 2002
+      src: >-
+        https://res.cloudinary.com/coolguy/image/upload/v1577892357/stock%20images/marcin-galusz-Xq0lte4P7rQ-unsplash_t8z03i.jpg
+      version: v1577892357
+      width: 3000
+    columnAlignment: center
+    columnWeighting: even
+    leftColumnContent:
+      - quoteText: A big old quote over here
+        textAlign: center
+        type: quote
+    rightColumnContent:
+      - header: Multiple Columns
+        preHeader: And a header over here!
+        textAlign: center
+        type: header
+    type: twoColumns
+  - backgroundColour: true
+    columnAlignment: center
+    columnWeighting: right
+    leftColumnContent:
+      - text: A few words and CTA buttons on the left
+        textAlign: left
+        type: text
+      - cta: A Button...
+        textAlign: left
+        type: cta
+    rightColumnContent:
+      - image:
+          alt: ''
+          base: 'https://res.cloudinary.com/coolguy/image/upload/'
+          dominant:
+            - 203
+            - 162
+            - 143
+          filename: stock%20images/toa-heftiba-do6ouuCdsto-unsplash_wop3u2.jpg
+          height: 2000
+          src: >-
+            https://res.cloudinary.com/coolguy/image/upload/v1577895800/stock%20images/toa-heftiba-do6ouuCdsto-unsplash_wop3u2.jpg
+          version: v1577895800
+          width: 3000
+        type: image
+      - image:
+          alt: ''
+          base: 'https://res.cloudinary.com/coolguy/image/upload/'
+          dominant:
+            - 228
+            - 228
+            - 226
+          filename: stock%20images/dane-deaner-1WFXk3WJXZU-unsplash_t22qma.jpg
+          height: 3000
+          src: >-
+            https://res.cloudinary.com/coolguy/image/upload/v1577897805/stock%20images/dane-deaner-1WFXk3WJXZU-unsplash_t22qma.jpg
+          version: v1577897805
+          width: 2400
+        type: image
+    type: twoColumns
 transparentHeader: true
 footerPartners: true
 footerCTA: true
