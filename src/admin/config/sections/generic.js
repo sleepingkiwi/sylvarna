@@ -108,6 +108,13 @@ const contentBlockContentTypes = {
           widget: 'string',
           required: false,
         },
+        {
+          label: 'Text alignment',
+          name: 'textAlign',
+          widget: 'select',
+          options: ['left', 'center', 'right'],
+          default: 'left',
+        },
       ],
     },
     {
@@ -184,6 +191,22 @@ const genericContentBlocks = [
         widget: 'object',
         fields: [
           ...contentBlockOptions,
+          {
+            label: 'Column Weighting',
+            name: 'columnWeighting',
+            widget: 'select',
+            options: ['left', 'even', 'right'],
+            default: 'left',
+            hint: 'It normally makes sense to give more weighting to the column with text in it. You can choose an even weighting if you want columns with evenly sized images.',
+          },
+          {
+            label: 'Column Alignment',
+            name: 'columnAlignment',
+            widget: 'select',
+            options: ['top', 'center', 'bottom'],
+            default: 'center',
+            hint: 'Should the content in each column align at the top/bottom edge or in the center?',
+          },
           {
             ...contentBlockContentTypes,
             label: 'Left Column Content',

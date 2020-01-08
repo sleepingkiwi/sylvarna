@@ -1,0 +1,69 @@
+{#
+  SylSection
+  Almost every content block on the site is one of these.
+  There are a few variants for single/double column and various background options.
+  ---
+  CMS _data:
+    -
+  ---
+  args:
+    class='',
+      String
+      Optional (adds custom classes to the <section> tag)
+    secondaryColour=false,
+      Boolean
+    backgroundImage={}
+      ExtraImageWidget object
+      Optional
+  ---
+#}
+
+{# import components #}
+{% from "components/BackgroundImageFull.njk" import BackgroundImageFull with context %}
+
+{% macro SylSection(
+  class='',
+  secondaryColour=false,
+  backgroundImage={}
+) %}
+{% set content = caller() %} {# ref: https://github.com/mozilla/nunjucks/issues/664 #}
+
+  <section
+    class="SylSection {{
+      class
+    }} SylSection--{{
+      'with-back' if backgroundImage.src else 'no-back'
+    }} SylSection--back-{{
+      'secondary' if secondaryColour else 'primary'
+    }}"
+
+    {% if backgroundImage and (backgroundImage.dominant | length === 3) -%}
+      style="background-color:rgb(
+        {{backgroundImage.dominant[0]}},
+        {{backgroundImage.dominant[1]}},
+        {{backgroundImage.dominant[2]}}
+      );"
+    {%- endif %}
+  >
+
+    {#
+      The actual content.
+      This will be one or two columns of stuff!
+    #}
+    <div class="SylSection__content u-flows">
+      {{ content }}
+    </div>
+
+    {#
+      backgrounds for various screen sizes
+      -
+      see comments in BackgroundImageFull for details
+    #}
+    {% if backgroundImage.src %}
+      <div class="SylSection__back">
+        {{ BackgroundImageFull(backgroundImage) }}
+      </div>
+    {% endif %}
+  </section>
+
+{% endmacro %}

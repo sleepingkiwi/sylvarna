@@ -1,23 +1,26 @@
+{#
+  Extend base template
+#}
 {% extends 'layouts/base.njk' %}
+
+{#
+  Import components
+#}
+{% from "components/PageHeader.njk" import PageHeader with context %}
+{% from "components/CustomContent.njk" import CustomContent with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--bespoke" tabindex="-1">
-    {{ content | safe }}
+    {{
+      PageHeader(
+        pre=hero.preHeader,
+        header=title,
+        hero=hero.hero
+      )
+    }}
 
     <div class="Wrap Wrap--readable">
       <pre>
-<strong>title:</strong>
-
-{{title | safe}}
-
----
-
-<strong>hero:</strong>
-
-{{hero | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-
----
-
 <strong>styleBigPicture:</strong>
 
 {{styleBigPicture | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
@@ -27,6 +30,21 @@
 <strong>quoteGenericOne:</strong>
 
 {{quoteGenericOne | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+      </pre>
+    </div>
+
+
+
+    {{
+      CustomContent(quoteGenericOne.genericContentBlocks)
+    }}
+
+
+    <div class="Wrap Wrap--readable">
+      <pre>
 
 ---
 
@@ -45,6 +63,21 @@
 <strong>quoteGenericTwo:</strong>
 
 {{quoteGenericTwo | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+
+---
+
+      </pre>
+    </div>
+
+
+
+    {{
+      CustomContent(quoteGenericTwo.genericContentBlocks)
+    }}
+
+
+    <div class="Wrap Wrap--readable">
+      <pre>
 
 ---
 

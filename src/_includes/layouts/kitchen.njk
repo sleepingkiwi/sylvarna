@@ -1,4 +1,12 @@
+{#
+  Extend base template
+#}
 {% extends 'layouts/base.njk' %}
+
+{#
+  Import components
+#}
+{% from "components/CustomContent.njk" import CustomContent with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--bespoke" tabindex="-1">
@@ -17,9 +25,19 @@
 {{kitchenInformation | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
 
 ---
-<strong>genericContentBlocks:</strong>
 
-{{genericContentBlocks | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+      </pre>
+    </div>
+
+
+
+    {{
+      CustomContent(genericContentBlocks)
+    }}
+
+
+    <div class="Wrap Wrap--readable">
+      <pre>
 
 ---
 

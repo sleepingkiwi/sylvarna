@@ -1,0 +1,39 @@
+{#
+  CTA
+  Call to action button.
+  If there is text we render a button.
+  If there is NO URL - we link to the brochure popup anchor
+  ---
+  CMS _data:
+    -
+  ---
+  args:
+    text=''
+      Optional
+      String
+    url=''
+      Optional
+      String
+    align='left'
+      OneOf: ['left', 'right', 'center']
+  ---
+#}
+
+{# import components #}
+{# {% from "components/Wrap.njk" import Wrap with context %} #}
+
+{% macro CTA(
+  text='',
+  url='',
+  align='left'
+) %}
+{% if text %}
+  <div
+    class="CTA CTA--align-{{ align }}{{ ' js--launch-popup' if not url }}"
+  >
+    <a href="{{ url if url else '#brochure'}}">
+      {{ text }}
+    </a>
+  </div>
+{% endif %}
+{% endmacro %}

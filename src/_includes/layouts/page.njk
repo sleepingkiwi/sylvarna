@@ -7,6 +7,7 @@
   Import components
 #}
 {% from "components/PageHeader.njk" import PageHeader with context %}
+{% from "components/CustomContent.njk" import CustomContent with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--page" tabindex="-1">
@@ -17,38 +18,13 @@
         hero=hero.hero
       )
     }}
+
+    {{
+      CustomContent(genericContentBlocks)
+    }}
+
     <div class="Wrap Wrap--readable">
       <pre>
-<strong>title:</strong>
-
-{{title | safe}}
-
----
-
-<strong>permalink:</strong>
-
-{{permalink | safe}}
-
----
-
-<strong>hero:</strong>
-
-{{hero | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-
----
-
-<strong>genericContentBlocks:</strong>
-
-{{genericContentBlocks | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-
----
-
-<strong>transparentHeader:</strong>
-
-{{transparentHeader | safe}}
-
----
-
 <strong>footerPartners:</strong>
 
 {{footerPartners | safe}}

@@ -4,7 +4,6 @@
 **/
 
 .HeaderText {
-  color: var(--colour-invert);
 
   & p {
     /* larger font size for pre/post headers */
@@ -14,10 +13,6 @@
 
 .HeaderText__header {
   line-height: 1.2;
-}
-
-.HeaderText--colour-dark {
-  color: var(--colour-primary);
 }
 
 .HeaderText--align-right {

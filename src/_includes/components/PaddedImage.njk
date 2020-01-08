@@ -1,0 +1,50 @@
+{#
+  PaddedImage.
+  Wrap for images that saves space for them
+  ---
+  CMS _data:
+    -
+  ---
+  args:
+    dominant=[]
+      Optional
+      Array of three numbers
+    padding=100
+      Number
+    maxWidth=0
+      Optional
+      Number - used to make sure smaller images aren't stretched up...
+  ---
+#}
+
+{% macro PaddedImage(
+  dominant=[],
+  padding=100,
+  maxWidth=0
+) %}
+{% set content = caller() %} {# ref: https://github.com/mozilla/nunjucks/issues/664 #}
+
+  <div
+    class="PaddedImage"
+    style="
+    {% if maxWidth > 0 -%}
+      max-width: {{ maxWidth }}px;
+      {%- endif %}
+      {% if dominant | length === 3 -%}
+      background-color:rgb(
+        {{ dominant[0] }},
+        {{ dominant[1] }},
+        {{ dominant[2] }}
+      );
+      {%- endif %}
+    "
+  >
+
+    {{ content }}
+
+    <div
+      class="PaddedImage__padder"
+      style="padding-bottom: {{padding}}%;"
+    ></div>
+  </div>
+{% endmacro %}

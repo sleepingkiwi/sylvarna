@@ -1,6 +1,9 @@
 {#
   PageHeader
   Hero image with header and pre-header text
+  These are just SylSections with backgrond images and header text!
+  They get a special PageHeader class
+  because there's some custom styling relating to the site header/nav
   ---
   CMS _data:
     -
@@ -23,6 +26,7 @@
 
 {# import components #}
 {% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/SylSection.njk" import SylSection with context %}
 
 {% macro PageHeader(
   pre='',
@@ -30,56 +34,23 @@
   header='',
   hero=''
 ) %}
-<section
-  class="PageHeader {{
-    'PageHeader--back' if hero.src else 'PageHeader--no-back'
-  }} syl-section"
-  {% if hero and (hero.dominant | length === 3) -%}
-    style="background-color:rgb({{hero.dominant[0]}}, {{hero.dominant[1]}}, {{hero.dominant[2]}})"
-  {%- endif %}
->
-  {{
-    HeaderText(
-      pre=pre,
-      post=post,
-      header=header,
-      priority='h1',
-      align='center'
-    )
-  }}
 
-  {#
-    backgrounds for various screen sizes
-    -
-    developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
-    css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
-    -
-    using an img because it works better with srcset
-    rather than trying to fight with multiple background images
-    we scale it with object-fit in css
-    -
-    currently making 500 1,000 2,000 3,000px versions available and letting browsers pick!
-    1,000 is fallback for browsers that don't support srcset. We are assuming older browsers are
-    on less powerful devices....
-    -
-    we scale down quality more on background images than on others normally we use q_auto:good or
-    q_auto:best but for backgrounds we can use q_auto:eco
-    -
-    cloudinary ref:
-    https://cloudinary.com/documentation/image_transformation_reference
-  #}
-  {% if hero.src %}
-    <div class="PageHeader__back">
-      <img
-        src="{{ hero.base }}w_1000,c_limit,q_auto:eco/{{ hero.version }}/{{ hero.filename }} 1000w"
-        srcset="{{ hero.base }}w_500,c_limit,q_auto:eco/{{ hero.version }}/{{ hero.filename }} 500w,
-          {{ hero.base }}w_1000,c_limit,q_auto:eco/{{ hero.version }}/{{ hero.filename }} 1000w,
-          {{ hero.base }}w_2000,c_limit,q_auto:eco/{{ hero.version }}/{{ hero.filename }} 2000w,
-          {{ hero.base }}w_3000,c_limit,q_auto:eco/{{ hero.version }}/{{ hero.filename }} 3000w"
-        sizes="100vw"
-        alt="{{ hero.alt | default('') }}"
-      >
-    </div>
-  {% endif %}
-</section>
+  {% call SylSection(
+    class='PageHeader',
+    secondaryColour=true,
+    backgroundImage=hero
+  ) %}
+
+    {{
+      HeaderText(
+        pre=pre,
+        post=post,
+        header=header,
+        priority='h1',
+        align='center'
+      )
+    }}
+
+  {% endcall %} {# SylSection #}
+
 {% endmacro %}

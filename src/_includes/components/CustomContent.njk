@@ -1,0 +1,95 @@
+{#
+  CustomContent
+  Handling rendering for the repeatable blocks of generic content added in the CMS!
+  ---
+  CMS _data:
+    -
+  ---
+  args:
+    customContent=[]
+      Array of shape: {
+        backgroundColour: true
+          Boolean
+        backgroundImage:
+          ExtraImageWidget object
+        type:
+          oneOf['oneColumn', 'twoColumns']
+        columnWeighting:
+          oneOf['left', 'even', 'right']
+        columnAlignment:
+          oneOf['top', 'center', 'bottom']
+
+        // IF twoColumns:
+        leftColumnContent:
+          GenericContentBlock objects
+        rightColumnContent:
+          GenericContentBlock objects
+
+        // IF oneColumn
+        content:
+          GenericContentBlock objects
+      }
+  ---
+#}
+
+{# import components #}
+{% from "components/SylSection.njk" import SylSection with context %}
+{% from "components/CustomContentBlocks.njk" import CustomContentBlocks with context %}
+
+{% macro CustomContent(
+  customContent=[]
+) %}
+
+  {% if customContent | length > 0 %}
+    {% for section in customContent %}
+
+      {% call SylSection(
+        class='CustomContent',
+        secondaryColour=section.backgroundColour,
+        backgroundImage=section.backgroundImage
+      ) %}
+        {% if section.type === 'oneColumn' %}
+          {{
+            CustomContentBlocks(section.content)
+          }}
+        {% else %}
+          <div class="SylSection__columns SylSection__columns--weighted-{{
+            section.columnWeighting | default('left')
+          }} sylSection__columns--aligned-{{
+            section.columnAlignment | default('center')
+          }} u-flows">
+            <div class="SylSection__column SylSection__column--left u-flows">
+              {{
+                CustomContentBlocks(section.leftColumnContent)
+              }}
+            </div>
+            <div class="SylSection__column SylSection__column--right u-flows">
+              {{
+                CustomContentBlocks(section.rightColumnContent)
+              }}
+            </div>
+          </div>
+        {% endif %}
+      {% endcall %} {# SylSection #}
+
+    {% endfor %}
+
+    {#
+      Debug
+    #}
+    {#
+    <div
+      class="Debug"
+      style="max-width: 800px; margin: 0 auto; padding: 24px; background: #eee; word-break: break-word;"
+    >
+      <h4>
+        Custom Content Debug:
+      </h4>
+      <pre>
+  {{customContent | dump | safe | replace('":"', ' : ') | replace(',"', ',<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">{<br>') | replace('}', '<br>}</div>')}}
+      </pre>
+    </div>
+    #}
+  {% endif %}
+
+{% endmacro %}

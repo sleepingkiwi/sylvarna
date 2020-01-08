@@ -35,7 +35,8 @@
 /* generic Wraps and containers */
 @import 'site/components/SvgWrap.css';
 @import 'site/components/Wrap.css';
-@import 'site/syl-section.css';
+@import 'site/components/SylSection.css';
+@import 'site/components/PaddedImage.css';
 
 /* large sections and pages */
 @import 'site/components/SiteHeader.css';
