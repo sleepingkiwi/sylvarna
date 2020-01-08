@@ -1,6 +1,5 @@
 ---
 layout: layouts/page.njk
-tags: page
 title: About
 hero:
   header: Sylvarna Kitchens
@@ -26,7 +25,7 @@ genericContentBlocks:
     columnWeighting: even
     leftColumnContent:
       - header: Committed to quality
-        preHeader: Founded in 1983
+        preHeader: Founded in 1984
         textAlign: left
         type: header
       - text: >-
@@ -123,3 +122,4 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
+
