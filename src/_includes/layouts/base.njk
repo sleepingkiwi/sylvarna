@@ -1,5 +1,7 @@
 {% from "components/SiteHeader.njk" import SiteHeader with context %}
 {% from "components/SiteFooter.njk" import SiteFooter with context %}
+{% from "components/FooterPartners.njk" import FooterPartners with context %}
+{% from "components/FooterCTA.njk" import FooterCTA with context %}
 
 <!DOCTYPE html>
 <html class ='no-js' lang="en">
@@ -43,6 +45,30 @@
   #}
   {% block content %}
   {% endblock %}
+
+
+  {#
+    CTA block in footer
+    -
+    the footerCTA variable is set by individual pages
+  #}
+  {% if footerPartners %}
+    {{
+      FooterPartners()
+    }}
+  {% endif %}
+
+
+  {#
+    CTA block in footer
+    -
+    the footerCTA variable is set by individual pages
+  #}
+  {% if footerCTA %}
+    {{
+      FooterCTA()
+    }}
+  {% endif %}
 
 
   {{

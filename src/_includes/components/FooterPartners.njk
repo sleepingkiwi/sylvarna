@@ -1,0 +1,50 @@
+{#
+  FooterPartners component
+  ---
+  CMS _data:
+    footerRecurring
+      partnerLogos
+  ---
+  args:
+    -
+  ---
+#}
+
+{% from "components/PaddedImage.njk" import PaddedImage with context %}
+{% from "components/Wrap.njk" import Wrap with context %}
+
+{% macro FooterPartners(
+  transparent = true
+) %}
+<div class="FooterPartners">
+  {% call Wrap(flavour='columns', flows=true) %} {# columns width Wrap with flow #}
+
+    <ul>
+      {% for partner in footerRecurring.partnerLogos %}
+        {% if partner.logo.src %}
+          <li
+            class="FooterPartners__partner"
+          >
+            <div
+              style="width: {{ (partner.logo.width * (16/partner.logo.height)) }}px;"
+            >
+              {% call PaddedImage(
+                dominant=[],
+                padding=((partner.logo.height/partner.logo.width)*100)
+              ) %}
+                <img
+                  src="{{ partner.logo.base }}h_16,c_limit,q_auto:best/{{ partner.logo.version }}/{{ partner.logo.filename }}"
+                  alt="{{ partner.logo.alt | default('') }}"
+                  loading="lazy"
+                  title="{{ partner.title | default('') }}"
+                >
+              {% endcall %} {# PaddedImage #}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+  {% endcall %} {# Wrap #}
+</div>
+{% endmacro %}

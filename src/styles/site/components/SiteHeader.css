@@ -42,7 +42,7 @@
 .SiteHeader__nav {
   /* allow nav to grow but not logo */
   flex: 1;
-  font-size: var(--s1);
+  font-size: var(--s0);
 
   & ul {
     display: flex;
