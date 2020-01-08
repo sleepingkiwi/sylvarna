@@ -1,0 +1,45 @@
+/** HomepageMain
+ *  ------------------------------------------------------------------------------------------------
+ *  First content for home page
+**/
+
+.HomepageMain {
+  text-align: center;
+
+  & .Wrap {
+    position: relative;
+  }
+}
+
+/** More terchnical layout at larger sizes
+ *  ------------------------------------------------------------------------------------------------
+ *  The primary section adds padding at desktop sizes to accomodate the image
+ *  which is positioned absolutely.
+ *  We use the same sizing as for normal weighted two column content.
+ *  -
+ *  Everything is relative to a .Wrap with maximum layout max-width so that things don't spread too
+ *  faron wide screens.
+**/
+
+@media (--squire) {
+
+  .HomepageMain {
+    text-align: left;
+  }
+
+  .HomepageMain__primary {
+    padding-right: var(--column-light);
+  }
+
+  .HomepageMain__image {
+    margin-top: 0;
+    position: absolute;
+    right: 0;
+    top: 25%;
+    width: var(--column-light);
+
+    & .Wrap {
+      padding: 0;
+    }
+  }
+}

@@ -42,6 +42,9 @@
 @import 'site/components/SiteHeader.css';
 @import 'site/components/SiteFooter.css';
 
+@import 'site/components/Homepage/HomepageMain.css';
+@import 'site/components/Homepage/HomepagePartnerships.css';
+
 /* block level components */
 @import 'site/components/HeaderText.css';
 @import 'site/components/PageHeader.css';

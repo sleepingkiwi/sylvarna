@@ -93,27 +93,31 @@
     & .SylSection__column {
       flex-basis: 50%;
     }
+
+    & .SylSection__column--right {
+      margin-top: 0;
+    }
   }
 
   .SylSection__columns--weighted-left {
 
     & .SylSection__column--left {
-      flex-basis: 65%;
+      flex-basis: var(--column-heavy);
     }
 
     & .SylSection__column--right {
-      flex-basis: 35%;
+      flex-basis: var(--column-light);
     }
   }
 
   .SylSection__columns--weighted-right {
 
     & .SylSection__column--left {
-      flex-basis: 35%;
+      flex-basis: var(--column-light);
     }
 
     & .SylSection__column--right {
-      flex-basis: 65%;
+      flex-basis: var(--column-heavy);
     }
   }
 }
