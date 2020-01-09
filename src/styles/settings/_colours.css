@@ -21,4 +21,9 @@
   --colour-background-subtle: #edefef;
   --colour-background-secondary: #b3bdc1;
   --colour-background-pop: #993434;
+
+  /** utility
+   *  ----------------------------------------------------------------------------------------------
+  **/
+  --colour-error: #993434;
 }

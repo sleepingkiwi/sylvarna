@@ -3,21 +3,14 @@
 **/
 
 .FooterPartners {
-  padding: var(--bsu-s) var(--bsu);
-  background-color: var(--colour-background-subtle);;
+  padding: var(--bsu);
+  background-color: var(--colour-background-subtle);
 
   & ul {
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
   }
 }
 
 .FooterPartners__partner {
   display: block;
-  max-width: 50%;
-  flex: 0 1 auto;
-  padding: var(--bsu-s);
 }

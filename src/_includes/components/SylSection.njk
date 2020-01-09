@@ -28,7 +28,8 @@
   class='',
   secondaryColour=false,
   backgroundImage={},
-  id=''
+  id='',
+  lazy=false
 ) %}
 {% set content = caller() %} {# ref: https://github.com/mozilla/nunjucks/issues/664 #}
 
@@ -69,7 +70,7 @@
     #}
     {% if backgroundImage.src %}
       <div class="SylSection__back">
-        {{ BackgroundImageFull(backgroundImage) }}
+        {{ BackgroundImageFull(backgroundImage, lazy) }}
       </div>
     {% endif %}
   </section>

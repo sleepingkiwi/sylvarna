@@ -19,51 +19,65 @@
 
 {# import components #}
 {% from "components/HeaderText.njk" import HeaderText with context %}
-{% from "components/CTA.njk" import CTA with context %}
 {% from "components/SylSection.njk" import SylSection with context %}
 {% from "components/RichText.njk" import RichText with context %}
 {% from "components/CloseButton.njk" import CloseButton with context %}
 {% from "components/InlineImage.njk" import InlineImage with context %}
+{% from "components/BrochureRequestForm.njk" import BrochureRequestForm with context %}
 
 {% macro BrochurePopup() %}
   {% for popup in collections.popup %}
     <div id="brochure" class="BrochurePopup BrochurePopup--brochure js--popup">
-      <button class="BrochurePopup__back-close js--popup-close"><span class="visuallyhidden">close</span></button>
-      <div class="BrochurePopup__wrap">
-        {{
-          CloseButton(
-            class='js--popup-close'
-          )
-        }}
-        {% call SylSection(
-          class='BrochurePopup__content',
-          secondaryColour=false
-        ) %}
-          <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
-            <div class="SylSection__column SylSection__column--left u-flows">
-              {{
-                InlineImage(popup.data.requestBrochureBlock.image)
-              }}
-            </div>
-            <div class="SylSection__column SylSection__column--right u-flows">
-              {{
-                HeaderText(
-                  pre=popup.data.requestBrochureBlock.preHeader,
-                  header=popup.data.requestBrochureBlock.header,
-                  priority='h2',
-                  align='left'
-                )
-              }}
+      <div class="BrochurePopup__container">
+        <button class="BrochurePopup__back-close js--popup-close"><span class="visuallyhidden">close</span></button>
 
-              {{
-                RichText(
-                  content=popup.data.requestBrochureBlock.text,
-                  align='left'
-                )
-              }}
+        <div class="BrochurePopup__wrap">
+          {{
+            CloseButton(
+              class='js--popup-close'
+            )
+          }}
+          {% call SylSection(
+            class='BrochurePopup__content',
+            secondaryColour=false
+          ) %}
+            <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
+              <div class="SylSection__column SylSection__column--left u-flows">
+                {{
+                  InlineImage(popup.data.requestBrochureBlock.image)
+                }}
+              </div>
+              <div class="SylSection__column SylSection__column--right u-flows">
+                {{
+                  HeaderText(
+                    pre=popup.data.requestBrochureBlock.preHeader,
+                    header=popup.data.requestBrochureBlock.header,
+                    priority='h2',
+                    align='left'
+                  )
+                }}
+                {{
+                  RichText(
+                    content=popup.data.requestBrochureBlock.text,
+                    align='left'
+                  )
+                }}
+                {{
+                  BrochureRequestForm(
+                    labels={
+                      name: popup.data.requestBrochureBlock.labels.name,
+                      email: popup.data.requestBrochureBlock.labels.email,
+                      address: popup.data.requestBrochureBlock.labels.address,
+                      requestPrintedBrochure: popup.data.requestBrochureBlock.labels.requestPrintedBrochure
+                    },
+                    cta=popup.data.requestBrochureBlock.cta,
+                    ctaURL=popup.data.requestBrochureBlock.ctaURL
+                  )
+                }}
+              </div>
             </div>
-          </div>
-        {% endcall %} {# SylSection #}
+          {% endcall %} {# SylSection #}
+        </div>
       </div>
     </div>
   {% endfor %}

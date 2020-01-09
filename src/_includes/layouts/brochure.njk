@@ -8,6 +8,11 @@
 #}
 {% from "components/PageHeader.njk" import PageHeader with context %}
 {% from "components/CustomContent.njk" import CustomContent with context %}
+{% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/SylSection.njk" import SylSection with context %}
+{% from "components/RichText.njk" import RichText with context %}
+{% from "components/InlineImage.njk" import InlineImage with context %}
+{% from "components/BrochureRequestForm.njk" import BrochureRequestForm with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--brochure" tabindex="-1">
@@ -25,15 +30,45 @@
     }}
 
 
-    <div class="Wrap Wrap--readable">
-      <pre>
-
----
-
-<strong>requestBrochureBlock:</strong>
-
-{{requestBrochureBlock | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-</pre>
-    </div>
+    {% call SylSection(
+      class='request-brochure-block',
+      secondaryColour=false
+    ) %}
+      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
+        <div class="SylSection__column SylSection__column--left u-flows">
+          {{
+            InlineImage(requestBrochureBlock.image)
+          }}
+        </div>
+        <div class="SylSection__column SylSection__column--right u-flows">
+          {{
+            HeaderText(
+              pre=requestBrochureBlock.preHeader,
+              header=requestBrochureBlock.header,
+              priority='h2',
+              align='left'
+            )
+          }}
+          {{
+            RichText(
+              content=requestBrochureBlock.text,
+              align='left'
+            )
+          }}
+          {{
+            BrochureRequestForm(
+              labels={
+                name: requestBrochureBlock.labels.name,
+                email: requestBrochureBlock.labels.email,
+                address: requestBrochureBlock.labels.address,
+                requestPrintedBrochure: requestBrochureBlock.labels.requestPrintedBrochure
+              },
+              cta=requestBrochureBlock.cta,
+              ctaURL=requestBrochureBlock.ctaURL
+            )
+          }}
+        </div>
+      </div>
+    {% endcall %} {# SylSection #}
   </main>
 {% endblock %}

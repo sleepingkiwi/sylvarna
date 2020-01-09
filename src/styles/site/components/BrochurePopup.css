@@ -9,15 +9,28 @@
   width: 100%;
   height: 100%;
   z-index: var(--z-overlay);
-  justify-content: center;
-  align-items: center;
   overflow: scroll;
 
   /* display: flex; */
   display: none; /* until js enables it... */
 
   &.js--popup-active {
+    display: block;
+  }
+
+  /*
+    the container provides a flex based container that is a minimum of 100% tall.
+    we need this to be a separate node because the root popup has a fixed 100% height which
+    causes large flex children to overflow over the top etc.
+  */
+  & .BrochurePopup__container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+    padding: var(--bsu-l) 0;
   }
 
   & .BrochurePopup__wrap {
@@ -58,33 +71,11 @@
   }
 
   & .SylSection__column--left {
-
-    & .PaddedImage {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-      opacity: 0.2;
-    }
-
-    & img {
-      height: auto;
-      top: 50%;
-      transform: translateY(-50%);
-
-      @supports (object-fit: cover) {
-        top: 0;
-        transform: none;
-        object-fit: cover;
-        height: 100%;
-      }
-    }
+    display: none;
   }
 
   & .SylSection__column--right {
+    flex-basis: 100%;
     position: relative;
     z-index: 2;
   }
@@ -113,11 +104,38 @@
   .js .BrochurePopup {
 
     & .SylSection__column--left {
+      width: 50%;
+      flex: 0 0 auto;
+      display: block;
+      min-height: 1px;
 
       & .PaddedImage {
+        position: absolute;
         width: 45%;
-        opacity: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
       }
+
+      & img {
+        height: auto;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @supports (object-fit: cover) {
+          top: 0;
+          transform: none;
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+    }
+
+    & .SylSection__column--right {
+      width: 50%;
+      flex: 0 0 auto;
     }
   }
 }

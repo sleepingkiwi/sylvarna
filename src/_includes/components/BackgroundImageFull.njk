@@ -44,7 +44,8 @@
   https://cloudinary.com/documentation/image_transformation_reference
 #}
 {% macro BackgroundImageFull(
-  img={}
+  img={},
+  lazy=false
 ) %}
   {% if img.src %}
     <img
@@ -55,6 +56,7 @@
         {{ img.base }}w_3000,c_limit,q_auto:eco/{{ img.version }}/{{ img.filename }} 3000w"
       sizes="100vw"
       alt="{{ img.alt | default('') }}"
+      {{ 'loading=lazy' if lazy }}
     >
   {% endif %}
 {% endmacro %}

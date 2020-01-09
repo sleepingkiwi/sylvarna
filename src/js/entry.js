@@ -3,6 +3,7 @@
 **/
 import { init as carouselInit } from './carousels';
 import { init as popupsInit } from './popups';
+import { init as formsInit } from './forms';
 
 
 /** Init everything
@@ -12,3 +13,5 @@ import { init as popupsInit } from './popups';
 carouselInit();
 // listen for popups
 popupsInit();
+// validation listeners for forms
+formsInit();

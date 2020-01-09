@@ -14,6 +14,9 @@
     font-family: var(--ff-heading);
     font-weight: bold;
     font-size: var(--s1);
+    border: 0;
+    outline: 0;
+    cursor: pointer;
     transition:
       color var(--time-transition) ease-in-out,
       background var(--time-transition) ease-in-out;

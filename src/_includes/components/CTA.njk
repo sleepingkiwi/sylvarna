@@ -16,7 +16,9 @@
       String
     align='left'
       OneOf: ['left', 'right', 'center']
+    newTab=false,
     dummy=false
+    submit=false
   ---
 #}
 
@@ -27,7 +29,9 @@
   text='',
   url='',
   align='left',
-  dummy=false
+  newTab=false,
+  dummy=false,
+  submit=false
 ) %}
 {% if text %}
   <div
@@ -36,12 +40,16 @@
     {% call Wrap(flavour='readable', flows=true) %} {# readable width Wrap with flow #}
       {% if dummy %}
         <span class="CTA__a">
+      {% elif submit %}
+        <button class="CTA__a" type="submit">
       {% else %}
-        <a class="CTA__a {{ 'js--popup-trigger' if not url }}" href="{{ url if url else '/brochure'}}" {{ 'data-target=brochure' if not url }}>
+        <a class="CTA__a {{ 'js--popup-trigger' if not url }}" href="{{ url if url else '/brochure'}}" {{ 'data-target=brochure' if not url }} {{ 'target=_blank' if newTab }}>
       {% endif %}
         {{ text }}
       {% if dummy %}
         </span>
+      {% elif submit %}
+        </button>
       {% else %}
         </a>
       {% endif %}

@@ -8,6 +8,10 @@
 #}
 {% from "components/PageHeader.njk" import PageHeader with context %}
 {% from "components/CustomContent.njk" import CustomContent with context %}
+{% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/RichText.njk" import RichText with context %}
+{% from "components/SylSection.njk" import SylSection with context %}
+{% from "components/ContactForm.njk" import ContactForm with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--contact" tabindex="-1">
@@ -19,18 +23,36 @@
       )
     }}
 
-    <div class="Wrap Wrap--readable">
-      <pre>
-
-<strong>formContentArea:</strong>
-
-{{formContentArea | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-
----
-
-      </pre>
-    </div>
-
+    {% call SylSection(
+      class='contact-form-block',
+      secondaryColour=false
+    ) %}
+      {{
+        HeaderText(
+          pre=formContentArea.preHeader,
+          header=formContentArea.header,
+          priority='h2',
+          align='center'
+        )
+      }}
+      {{
+        RichText(
+          content=formContentArea.text,
+          align='center'
+        )
+      }}
+      {{
+        ContactForm(
+          labels={
+            name: formContentArea.labels.name,
+            email: formContentArea.labels.email,
+            subject: formContentArea.labels.subject,
+            message: formContentArea.labels.message,
+            sendMessage: formContentArea.labels.sendMessage
+          }
+        )
+      }}
+    {% endcall %} {# SylSection #}
 
 
     {{

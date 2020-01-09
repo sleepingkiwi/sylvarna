@@ -10,9 +10,11 @@
       String
     flows=false
       Boolean
+    gaps=false
+      Boolean
   ---
 
-  look in Wrap.css fopr all flavours but currently one of:
+  look in Wrap.css for all flavours but currently one of:
     content
     columns
     readable
@@ -25,10 +27,11 @@
 
 {% macro Wrap(
   flavour='',
-  flows=false
+  flows=false,
+  gaps=false
 ) %}
 {% set content = caller() %} {# ref: https://github.com/mozilla/nunjucks/issues/664 #}
-<div class="Wrap{{ ' Wrap--' if flavour }}{{ flavour }}{{ ' u-flows' if flows }}">
+<div class="Wrap{{ ' Wrap--' if flavour }}{{ flavour }}{{ ' u-flows' if flows }}{{ ' u-gaps' if gaps }}">
   {{ content }}
 </div>
 {% endmacro %}

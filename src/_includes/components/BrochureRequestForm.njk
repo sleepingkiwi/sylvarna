@@ -1,0 +1,107 @@
+{#
+  BrochureRequestForm
+  ---
+  CMS _data:
+    -
+  ---
+  args:
+    labels={
+      name,
+        String
+        Optional
+      email,
+        String
+        Optional
+      address,
+        String
+        Optional
+      requestPrintedBrochure,
+        String
+        Optional
+    },
+    cta='',
+      String
+      Optional
+    ctaURL=''
+      String
+      Optional
+  ---
+#}
+
+{# import components #}
+{% from "components/Wrap.njk" import Wrap with context %}
+{% from "components/CTA.njk" import CTA with context %}
+
+{% macro BrochureRequestForm(
+  labels={},
+  cta='',
+  ctaURL=''
+) %}
+<form
+  class="BrochureRequestForm form js--validate-me js--validate-me--invalid"
+  name="brochure-request"
+  method="POST"
+  data-netlify="true"
+>
+  {% call Wrap(flavour='readable', flows=true) %} {# readable width Wrap with flow #}
+    <div class="form__split-inputs u-stacks">
+      <div class="form__split-inputs__intermidiary">
+        <div class="form__input-group--integrated">
+          <label for="name">{{ labels.name | default('name') }}</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            class="js--required"
+          >
+        </div>
+
+        <div class="form__input-group--integrated">
+          <label for="email">{{ labels.email | default('email') }}</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="js--required"
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="form__input-group--integrated-textarea">
+      <label for="address">{{ labels.address | default('address') }}</label>
+      <textarea
+        name="address"
+        id="address"
+        required
+        class="js--required"
+      ></textarea>
+    </div>
+
+    <div class="form__submit form__split-inputs form__split-inputs--submits u-stacks">
+      <div class="form__split-inputs__intermidiary">
+        {{
+          CTA(
+            text=labels.requestPrintedBrochure | default('Request Printed Brochure'),
+            align='left',
+            submit=true
+          )
+        }}
+
+        {% if cta and ctaURL %}
+          {{
+            CTA(
+              text=cta,
+              url=ctaURL,
+              align='left',
+              newTab=true
+            )
+          }}
+        {% endif %}
+      </div>
+    </div>
+  {% endcall %} {# wrap #}
+</form>
+{% endmacro %}
