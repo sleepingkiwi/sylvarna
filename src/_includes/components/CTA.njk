@@ -37,7 +37,7 @@
       {% if dummy %}
         <span class="CTA__a">
       {% else %}
-        <a class="CTA__a" href="{{ url if url else '#brochure'}}">
+        <a class="CTA__a {{ 'js--popup-trigger' if not url }}" href="{{ url if url else '/brochure'}}" {{ 'data-target=brochure' if not url }}>
       {% endif %}
         {{ text }}
       {% if dummy %}

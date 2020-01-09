@@ -1,5 +1,6 @@
 ---
 layout: layouts/brochure
+tags: popup
 title: Brochure
 hero:
   header: Order our brochure

@@ -33,6 +33,12 @@ const brochureConfig = {
       default: 'Brochure',
     },
     {
+      label: 'Tags',
+      name: 'tags',
+      widget: 'hidden',
+      default: 'popup',
+    },
+    {
       label: 'Hero Image and Page Title',
       name: 'hero',
       widget: 'object',

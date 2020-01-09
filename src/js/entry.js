@@ -2,6 +2,7 @@
  *  ------------------------------------------------------------------------------------------------
 **/
 import { init as carouselInit } from './carousels';
+import { init as popupsInit } from './popups';
 
 
 /** Init everything
@@ -9,3 +10,5 @@ import { init as carouselInit } from './carousels';
 **/
 // set up all the carousel listeners
 carouselInit();
+// listen for popups
+popupsInit();

@@ -1,0 +1,143 @@
+/** BrochurePopup
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+.js .BrochurePopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-overlay);
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+
+  /* display: flex; */
+  display: none; /* until js enables it... */
+
+  &.js--popup-active {
+    display: flex;
+  }
+
+  & .BrochurePopup__wrap {
+    transition:
+      opacity var(--time-transition) var(--ease-default),
+      transform var(--time-transition) var(--ease-default);
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  &.js--popup-active-trans-in .BrochurePopup__wrap {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  & .BrochurePopup__back-close {
+    /* background: rgba(0, 0, 0, 0.8); */
+    background: var(--colour-subtler);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    z-index: 1;
+    transition: opacity var(--time-transition) var(--ease-default);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+
+  /* we need to position content outside this area */
+  & .SylSection__content {
+    position: static;
+  }
+
+  & .SylSection__column--left {
+
+    & .PaddedImage {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      opacity: 0.2;
+    }
+
+    & img {
+      height: auto;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @supports (object-fit: cover) {
+        top: 0;
+        transform: none;
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+  }
+
+  & .SylSection__column--right {
+    position: relative;
+    z-index: 2;
+  }
+
+  & .CloseButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: var(--bsu);
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    z-index: var(--z-section-nav);
+
+    & .SvgWrap {
+      width: var(--s2);
+    }
+  }
+}
+
+/* two columns at large sizes */
+
+@media (--squire) {
+
+  .js .BrochurePopup {
+
+    & .SylSection__column--left {
+
+      & .PaddedImage {
+        width: 45%;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.BrochurePopup__wrap {
+  /* full width if there's no js... */
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.js .BrochurePopup__wrap {
+  width: 90%;
+  max-width: var(--layout-content);
+  background: var(--colour-subtler);
+  padding: var(--bsu-s);
+}
+
+.BrochurePopup__content {
+  background: var(--colour-background-body);
+}

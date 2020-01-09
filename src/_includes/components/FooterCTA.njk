@@ -25,7 +25,7 @@
   secondaryColour=false,
   backgroundImage=footerRecurring.ctaBackground
 ) %}
-  <a href="{{ footerRecurring.ctaUrl | default('#brochure') }}">
+  <a class="{{ 'js--popup-trigger' if not footerRecurring.ctaUrl }}" href="{{ footerRecurring.ctaUrl if footerRecurring.ctaUrl else '/brochure'}}" {{ 'data-target="brochure"' if not footerRecurring.ctaUrl }}>
     {{
       HeaderText(
         pre=footerRecurring.ctaPreHeader,

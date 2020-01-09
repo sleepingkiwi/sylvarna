@@ -2,6 +2,7 @@
 {% from "components/SiteFooter.njk" import SiteFooter with context %}
 {% from "components/FooterPartners.njk" import FooterPartners with context %}
 {% from "components/FooterCTA.njk" import FooterCTA with context %}
+{% from "components/BrochurePopup.njk" import BrochurePopup with context %}
 
 <!DOCTYPE html>
 <html class ='no-js' lang="en">
@@ -69,6 +70,16 @@
       FooterCTA()
     }}
   {% endif %}
+
+
+  {#
+    BrochurePopup in footer
+    -
+    currently this is just the brochure but it's based on a collection so is extensible...
+  #}
+  {{
+    BrochurePopup()
+  }}
 
 
   {{
