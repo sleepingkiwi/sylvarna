@@ -43,18 +43,14 @@
 {% macro HomepageCarousel(
   carousel={}
 ) %}
-  <div class="HomepageCarousel js--carousel" data-active-slide="intro">
+  <div class="HomepageCarousel js--carousel" data-active-slide="intro" data-trans="400">
 
     {% call SylSection(
-      class='HomepageCarousel__slide js--carousel__slide js--carousel__slide--active',
+      class='HomepageCarousel__slide js--carousel__slide js--carousel__slide--active js--carousel__slide--trans-in',
       secondaryColour=true,
       backgroundImage=carousel.hero,
       id='intro'
     ) %}
-
-      {% if carousel.cta %}
-        <a class="u-flows" href="{{ carousel.ctaURL if carousel.ctaURL else '#brochure' }}">
-      {% endif %}
 
       {{
         HeaderText(
@@ -71,13 +67,9 @@
             text=carousel.cta,
             url=carousel.ctaURL,
             align='center',
-            dummy=true
+            dummy=false
           )
         }}
-      {% endif %}
-
-      {% if carousel.cta %}
-        </a>
       {% endif %}
 
     {% endcall %} {# SylSection #}
@@ -94,44 +86,52 @@
         id=style.fileSlug
       ) %}
 
-        <a class="u-flows" href="{{ style.url }}">
+        {{
+          HeaderText(
+            pre=(style.data.hero.preHeader | default('')),
+            header=style.data.title,
+            priority='h1',
+            align='center'
+          )
+        }}
+
+        {% if style.data.hero.carouselCTA %}
           {{
-            HeaderText(
-              pre=(style.data.hero.preHeader | default('')),
-              header=style.data.title,
-              priority='h1',
-              align='center'
+            CTA(
+              text=style.data.hero.carouselCTA,
+              url=style.url,
+              align='center',
+              dummy=false
             )
           }}
-
-          {% if style.data.hero.carouselCTA %}
-            {{
-              CTA(
-                text=style.data.hero.carouselCTA,
-                url=style.url,
-                align='center',
-                dummy=true
-              )
-            }}
-          {% endif %}
-        </a>
+        {% endif %}
 
       {% endcall %} {# SylSection #}
 
     {% endfor %}
 
     <nav class="js--carousel__nav">
-      <button data-action="prev" class="js--carousel__nav-link">prev</button>
-      <button data-action="next" class="js--carousel__nav-link">next</button>
-      <ul>
-        {% for style in collections.style %}
-          <li>
-            <button data-action="target" data-target="{{style.fileSlug}}" class="js--carousel__nav-link">
-              {{ style.data.title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+      <button data-action="prev" class="js--carousel__nav-link js--carousel__nav-link--prev">
+        <span class="visuallyhidden">
+          prev
+        </span>
+      </button>
+      <button data-action="next" class="js--carousel__nav-link js--carousel__nav-link--next">
+        <span class="visuallyhidden">
+          next
+        </span>
+      </button>
+      <div class="js--carousel__nav__links">
+        <ul>
+          {% for style in collections.style %}
+            <li>
+              <button data-action="target" data-target="{{style.fileSlug}}" class="js--carousel__nav-link">
+                {{ style.data.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </nav>
   </div>
 {% endmacro %}

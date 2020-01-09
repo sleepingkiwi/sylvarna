@@ -1,48 +1,27 @@
 /** Carousels...
  *  ------------------------------------------------------------------------------------------------
 **/
-
-/** MOVE THESE INTO UTILITIES
- *  ------------------------------------------------------------------------------------------------
-**/
-const getPreviousSibling = (elem, selector) => {
-  let sibling = elem.previousElementSibling;
-
-  while (sibling) {
-    if (sibling.matches(selector)) return sibling;
-    sibling = sibling.previousElementSibling;
-  }
-
-  return null;
-};
-
-const getNextSibling = (elem, selector) => {
-  let sibling = elem.nextElementSibling;
-
-  while (sibling) {
-    if (sibling.matches(selector)) return sibling;
-    sibling = sibling.nextElementSibling;
-  }
-
-  return null;
-};
+import { getNextSibling, getPreviousSibling } from './utils/siblings';
 
 
 /** Action functions
  *  ------------------------------------------------------------------------------------------------
 **/
 const carouselGoTo = (target, carousel) => {
-  /** START DEBUGGING **/
-  // TODO - remove this debugging code!
-  if (process.env.NODE_ENV !== 'production') {
-    // eslint-disable-next-line no-console
-    console.log({
-      message: 'carouselGoTo',
-      target,
-      carousel,
-    });
-  }
-  /** END DEBUGGING **/
+  // remove old active classes.
+  const active = carousel.querySelectorAll('.js--carousel__slide--active');
+  (active || []).forEach(
+    (a) => {
+      a.classList.remove('js--carousel__slide--active');
+      a.classList.remove('js--carousel__slide--trans-in');
+    },
+  );
+
+  // add new one
+  target.classList.add('js--carousel__slide--active');
+  // wait a tick for the transition class so that it animates...
+  window.setTimeout(() => target.classList.add('js--carousel__slide--trans-in'), 10);
+  carousel.setAttribute('data-active-slide', target.id);
 };
 
 const carouselPrevNext = (direction, carousel) => {
@@ -52,7 +31,11 @@ const carouselPrevNext = (direction, carousel) => {
       direction === 'prev'
         ? getPreviousSibling(active, '.js--carousel__slide')
         : getNextSibling(active, '.js--carousel__slide')
-    ) || carousel.querySelector('.js--carousel__slide:last-of-type');
+    ) || (
+      direction === 'prev'
+        ? carousel.querySelector('.js--carousel__slide:last-of-type')
+        : carousel.querySelector('.js--carousel__slide:first-of-type')
+    );
 
     if (target) {
       carouselGoTo(target, carousel);
@@ -104,6 +87,16 @@ export const init = () => {
       butt.addEventListener('click', carouselAction, false);
     },
   );
+
+  // left/right for progress
+  document.addEventListener('keydown', (e) => {
+    if (e.keyCode === 37 || e.keyCode === 39) {
+      const carousels = document.querySelectorAll('.js--carousel');
+      (carousels || []).forEach(
+        (carousel) => carouselPrevNext(e.keycode === 37 ? 'prev' : 'next', carousel),
+      );
+    }
+  });
 };
 
 export default init;

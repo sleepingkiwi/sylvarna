@@ -1,9 +1,11 @@
-import { soModern, soFunctional } from './test';
+/** imports
+ *  ------------------------------------------------------------------------------------------------
+**/
 import { init as carouselInit } from './carousels';
 
-console.log(`Oh. ${soModern()}`);
 
-soFunctional().forEach((l) => console.log(l));
-
+/** Init everything
+ *  ------------------------------------------------------------------------------------------------
+**/
 // set up all the carousel listeners
 carouselInit();

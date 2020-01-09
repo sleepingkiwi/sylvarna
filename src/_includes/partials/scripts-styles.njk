@@ -17,7 +17,11 @@
   // we don't load any js in browsers that don't support a subset of features.
   // for this site we use Element.closest quite a lot...
   // https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
-  if (!Element.prototype.closest) {
+  // I also want claaList support!
+  if (
+    !Element.prototype.closest
+    || !('classList' in document.createElement("_"))
+  ) {
     document.documentElement.className = document.documentElement.className.replace(/(^|\s)no-js(\s|$)/, ' no-js no-js--hagard');
   } else {
     // more modern script for more modern browsers

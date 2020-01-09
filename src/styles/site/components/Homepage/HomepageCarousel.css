@@ -5,66 +5,138 @@
 .HomepageCarousel {
   position: relative;
   overflow: hidden;
+  background-color: var(--colour-primary);
 }
 
 .HomepageCarousel__slide {
   min-height: 60vh; /* taller than normal SylSections */
-  padding: 0;
   overflow: hidden;
-  transition: opacity var(--time-transition) var(--ease-default);
+  transition: opacity var(--time-transition-slow) var(--ease-default);
 
   & .SylSection__back {
-    transition: transform var(--time-transition) var(--ease-default);
-  }
-
-  &::after {
-    transition: opacity var(--time-transition) var(--ease-default);
-  }
-
-  &:hover {
-
-    & .SylSection__back {
-      transform: scale(1.1);
-    }
-
-    &::after {
-      opacity: 0.7;
-    }
-  }
-
-  & a {
-    display: block;
-    padding: var(--section-padding) 0;
-    color: var(--colour-invert);
+    transition: transform var(--time-transition-slow) var(--ease-default);
   }
 }
 
 /* overwrite top padding to be twice the normal syl-section if there's a floating header */
 /* This is only for the first section if js is disabled. If js is enabled it should apply to all */
-.no-js .with-transparent-header .HomepageCarousel__slide:first-child a,
-.js .with-transparent-header .HomepageCarousel__slide a {
+.no-js .with-transparent-header .HomepageCarousel__slide:first-child,
+.js .with-transparent-header .HomepageCarousel__slide {
   padding-top: calc(var(--section-padding) * 1.5);
 }
 
-.HomepageCarousel nav {
-  position: absolute;
-  z-index: var(--z-section-nav);
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: var(--bsu-s);
-  background-color: rgba(0, 0, 0, 0.6);
+/** Displaying slides when JS is enabled
+ *  ------------------------------------------------------------------------------------------------
+**/
+.js .HomepageCarousel__slide {
+  display: none;
+  opacity: 0;
+
+  & .SylSection__back {
+    transform: scale(1.2);
+  }
 }
 
-.js .HomepageCarousel__slide {
-  opacity: 0;
-  display: none;
+.HomepageCarousel__slide.js--carousel__slide--trans-in {
+  opacity: 1;
+
+  & .SylSection__back {
+    transform: scale(1);
+  }
 }
 
 .js .HomepageCarousel__slide.js--carousel__slide--active {
-  opacity: 1;
   display: flex;
 }
+
+
+/** Nav elements
+ *  ------------------------------------------------------------------------------------------------
+**/
+.HomepageCarousel nav {
+
+  & .js--carousel__nav__links {
+    position: absolute;
+    z-index: var(--z-section-nav);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 var(--bsu-s);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  & ul {
+    margin: 0 auto;
+    max-width: var(--layout-max);
+    display: flex;
+    justify-content: space-around;
+  }
+
+  & li {
+    display: block;
+  }
+
+  & button {
+    background: transparent;
+    color: var(--colour-invert);
+    border: 0;
+    outline: 0;
+    font-family: var(--ff-heading);
+    font-weight: normal;
+    padding: var(--bsu-s);
+    cursor: pointer;
+    transition: color var(--time-transition) var(--ease-default);
+
+    &:hover,
+    &:focus {
+      color: var(--colour-secondary);
+    }
+  }
+
+  /* next-prev */
+  & .js--carousel__nav-link--prev,
+  & .js--carousel__nav-link--next {
+    position: absolute;
+    left: 0;
+    transform: translateY(-50%);
+    top: 50%;
+    z-index: var(--z-section-nav);
+    padding-left: 0;
+
+    &::after {
+      content: ' ';
+      display: block;
+      width: var(--bsu-s);
+      height: var(--bsu);
+      border-radius: 0 var(--bsu) var(--bsu) 0;
+      background: var(--colour-invert);
+      transition:
+        background-color var(--time-transition) var(--ease-default),
+        transform var(--time-transition) var(--ease-default);
+    }
+
+    &:hover,
+    &:focus {
+
+      &::after {
+        background: var(--colour-secondary);
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  & .js--carousel__nav-link--next {
+    left: auto;
+    right: 0;
+    padding-left: var(--bsu-s);
+    padding-right: 0;
+
+    &::after {
+      border-radius: var(--bsu) 0 0 var(--bsu);
+    }
+  }
+}
+
 
 /** No Javascript styles
  *  ------------------------------------------------------------------------------------------------
