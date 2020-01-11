@@ -37,6 +37,8 @@
 }
 
 .SylSection--no-back {
+  min-height: 20vh;
+  padding: calc(var(--section-padding) * 0.5) 0;
 
   &::after {
     content: none;

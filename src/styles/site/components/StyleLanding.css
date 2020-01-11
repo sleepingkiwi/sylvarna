@@ -1,0 +1,35 @@
+/** Kitchen Styles landing page
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+.StyleLanding__nav {
+  padding: var(--bsu-xs) 0;
+  background-color: var(--colour-subtle);
+
+  & .u-gaps {
+    --gap: var(--bsu-s);
+  }
+
+  & li {
+    display: block;
+  }
+
+  & a {
+    display: block;
+    padding: var(--bsu-xs);
+    color: var(--colour-invert);
+    font-family: var(--ff-heading);
+
+    &:hover,
+    &:focus {
+      color: var(--colour-secondary);
+    }
+  }
+}
+
+
+.StyleLanding__styles {
+  background-color: var(--colour-subtler);
+
+  --flow-space: 2px;
+}

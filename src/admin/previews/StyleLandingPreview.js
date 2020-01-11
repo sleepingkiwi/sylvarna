@@ -6,6 +6,7 @@
 /* eslint-disable object-shorthand */
 
 import markdownFilter from '../../filters/markdown';
+import previewDummyContent from './dummy';
 
 // this is brought in with a script tag in admin.njk and copied in .eleventy.js
 // we could add it as a dependency if that feels too brittle...
@@ -31,6 +32,33 @@ const StyleLandingPreview = window.createClass({
       transparentHeader,
       footerPartners,
       footerCTA,
+      collections: {
+        style: [
+          {
+            url: '#',
+            fileSlug: 'example',
+            data: {
+              title: 'Example One',
+              hero: {
+                carouselCTA: 'Explore',
+                preHeader: 'All Kitchen Styles Will Appear Here...',
+              },
+            },
+          },
+          {
+            url: '#',
+            fileSlug: 'exampleTwo',
+            data: {
+              title: 'Example Two',
+              hero: {
+                carouselCTA: 'Explore',
+                preHeader: '...On the live site or preview link',
+              },
+            },
+          },
+        ],
+      },
+      ...previewDummyContent,
     });
     const path = 'layouts/styleLanding.njk';
     const data = context(entry.get('data').toJS());

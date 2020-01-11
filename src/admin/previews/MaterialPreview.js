@@ -6,6 +6,7 @@
 /* eslint-disable object-shorthand */
 
 import markdownFilter from '../../filters/markdown';
+import previewDummyContent from './dummy';
 
 // this is brought in with a script tag in admin.njk and copied in .eleventy.js
 // we could add it as a dependency if that feels too brittle...
@@ -37,6 +38,7 @@ const MaterialPreview = window.createClass({
       transparentHeader,
       footerPartners,
       footerCTA,
+      ...previewDummyContent,
     });
     const path = 'layouts/material.njk';
     const data = context(entry.get('data').toJS());

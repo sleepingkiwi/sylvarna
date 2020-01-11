@@ -8,6 +8,11 @@
 #}
 {% from "components/PageHeader.njk" import PageHeader with context %}
 {% from "components/CustomContent.njk" import CustomContent with context %}
+{% from "components/SylSection.njk" import SylSection with context %}
+{% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/CTA.njk" import CTA with context %}
+{% from "components/Wrap.njk" import Wrap with context %}
+
 
 {% block content %}
   <main id="main-content" class="site-main site-main--style-landing" tabindex="-1">
@@ -19,9 +24,56 @@
       )
     }}
 
+    <nav class="StyleLanding__nav">
+      {% call Wrap(gaps=true) %}
+        <ul>
+          {% for style in collections.style %}
+            <li>
+              <a href="{{ style.url }}">
+                {{ style.data.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endcall %}
+    </nav>
 
-    {{
-      CustomContent(genericContentBlocks)
-    }}
+    <div class="StyleLanding__styles u-flows">
+      {% for style in collections.style %}
+
+        {% call SylSection(
+          class='StyleLanding__Style',
+          secondaryColour=true,
+          backgroundImage=style.data.hero.carousel if style.data.hero.carousel.src else style.data.hero.hero,
+          id=style.fileSlug,
+          lazy=true
+        ) %}
+
+          {{
+            HeaderText(
+              post=(style.data.hero.preHeader | default('')),
+              header=style.data.title,
+              priority='h1',
+              align='center'
+            )
+          }}
+
+          {% if style.data.hero.carouselCTA %}
+            {{
+              CTA(
+                text=style.data.hero.carouselCTA,
+                url=style.url,
+                align='center'
+              )
+            }}
+          {% endif %}
+
+        {% endcall %} {# SylSection #}
+      {% endfor %}
+
+      {{
+        CustomContent(genericContentBlocks)
+      }}
+    </div>
   </main>
 {% endblock %}
