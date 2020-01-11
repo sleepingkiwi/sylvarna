@@ -46,6 +46,7 @@ kitchenInformation:
         version: v1577895800
         width: 3000
       name: Buns in the oven
+  cover: false
   description: >-
     Quis commodo odio aenean sed adipiscing diam donec adipiscing tristique.
     Arcu dictum varius duis at consectetur lorem. Fermentum et sollicitudin ac
@@ -65,7 +66,7 @@ materials:
 styles:
   - Modern Classic
   - Timeless
-transparentHeader: true
+transparentHeader: false
 footerPartners: true
 footerCTA: true
 ---

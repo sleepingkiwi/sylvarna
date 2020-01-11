@@ -46,6 +46,7 @@ kitchenInformation:
         version: v1577892372
         width: 964
       name: Some drawers
+  cover: false
   description: >-
     A Modern classic style kitchen using white marble, clean elegant wooden
     cabinets and utilising the latest in Neff oven technology to give it a
@@ -64,7 +65,7 @@ materials:
   - Solid Oak
 styles:
   - Modern Classic
-transparentHeader: true
+transparentHeader: false
 footerPartners: true
 footerCTA: true
 ---

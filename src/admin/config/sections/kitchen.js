@@ -74,6 +74,14 @@ const kitchenConfig = [
         ],
       },
       {
+        label: 'Force Carousel Images to squares?',
+        name: 'cover',
+        widget: 'boolean',
+        required: true,
+        default: false,
+        hint: 'By default images you upload are fitted within a square frame so that none of the image is cropped. Toggle this option if you would rather your images filled the square frame completely (cropped from the center)',
+      },
+      {
         label: 'Images',
         name: 'additionalImages',
         required: true,

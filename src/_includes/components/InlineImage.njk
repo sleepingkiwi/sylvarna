@@ -23,6 +23,9 @@
       }
     lazy=false
       Boolean
+    forcePadding
+      Number
+      Optional
   ---
 #}
 
@@ -32,7 +35,9 @@
 
 {% macro InlineImage(
   img={},
-  lazy=false
+  lazy=false,
+  forcePadding,
+  contain=false
 ) %}
   {# render nothing if there's not src #}
   {% if img.src %}
@@ -41,8 +46,10 @@
       {# we wrap everything in a padded image container #}
       {% call PaddedImage(
         dominant=img.dominant | default([]),
-        padding=((img.height/img.width)*100),
-        maxWidth=img.width
+        padding=forcePadding or ((img.height/img.width)*100),
+        maxWidth=img.width,
+        paddingWasForced=true if forcePadding else false,
+        contain=contain
       ) %}
       {#
         developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images

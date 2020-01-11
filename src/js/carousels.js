@@ -16,12 +16,26 @@ const carouselGoTo = (target, carousel) => {
       a.classList.remove('js--carousel__slide--trans-in');
     },
   );
+  const activeNav = carousel.querySelectorAll('.js--carousel__nav-link--active');
+  (activeNav || []).forEach(
+    (a) => {
+      a.classList.remove('js--carousel__nav-link--active');
+    },
+  );
 
   // add new one
   target.classList.add('js--carousel__slide--active');
   // wait a tick for the transition class so that it animates...
   window.setTimeout(() => target.classList.add('js--carousel__slide--trans-in'), 10);
   carousel.setAttribute('data-active-slide', target.id);
+
+  // if there's nav we should highlight the active item.
+  const navForActive = carousel.querySelectorAll(`.js--carousel__nav-link[data-target=${target.id}]`);
+  (navForActive || []).forEach(
+    (a) => {
+      a.classList.add('js--carousel__nav-link--active');
+    },
+  );
 };
 
 const carouselPrevNext = (direction, carousel) => {

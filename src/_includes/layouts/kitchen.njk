@@ -7,44 +7,139 @@
   Import components
 #}
 {% from "components/CustomContent.njk" import CustomContent with context %}
+{% from "components/SylSection.njk" import SylSection with context %}
+{% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/RichText.njk" import RichText with context %}
+{% from "components/InlineImage.njk" import InlineImage with context %}
+{% from "components/Wrap.njk" import Wrap with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--bespoke" tabindex="-1">
     {{ content | safe }}
 
-    <div class="Wrap Wrap--readable">
-      <pre>
-<strong>title:</strong>
+    {#
+    kitchenInformation
+      location
+      description
+      additionalImages
+    #}
 
-{{title | safe}}
+    {% call SylSection(
+      class='KitchenInformation',
+      secondaryColour=false
+    ) %}
+      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
+        <div class="SylSection__column SylSection__column--left u-flows">
 
----
+          <div
+            class="KitchenCarousel js--carousel"
+            data-active-slide="KitchenCarousel-1"
+            data-trans="400"
+          >
 
-<strong>kitchenInformation:</strong>
+            {% for image in kitchenInformation.additionalImages %}
+              <div
+                class="KitchenCarousel__slide js--carousel__slide{{
+                  ' js--carousel__slide--active js--carousel__slide--trans-in' if loop.first
+                }}"
+                id="KitchenCarousel-{{loop.index}}"
+              >
+                {{
+                  InlineImage(
+                    img=image.additionalImage,
+                    lazy=true,
+                    forcePadding=100,
+                    contain=false if kitchenInformation.cover else true
+                  )
+                }}
+              </div>
+            {% endfor %}
 
-{{kitchenInformation | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+            <nav class="js--carousel__nav">
+              <div class="js--carousel__nav__links">
+                {% call Wrap(flavour='readable') %}
+                  <ul>
 
----
+                    {# prev #}
+                    <li>
+                      <button data-action="prev" class="js--carousel__nav-link js--carousel__nav-link--prev">
+                        <span class="visuallyhidden">
+                          prev
+                        </span>
+                      </button>
+                    </li>
 
-      </pre>
-    </div>
+                    {# all content links #}
+                    {% for image in kitchenInformation.additionalImages %}
+                      <li>
+                        <button data-action="target" data-target="KitchenCarousel-{{loop.index}}" class="js--carousel__nav-link{{
+                          ' js--carousel__nav-link--active' if loop.first
+                        }}"></button>
+                      </li>
+                    {% endfor %}
 
+                    {# next #}
+                    <li>
+                      <button data-action="next" class="js--carousel__nav-link js--carousel__nav-link--next">
+                        <span class="visuallyhidden">
+                          next
+                        </span>
+                      </button>
+                    </li>
 
+                  </ul>
+                {% endcall %}
+              </div>
+            </nav>
+
+          </div>
+        </div>
+        <div class="SylSection__column SylSection__column--right u-flows">
+          {{
+            HeaderText(
+              pre=kitchenInformation.location,
+              header=title,
+              priority='h1',
+              align='left'
+            )
+          }}
+          {{
+            RichText(
+              content=kitchenInformation.description,
+              align='left'
+            )
+          }}
+        </div>
+      </div>
+    {% endcall %} {# SylSection #}
 
     {{
       CustomContent(genericContentBlocks)
     }}
 
-
-    <div class="Wrap Wrap--readable">
-      <pre>
-
----
-
-<strong>materials:</strong>
-
-{{materials | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-</pre>
+    <div>
+      {{collections.keyedMaterials['Marble Counters'].data.title}}
     </div>
+
+    <div>
+      {% for kitchen in collections.similarKitchens[page.fileSlug] %}
+        <h4>
+          {{
+            kitchen.title
+          }} matched: {{
+            kitchen.matches
+          }}
+        </h4>
+
+        {% for matchTitle in kitchen.materialMatches %}
+          <p>Also features {{ matchTitle }}</p>
+        {% endfor %}
+
+        {% for matchTitle in kitchen.styleMatches %}
+          <p>Also appears in {{ matchTitle }}</p>
+        {% endfor %}
+      {% endfor %}
+    </div>
+
   </main>
 {% endblock %}
