@@ -63,6 +63,8 @@ genericContentBlocks:
 materials:
   - Marble Counters
   - Solid Oak
+materialsUsedTitle: Materials Used
+similarKitchensTitle: Similar Kitchens
 styles:
   - Modern Classic
 transparentHeader: false

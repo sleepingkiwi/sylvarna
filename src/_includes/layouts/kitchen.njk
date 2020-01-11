@@ -117,29 +117,96 @@
       CustomContent(genericContentBlocks)
     }}
 
-    <div>
-      {{collections.keyedMaterials['Marble Counters'].data.title}}
-    </div>
+    {# materials used #}
+    {# the keyed collections is specially defined in .evelnty.js to make getting data easy #}
+    {% call SylSection(
+      class='KitchenMaterials',
+      secondaryColour=true,
+      backgroundImage=collections.keyedMaterials[materials[0]].data.hero.hero,
+      lazy=true
+    ) %}
 
-    <div>
-      {% for kitchen in collections.similarKitchens[page.fileSlug] %}
-        <h4>
-          {{
-            kitchen.title
-          }} matched: {{
-            kitchen.matches
-          }}
-        </h4>
+      {{
+        HeaderText(
+          header=materialsUsedTitle,
+          priority='h2',
+          align='center'
+        )
+      }}
 
-        {% for matchTitle in kitchen.materialMatches %}
-          <p>Also features {{ matchTitle }}</p>
+      <ul class="KitchenMaterials__materials">
+        {% for material in materials %}
+          <li>
+            <a href="{{ collections.keyedMaterials[material].url }}">
+              {{ material }}
+            </a>
+          </li>
         {% endfor %}
+      </ul>
 
-        {% for matchTitle in kitchen.styleMatches %}
-          <p>Also appears in {{ matchTitle }}</p>
+    {% endcall %}
+
+
+    {# similar kitchens #}
+    {# the collection of similar kitchens is generated in .eleventy.js #}
+    {% call SylSection(
+      class='KitchenSimilar',
+      secondaryColour=false
+    ) %}
+      {{
+        HeaderText(
+          header=similarKitchensTitle,
+          priority='h2',
+          align='center'
+        )
+      }}
+
+      <div class="KitchenGrid">
+        {% for kitchen in collections.similarKitchens[page.fileSlug] %}
+          <div class="KitchenItem">
+            <a href="{{ collections.keyedKitchens[kitchen.title].url }}">
+              {{
+                InlineImage(
+                  img=collections.keyedKitchens[kitchen.title].data.kitchenInformation.additionalImages[0].additionalImage,
+                  lazy=true,
+                  forcePadding=58,
+                  contain=false
+                )
+              }}
+              {{
+                HeaderText(
+                  header=kitchen.title,
+                  post=collections.keyedKitchens[kitchen.title].data.kitchenInformation.location,
+                  priority='h3',
+                  align='center'
+                )
+              }}
+            </a>
+
+            {#
+              subtle links to all of the matching elements
+            #}
+            <ul class="SimilarKitchen__matching-tags">
+              {% for matchTitle in kitchen.materialMatches %}
+              <li
+                class="SimilarKitchen__matching-tag SimilarKitchen__matching-tag--material"
+              >
+                <a href="{{ collections.keyedMaterials[matchTitle].url }}">{{ matchTitle }}</a>
+              </li>
+              {% endfor %}
+
+              {% for matchTitle in kitchen.styleMatches %}
+                <li
+                  class="SimilarKitchen__matching-tag SimilarKitchen__matching-tag--style"
+                >
+                  <a href="{{ collections.keyedStyles[matchTitle].url }}">{{ matchTitle }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         {% endfor %}
-      {% endfor %}
-    </div>
+      </div>
+    {% endcall %}
 
   </main>
 {% endblock %}

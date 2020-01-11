@@ -126,6 +126,14 @@ const kitchenConfig = [
     optionsLength: 50,
   },
   {
+    label: 'Materials Used Title',
+    name: 'materialsUsedTitle',
+    widget: 'string',
+    required: true,
+    default: 'Materials Used',
+    hint: 'Defaults to Materials Used but you can change it.',
+  },
+  {
     label: 'Styles Used',
     name: 'kitchenPageInstructionsStyles',
     widget: 'instructions',
@@ -142,6 +150,14 @@ const kitchenConfig = [
     searchFields: ['title'],
     valueField: 'title',
     optionsLength: 50,
+  },
+  {
+    label: 'Similar Kitchens Title',
+    name: 'similarKitchensTitle',
+    widget: 'string',
+    required: true,
+    default: 'Similar Kitchens',
+    hint: 'Defaults to Similar Kitchens Used but you can change it.',
   },
   // include general page settings
   ...pageSettings,

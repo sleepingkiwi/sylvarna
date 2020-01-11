@@ -63,6 +63,8 @@ genericContentBlocks:
     type: oneColumn
 materials:
   - Solid Oak
+materialsUsedTitle: Materials Used
+similarKitchensTitle: Similar Kitchens
 styles:
   - Modern Classic
   - Timeless
