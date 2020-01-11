@@ -143,8 +143,11 @@ genericContentBlocks:
     type: oneColumn
 findUsContentArea:
   header: Chichester Showroom
-  lat: '-0.790329'
-  lng: '50.8316445'
+  mapEmbed: >-
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.977786759544!2d-0.7924201836467075!3d50.83157536770926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48745264a0b5d43d%3A0x212878c9e81d7640!2sSylvarna%20Kitchen%20Design!5e0!3m2!1sen!2suk!4v1578706503986!5m2!1sen!2suk"
+    width="600" height="450" frameborder="0" style="border:0;"
+    allowfullscreen=""></iframe>
   preHeader: Find us
   text: |-
     Sylvarna Kitchen Design Ltd\
@@ -159,3 +162,4 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
+
