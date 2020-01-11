@@ -29,7 +29,7 @@ const openPopup = (e) => {
 };
 
 
-const closePopups = () => {
+export const closePopups = () => {
   document.body.classList.remove('js--has-popup');
   window.scrollTo(0, document.body.getAttribute('data-scroll-pos') || 0);
   const activePopups = document.querySelectorAll('.js--popup-active');

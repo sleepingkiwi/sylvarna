@@ -11,7 +11,9 @@
 {% from "components/HeaderText.njk" import HeaderText with context %}
 {% from "components/RichText.njk" import RichText with context %}
 {% from "components/SylSection.njk" import SylSection with context %}
+{% from "components/InlineImage.njk" import InlineImage with context %}
 {% from "components/ContactForm.njk" import ContactForm with context %}
+{% from "components/Wrap.njk" import Wrap with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--contact" tabindex="-1">
@@ -24,7 +26,7 @@
     }}
 
     {% call SylSection(
-      class='contact-form-block',
+      class='ContactFormSection',
       secondaryColour=false
     ) %}
       {{
@@ -52,6 +54,48 @@
           }
         )
       }}
+
+      {# decorative images #}
+      <div class="ContactFormSection__decoration ContactFormSection__decoration--odd">
+        {% for image in formContentArea.decorationImages %}
+          {#
+            all odd numbered images
+            unless it's the last loop iteration because we want an even number on each side
+          #}
+          {% if loop.index % 2 !== 0 and not loop.last %}
+            <div class="ContactFormSection__decoration__image">
+              <img
+                src="{{ image.image.base }}w_1200,c_limit,q_auto:best/{{ image.image.version }}/{{ image.image.filename }}"
+                srcset="{{ image.image.base }}w_600,c_limit,q_auto:best/{{ image.image.version }}/{{ image.image.filename }} 600w,
+                  {{ image.image.base }}w_1200,c_limit,q_auto:best/{{ image.image.version }}/{{ image.image.filename }} 1200w"
+                sizes="25vw"
+                alt="{{ image.image.alt | default('') }}"
+                loading="lazy"
+              >
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="ContactFormSection__decoration ContactFormSection__decoration--even">
+        {% for image in formContentArea.decorationImages %}
+          {#
+            all odd numbered images
+            unless it's the last loop iteration because we want an even number on each side
+          #}
+          {% if loop.index % 2 === 0 %}
+            <div class="ContactFormSection__decoration__image">
+              <img
+                src="{{ image.image.base }}w_1200,c_limit,q_auto:best/{{ image.image.version }}/{{ image.image.filename }}"
+                srcset="{{ image.image.base }}w_600,c_limit,q_auto:best/{{ image.image.version }}/{{ image.image.filename }} 600w,
+                  {{ image.image.base }}w_1200,c_limit,q_auto:best/{{ image.image.version }}/{{ image.image.filename }} 1200w"
+                sizes="25vw"
+                alt="{{ image.image.alt | default('') }}"
+                loading="lazy"
+              >
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
     {% endcall %} {# SylSection #}
 
 
@@ -60,15 +104,36 @@
     }}
 
 
-    <div class="Wrap Wrap--readable">
-      <pre>
-
----
-
-<strong>findUsContentArea:</strong>
-
-{{findUsContentArea | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-</pre>
-    </div>
+    {% call SylSection(
+      class='ContactFindUs',
+      secondaryColour=false
+    ) %}
+      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
+        <div class="SylSection__column SylSection__column--left u-flows">
+          {{
+            HeaderText(
+              pre=findUsContentArea.preHeader,
+              header=findUsContentArea.header,
+              priority='h2',
+              align='left'
+            )
+          }}
+          {{
+            RichText(
+              content=findUsContentArea.text,
+              align='left'
+            )
+          }}
+        </div>
+        <div class="SylSection__column SylSection__column--right u-flows">
+          {% call Wrap('readable') %}
+            <div class="ContactFindUs__map">
+              {{ findUsContentArea.mapEmbed | safe }}
+              <div class="ContactFindUs__map__pad">
+            </div>
+          {% endcall %}
+        </div>
+      </div>
+    {% endcall %} {# SylSection #}
   </main>
 {% endblock %}

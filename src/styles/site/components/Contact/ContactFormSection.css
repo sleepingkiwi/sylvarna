@@ -1,0 +1,100 @@
+/** ContactFormSection
+ *  ------------------------------------------------------------------------------------------------
+ *  styling is almost entirely generic. apart from the decorative images
+**/
+
+.ContactFormSection {
+  /* ... */
+}
+
+.ContactFormSection__decoration {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  flex-direction: column;
+  margin: calc(var(--bsu-s) * -1);
+  overflow: hidden;
+
+  /*
+    Take up as much space as possible up tp 20% of screen
+    width is based on the space remaining after center content has had it's space plus some pad
+  */
+  min-width: var(--bsu);
+  max-width: 20vw;
+  width: calc((100vw - (var(--layout-readable) + var(--bsu-l) * 2)) * 0.5);
+
+  /*
+    Random(ish) flex basis to keep things fun
+  */
+  & .ContactFormSection__decoration__image:nth-child(1),
+  & .ContactFormSection__decoration__image:nth-child(4),
+  & .ContactFormSection__decoration__image:nth-child(6) {
+    flex-grow: 1;
+  }
+
+  & .ContactFormSection__decoration__image:nth-child(5) {
+    flex-grow: 1.3;
+  }
+
+  & .ContactFormSection__decoration__image:nth-child(2) {
+    flex-grow: 1.6;
+  }
+
+  & .ContactFormSection__decoration__image:nth-child(3) {
+    flex-grow: 0.8;
+  }
+}
+
+.ContactFormSection__decoration__image {
+  margin: var(--bsu-s);
+  flex: 1;
+  position: relative;
+
+  /* images ar sized by height with the excess cropped by overflow hidden */
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: none;
+  }
+}
+
+.ContactFormSection__decoration--even {
+  left: auto;
+  right: 0;
+
+  & img {
+    left: auto;
+    right: 0;
+  }
+
+  & .ContactFormSection__decoration__image:nth-child(2),
+  & .ContactFormSection__decoration__image:nth-child(4),
+  & .ContactFormSection__decoration__image:nth-child(6) {
+    flex-grow: 0.7;
+  }
+
+  & .ContactFormSection__decoration__image:nth-child(5) {
+    flex-grow: 1.3;
+  }
+
+  & .ContactFormSection__decoration__image:nth-child(3) {
+    flex-grow: 1.8;
+  }
+
+  & .ContactFormSection__decoration__image:nth-child(1) {
+    flex-grow: 1.6;
+  }
+}
+
+@media (--squire) {
+
+  .ContactFormSection__decoration {
+    display: flex;
+  }
+}

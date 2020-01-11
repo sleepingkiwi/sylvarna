@@ -42,14 +42,6 @@
 @import 'site/components/SylSection.css';
 @import 'site/components/PaddedImage.css';
 
-/* large sections and pages */
-@import 'site/components/SiteHeader.css';
-@import 'site/components/SiteFooter.css';
-
-@import 'site/components/Homepage/HomepageCarousel.css';
-@import 'site/components/Homepage/HomepageMain.css';
-@import 'site/components/Homepage/HomepagePartnerships.css';
-
 /* block level components */
 @import 'site/components/HeaderText.css';
 @import 'site/components/PageHeader.css';
@@ -61,6 +53,17 @@
 
 @import 'site/components/FooterCTA.css';
 @import 'site/components/FooterPartners.css';
+
+/* site sections and pages */
+@import 'site/components/SiteHeader.css';
+@import 'site/components/SiteFooter.css';
+
+@import 'site/components/Homepage/HomepageCarousel.css';
+@import 'site/components/Homepage/HomepageMain.css';
+@import 'site/components/Homepage/HomepagePartnerships.css';
+
+@import 'site/components/Contact/ContactFormSection.css';
+@import 'site/components/Contact/ContactFindUs.css';
 
 
 /** Helpers & overrides

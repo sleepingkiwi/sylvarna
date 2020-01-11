@@ -21,6 +21,8 @@
         version : v1577892372,
         width:964
       }
+    lazy=false
+      Boolean
   ---
 #}
 
@@ -29,7 +31,8 @@
 {% from "components/Wrap.njk" import Wrap with context %}
 
 {% macro InlineImage(
-  img={}
+  img={},
+  lazy=false
 ) %}
   {# render nothing if there's not src #}
   {% if img.src %}
@@ -67,6 +70,7 @@
             {{ img.base }}w_2400,c_limit,q_auto:best/{{ img.version }}/{{ img.filename }} 2400w"
           sizes="(min-width: 1200px) 1200px, 100vw"
           alt="{{ img.alt | default('') }}"
+          {{ 'loading=lazy' if lazy }}
         >
       {% endcall %} {# PaddedImage #}
     {% endcall %} {# Wrap #}
