@@ -247,6 +247,7 @@ genericContentBlocks:
     content:
       - quoteAttribution: 'Mr & Mrs Johnson, Chichester England'
         quoteText: ' Pellentesque nulla odio, commodo ut tortor sed, consectetur'
+        textAlign: 'center'
         type: quote
     type: oneColumn
 kitchensBlock:
