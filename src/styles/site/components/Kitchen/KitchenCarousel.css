@@ -106,86 +106,39 @@
  *  ------------------------------------------------------------------------------------------------
  *  presented as a reel if there's no js
 **/
-.no-js .KitchenCarousel {
-  display: flex;
-  height: 60vh;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-color: var(--colour-primary) var(--colour-subtler);
-  background: var(--colour-primary);
-}
+.no-js .KitchenInformation {
 
-.no-js .KitchenCarousel::-webkit-scrollbar {
-  height: 1rem;
-}
+  & .SylSection__column {
+    flex-basis: 100%;
+  }
 
-.no-js .KitchenCarousel::-webkit-scrollbar-track {
-  background-color: var(--colour-subtler);
-}
+  & .SylSection__column--right {
+    order: 1;
+  }
 
-.no-js .KitchenCarousel::-webkit-scrollbar-thumb {
-  background-color: var(--colour-subtler);
-  background-image: linear-gradient(var(--colour-subtler) 0, var(--colour-subtler) 0.25rem, var(--colour-primary) 0.25rem, var(--colour-primary) 0.75rem, var(--colour-subtler) 0.75rem);
-}
+  & .SylSection__column--left {
+    order: 2;
+    margin-top: var(--bsu-l);
+  }
 
-.no-js .KitchenCarousel > * {
-  flex: 0 0 90vw;
-}
+  & .KitchenCarousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 
+  & .KitchenCarousel__slide {
+    width: 50%;
+    flex: 0 0 auto;
 
-.no-js .KitchenCarousel > img {
-  height: 100%;
-  flex-basis: auto;
-  width: auto;
-}
+    & .Wrap {
+      padding: var(--bsu-s);
+      margin: 0;
+    }
+  }
 
-.no-js .KitchenCarousel > * + * {
-  margin-left: var(--bsu-s);
-}
-
-.no-js .KitchenCarousel.overflowing {
-  padding-bottom: 1rem;
-}
-
-.no-js .KitchenCarousel nav {
-  display: none;
-}
-
-/** Alternative no-js styling
- *  ------------------------------------------------------------------------------------------------
- *  presented as a block
-**/
-.no-js--alt .KitchenCarousel {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.no-js--alt .KitchenCarousel__slide:first-child {
-  flex-basis: 100%;
-  border-bottom: var(--bsu-s) solid var(--colour-background-body);
-}
-
-/* everything but the first child */
-.no-js--alt .KitchenCarousel__slide:nth-child(1n+2) {
-  min-height: 0;
-  margin: 0 auto;
-  flex: 1;
-  flex-basis: 50%;
-  border-bottom: var(--bsu-s) solid var(--colour-background-body);
-}
-
-/* every even numbered child after first */
-.no-js--alt .KitchenCarousel__slide:nth-child(2n+2) {
-  border-right: var(--bsu-xs) solid var(--colour-background-body);
-}
-
-/* every odd numbered slide after the first */
-.no-js--alt .KitchenCarousel__slide:nth-child(2n+3) {
-  border-left: var(--bsu-xs) solid var(--colour-background-body);
-}
-
-/* the last child if there are an uneven total number including the intro slide */
-.no-js--alt .KitchenCarousel__slide:nth-child(2n+2):last-of-type {
-  flex-basis: 100%;
-  border: 0;
+  & .KitchenCarousel nav {
+    display: none;
+  }
 }

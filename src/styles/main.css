@@ -52,6 +52,7 @@
 @import 'site/components/BrochurePopup.css';
 
 @import 'site/components/StyleLanding.css';
+@import 'site/components/KitchenGrid.css';
 
 @import 'site/components/FooterCTA.css';
 @import 'site/components/FooterPartners.css';
@@ -68,6 +69,7 @@
 @import 'site/components/Contact/ContactFindUs.css';
 
 @import 'site/components/Kitchen/KitchenCarousel.css';
+@import 'site/components/Kitchen/Kitchen.css';
 
 
 /** Helpers & overrides

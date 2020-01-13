@@ -1,0 +1,25 @@
+/** Styles for the kitchen page that aren't component specific.
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+.KitchenMaterials__materials {
+  padding: 0;
+  text-align: center;
+
+  & li {
+    display: block;
+    font-size: var(--s2);
+  }
+
+  & a {
+    display: block;
+    color: var(--colour-invert);
+
+    /* padding: var(--bsu-xs); */
+
+    &:hover,
+    &:focus {
+      color: var(--colour-secondary);
+    }
+  }
+}

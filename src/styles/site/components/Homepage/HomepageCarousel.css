@@ -179,10 +179,6 @@
   margin-left: var(--bsu-s);
 }
 
-.no-js .HomepageCarousel.overflowing {
-  padding-bottom: 1rem;
-}
-
 .no-js .HomepageCarousel nav {
   display: none;
 }

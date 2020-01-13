@@ -1,0 +1,116 @@
+{#
+  Kitchen Grid
+  Grid of kitchens. Appear in multiple places
+  -
+  On the kitchen pages these also show the matched Materials and Styles as links under each item
+  -
+  All of the collections used here are created in .eleventy.js
+  ---
+  CMS _data:
+    collections.keyedKitchens
+    collections.keyedMaterials
+    collections.keyedStyles
+  ---
+  args:
+    kitchens=[
+      {
+        title: 'Kitchen Title',
+        // THESE THREE ONLY APPEAR ON KITCHEN PAGES WHERE THIS IS A SIMILAR KITCHEN
+        materialMatches: [
+          'Material Titles',
+          ...
+        ],
+        styleMatches: [
+          'Style Titles',
+          ...
+        ],
+        matches: 6, // count of matches
+      }
+    ]
+  ---
+#}
+
+{# import components #}
+{% from "components/InlineImage.njk" import InlineImage with context %}
+{% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/Wrap.njk" import Wrap with context %}
+
+{% macro KitchenGrid(
+  kitchens=[],
+  showOwnMaterials=false
+) %}
+<div class="KitchenGrid">
+  {% call Wrap(flows=true) %}
+    {% for kitchen in kitchens %}
+      <div class="KitchenGrid__kitchen">
+        <a href="{{ collections.keyedKitchens[kitchen.title].url }}">
+          {{
+            InlineImage(
+              img=collections.keyedKitchens[kitchen.title].data.kitchenInformation.additionalImages[0].additionalImage,
+              lazy=true,
+              forcePadding=58,
+              contain=false
+            )
+          }}
+        </a>
+
+        <div class="KitchenGrid__kitchen__content">
+          <a href="{{ collections.keyedKitchens[kitchen.title].url }}">
+            {{
+              HeaderText(
+                header=kitchen.title,
+                pre=collections.keyedKitchens[kitchen.title].data.kitchenInformation.location,
+                priority='h3',
+                align='center'
+              )
+            }}
+          </a>
+
+          {#
+            subtle links to all of the matching elements if there were any matches
+          #}
+          {% if kitchen.matches and kitchen.matches > 0 %}
+            <div class="KitchenGrid__matching-tags u-gaps">
+              <ul>
+                <li>
+                  {{'Also features:' if kitchen.matches and kitchen.matches > 0 else 'Featuring:'}}
+                </li>
+                {% for matchTitle in kitchen.materialMatches %}
+                <li
+                  class="KitchenGrid__matching-tag KitchenGrid__matching-tag--material"
+                >
+                  <a href="{{ collections.keyedMaterials[matchTitle].url }}">{{ matchTitle }}</a>
+                </li>
+                {% endfor %}
+
+                {% for matchTitle in kitchen.styleMatches %}
+                  <li
+                    class="KitchenGrid__matching-tag KitchenGrid__matching-tag--style"
+                  >
+                    <a href="{{ collections.keyedStyles[matchTitle].url }}">{{ matchTitle }} Style</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% elif showOwnMaterials %}
+            <div class="KitchenGrid__matching-tags u-gaps">
+              <ul>
+                <li>
+                  Featuring:
+                </li>
+                {% for matchTitle in collections.keyedKitchens[kitchen.title].data.materials %}
+                <li
+                  class="KitchenGrid__matching-tag KitchenGrid__matching-tag--material"
+                >
+                  <a href="{{ collections.keyedMaterials[matchTitle].url }}">{{ matchTitle }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% endcall %}
+</div>
+{% endmacro %}

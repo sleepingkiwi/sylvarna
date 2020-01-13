@@ -167,6 +167,64 @@ module.exports = (eleventyConfig) => {
     );
   });
 
+  /** KitchensUsing...
+   *  ----------------------------------------------------------------------------------------------
+   *  collections keyed by fileSlug for each style and material
+   *  to retrieve kitchens that mention them!
+   *  -
+   *  collections return an array of kitchen titles
+  **/
+  eleventyConfig.addCollection('kitchensUsingMaterial', function(collection) {
+    return collection.getFilteredByTag('material').map(
+      // for every material we return an object with their slug and array of kitchens that use it
+      (material) => {
+        return {
+          fileSlug: material.fileSlug,
+          kitchens: collection.getFilteredByTag('kitchen').filter(
+            (kitchen) =>( kitchen.data.materials || []).includes(material.data.title),
+          ).map(
+            (kitchen) => ({ title: kitchen.data.title, })
+          ),
+        };
+      }
+    // finally we reduce to an object of arrays keyed by fileslug
+    ).reduce(
+      (accumulator, current) => {
+        return {
+          ...accumulator,
+          [current.fileSlug]: current.kitchens,
+        };
+      },
+      {},
+    );
+  });
+
+  eleventyConfig.addCollection('kitchensUsingStyle', function(collection) {
+    return collection.getFilteredByTag('style').map(
+      // for every style we return an object with their slug and array of kitchens that use it
+      (style) => {
+        return {
+          fileSlug: style.fileSlug,
+          kitchens: collection.getFilteredByTag('kitchen').filter(
+            (kitchen) => (kitchen.data.styles || []).includes(style.data.title),
+          ).map(
+            (kitchen) => ({ title: kitchen.data.title, })
+          ),
+        };
+      }
+    // finally we reduce to an object of arrays keyed by fileslug
+    ).reduce(
+      (accumulator, current) => {
+        return {
+          ...accumulator,
+          [current.fileSlug]: current.kitchens,
+        };
+      },
+      {},
+    );
+  });
+
+
 
   return {
     dir: {

@@ -1,0 +1,90 @@
+{#
+  Kitchen Carousel
+  The square image carousels that appear on the kitchen pages
+  ---
+  CMS _data:
+    -
+  ---
+  args:
+    images=[
+      {
+        additionalImage:
+          ExtraImage Object
+      },
+      ...
+    ],
+    cover=false
+  ---
+#}
+
+{# import components #}
+{% from "components/InlineImage.njk" import InlineImage with context %}
+{% from "components/Wrap.njk" import Wrap with context %}
+
+{% macro KitchenCarousel(
+  images=[],
+  cover=false
+) %}
+<div
+  class="KitchenCarousel js--carousel"
+  data-active-slide="KitchenCarousel-1"
+  data-trans="400"
+>
+
+  {% for image in images %}
+    <div
+      class="KitchenCarousel__slide js--carousel__slide{{
+        ' js--carousel__slide--active js--carousel__slide--trans-in' if loop.first
+      }}"
+      id="KitchenCarousel-{{loop.index}}"
+    >
+      {{
+        InlineImage(
+          img=image.additionalImage,
+          lazy=true,
+          forcePadding=100,
+          contain=false if cover else true
+        )
+      }}
+    </div>
+  {% endfor %}
+
+  <nav class="js--carousel__nav">
+    <div class="js--carousel__nav__links">
+      {% call Wrap(flavour='readable') %}
+        <ul>
+
+          {# prev #}
+          <li>
+            <button data-action="prev" class="js--carousel__nav-link js--carousel__nav-link--prev">
+              <span class="visuallyhidden">
+                prev
+              </span>
+            </button>
+          </li>
+
+          {# all content links #}
+          {% for image in images %}
+            <li>
+              <button data-action="target" data-target="KitchenCarousel-{{loop.index}}" class="js--carousel__nav-link{{
+                ' js--carousel__nav-link--active' if loop.first
+              }}"></button>
+            </li>
+          {% endfor %}
+
+          {# next #}
+          <li>
+            <button data-action="next" class="js--carousel__nav-link js--carousel__nav-link--next">
+              <span class="visuallyhidden">
+                next
+              </span>
+            </button>
+          </li>
+
+        </ul>
+      {% endcall %}
+    </div>
+  </nav>
+
+</div>
+{% endmacro %}

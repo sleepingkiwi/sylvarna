@@ -62,6 +62,7 @@ genericContentBlocks:
         type: header
       - cta: Explore Timeless Style
         ctaURL: /style/timeless
+        textAlign: center
         type: cta
     type: oneColumn
 kitchensTitle: Explore Example Kitchens

@@ -1,23 +1,9 @@
 ---
 layout: layouts/kitchen
 tags: kitchen
-title: Joe and Zelle
+title: Joseph and Giselle
 kitchenInformation:
   additionalImages:
-    - additionalImage:
-        alt: ''
-        base: 'https://res.cloudinary.com/coolguy/image/upload/'
-        dominant:
-          - 208
-          - 209
-          - 213
-        filename: stock%20images/christian-mackie-SxBca4GcC9k-unsplash_kxyi8y.jpg
-        height: 2007
-        src: >-
-          https://res.cloudinary.com/coolguy/image/upload/v1577895801/stock%20images/christian-mackie-SxBca4GcC9k-unsplash_kxyi8y.jpg
-        version: v1577895801
-        width: 3000
-      name: Stools and counter
     - additionalImage:
         alt: ''
         base: 'https://res.cloudinary.com/coolguy/image/upload/'
@@ -32,6 +18,20 @@ kitchenInformation:
         version: v1577895801
         width: 2000
       name: Fridge (portrait)
+    - additionalImage:
+        alt: ''
+        base: 'https://res.cloudinary.com/coolguy/image/upload/'
+        dominant:
+          - 208
+          - 209
+          - 213
+        filename: stock%20images/christian-mackie-SxBca4GcC9k-unsplash_kxyi8y.jpg
+        height: 2007
+        src: >-
+          https://res.cloudinary.com/coolguy/image/upload/v1577895801/stock%20images/christian-mackie-SxBca4GcC9k-unsplash_kxyi8y.jpg
+        version: v1577895801
+        width: 3000
+      name: Stools and counter
     - additionalImage:
         alt: ''
         base: 'https://res.cloudinary.com/coolguy/image/upload/'

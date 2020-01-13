@@ -53,7 +53,7 @@ kitchenInformation:
     modern & contemporary edge
   location: London
 genericContentBlocks:
-  - backgroundColour: false
+  - backgroundColour: true
     content:
       - quoteText: >-
           ellentesque habitant morbi tristique senectus. Tincidunt arcu non

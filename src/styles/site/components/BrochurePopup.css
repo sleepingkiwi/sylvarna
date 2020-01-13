@@ -149,6 +149,10 @@
   z-index: 2;
 }
 
+.no-js .BrochurePopup .js--popup-close {
+  display: none;
+}
+
 .js .BrochurePopup__wrap {
   width: 90%;
   max-width: var(--layout-content);

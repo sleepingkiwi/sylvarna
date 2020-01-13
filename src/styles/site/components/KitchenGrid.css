@@ -1,0 +1,110 @@
+/** It's a grid, full of kitchens!
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+@media (--yeoman) {
+  /* .KitchenGrid > .Wrap {
+    display: grid;
+    grid-gap: var(--bsu);
+    grid-template-columns: repeat(auto-fill, minmax(33.3%, 1fr));
+  }
+
+  .KitchenGrid__kitchen {
+    margin: 0;
+  } */
+
+  .KitchenGrid > .Wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .KitchenGrid__kitchen {
+    flex: 1 1 auto;
+    max-width: 33.3%;
+    min-width: 300px;
+    margin: 0;
+    border: var(--bsu-s) solid var(--colour-invert);
+  }
+}
+
+/* .KitchenGrid > .Wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.KitchenGrid__kitchen {
+  flex: 1 1 auto;
+  max-width: 33.3%;
+  min-width: 250px;
+} */
+
+
+/** Kitchen Item Styles
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+.KitchenGrid__kitchen .Wrap {
+  padding: 0;
+}
+
+.KitchenGrid__kitchen__content {
+  padding: var(--bsu) var(--bsu-s);
+}
+
+.KitchenGrid__kitchen {
+  background-color: var(--colour-background-subtle);
+
+  & > a,
+  & .KitchenGrid__kitchen__content > a {
+    display: block;
+    color: var(--colour-primary);
+
+    &:hover,
+    &:focus {
+      color: var(--colour-highlight);
+    }
+  }
+
+  & .HeaderText__header {
+    font-size: var(--s3);
+  }
+
+  & .HeaderText__post {
+    font-size: 0.8em;
+    color: var(--colour-subtle);
+    margin-top: var(--bsu-s);
+  }
+}
+
+.KitchenGrid__matching-tags {
+  margin-top: var(--bsu-xs);
+
+  --gap: var(--bsu-s);
+
+  & li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+
+.KitchenGrid__matching-tags li {
+  display: block;
+  font-size: 0.8em;
+  color: var(--colour-subtle);
+}
+
+.KitchenGrid__matching-tags ul {
+  justify-content: center;
+}
+
+.KitchenGrid__matching-tags a {
+  color: var(--colour-subtle);
+
+  &:hover,
+  &:focus {
+    color: var(--colour-highlight);
+  }
+}
