@@ -253,13 +253,12 @@ genericContentBlocks:
 kitchensBlock:
   hero:
     header: Explore example kitchens
-    kitchens:
-      - Jane and Christian
-      - Joe and Zelle
-      - Joseph and Giselle
     subHeader: By material type
+  kitchens:
+    - Jane and Christian
+    - Joe and Zelle
+    - Joseph and Giselle
 transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
-
