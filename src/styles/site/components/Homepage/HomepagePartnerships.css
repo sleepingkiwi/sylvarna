@@ -46,7 +46,7 @@
   }
 }
 
-@media (--squire) {
+@media (--column-break) {
 
   .HomepagePartnerships {
     text-align: left;

@@ -25,76 +25,92 @@
       )
     }}
 
-    {% call SylSection(
-      class='StyleBigPicture',
-      secondaryColour=false
-    ) %}
-      <div class="SylSection__columns SylSection__columns--weighted-right sylSection__columns--aligned-center u-flows">
-        <div class="SylSection__column SylSection__column--left u-flows">
-          {{
-            HeaderText(
-              pre=styleBigPicture.preHeader,
-              header=styleBigPicture.header,
-              priority='h2',
-              align='left'
-            )
-          }}
-          {{
-            RichText(
-              content=styleBigPicture.textOne,
-              align='left'
-            )
-          }}
-        </div>
-        <div class="SylSection__column SylSection__column--right u-flows">
-          {{
-            InlineImage(
-              img=styleBigPicture.imageOne
-            )
-          }}
-        </div>
-      </div>
-    {% endcall %} {# SylSection #}
 
-    {% call SylSection(
-      class='StyleBigPictureTwo',
-      secondaryColour=false,
-      collapseTop=true
-    ) %}
-      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
-        <div class="SylSection__column SylSection__column--left u-flows">
-          {{
-            InlineImage(
-              img=styleBigPicture.imageTwo
-            )
-          }}
+    {#
+      big picture
+    #}
+    <section
+      class="StyleBigPicture"
+    >
+      {% call SylSection(
+        class='StyleBigPicture__one',
+        secondaryColour=false,
+        isAChild=true
+      ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-right sylSection__columns--aligned-center u-flows">
+          <div class="SylSection__column SylSection__column--left u-flows">
+            {{
+              HeaderText(
+                pre=styleBigPicture.preHeader,
+                header=styleBigPicture.header,
+                priority='h2',
+                align='left'
+              )
+            }}
+            {{
+              RichText(
+                content=styleBigPicture.textOne,
+                align='left'
+              )
+            }}
+          </div>
+          <div class="SylSection__column SylSection__column--right u-flows">
+            {{
+              InlineImage(
+                img=styleBigPicture.imageOne
+              )
+            }}
+          </div>
         </div>
-        <div class="SylSection__column SylSection__column--right u-flows">
-          {{
-            RichText(
-              content=styleBigPicture.textTwo,
-              align='left'
-            )
-          }}
-          {{
-            CTA(
-              text=styleBigPicture.ctaOne,
-              url=styleBigPicture.ctaURLOne,
-              align='left'
-            )
-          }}
-          {{
-            CTA(
-              text=styleBigPicture.ctaTwo,
-              url=styleBigPicture.ctaURLTwo,
-              align='left'
-            )
-          }}
+      {% endcall %} {# SylSection #}
+
+      {% call SylSection(
+        class='StyleBigPicture__two',
+        secondaryColour=false,
+        collapseTop=true,
+        isAChild=true
+      ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
+          <div class="SylSection__column SylSection__column--left u-flows">
+            {{
+              InlineImage(
+                img=styleBigPicture.imageTwo
+              )
+            }}
+          </div>
+          <div class="SylSection__column SylSection__column--right u-flows">
+            {{
+              RichText(
+                content=styleBigPicture.textTwo,
+                align='left'
+              )
+            }}
+            {{
+              CTA(
+                text=styleBigPicture.ctas.ctaOne,
+                url=styleBigPicture.ctas.ctaURLOne,
+                align='left'
+              )
+            }}
+            {{
+              CTA(
+                text=styleBigPicture.ctas.ctaTwo,
+                url=styleBigPicture.ctas.ctaURLTwo,
+                align='left'
+              )
+            }}
+          </div>
         </div>
-      </div>
-    {% endcall %} {# SylSection #}
+      {% endcall %} {# SylSection #}
+    </section>
+    {#
+      end of big picture
+    #}
 
 
+    {#
+      quote and generic content
+    #}
     {% call SylSection(
       class='StyleQuoteOne',
       secondaryColour=true,
@@ -113,101 +129,119 @@
     {{
       CustomContent(quoteGenericOne.genericContentBlocks)
     }}
+    {#
+      end of quote and generic content
+    #}
 
 
-    {% call SylSection(
-      class='StyleDetails',
-      secondaryColour=false
-    ) %}
-      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
-        <div class="SylSection__column SylSection__column--left u-flows">
+    {#
+      style details
+    #}
+    <section
+      class="StyleDetails"
+    >
+      {% call SylSection(
+        class='StyleDetails__primary',
+        secondaryColour=false,
+        isAChild=true
+      ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+          <div class="SylSection__column SylSection__column--left u-flows">
+              {{
+                InlineImage(
+                  img=styleDetails.imageOne,
+                  forcePadding=100
+                )
+              }}
+            <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+              <div class="SylSection__column SylSection__column--left u-flows">
+                {{
+                  InlineImage(
+                    img=styleDetails.imageTwo,
+                    forcePadding=128
+                  )
+                }}
+              </div>
+              <div class="SylSection__column SylSection__column--right u-flows">
+                {{
+                  InlineImage(
+                    img=styleDetails.imageThree,
+                    forcePadding=128
+                  )
+                }}
+              </div>
+            </div>
+          </div>
+          <div class="SylSection__column SylSection__column--right u-flows">
             {{
-              InlineImage(
-                img=styleDetails.imageOne,
-                forcePadding=100
+              HeaderText(
+                pre=styleDetails.preHeader,
+                header=styleDetails.header,
+                priority='h2',
+                align='left'
               )
             }}
-          <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
-            <div class="SylSection__column SylSection__column--left u-flows">
-              {{
-                InlineImage(
-                  img=styleDetails.imageTwo,
-                  forcePadding=128
-                )
-              }}
-            </div>
-            <div class="SylSection__column SylSection__column--right u-flows">
-              {{
-                InlineImage(
-                  img=styleDetails.imageThree,
-                  forcePadding=128
-                )
-              }}
-            </div>
+            {{
+              RichText(
+                content=styleDetails.textOne,
+                align='left'
+              )
+            }}
+            {{
+              InlineImage(
+                img=styleDetails.imageFour
+              )
+            }}
           </div>
         </div>
-        <div class="SylSection__column SylSection__column--right u-flows">
-          {{
-            HeaderText(
-              pre=styleDetails.preHeader,
-              header=styleDetails.header,
-              priority='h2',
-              align='left'
-            )
-          }}
-          {{
-            RichText(
-              content=styleDetails.textOne,
-              align='left'
-            )
-          }}
-          {{
-            InlineImage(
-              img=styleDetails.imageFour
-            )
-          }}
-        </div>
-      </div>
-    {% endcall %} {# SylSection #}
+      {% endcall %} {# SylSection #}
 
-    {% call SylSection(
-      class='StyleDetailsSecondaryText',
-      secondaryColour=false,
-      collapseTop=true
-    ) %}
-      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
-        <div class="SylSection__column SylSection__column--left u-flows">
-          <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
-            <div class="SylSection__column SylSection__column--left u-flows">
-              {{
-                RichText(
-                  content=styleDetails.textTwo,
-                  align='left'
-                )
-              }}
-            </div>
-            <div class="SylSection__column SylSection__column--right u-flows">
-              {{
-                RichText(
-                  content=styleDetails.textThree,
-                  align='left'
-                )
-              }}
+      {% call SylSection(
+        class='StyleDetails__secondary-text',
+        secondaryColour=false,
+        collapseTop=true,
+        isAChild=true
+      ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+          <div class="SylSection__column SylSection__column--left u-flows">
+            <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+              <div class="SylSection__column SylSection__column--left u-flows">
+                {{
+                  RichText(
+                    content=styleDetails.textTwo,
+                    align='left'
+                  )
+                }}
+              </div>
+              <div class="SylSection__column SylSection__column--right u-flows">
+                {{
+                  RichText(
+                    content=styleDetails.textThree,
+                    align='left'
+                  )
+                }}
+              </div>
             </div>
           </div>
+          <div class="SylSection__column SylSection__column--right u-flows">
+            {{
+              RichText(
+                content=styleDetails.textFour,
+                align='left'
+              )
+            }}
+          </div>
         </div>
-        <div class="SylSection__column SylSection__column--right u-flows">
-          {{
-            RichText(
-              content=styleDetails.textFour,
-              align='left'
-            )
-          }}
-        </div>
-      </div>
-    {% endcall %} {# SylSection #}
+      {% endcall %} {# SylSection #}
+    </section>
+    {#
+      end of style details
+    #}
 
 
+    {#
+     style materials
+    #}
     {% call SylSection(
       class='StyleMaterials',
       secondaryColour=true
@@ -260,8 +294,14 @@
         </div>
       </div>
     {% endcall %} {# SylSection #}
+    {#
+      end of style details
+    #}
 
 
+    {#
+      second quote and generic content
+    #}
     {% call SylSection(
       class='StyleQuoteTwo',
       secondaryColour=false,
@@ -278,78 +318,90 @@
 
     {{
       CustomContent(quoteGenericTwo.genericContentBlocks)
-    }}
+    }}/
+    {#
+      end of second quote and generic content
+    #}
 
 
-    {% call SylSection(
-      class='StyleExampleKitchensHeader',
-      secondaryColour=true,
-      backgroundImage=exampleKitchens.hero
-    ) %}
-      {{
-        HeaderText(
-          post=exampleKitchens.subHeader,
-          header=exampleKitchens.header,
-          priority='h2',
-          align='center'
-        )
-      }}
-    {% endcall %} {# SylSection #}
+    {#
+      example kitchens carousel
+    #}
+    <section class="StyleExampleKitchens">
+      {% call SylSection(
+        class='StyleExampleKitchens__header',
+        secondaryColour=true,
+        backgroundImage=exampleKitchens.hero,
+        isAChild=true
+      ) %}
+        {{
+          HeaderText(
+            post=exampleKitchens.subHeader,
+            header=exampleKitchens.header,
+            priority='h2',
+            align='center'
+          )
+        }}
+      {% endcall %} {# SylSection #}
 
 
-    {% call SylSection(
-      class='StyleExampleKitchens',
-      secondaryColour=false
-    ) %}
-      <div
-        class="StyleKitchenCarousel js--carousel u-flows"
-        data-active-slide="StyleKitchenCarousel-1"
-        data-trans="400"
-      >
-        {% for kitchen in collections.kitchensUsingStyle[page.fileSlug] %}
-          <div
-            class="StyleKitchenCarousel__slide js--carousel__slide SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows{{
-              ' js--carousel__slide--active js--carousel__slide--trans-in' if loop.first
-            }}"
-            id="StyleKitchenCarousel-{{loop.index}}"
-          >
-            <div class="SylSection__column SylSection__column--left u-flows">
-              {{
-                InlineImage(
-                  img=collections.keyedKitchens[kitchen.title].data.kitchenInformation.additionalImages[0].additionalImage,
-                  forcePadding=100,
-                  lazy=true
-                )
-              }}
+      {% call SylSection(
+        class='StyleExampleKitchens__kitchens',
+        secondaryColour=false,
+        isAChild=true
+      ) %}
+        <div
+          class="StyleKitchenCarousel js--carousel u-flows"
+          data-active-slide="StyleKitchenCarousel-1"
+          data-trans="400"
+        >
+          {% for kitchen in collections.kitchensUsingStyle[page.fileSlug] %}
+            <div
+              class="StyleKitchenCarousel__slide js--carousel__slide SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows{{
+                ' js--carousel__slide--active js--carousel__slide--trans-in' if loop.first
+              }}"
+              id="StyleKitchenCarousel-{{loop.index}}"
+            >
+              <div class="SylSection__column SylSection__column--left u-flows">
+                {{
+                  InlineImage(
+                    img=collections.keyedKitchens[kitchen.title].data.kitchenInformation.additionalImages[0].additionalImage,
+                    forcePadding=100,
+                    lazy=true
+                  )
+                }}
+              </div>
+              <div class="SylSection__column SylSection__column--right u-flows">
+                {{
+                  HeaderText(
+                    pre=collections.keyedKitchens[kitchen.title].data.kitchenInformation.location,
+                    header=kitchen.title,
+                    priority='h3',
+                    align='left'
+                  )
+                }}
+                {{
+                  RichText(
+                    content=collections.keyedKitchens[kitchen.title].data.kitchenInformation.description,
+                    align='left'
+                  )
+                }}
+                {{
+                  CTA(
+                    text=(collections.keyedKitchens[kitchen.title].data.kitchenInformation.ctaText | default('See kitchen info')),
+                    url=collections.keyedKitchens[kitchen.title].url,
+                    align='left'
+                  )
+                }}
+              </div>
             </div>
-            <div class="SylSection__column SylSection__column--right u-flows">
-              {{
-                HeaderText(
-                  pre=collections.keyedKitchens[kitchen.title].data.kitchenInformation.location,
-                  header=kitchen.title,
-                  priority='h3',
-                  align='left'
-                )
-              }}
-              {{
-                RichText(
-                  content=collections.keyedKitchens[kitchen.title].data.kitchenInformation.description,
-                  align='left'
-                )
-              }}
-              {{
-                CTA(
-                  text=(collections.keyedKitchens[kitchen.title].data.kitchenInformation.ctaText | default('See kitchen info')),
-                  url=collections.keyedKitchens[kitchen.title].url,
-                  align='left'
-                )
-              }}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    {% endcall %} {# SylSection #}
-
+          {% endfor %}
+        </div>
+      {% endcall %} {# SylSection #}
+    </section>
+    {#
+      end of example kitchens carousel
+    #}
 
   </main>
 {% endblock %}

@@ -71,6 +71,10 @@
 @import 'site/components/Kitchen/KitchenCarousel.css';
 @import 'site/components/Kitchen/Kitchen.css';
 
+@import 'site/components/Bespoke/Bespoke.css';
+
+@import 'site/components/Style/Style.css';
+
 
 /** Helpers & overrides
  *  ------------------------------------------------------------------------------------------------

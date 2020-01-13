@@ -26,6 +26,9 @@
       )
     }}
 
+    {#
+      introduction
+    #}
     {% call SylSection(
       class='BespokeIntroduction',
       secondaryColour=false
@@ -64,160 +67,195 @@
         four
         five
     #}
+    {#
+      end introduction
+    #}
 
 
-    {% call SylSection(
-      class='BespokeMaterialsHeader',
-      secondaryColour=true,
-      backgroundImage=materialsBlock.hero.hero
-    ) %}
-      {{
-        HeaderText(
-          post=materialsBlock.hero.subHeader,
-          header=materialsBlock.hero.header,
-          priority='h2',
-          align='center'
-        )
-      }}
-    {% endcall %} {# SylSection #}
+    {#
+      bespoke materials
+    #}
+    <section
+      class="BespokeMaterials"
+    >
+      {% call SylSection(
+        class='BespokeMaterials__header',
+        secondaryColour=true,
+        backgroundImage=materialsBlock.hero.hero,
+        isAChild=true
+      ) %}
+        {{
+          HeaderText(
+            post=materialsBlock.hero.subHeader,
+            header=materialsBlock.hero.header,
+            priority='h2',
+            align='center'
+          )
+        }}
+      {% endcall %} {# SylSection #}
 
-    {% call SylSection(
-      class='BespokeMaterials',
-      secondaryColour=false
-    ) %}
-      <div class="SylSection__columns SylSection__columns--weighted-left sylSection__columns--aligned-center u-flows">
-        <div class="SylSection__column SylSection__column--left u-flows">
-          {{
-            HeaderText(
-              pre=materialsBlock.preHeader,
-              header=materialsBlock.header,
-              priority='h2',
-              align='left'
-            )
-          }}
-          {{
-            RichText(
-              content=materialsBlock.text,
-              align='left'
-            )
-          }}
-          {{
-            CTA(
-              text=materialsBlock.cta,
-              url=materialsBlock.ctaURL,
-              align='left'
-            )
-          }}
+      {% call SylSection(
+        class='BespokeMaterials__materials',
+        secondaryColour=false,
+        isAChild=true
+      ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-left sylSection__columns--aligned-center u-flows">
+          <div class="SylSection__column SylSection__column--left u-flows">
+            {{
+              HeaderText(
+                pre=materialsBlock.preHeader,
+                header=materialsBlock.header,
+                priority='h2',
+                align='left'
+              )
+            }}
+            {{
+              RichText(
+                content=materialsBlock.text,
+                align='left'
+              )
+            }}
+            {{
+              CTA(
+                text=materialsBlock.cta,
+                url=materialsBlock.ctaURL,
+                align='left'
+              )
+            }}
+          </div>
+          <div class="SylSection__column SylSection__column--right u-flows">
+
+          </div>
         </div>
-        <div class="SylSection__column SylSection__column--right u-flows">
+      {% endcall %} {# SylSection #}
+    </section>
+    {#
+      end bespoke materials
+    #}
 
+
+    {#
+      bespoke fittings
+    #}
+    <section
+      class="BespokeFittings"
+    >
+      {% call SylSection(
+        class='BespokeFittings__header',
+        secondaryColour=true,
+        backgroundImage=fittingsBlock.hero.hero
+      ) %}
+        {{
+          HeaderText(
+            post=fittingsBlock.hero.subHeader,
+            header=fittingsBlock.hero.header,
+            priority='h2',
+            align='center'
+          )
+        }}
+      {% endcall %} {# SylSection #}
+
+      {% call SylSection(
+        class='BespokeFittings__fittings',
+        secondaryColour=false
+      ) %}
+        {{
+          HeaderText(
+            pre=fittingsBlock.preHeader,
+            header=fittingsBlock.header,
+            priority='h2',
+            align='center'
+          )
+        }}
+        {{
+          RichText(
+            content=fittingsBlock.text,
+            align='center'
+          )
+        }}
+        {{
+          CTA(
+            text=fittingsBlock.cta,
+            url=fittingsBlock.ctaURL,
+            align='center'
+          )
+        }}
+      {% endcall %} {# SylSection #}
+    </section>
+    {#
+      end bespoke fittings
+    #}
+
+
+
+    {#
+      bespoke appliances
+    #}
+    <section
+      class="BespokeSppliances"
+    >
+      {% call SylSection(
+        class='BespokeAppliances__header',
+        secondaryColour=true,
+        backgroundImage=appliancesBlock.hero.hero
+      ) %}
+        {{
+          HeaderText(
+            post=appliancesBlock.hero.subHeader,
+            header=appliancesBlock.hero.header,
+            priority='h2',
+            align='center'
+          )
+        }}
+      {% endcall %} {# SylSection #}
+
+      {% call SylSection(
+        class='BespokeAppliances__appliances',
+        secondaryColour=false
+      ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
+          <div class="SylSection__column SylSection__column--left u-flows">
+            {{
+              InlineImage(
+                img=appliancesBlock.leftImageOne
+              )
+            }}
+            {{
+              InlineImage(
+                img=appliancesBlock.leftImageTwo
+              )
+            }}
+          </div>
+          <div class="SylSection__column SylSection__column--right u-flows">
+            {{
+              HeaderText(
+                pre=appliancesBlock.preHeader,
+                header=appliancesBlock.header,
+                priority='h2',
+                align='left'
+              )
+            }}
+            {{
+              RichText(
+                content=appliancesBlock.text,
+                align='left'
+              )
+            }}
+            {{
+              CTA(
+                text=appliancesBlock.cta,
+                url=appliancesBlock.ctaURL,
+                align='left'
+              )
+            }}
+          </div>
         </div>
-      </div>
-    {% endcall %} {# SylSection #}
+      {% endcall %} {# SylSection #}
+    </section>
+    {#
+      end bespoke appliances
+    #}
 
-
-
-    {% call SylSection(
-      class='BespokeFittingsHeader',
-      secondaryColour=true,
-      backgroundImage=fittingsBlock.hero.hero
-    ) %}
-      {{
-        HeaderText(
-          post=fittingsBlock.hero.subHeader,
-          header=fittingsBlock.hero.header,
-          priority='h2',
-          align='center'
-        )
-      }}
-    {% endcall %} {# SylSection #}
-
-    {% call SylSection(
-      class='BespokeFittings',
-      secondaryColour=false
-    ) %}
-      {{
-        HeaderText(
-          pre=fittingsBlock.preHeader,
-          header=fittingsBlock.header,
-          priority='h2',
-          align='center'
-        )
-      }}
-      {{
-        RichText(
-          content=fittingsBlock.text,
-          align='center'
-        )
-      }}
-      {{
-        CTA(
-          text=fittingsBlock.cta,
-          url=fittingsBlock.ctaURL,
-          align='center'
-        )
-      }}
-    {% endcall %} {# SylSection #}
-
-
-
-    {% call SylSection(
-      class='BespokeAppliancesHeader',
-      secondaryColour=true,
-      backgroundImage=appliancesBlock.hero.hero
-    ) %}
-      {{
-        HeaderText(
-          post=appliancesBlock.hero.subHeader,
-          header=appliancesBlock.hero.header,
-          priority='h2',
-          align='center'
-        )
-      }}
-    {% endcall %} {# SylSection #}
-
-    {% call SylSection(
-      class='BespokeAppliances',
-      secondaryColour=false
-    ) %}
-      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
-        <div class="SylSection__column SylSection__column--left u-flows">
-          {{
-            InlineImage(
-              img=appliancesBlock.leftImageOne
-            )
-          }}
-          {{
-            InlineImage(
-              img=appliancesBlock.leftImageTwo
-            )
-          }}
-        </div>
-        <div class="SylSection__column SylSection__column--right u-flows">
-          {{
-            HeaderText(
-              pre=appliancesBlock.preHeader,
-              header=appliancesBlock.header,
-              priority='h2',
-              align='left'
-            )
-          }}
-          {{
-            RichText(
-              content=appliancesBlock.text,
-              align='left'
-            )
-          }}
-          {{
-            CTA(
-              text=appliancesBlock.cta,
-              url=appliancesBlock.ctaURL,
-              align='left'
-            )
-          }}
-        </div>
-      </div>
-    {% endcall %} {# SylSection #}
 
 
     {{
@@ -225,6 +263,9 @@
     }}
 
 
+    {#
+      bespoke kitchens grid
+    #}
     {% call SylSection(
       class='BespokeKitchensGrid',
       secondaryColour=false,

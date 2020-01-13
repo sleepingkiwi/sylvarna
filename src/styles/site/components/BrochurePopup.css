@@ -99,7 +99,7 @@
 
 /* two columns at large sizes */
 
-@media (--squire) {
+@media (--column-break) {
 
   .js .BrochurePopup {
 

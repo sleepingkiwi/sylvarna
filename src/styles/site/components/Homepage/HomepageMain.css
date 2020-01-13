@@ -21,7 +21,7 @@
  *  faron wide screens.
 **/
 
-@media (--squire) {
+@media (--column-break) {
 
   .HomepageMain {
     text-align: left;

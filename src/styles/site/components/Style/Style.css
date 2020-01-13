@@ -1,0 +1,129 @@
+/** Styles for the Style pages that aren't enough for individual components
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+
+/** Big picture image to edge + line
+ *  ------------------------------------------------------------------------------------------------
+ *  there's a nice little line that connects the image above to the text below.
+ *  top image also butts right up to the right of the page
+ *  lovely.
+ *  -
+ *  We only apply this when two columns are used.
+**/
+.StyleBigPicture__one {
+  padding-bottom: var(--bsu);
+}
+
+@media (--column-break) {
+
+  .StyleBigPicture {
+    overflow: hidden;
+  }
+
+  .StyleBigPicture__one {
+    padding-bottom: calc(var(--section-padding) * 0.5);
+    position: relative;
+    z-index: 2;
+
+    & .SylSection__columns {
+      padding-right: 0;
+    }
+
+    & .SylSection__column--right .Wrap {
+      padding-right: 0;
+    }
+
+    & .SylSection__content {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      z-index: 1;
+      height: 50%;
+      width: 100%;
+      background: var(--colour-background-body);
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .StyleBigPicture__two {
+    position: relative;
+    z-index: 1;
+
+    & .RichText {
+      position: relative;
+      background: var(--colour-background-body);
+
+      & .Wrap {
+        position: relative;
+        z-index: 2;
+        background: var(--colour-background-body);
+        padding-top: var(--bsu);
+      }
+
+      &::after {
+        content: ' ';
+        position: absolute;
+        z-index: 1;
+        height: 2000px; /* this could be computed probably... */
+        left: 50%;
+        bottom: 0;
+        width: 3px;
+        margin-left: -1.5px;
+        background: var(--colour-subtler);
+      }
+    }
+  }
+}
+
+
+/** Details - align image bottoms and draw lines to text!
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+@media (--column-break) {
+
+  .StyleDetails__primary .SylSection__column--left .SylSection__column--left .Wrap {
+    padding-left: 0;
+  }
+
+  .StyleDetails__primary .SylSection__column--left .SylSection__column--right .Wrap {
+    padding-right: 0;
+  }
+
+  .StyleDetails__primary .SylSection__columns {
+    align-items: stretch;
+
+    & > .SylSection__column--right {
+      display: flex;
+      flex-direction: column;
+
+      & > .Wrap {
+        width: 100%;
+        flex: 1;
+        position: relative;
+      }
+
+      & .PaddedImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      & .PaddedImage__padder {
+        display: none;
+      }
+
+      & img {
+        object-fit: cover;
+      }
+    }
+  }
+}

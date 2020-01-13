@@ -19,7 +19,8 @@
       String
       Optional
     lazy=false,
-    collapseTop=false
+    collapseTop=false,
+    isAChild=false // is this a smaller part of a parent section?
   ---
 #}
 
@@ -32,11 +33,12 @@
   backgroundImage={},
   id='',
   lazy=false,
-  collapseTop=false
+  collapseTop=false,
+  isAChild=false
 ) %}
 {% set content = caller() %} {# ref: https://github.com/mozilla/nunjucks/issues/664 #}
 
-  <section
+  <{{ 'section' if not isAChild else 'div'}}
     class="SylSection {{
       class
     }} SylSection--{{
@@ -78,6 +80,6 @@
         {{ BackgroundImageFull(backgroundImage, lazy) }}
       </div>
     {% endif %}
-  </section>
+  </{{ 'section' if not isAChild else 'div'}}>
 
 {% endmacro %}
