@@ -247,14 +247,19 @@ genericContentBlocks:
     content:
       - quoteAttribution: 'Mr & Mrs Johnson, Chichester England'
         quoteText: ' Pellentesque nulla odio, commodo ut tortor sed, consectetur'
-        textAlign: 'center'
+        textAlign: center
         type: quote
     type: oneColumn
 kitchensBlock:
   hero:
     header: Explore example kitchens
+    kitchens:
+      - Jane and Christian
+      - Joe and Zelle
+      - Joseph and Giselle
     subHeader: By material type
 transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
+
