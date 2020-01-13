@@ -62,9 +62,17 @@
     display: block;
     color: var(--colour-primary);
 
+    & .PaddedImage img {
+      transition: transform var(--time-transition) var(--ease-default);
+    }
+
     &:hover,
     &:focus {
       color: var(--colour-highlight);
+
+      & .PaddedImage img {
+        transform: scale(1.1);
+      }
     }
   }
 

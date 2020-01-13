@@ -74,6 +74,14 @@ const kitchenConfig = [
         ],
       },
       {
+        label: 'CTA text for style pages',
+        name: 'ctaText',
+        widget: 'string',
+        required: false,
+        default: 'See kitchen info',
+        hint: 'When we link to this kitchen from a style page, this is the text that will appear in the CTA.',
+      },
+      {
         label: 'Force Carousel Images to squares?',
         name: 'cover',
         widget: 'boolean',

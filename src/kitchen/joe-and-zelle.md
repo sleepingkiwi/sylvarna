@@ -47,6 +47,7 @@ kitchenInformation:
         width: 3000
       name: Buns in the oven
   cover: false
+  ctaText: View more images
   description: >-
     Quis commodo odio aenean sed adipiscing diam donec adipiscing tristique.
     Arcu dictum varius duis at consectetur lorem. Fermentum et sollicitudin ac
@@ -54,7 +55,8 @@ kitchenInformation:
     arcu non sodales neque sodales ut etiam sit amet.
   location: London
 genericContentBlocks:
-  - backgroundColour: true
+  - backgroundColour: false
+    collapseTop: true
     content:
       - quoteText: >-
           ellentesque habitant morbi tristique senectus. Tincidunt arcu non

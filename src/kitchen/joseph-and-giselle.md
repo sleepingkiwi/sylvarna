@@ -54,7 +54,8 @@ kitchenInformation:
     arcu non sodales neque sodales ut etiam sit amet.
   location: London
 genericContentBlocks:
-  - backgroundColour: true
+  - backgroundColour: false
+    collapseTop: true
     content:
       - quoteText: >-
           ellentesque habitant morbi tristique senectus. Tincidunt arcu non

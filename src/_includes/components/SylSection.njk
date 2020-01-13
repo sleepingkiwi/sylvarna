@@ -18,6 +18,8 @@
     id=''
       String
       Optional
+    lazy=false,
+    collapseTop=false
   ---
 #}
 
@@ -29,7 +31,8 @@
   secondaryColour=false,
   backgroundImage={},
   id='',
-  lazy=false
+  lazy=false,
+  collapseTop=false
 ) %}
 {% set content = caller() %} {# ref: https://github.com/mozilla/nunjucks/issues/664 #}
 
@@ -40,6 +43,8 @@
       'with-back' if backgroundImage.src else 'no-back'
     }} SylSection--back-{{
       'secondary' if secondaryColour else 'primary'
+    }} SylSection--{{
+      'top-collapse' if collapseTop else 'uncollapsed'
     }}"
 
     {% if id %}

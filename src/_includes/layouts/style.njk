@@ -8,6 +8,12 @@
 #}
 {% from "components/PageHeader.njk" import PageHeader with context %}
 {% from "components/CustomContent.njk" import CustomContent with context %}
+{% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/RichText.njk" import RichText with context %}
+{% from "components/QuoteText.njk" import QuoteText with context %}
+{% from "components/InlineImage.njk" import InlineImage with context %}
+{% from "components/CTA.njk" import CTA with context %}
+{% from "components/SylSection.njk" import SylSection with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--style" tabindex="-1">
@@ -19,23 +25,89 @@
       )
     }}
 
-    <div class="Wrap Wrap--readable">
-      <pre>
-<strong>styleBigPicture:</strong>
+    {% call SylSection(
+      class='StyleBigPicture',
+      secondaryColour=false
+    ) %}
+      <div class="SylSection__columns SylSection__columns--weighted-right sylSection__columns--aligned-center u-flows">
+        <div class="SylSection__column SylSection__column--left u-flows">
+          {{
+            HeaderText(
+              pre=styleBigPicture.preHeader,
+              header=styleBigPicture.header,
+              priority='h2',
+              align='left'
+            )
+          }}
+          {{
+            RichText(
+              content=styleBigPicture.textOne,
+              align='left'
+            )
+          }}
+        </div>
+        <div class="SylSection__column SylSection__column--right u-flows">
+          {{
+            InlineImage(
+              img=styleBigPicture.imageOne
+            )
+          }}
+        </div>
+      </div>
+    {% endcall %} {# SylSection #}
 
-{{styleBigPicture | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+    {% call SylSection(
+      class='StyleBigPictureTwo',
+      secondaryColour=false,
+      collapseTop=true
+    ) %}
+      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
+        <div class="SylSection__column SylSection__column--left u-flows">
+          {{
+            InlineImage(
+              img=styleBigPicture.imageTwo
+            )
+          }}
+        </div>
+        <div class="SylSection__column SylSection__column--right u-flows">
+          {{
+            RichText(
+              content=styleBigPicture.textTwo,
+              align='left'
+            )
+          }}
+          {{
+            CTA(
+              text=styleBigPicture.ctaOne,
+              url=styleBigPicture.ctaURLOne,
+              align='left'
+            )
+          }}
+          {{
+            CTA(
+              text=styleBigPicture.ctaTwo,
+              url=styleBigPicture.ctaURLTwo,
+              align='left'
+            )
+          }}
+        </div>
+      </div>
+    {% endcall %} {# SylSection #}
 
----
 
-<strong>quoteGenericOne:</strong>
-
-{{quoteGenericOne | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-
----
-
-      </pre>
-    </div>
-
+    {% call SylSection(
+      class='StyleQuoteOne',
+      secondaryColour=true,
+      backgroundImage=quoteGenericOne.hero
+    ) %}
+      {{
+        QuoteText(
+          quote=quoteGenericOne.quoteText,
+          attribution=quoteGenericOne.quoteAttribution,
+          align='left'
+        )
+      }}
+    {% endcall %} {# SylSection #}
 
 
     {{
@@ -43,48 +115,241 @@
     }}
 
 
-    <div class="Wrap Wrap--readable">
-      <pre>
+    {% call SylSection(
+      class='StyleDetails',
+      secondaryColour=false
+    ) %}
+      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+        <div class="SylSection__column SylSection__column--left u-flows">
+            {{
+              InlineImage(
+                img=styleDetails.imageOne,
+                forcePadding=100
+              )
+            }}
+          <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+            <div class="SylSection__column SylSection__column--left u-flows">
+              {{
+                InlineImage(
+                  img=styleDetails.imageTwo,
+                  forcePadding=128
+                )
+              }}
+            </div>
+            <div class="SylSection__column SylSection__column--right u-flows">
+              {{
+                InlineImage(
+                  img=styleDetails.imageThree,
+                  forcePadding=128
+                )
+              }}
+            </div>
+          </div>
+        </div>
+        <div class="SylSection__column SylSection__column--right u-flows">
+          {{
+            HeaderText(
+              pre=styleDetails.preHeader,
+              header=styleDetails.header,
+              priority='h2',
+              align='left'
+            )
+          }}
+          {{
+            RichText(
+              content=styleDetails.textOne,
+              align='left'
+            )
+          }}
+          {{
+            InlineImage(
+              img=styleDetails.imageFour
+            )
+          }}
+        </div>
+      </div>
+    {% endcall %} {# SylSection #}
 
----
+    {% call SylSection(
+      class='StyleDetailsSecondaryText',
+      secondaryColour=false,
+      collapseTop=true
+    ) %}
+      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+        <div class="SylSection__column SylSection__column--left u-flows">
+          <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+            <div class="SylSection__column SylSection__column--left u-flows">
+              {{
+                RichText(
+                  content=styleDetails.textTwo,
+                  align='left'
+                )
+              }}
+            </div>
+            <div class="SylSection__column SylSection__column--right u-flows">
+              {{
+                RichText(
+                  content=styleDetails.textThree,
+                  align='left'
+                )
+              }}
+            </div>
+          </div>
+        </div>
+        <div class="SylSection__column SylSection__column--right u-flows">
+          {{
+            RichText(
+              content=styleDetails.textFour,
+              align='left'
+            )
+          }}
+        </div>
+      </div>
+    {% endcall %} {# SylSection #}
 
-<strong>styleDetails:</strong>
 
-{{styleDetails | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
+    {% call SylSection(
+      class='StyleMaterials',
+      secondaryColour=true
+    ) %}
+      <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
+        <div class="SylSection__column SylSection__column--left u-flows">
+          {% for material in materials.materials %}
+            {{
+              InlineImage(
+                img=collections.keyedMaterials[material].data.hero.hero,
+                forcePadding=100
+              )
+            }}
+          {% endfor %}
+        </div>
+        <div class="SylSection__column SylSection__column--right u-flows">
+          {{
+            HeaderText(
+              pre=materials.preHeader,
+              header=materials.header,
+              priority='h2',
+              align='left'
+            )
+          }}
+          {{
+            RichText(
+              content=materials.text,
+              align='left'
+            )
+          }}
+          {{
+            CTA(
+              text=materials.ctaOne,
+              url=materials.ctaURLOne,
+              align='left'
+            )
+          }}
 
----
-
-<strong>materials:</strong>
-
-{{materials | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-
----
-
-<strong>quoteGenericTwo:</strong>
-
-{{quoteGenericTwo | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-
----
-
-      </pre>
-    </div>
+          <div class="StyleMaterials__materials">
+            <ul>
+              {% for material in materials.materials %}
+                <li>
+                  <a href="{{ collections.keyedMaterials[material].url }}">
+                    {{ material }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% endcall %} {# SylSection #}
 
 
+    {% call SylSection(
+      class='StyleQuoteTwo',
+      secondaryColour=false,
+      backgroundImage=quoteGenericTwo.hero
+    ) %}
+      {{
+        QuoteText(
+          quote=quoteGenericTwo.quoteText,
+          attribution=quoteGenericTwo.quoteAttribution,
+          align='center'
+        )
+      }}
+    {% endcall %} {# SylSection #}
 
     {{
       CustomContent(quoteGenericTwo.genericContentBlocks)
     }}
 
 
-    <div class="Wrap Wrap--readable">
-      <pre>
+    {% call SylSection(
+      class='StyleExampleKitchensHeader',
+      secondaryColour=true,
+      backgroundImage=exampleKitchens.hero
+    ) %}
+      {{
+        HeaderText(
+          post=exampleKitchens.subHeader,
+          header=exampleKitchens.header,
+          priority='h2',
+          align='center'
+        )
+      }}
+    {% endcall %} {# SylSection #}
 
----
 
-<strong>exampleKitchens:</strong>
+    {% call SylSection(
+      class='StyleExampleKitchens',
+      secondaryColour=false
+    ) %}
+      <div
+        class="StyleKitchenCarousel js--carousel u-flows"
+        data-active-slide="StyleKitchenCarousel-1"
+        data-trans="400"
+      >
+        {% for kitchen in collections.kitchensUsingStyle[page.fileSlug] %}
+          <div
+            class="StyleKitchenCarousel__slide js--carousel__slide SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows{{
+              ' js--carousel__slide--active js--carousel__slide--trans-in' if loop.first
+            }}"
+            id="StyleKitchenCarousel-{{loop.index}}"
+          >
+            <div class="SylSection__column SylSection__column--left u-flows">
+              {{
+                InlineImage(
+                  img=collections.keyedKitchens[kitchen.title].data.kitchenInformation.additionalImages[0].additionalImage,
+                  forcePadding=100,
+                  lazy=true
+                )
+              }}
+            </div>
+            <div class="SylSection__column SylSection__column--right u-flows">
+              {{
+                HeaderText(
+                  pre=collections.keyedKitchens[kitchen.title].data.kitchenInformation.location,
+                  header=kitchen.title,
+                  priority='h3',
+                  align='left'
+                )
+              }}
+              {{
+                RichText(
+                  content=collections.keyedKitchens[kitchen.title].data.kitchenInformation.description,
+                  align='left'
+                )
+              }}
+              {{
+                CTA(
+                  text=(collections.keyedKitchens[kitchen.title].data.kitchenInformation.ctaText | default('See kitchen info')),
+                  url=collections.keyedKitchens[kitchen.title].url,
+                  align='left'
+                )
+              }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endcall %} {# SylSection #}
 
-{{exampleKitchens | dump | safe | replace('":"', ' : ') | replace(',"', '<br><br>') | replace('"', "") | replace('{', '<div style="padding-left:24px;">') | replace('}', '</div>')}}
-</pre>
-    </div>
+
   </main>
 {% endblock %}

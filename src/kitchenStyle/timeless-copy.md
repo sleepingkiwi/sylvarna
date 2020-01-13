@@ -25,7 +25,7 @@ styleBigPicture:
   ctas:
     ctaOne: Order a brochure
     ctaTwo: Book an appointment
-    ctaURTwoL: /contact
+    ctaURLTwo: /contact
   header: Timeless
   imageOne:
     alt: View across a white marble counter top in a Modern Classic style kitchen

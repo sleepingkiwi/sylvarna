@@ -192,7 +192,7 @@ const kitchenConfig = [
           },
           {
             label: 'Second CTA Link',
-            name: 'ctaURTwoL',
+            name: 'ctaURLTwo',
             widget: 'string',
             default: '/contact',
             required: false,

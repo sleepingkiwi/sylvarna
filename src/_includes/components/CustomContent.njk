@@ -46,7 +46,8 @@
       {% call SylSection(
         class='CustomContent',
         secondaryColour=section.backgroundColour,
-        backgroundImage=section.backgroundImage
+        backgroundImage=section.backgroundImage,
+        collapseTop=section.collapseTop
       ) %}
         {% if section.type === 'oneColumn' %}
           {{

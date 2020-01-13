@@ -37,12 +37,21 @@
 }
 
 .SylSection--no-back {
-  min-height: 20vh;
+  min-height: 0;
   padding: calc(var(--section-padding) * 0.5) 0;
 
   &::after {
     content: none;
   }
+}
+
+/** This class is for content that's meant to trail the section above.
+ *  ------------------------------------------------------------------------------------------------
+ *  min-height and padding are dropped...
+**/
+.SylSection--top-collapse {
+  padding-top: 0;
+  min-height: 0;
 }
 
 .SylSection__content {

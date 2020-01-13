@@ -21,6 +21,14 @@ const contentBlockOptions = [
     required: false,
     hint: 'centrally cropped full bleed image. Optional.',
   },
+  {
+    label: 'Collapse Top Padding?',
+    name: 'collapseTop',
+    widget: 'boolean',
+    default: false,
+    required: false,
+    hint: 'Generally you should leave this. If you want more complex layouts however, you can collapse the padding at the top which helps group content that shares a background colour with the block above.',
+  },
 ];
 
 const contentBlockContentTypes = {
