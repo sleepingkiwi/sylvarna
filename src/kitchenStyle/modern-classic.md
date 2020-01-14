@@ -179,6 +179,7 @@ materials:
   materials:
     - Solid Oak
     - Marble Counters
+    - Neff N90 Extractor
   text: >-
     Metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Id
     diam vel quam elementum pulvinar. Tincidunt ornare massa eget egestas purus.
@@ -209,3 +210,4 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
+
