@@ -2,6 +2,13 @@
  *  ------------------------------------------------------------------------------------------------
 **/
 
+/** Bigger headers
+ *  ------------------------------------------------------------------------------------------------
+**/
+.site-main--style > .PageHeader {
+  min-height: 60vh; /* taller than normal SylSections */
+}
+
 
 /** Big picture image to edge + line
  *  ------------------------------------------------------------------------------------------------
@@ -73,8 +80,8 @@
         height: 2000px; /* this could be computed probably... */
         left: 50%;
         bottom: 0;
-        width: 3px;
-        margin-left: -1.5px;
+        width: 2px;
+        margin-left: -1px;
         background: var(--colour-subtler);
       }
     }
@@ -87,7 +94,9 @@
 **/
 
 @media (--column-break) {
-
+  /** positioning
+   *  ----------------------------------------------------------------------------------------------
+  **/
   .StyleDetails__primary .SylSection__column--left .SylSection__column--left .Wrap {
     padding-left: 0;
   }
@@ -96,7 +105,7 @@
     padding-right: 0;
   }
 
-  .StyleDetails__primary .SylSection__columns {
+  .StyleDetails__primary__flex-columns {
     align-items: stretch;
 
     & > .SylSection__column--right {
@@ -115,6 +124,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        background: transparent !important;
       }
 
       & .PaddedImage__padder {
@@ -123,7 +133,45 @@
 
       & img {
         object-fit: cover;
+        padding: 0 var(--bsu);
       }
     }
+  }
+
+  /** lines
+   *  ----------------------------------------------------------------------------------------------
+  **/
+  .StyleDetails__secondary-text .RichText {
+    position: relative;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      z-index: 1;
+      height: calc(100% + (var(--section-padding) * 0.5)); /* this could be computed probably... */
+      left: var(--bsu);
+      bottom: 0;
+      width: 2px;
+      background: var(--colour-subtler);
+    }
+  }
+
+  .StyleDetails__secondary-text .SylSection__column--left .SylSection__column--left .Wrap {
+    padding-left: var(--bsu-xs);
+  }
+
+  .StyleDetails__secondary-text .SylSection__column--left .SylSection__column--left .RichText::after {
+    left: 0;
+  }
+
+  .StyleDetails__secondary-text .SylSection__column--left .SylSection__column--right .Wrap {
+    padding-top: var(--bsu);
+    background: var(--colour-background-body);
+    position: relative;
+    z-index: 2;
+  }
+
+  .StyleDetails__secondary-text__columns > .SylSection__column--right .Wrap {
+    padding-left: calc(var(--bsu-xs) + var(--bsu));
   }
 }

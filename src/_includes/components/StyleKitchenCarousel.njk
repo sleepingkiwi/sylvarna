@@ -1,0 +1,107 @@
+{#
+  Style page Example Kitchen Carousel
+  The image carousels that appear on style pages
+  ---
+  CMS _data:
+    collections.kitchensUsingStyle
+    collections.keyedKitchens
+  ---
+  args:
+    currentStlye
+      String
+      Required
+  ---
+#}
+
+{# import components #}
+{% from "components/InlineImage.njk" import InlineImage with context %}
+{% from "components/Wrap.njk" import Wrap with context %}
+
+{% macro StyleKitchenCarousel(
+  currentStyle
+) %}
+{% if currentStyle %}
+<div
+  class="StyleKitchenCarousel js--carousel u-flows"
+  data-active-slide="StyleKitchenCarousel-1"
+  data-trans="400"
+>
+  {% for kitchen in collections.kitchensUsingStyle[currentStyle] %}
+    <div
+      class="StyleKitchenCarousel__slide js--carousel__slide SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows{{
+        ' js--carousel__slide--active js--carousel__slide--trans-in' if loop.first
+      }}"
+      id="StyleKitchenCarousel-{{loop.index}}"
+    >
+      <div class="SylSection__column SylSection__column--left u-flows">
+        {{
+          InlineImage(
+            img=collections.keyedKitchens[kitchen.title].data.kitchenInformation.additionalImages[0].additionalImage,
+            forcePadding=100,
+            lazy=true
+          )
+        }}
+      </div>
+      <div class="SylSection__column SylSection__column--right u-flows">
+        {{
+          HeaderText(
+            pre=collections.keyedKitchens[kitchen.title].data.kitchenInformation.location,
+            header=kitchen.title,
+            priority='h3',
+            align='left'
+          )
+        }}
+        {{
+          RichText(
+            content=collections.keyedKitchens[kitchen.title].data.kitchenInformation.description,
+            align='left'
+          )
+        }}
+        {{
+          CTA(
+            text=(collections.keyedKitchens[kitchen.title].data.kitchenInformation.ctaText | default('See kitchen info')),
+            url=collections.keyedKitchens[kitchen.title].url,
+            align='left'
+          )
+        }}
+
+        <nav class="js--carousel__nav">
+          <div class="js--carousel__nav__links">
+            <ul>
+
+              {# prev #}
+              <li>
+                <button data-action="prev" class="js--carousel__nav-link js--carousel__nav-link--prev">
+                  <span class="visuallyhidden">
+                    prev
+                  </span>
+                </button>
+              </li>
+
+              {# all content links #}
+              {% for kitchen in collections.kitchensUsingStyle[currentStyle] %}
+                <li>
+                  <button data-action="target" data-target="StyleKitchenCarousel-{{loop.index}}" class="js--carousel__nav-link{{
+                    ' js--carousel__nav-link--active' if loop.first
+                  }}"></button>
+                </li>
+              {% endfor %}
+
+              {# next #}
+              <li>
+                <button data-action="next" class="js--carousel__nav-link js--carousel__nav-link--next">
+                  <span class="visuallyhidden">
+                    next
+                  </span>
+                </button>
+              </li>
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+{% endmacro %}

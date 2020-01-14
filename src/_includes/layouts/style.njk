@@ -14,6 +14,8 @@
 {% from "components/InlineImage.njk" import InlineImage with context %}
 {% from "components/CTA.njk" import CTA with context %}
 {% from "components/SylSection.njk" import SylSection with context %}
+{% from "components/StyleKitchenCarousel.njk" import StyleKitchenCarousel with context %}
+
 
 {% block content %}
   <main id="main-content" class="site-main site-main--style" tabindex="-1">
@@ -145,7 +147,7 @@
         secondaryColour=false,
         isAChild=true
       ) %}
-        <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+        <div class="StyleDetails__primary__flex-columns SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
           <div class="SylSection__column SylSection__column--left u-flows">
               {{
                 InlineImage(
@@ -172,7 +174,7 @@
               </div>
             </div>
           </div>
-          <div class="SylSection__column SylSection__column--right u-flows">
+          <div class="SylSection__column SylSection__column--right StyleDetails__primary__flexed-image u-flows">
             {{
               HeaderText(
                 pre=styleDetails.preHeader,
@@ -202,7 +204,7 @@
         collapseTop=true,
         isAChild=true
       ) %}
-        <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
+        <div class="StyleDetails__secondary-text__columns SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
           <div class="SylSection__column SylSection__column--left u-flows">
             <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-top u-flows">
               <div class="SylSection__column SylSection__column--left u-flows">
@@ -350,53 +352,9 @@
         secondaryColour=false,
         isAChild=true
       ) %}
-        <div
-          class="StyleKitchenCarousel js--carousel u-flows"
-          data-active-slide="StyleKitchenCarousel-1"
-          data-trans="400"
-        >
-          {% for kitchen in collections.kitchensUsingStyle[page.fileSlug] %}
-            <div
-              class="StyleKitchenCarousel__slide js--carousel__slide SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows{{
-                ' js--carousel__slide--active js--carousel__slide--trans-in' if loop.first
-              }}"
-              id="StyleKitchenCarousel-{{loop.index}}"
-            >
-              <div class="SylSection__column SylSection__column--left u-flows">
-                {{
-                  InlineImage(
-                    img=collections.keyedKitchens[kitchen.title].data.kitchenInformation.additionalImages[0].additionalImage,
-                    forcePadding=100,
-                    lazy=true
-                  )
-                }}
-              </div>
-              <div class="SylSection__column SylSection__column--right u-flows">
-                {{
-                  HeaderText(
-                    pre=collections.keyedKitchens[kitchen.title].data.kitchenInformation.location,
-                    header=kitchen.title,
-                    priority='h3',
-                    align='left'
-                  )
-                }}
-                {{
-                  RichText(
-                    content=collections.keyedKitchens[kitchen.title].data.kitchenInformation.description,
-                    align='left'
-                  )
-                }}
-                {{
-                  CTA(
-                    text=(collections.keyedKitchens[kitchen.title].data.kitchenInformation.ctaText | default('See kitchen info')),
-                    url=collections.keyedKitchens[kitchen.title].url,
-                    align='left'
-                  )
-                }}
-              </div>
-            </div>
-          {% endfor %}
-        </div>
+        {{
+          StyleKitchenCarousel(page.fileSlug)
+        }}
       {% endcall %} {# SylSection #}
     </section>
     {#
