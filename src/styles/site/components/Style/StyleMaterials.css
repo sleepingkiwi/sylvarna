@@ -1,0 +1,223 @@
+/** StyleMaterials
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+/** List styles
+ *  ------------------------------------------------------------------------------------------------
+**/
+.StyleMaterials__materials {
+  color: var(--colour-invert);
+  text-align: center;
+  padding: var(--bsu) 0 var(--section-padding) 0;
+
+  & ul {
+    text-align: left;
+
+    /* display: inline-block; */
+  }
+
+  & a {
+    color: inherit;
+    font-family: var(--ff-heading);
+    font-size: var(--s2);
+    display: inline-flex;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+      color: var(--colour-primary);
+
+      &::before {
+        color: var(--colour-primary);
+      }
+    }
+
+    &::before {
+      content: ' ';
+      display: block;
+      background: transparent;
+      border: 2px solid;
+      cursor: pointer;
+      width: var(--s0);
+      height: var(--s0);
+      margin-right: var(--bsu-s);
+      color: var(--colour-invert);
+      transition:
+        color var(--time-transition) var(--ease-default),
+        background-color var(--time-transition) var(--ease-default);
+      transform: rotate(45deg);
+    }
+  }
+
+  & li {
+    display: block;
+
+    &::after {
+      content: ' ';
+      display: block;
+      margin: var(--bsu-xs) 0;
+      height: var(--bsu-l);
+      border-left: 2px solid;
+      margin-left: calc((var(--s0) * 0.5) - 1px);
+    }
+  }
+
+  & li:last-child::after {
+    content: none;
+  }
+}
+
+.js .StyleMaterials__materials .js--material--active {
+
+  &::before {
+    background: currentColor;
+  }
+}
+
+
+/** Column and image layout
+ *  ------------------------------------------------------------------------------------------------
+**/
+.StyleMaterials {
+  background: transparent;
+  padding: 0;
+  overflow: hidden;
+
+  & .SylSection__content {
+    background: var(--colour-subtler);
+  }
+
+  & .SylSection__columns {
+    align-items: center;
+
+    @supports (position: sticky) {
+      align-items: stretch;
+    }
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.6;
+    }
+  }
+
+  & .SylSection__column--right {
+    padding: var(--section-padding) 0 0;
+    margin-top: 0;
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.StyleMaterials__images {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+
+  & .js--material-image {
+    height: 100%;
+    max-height: 100vh;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    transition: flex-grow var(--time-transition) var(--ease-default);
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(179, 189, 193, 0) 0%, rgba(179, 189, 193, 1) 100%);
+    }
+  }
+
+  & .js--material-image--active {
+    flex-grow: 3;
+  }
+
+  & img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: auto;
+    max-width: none;
+    height: 100%;
+    transform: translateX(-50%);
+
+    @supports (object-fit: cover) {
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+      transform: none;
+    }
+  }
+}
+
+
+@media (--column-break) {
+
+  .StyleMaterials {
+    padding: var(--section-padding) 0;
+
+    @supports (position: sticky) {
+      overflow: visible;
+    }
+
+    & .SylSection__content {
+      background: var(--colour-subtler);
+    }
+
+    & .SylSection__columns {
+      padding-left: 0;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    & .SylSection__column--left {
+
+      @supports (position: sticky) {
+        margin-top: calc(var(--section-padding) * -1);
+      }
+    }
+
+    & .SylSection__column--right {
+      padding: var(--section-padding) 0;
+    }
+  }
+
+  .StyleMaterials__images {
+    position: relative;
+    position: sticky;
+    height: auto;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    align-items: flex-start;
+    padding-right: var(--bsu-l);
+
+    & .js--material-image {
+      height: 40rem;
+      max-height: 60vh;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

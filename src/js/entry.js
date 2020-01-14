@@ -4,6 +4,7 @@
 import { init as carouselInit } from './carousels';
 import { init as popupsInit, closePopups } from './popups';
 import { init as formsInit } from './forms';
+import { init as materialObserverInit } from './material-observer';
 
 
 /** Init everything
@@ -15,6 +16,8 @@ carouselInit();
 popupsInit();
 // validation listeners for forms
 formsInit();
+// observing materials in lists on style pages (if relevant)
+materialObserverInit();
 
 
 /** Cancel/close stuff with the esc key

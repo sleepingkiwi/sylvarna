@@ -14,7 +14,8 @@
 {% from "components/InlineImage.njk" import InlineImage with context %}
 {% from "components/CTA.njk" import CTA with context %}
 {% from "components/SylSection.njk" import SylSection with context %}
-{% from "components/StyleKitchenCarousel.njk" import StyleKitchenCarousel with context %}
+{% from "components/StyleKitchenCarousel.njk" import StyleKitchenCarousel with context %}H
+{% from "components/Wrap.njk" import Wrap with context %}HeaderText
 
 
 {% block content %}
@@ -250,14 +251,26 @@
     ) %}
       <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
         <div class="SylSection__column SylSection__column--left u-flows">
-          {% for material in materials.materials %}
-            {{
-              InlineImage(
-                img=collections.keyedMaterials[material].data.hero.hero,
-                forcePadding=100
-              )
-            }}
-          {% endfor %}
+          <div class="StyleMaterials__images">
+            {% for material in materials.materials %}
+              <div
+                class="js--material-image{{ ' js--material-image--active' if loop.first }}"
+                id="js--material-image-{{loop.index}}"
+              >
+                {% set img = collections.keyedMaterials[material].data.hero.hero %}
+                <img
+                  src="{{ img.base }}w_1200,c_limit,q_auto:best/{{ img.version }}/{{ img.filename }}"
+                  srcset="{{ img.base }}w_600,c_limit,q_auto:best/{{ img.version }}/{{ img.filename }} 600w,
+                    {{ img.base }}w_1200,c_limit,q_auto:best/{{ img.version }}/{{ img.filename }} 1200w,
+                    {{ img.base }}w_1800,c_limit,q_auto:best/{{ img.version }}/{{ img.filename }} 1800w,
+                    {{ img.base }}w_2400,c_limit,q_auto:best/{{ img.version }}/{{ img.filename }} 2400w"
+                  sizes="(min-width: 1200px) 100vh, 60vh"
+                  alt="{{ img.alt | default('') }}"
+                  {{ 'loading=lazy' if lazy }}
+                >
+              </div>
+            {% endfor %}
+          </div>
         </div>
         <div class="SylSection__column SylSection__column--right u-flows">
           {{
@@ -283,15 +296,21 @@
           }}
 
           <div class="StyleMaterials__materials">
-            <ul>
-              {% for material in materials.materials %}
-                <li>
-                  <a href="{{ collections.keyedMaterials[material].url }}">
-                    {{ material }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
+            {% call Wrap(flavour='readable') %}
+              <ul>
+                {% for material in materials.materials %}
+                  <li>
+                    <a
+                      href="{{ collections.keyedMaterials[material].url }}"
+                      class="js--material{{ ' js--material--active' if loop.first }}"
+                      data-target="js--material-image-{{loop.index}}"
+                    >
+                      {{ material }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endcall %}
           </div>
         </div>
       </div>
