@@ -2,18 +2,20 @@
  *  ------------------------------------------------------------------------------------------------
  *  ref: https://alligator.io/js/intersection-observer/
 **/
+const deactivateMaterial = (material, isNode = false) => {
+  const activeMaterial = isNode ? material : material.target;
+  activeMaterial.classList.remove('js--material--active');
+  const imageTarget = activeMaterial.getAttribute('data-target');
+  if (imageTarget) {
+    document.getElementById(imageTarget).classList.remove('js--material-image--active');
+  }
+};
 
 const activateMaterial = (material) => {
   // de-activate old ones first
   const activeMats = document.querySelectorAll('.js--material--active');
   (activeMats || []).forEach(
-    (activeMaterial) => {
-      const activeImage = activeMaterial.getAttribute('data-target');
-      if (activeImage) {
-        document.getElementById(activeImage).classList.remove('js--material-image--active');
-      }
-      activeMaterial.classList.remove('js--material--active');
-    },
+    (activeMaterial) => deactivateMaterial(activeMaterial, true),
   );
 
   // activate the new one
@@ -27,16 +29,19 @@ const activateMaterial = (material) => {
 const config = {
   // we count an intersection as having passed a line 30% from the bottom of the screen
   // in either direction
-  rootMargin: '-70% 0px -30% 0px',
+  rootMargin: '-50% 0px -50% 0px',
   // threshold: [0, 0.25, 0.75, 1],
 };
 
 const observer = new IntersectionObserver(
   (entries/* , obs */) => {
     entries.forEach((entry) => {
+      // console.log(entry.intersectionRatio);
       // > 0 means it has entered our rootMargin box
       if (entry.intersectionRatio > 0) {
         activateMaterial(entry);
+      } else {
+        // deactivateMaterial(entry);
       }
     });
     // console.log('observer:', obs);
