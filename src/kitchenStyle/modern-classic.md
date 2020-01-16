@@ -180,6 +180,10 @@ materials:
     - Solid Oak
     - Marble Counters
     - Neff N90 Extractor
+    - Cement
+    - Dragon Scales
+    - Darkness
+    - Nice Tiles
   text: >-
     Metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Id
     diam vel quam elementum pulvinar. Tincidunt ornare massa eget egestas purus.
