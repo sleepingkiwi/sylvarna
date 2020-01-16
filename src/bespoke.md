@@ -132,6 +132,8 @@ materialsBlock:
     - Neff N90 Extractor
     - Match Sticks
     - Nice Tiles
+    - Cement
+    - Solid Oak
   preHeader: 'Surfaces, floors, doors, tiles'
   text: >-
     We can work with you to build a kitchen design completely made to measure
