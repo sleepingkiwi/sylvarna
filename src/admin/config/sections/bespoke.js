@@ -248,6 +248,18 @@ const bespokeConfig = {
           required: false,
           hint: 'CTA is optional, but recommended. If you leave this field blank but provide CTA text the button will open a popup to the CTA/Brochure popup configured in the Fixed Pages menu.',
         },
+        {
+          label: 'Materials To Showcase',
+          name: 'materials',
+          widget: 'relationWrapped',
+          collection: 'material',
+          required: false,
+          multiple: true,
+          searchFields: ['title'],
+          valueField: 'title',
+          optionsLength: 50,
+          hitn: 'Shown as diamonds, 10, 7 or 4 all look quite good!',
+        },
       ],
     },
     {

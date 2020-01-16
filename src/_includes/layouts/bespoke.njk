@@ -177,7 +177,8 @@
             }}
           </div>
           <div class="SylSection__column SylSection__column--right u-flows">
-            {% for material in collections.material %}
+            {% for materialTitle in materials %}
+              {% set material = collections.keyedMaterials[materialTitle] %}
               <span class="BespokeMaterials__material">
                 <div class="BespokeMaterials__material__pad"></div>
                 <a
@@ -199,7 +200,8 @@
         </div>
       {% endcall %} {# SylSection #}
 
-      {% for material in collections.material %}
+      {% for materialTitle in materials %}
+        {% set material = collections.keyedMaterials[materialTitle] %}
         <div id="{{['BespokeMaterials__material--', material.fileSlug] | join}}" class="BrochurePopup BrochurePopup--brochure js--popup">
           <div class="BrochurePopup__container">
             <button class="BrochurePopup__back-close js--popup-close"><span class="visuallyhidden">close</span></button>
