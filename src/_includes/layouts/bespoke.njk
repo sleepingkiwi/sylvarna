@@ -15,6 +15,7 @@
 {% from "components/CTA.njk" import CTA with context %}
 {% from "components/SylSection.njk" import SylSection with context %}
 {% from "components/KitchenGrid.njk" import KitchenGrid with context %}
+{% from "components/CloseButton.njk" import CloseButton with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--bespoke" tabindex="-1">
@@ -145,12 +146,13 @@
         }}
       {% endcall %} {# SylSection #}
 
+      <div class="BespokeMaterials__diamond-wrap">
       {% call SylSection(
         class='BespokeMaterials__materials',
         secondaryColour=false,
         isAChild=true
       ) %}
-        <div class="SylSection__columns SylSection__columns--weighted-left SylSection__columns--aligned-center u-flows">
+        <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
           <div class="SylSection__column SylSection__column--left u-flows">
             {{
               HeaderText(
@@ -175,10 +177,70 @@
             }}
           </div>
           <div class="SylSection__column SylSection__column--right u-flows">
-
+            {% for material in collections.material %}
+              <span class="BespokeMaterials__material">
+                <div class="BespokeMaterials__material__pad"></div>
+                <a
+                  class="BespokeMaterials__material__link js--popup-trigger"
+                  data-target="{{['BespokeMaterials__material--', material.fileSlug] | join}}"
+                  href="{{ material.url }}"
+                >
+                  {{
+                    InlineImage(
+                      img=material.data.hero.hero,
+                      lazy=true,
+                      forcePadding=100
+                    )
+                  }}
+                </a>
+              </span>
+            {% endfor %}
           </div>
         </div>
       {% endcall %} {# SylSection #}
+
+      {% for material in collections.material %}
+        <div id="{{['BespokeMaterials__material--', material.fileSlug] | join}}" class="BrochurePopup BrochurePopup--brochure js--popup">
+          <div class="BrochurePopup__container">
+            <button class="BrochurePopup__back-close js--popup-close"><span class="visuallyhidden">close</span></button>
+
+            <div class="BrochurePopup__wrap">
+              {{
+                CloseButton(
+                  class='js--popup-close'
+                )
+              }}
+              {% call SylSection(
+                class='BrochurePopup__content BespokeMaterials__material-info',
+                secondaryColour=false,
+                isAchild=true
+              ) %}
+                {{
+                  HeaderText(
+                    header=material.data.title,
+                    priority='h2',
+                    align='left'
+                  )
+                }}
+                {{
+                  RichText(
+                    content=material.data.materialInformation.text,
+                    align='left'
+                  )
+                }}
+                {{
+                  CTA(
+                    text=[material.data.kitchensTitle, material.data.kitchensSubTitle] | join(' '),
+                    url=material.url,
+                    align='left'
+                  )
+                }}
+              {% endcall %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div> {# .BespokeMaterials__diamond-wrap #}
     </section>
     {#
       end bespoke materials

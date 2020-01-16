@@ -14,7 +14,7 @@ const openPopup = (e) => {
     e.preventDefault();
   }
 
-  const target = document.getElementById(e.target.getAttribute('data-target'));
+  const target = document.getElementById(e.currentTarget.getAttribute('data-target'));
   if (target) {
     const scroll = window.pageYOffset
       || document.documentElement.scrollTop
