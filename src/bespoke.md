@@ -126,7 +126,6 @@ materialsBlock:
       width: 3000
     subHeader: 'Hundreds of styles, colours and finishes to choose from'
   materials:
-    - Cement
     - Darkness
     - Marble Counters
     - Dragon Scales
