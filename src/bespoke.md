@@ -125,6 +125,14 @@ materialsBlock:
       version: v1577881489
       width: 3000
     subHeader: 'Hundreds of styles, colours and finishes to choose from'
+  materials:
+    - Cement
+    - Darkness
+    - Marble Counters
+    - Dragon Scales
+    - Neff N90 Extractor
+    - Match Sticks
+    - Nice Tiles
   preHeader: 'Surfaces, floors, doors, tiles'
   text: >-
     We can work with you to build a kitchen design completely made to measure
@@ -262,3 +270,4 @@ transparentHeader: true
 footerPartners: true
 footerCTA: true
 ---
+
