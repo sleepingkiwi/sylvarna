@@ -29,7 +29,7 @@ const activateMaterial = (material) => {
 const config = {
   // we count an intersection as having passed a line 30% from the bottom of the screen
   // in either direction
-  rootMargin: '-50% 0px -50% 0px',
+  rootMargin: '-70% 0px -30% 0px',
   // threshold: [0, 0.25, 0.75, 1],
 };
 

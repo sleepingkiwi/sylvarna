@@ -29,44 +29,95 @@
     {#
       introduction
     #}
-    {% call SylSection(
-      class='BespokeIntroduction',
-      secondaryColour=false
-    ) %}
-      <div class="SylSection__columns SylSection__columns--weighted-right sylSection__columns--aligned-center u-flows">
-        <div class="SylSection__column SylSection__column--left u-flows">
-          {{
-            InlineImage(
-              img=introductionBlock.primaryImage
-            )
-          }}
+    <section class="BespokeIntroduction">
+      {% call SylSection(
+        class='BespokeIntroduction__one',
+        secondaryColour=false,
+        isAChild=true
+      ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-right SylSection__columns--image-match-content--left u-flows">
+          <div class="SylSection__column SylSection__column--left u-flows">
+            {{
+              InlineImage(
+                img=introductionBlock.primaryImage
+              )
+            }}
+          </div>
+          <div class="SylSection__column SylSection__column--right u-flows">
+            {{
+              HeaderText(
+                pre=introductionBlock.preHeader,
+                header=introductionBlock.header,
+                priority='h2',
+                align='left'
+              )
+            }}
+            {{
+              RichText(
+                content=introductionBlock.text,
+                align='left'
+              )
+            }}
+          </div>
         </div>
-        <div class="SylSection__column SylSection__column--right u-flows">
-          {{
-            HeaderText(
-              pre=introductionBlock.preHeader,
-              header=introductionBlock.header,
-              priority='h2',
-              align='left'
-            )
-          }}
-          {{
-            RichText(
-              content=introductionBlock.text,
-              align='left'
-            )
-          }}
+      {% endcall %} {# SylSection #}
+
+      {% call SylSection(
+        class='BespokeIntroduction__two',
+        secondaryColour=false,
+        isAChild=true,
+        collapseTop=true
+      ) %}
+        <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
+          <div class="SylSection__column SylSection__column--left BespokeIntroduction__two__left u-flows">
+            <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
+              <div class="SylSection__column SylSection__column--left u-flows">
+                {{
+                  InlineImage(
+                    img=introductionBlock.subImages.one,
+                    lazy=true
+                  )
+                }}
+                {{
+                  InlineImage(
+                    img=introductionBlock.subImages.two,
+                    lazy=true
+                  )
+                }}
+              </div>
+              <div class="SylSection__column SylSection__column--right u-flows">
+                {{
+                  InlineImage(
+                    img=introductionBlock.subImages.three,
+                    lazy=true
+                  )
+                }}
+              </div>
+            </div>
+          </div>
+          <div class="SylSection__column SylSection__column--right BespokeIntroduction__two__right u-flows">
+            <div class="SylSection__columns SylSection__columns--weighted-left SylSection__columns--aligned-center u-flows">
+              <div class="SylSection__column SylSection__column--left u-flows">
+                {{
+                  InlineImage(
+                    img=introductionBlock.subImages.four,
+                    lazy=true
+                  )
+                }}
+              </div>
+              <div class="SylSection__column SylSection__column--right u-flows">
+                {{
+                  InlineImage(
+                    img=introductionBlock.subImages.five,
+                    lazy=true
+                  )
+                }}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    {% endcall %} {# SylSection #}
-    {# TODO
-      subImages
-        one
-        two
-        three
-        four
-        five
-    #}
+      {% endcall %} {# SylSection #}
+    </section>
     {#
       end introduction
     #}
@@ -99,7 +150,7 @@
         secondaryColour=false,
         isAChild=true
       ) %}
-        <div class="SylSection__columns SylSection__columns--weighted-left sylSection__columns--aligned-center u-flows">
+        <div class="SylSection__columns SylSection__columns--weighted-left SylSection__columns--aligned-center u-flows">
           <div class="SylSection__column SylSection__column--left u-flows">
             {{
               HeaderText(
@@ -213,7 +264,7 @@
         class='BespokeAppliances__appliances',
         secondaryColour=false
       ) %}
-        <div class="SylSection__columns SylSection__columns--weighted-even sylSection__columns--aligned-center u-flows">
+        <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
           <div class="SylSection__column SylSection__column--left u-flows">
             {{
               InlineImage(

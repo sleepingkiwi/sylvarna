@@ -295,7 +295,6 @@ const kitchenConfig = [
         widget: 'extraImage',
         showDetails: true,
         required: false,
-        hint: 'Square ratio or close to it works best.',
       },
       {
         label: 'Second Image',
@@ -303,7 +302,6 @@ const kitchenConfig = [
         widget: 'extraImage',
         showDetails: true,
         required: false,
-        hint: '7:9 or other portrait ratios. Image 2 and 3 look best with the same proportions.',
       },
       {
         label: 'Second Text Content',
@@ -333,7 +331,6 @@ const kitchenConfig = [
         widget: 'extraImage',
         showDetails: true,
         required: false,
-        hint: '7:9 or other portrait ratios. Image 2 and 3 look best with the same proportions.',
       },
       {
         label: 'Third Text Content',
@@ -363,7 +360,6 @@ const kitchenConfig = [
         widget: 'extraImage',
         showDetails: true,
         required: false,
-        hint: 'Square or slightly portrait work well.',
       },
       {
         label: 'Fourth Text Content',

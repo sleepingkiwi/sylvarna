@@ -133,10 +133,58 @@
   }
 }
 
-.sylSection__columns--aligned-top {
+.SylSection__columns--aligned-top {
   align-items: flex-start;
 }
 
-.sylSection__columns--aligned-bottom {
+.SylSection__columns--aligned-bottom {
   align-items: flex-end;
+}
+
+
+/** Columns where an image is forced to match content height
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SylSection__columns--image-match-content--left,
+.SylSection__columns--image-match-content--right {
+  align-items: stretch;
+}
+
+.SylSection__columns--image-match-content--left .SylSection__column--left,
+.SylSection__columns--image-match-content--right .SylSection__column--right {
+  position: relative;
+  overflow: hidden;
+
+  & img {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+    @supports (object-fit: cover) {
+      left: 0;
+      transform: none;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  /*
+    if we used a padded image we can disable some of it's functionality
+    better just not use one
+  */
+  & .PaddedImage {
+    position: static;
+  }
+
+  & .PaddedImage__padder {
+    display: none;
+  }
+}
+
+.SylSection__columns--image-match-content--left .SylSection__column--right,
+.SylSection__columns--image-match-content--right .SylSection__column--left {
+  padding: var(--section-padding) 0;
 }

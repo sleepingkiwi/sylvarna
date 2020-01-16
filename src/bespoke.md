@@ -38,19 +38,6 @@ introductionBlock:
       alt: ''
       base: 'https://res.cloudinary.com/coolguy/image/upload/'
       dominant:
-        - 210
-        - 209
-        - 208
-      filename: stock%20images/jeff-sheldon-6MT4_Ut8a3Y-unsplash_itvktd.jpg
-      height: 3000
-      src: >-
-        https://res.cloudinary.com/coolguy/image/upload/v1577975801/stock%20images/jeff-sheldon-6MT4_Ut8a3Y-unsplash_itvktd.jpg
-      version: v1577975801
-      width: 2199
-    four:
-      alt: ''
-      base: 'https://res.cloudinary.com/coolguy/image/upload/'
-      dominant:
         - 208
         - 209
         - 213
@@ -60,6 +47,19 @@ introductionBlock:
         https://res.cloudinary.com/coolguy/image/upload/v1577895801/stock%20images/christian-mackie-SxBca4GcC9k-unsplash_kxyi8y.jpg
       version: v1577895801
       width: 3000
+    four:
+      alt: ''
+      base: 'https://res.cloudinary.com/coolguy/image/upload/'
+      dominant:
+        - 210
+        - 209
+        - 208
+      filename: stock%20images/jeff-sheldon-6MT4_Ut8a3Y-unsplash_itvktd.jpg
+      height: 3000
+      src: >-
+        https://res.cloudinary.com/coolguy/image/upload/v1577975801/stock%20images/jeff-sheldon-6MT4_Ut8a3Y-unsplash_itvktd.jpg
+      version: v1577975801
+      width: 2199
     one:
       alt: ''
       base: 'https://res.cloudinary.com/coolguy/image/upload/'
