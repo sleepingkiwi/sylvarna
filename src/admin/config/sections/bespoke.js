@@ -258,7 +258,7 @@ const bespokeConfig = {
           searchFields: ['title'],
           valueField: 'title',
           optionsLength: 50,
-          hitn: 'Shown as diamonds, 10, 7 or 4 all look quite good!',
+          hitn: 'Shown as diamonds, 6, 9 or 12 all look quite good!',
         },
       ],
     },

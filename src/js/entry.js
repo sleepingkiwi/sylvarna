@@ -20,6 +20,16 @@ formsInit();
 materialObserverInit();
 
 
+// TODO this needs to flesh out in it's own file!
+const menuTrigger = document.querySelector('.SiteHeader__nav-trigger');
+menuTrigger.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const menu = document.querySelector('.SiteHeader__nav');
+  menu.classList.toggle('js--show--SiteHeader__nav');
+}, false);
+
+
 /** Cancel/close stuff with the esc key
  *  ------------------------------------------------------------------------------------------------
 **/
