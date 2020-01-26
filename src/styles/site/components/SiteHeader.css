@@ -3,20 +3,55 @@
 **/
 
 .SiteHeader {
-  /* the wrap inside already has left/right padding */
+  /* the wrap inside already has left/right padding on larger screens */
   padding: var(--bsu) 0;
-  color: var(--colour-invert);
-  position: absolute;
-  z-index: var(--z-fixed-header);
-  top: 0;
-  left: 0;
-  width: 100%;
+  background-color: var(--colour-background-body);
+  color: var(--colour-primary);
+  position: relative;
+
+  & svg path {
+    fill: var(--colour-primary);
+  }
 
   & .Wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
+    /* disable padding on mobile - re-introduced below */
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.SiteHeader--with-cta {
+  padding-bottom: 0;
+}
+
+@media (--edge-to-edge-ends) {
+
+  .SiteHeader > .Wrap {
+    padding-left: var(--bsu);
+    padding-right: var(--bsu);
+  }
+}
+
+@media (--menu-floats) {
+
+  .SiteHeader {
+    color: var(--colour-invert);
+    background-color: transparent;
+    padding-bottom: var(--bsu);
+    position: absolute;
+    z-index: var(--z-fixed-header);
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    & svg path {
+      fill: var(--colour-invert);
+    }
   }
 }
 
@@ -27,11 +62,74 @@
 .SiteHeader__logo {
   /* padding to bump down nav if required */
   padding-right: var(--bsu);
+  padding-left: var(--bsu);
+  order: 1;
 
   & .Logo > .SvgWrap,
   & .Logo > img {
     width: 200px; /* TODO: should we let CMS user decide this? */
     max-width: 100%;
+  }
+}
+
+@media (--edge-to-edge-ends) {
+  /* wrap has padding above this point */
+  .SiteHeader__logo {
+    padding-left: 0;
+
+    /* push other content to the right (menu is still minimised) */
+    flex-grow: 1;
+  }
+}
+
+@media (--column-break) {
+  flex-grow: 0;
+}
+
+
+/** Header CTA
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SiteHeader__cta {
+  flex-basis: 100%;
+  margin-top: var(--bsu);
+  order: 3;
+
+  & .Wrap {
+    padding: 0;
+  }
+
+  & .CTA__a {
+    width: 100%;
+    font-size: var(--s-1);
+    padding: var(--bsu-xs) var(--bsu);
+    text-align: center;
+  }
+}
+
+@media (--menu-floats) {
+
+  .SiteHeader__cta {
+    flex-basis: auto;
+    flex-grow: 0;
+    margin-top: 0;
+    order: 2;
+
+    & .Wrap {
+      padding-left: var(--bsu);
+    }
+
+    & .CTA__a {
+      font-size: var(--s-1);
+      padding: var(--bsu-xs) var(--bsu);
+    }
+  }
+}
+
+@media (--column-break) {
+
+  .SiteHeader__cta {
+    order: 3;
   }
 }
 
@@ -43,10 +141,12 @@
   display: inline-block;
   font-size: var(--s0);
   position: relative;
+  order: 2;
 
   & ul {
     display: none;
     position: absolute;
+    z-index: var(--z-fixed-header);
     right: 0;
     top: calc(var(--s0) + var(--bsu) + var(--bsu));
   }
@@ -94,7 +194,14 @@
   }
 }
 
-@media (--squire) {
+@media (--menu-floats) {
+
+  .SiteHeader__nav {
+    order: 3;
+  }
+}
+
+@media (--column-break) {
 
   .SiteHeader__nav-trigger {
     display: none;
@@ -103,7 +210,8 @@
   .SiteHeader__nav {
     /* allow nav to grow but not logo */
     display: block;
-    flex: 1;
+    flex-grow: 1;
+    order: 2;
     font-size: var(--s0);
 
     & ul {

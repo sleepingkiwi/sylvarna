@@ -16,6 +16,36 @@
   }
 }
 
+.InlineImage {
+  /* when we are edge to edge we pad above by a little extra... */
+  --flow-space: var(--bsu-l);
+}
+
+.InlineImage .Wrap {
+  padding: 0;
+}
+
+/* when we are edge to edge we want images immediately after CTAs to collapse their top margin */
+/* images that follow images on edge-to-edge should also be seamless */
+.u-flows > .InlineImage + .InlineImage,
+.u-flows > .CTA + .InlineImage {
+  --flow-space: 0;
+}
+
+
+@media (--edge-to-edge-ends) {
+
+  .u-flows > .InlineImage + .InlineImage,
+  .u-flows > .CTA + .InlineImage,
+  .InlineImage {
+    --flow-space: var(--bsu);
+  }
+
+  .InlineImage .Wrap {
+    padding: 0 var(--bsu);
+  }
+}
+
 /* if the ratio was forced we want the image to cover the available space where possible */
 .PaddedImage--forced-ratio {
   overflow: hidden;

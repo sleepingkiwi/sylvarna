@@ -45,6 +45,46 @@
   }
 }
 
+/* on very small screens we collapse the bottom padding for certain sections */
+.SylSection--bottom-collapse {
+  padding-bottom: 0;
+}
+
+/*
+  we possibly want to collapse the top of leading image sections but only if they follow sections that already have collapsed bottoms!?
+*/
+.SylSection--bottom-collapse + .SylSection--leading-image {
+  padding-top: 0;
+}
+
+@media (--edge-to-edge-ends) {
+
+  .SylSection {
+    padding-bottom: var(--section-padding);
+  }
+
+  .SylSection--no-back {
+    padding-bottom: calc(var(--section-padding) * 0.5);
+  }
+}
+
+/** If our content contains an immediate wrap we disable padding on mobile sizes
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SylSection__content > .Wrap {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (--edge-to-edge-ends) {
+
+  .SylSection__content > .Wrap {
+    padding-left: var(--bsu);
+    padding-right: var(--bsu);
+  }
+}
+
+
 /** This class is for content that's meant to trail the section above.
  *  ------------------------------------------------------------------------------------------------
  *  min-height and padding are dropped...
@@ -85,8 +125,6 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding-right: var(--bsu);
-  padding-left: var(--bsu);
   margin-right: auto;
   margin-left: auto;
   max-width: var(--layout-columns);
@@ -97,9 +135,29 @@
   }
 }
 
+/* extra or collapsed padding for specific columns that should act like stacked content on mobile */
+.SylSection__column--right--leading-image {
+  /* when we are edge to edge we pad above by a little extra... */
+  --flow-space: var(--bsu-l);
+}
+
+.u-flows > .SylSection__column--left--bottom-collapse + .SylSection__column--right--leading-image {
+  --flow-space: 0;
+}
+
+@media (--edge-to-edge-ends) {
+
+  .SylSection__column--right--leading-image,
+  .u-flows > .SylSection__column--left--bottom-collapse + .SylSection__column--right--leading-image {
+    --flow-space: var(--bsu);
+  }
+}
+
 @media (--column-break) {
 
   .SylSection__columns {
+    padding-right: var(--bsu);
+    padding-left: var(--bsu);
 
     & .SylSection__column {
       flex-basis: 50%;

@@ -7,6 +7,7 @@
 html {
   font-size: 1rem; /* this is the default anyway... */
   overflow-y: scroll; /* forces scrollbars so that there's no jump when a new one appears */
+  scroll-behavior: smooth; /* smooth scroll where supported */
 }
 
 body {

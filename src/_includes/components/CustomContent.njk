@@ -43,11 +43,58 @@
   {% if customContent | length > 0 %}
     {% for section in customContent %}
 
+      {#
+        Content is collapsible if the main content (or right column) is terminated with an image
+        or a CTA. We also run a check for the left column
+      #}
+      {% set endsWithCollapsibleContent = false %}
+      {% set endsWithCollapsibleContentLeft = false %}
+      {% if section.type === 'oneColumn' and (
+        section.content[(section.content | length) - 1].type === 'cta' or section.content[(section.content | length) - 1].type === 'image'
+      ) %}
+        {% set endsWithCollapsibleContent = true %}
+      {% elif section.type === 'twoColumns' and (
+        section.rightColumnContent[(section.rightColumnContent | length) - 1].type === 'cta' or section.rightColumnContent[(section.rightColumnContent | length) - 1].type === 'image'
+      ) %}
+        {% set endsWithCollapsibleContent = true %}
+      {% endif %}
+
+      {% if section.type === 'twoColumns' and (
+        section.leftColumnContent[(section.leftColumnContent | length) - 1].type === 'cta' or section.leftColumnContent[(section.leftColumnContent | length) - 1].type === 'image'
+      ) %}
+        {% set endsWithCollapsibleContentLeft = true %}
+      {% endif %}
+
+
+      {#
+        Leading image is similar, just if there's an image in the lead. We do one for both columns
+      #}
+      {% set leadingImageMain = false %}
+      {% set leadingImageRight = false %}
+      {% if section.type === 'oneColumn' and (
+        section.content[0].type === 'image'
+      ) %}
+        {% set leadingImageMain = true %}
+      {% elif section.type === 'twoColumns' and (
+        section.leftColumnContent[0].type === 'image'
+      ) %}
+        {% set leadingImageMain = true %}
+      {% endif %}
+
+      {% if section.type === 'twoColumns' and (
+        section.rightColumnContent[0].type === 'image'
+      ) %}
+        {% set leadingImageRight = true %}
+      {% endif %}
+
+
       {% call SylSection(
         class='CustomContent',
         secondaryColour=section.backgroundColour,
         backgroundImage=section.backgroundImage,
-        collapseTop=section.collapseTop
+        collapseTop=section.collapseTop,
+        leadingImage=leadingImageMain,
+        endsWithCollapsible=endsWithCollapsibleContent
       ) %}
         {% if section.type === 'oneColumn' %}
           {{
@@ -59,12 +106,20 @@
           }} SylSection__columns--aligned-{{
             section.columnAlignment | default('center')
           }} u-flows">
-            <div class="SylSection__column SylSection__column--left u-flows">
+            <div
+              class="SylSection__column SylSection__column--left u-flows SylSection__column--left--{{
+                'bottom-collapse' if endsWithCollapsibleContentLeft else 'uncollapsed-bottom'
+              }}"
+            >
               {{
                 CustomContentBlocks(section.leftColumnContent)
               }}
             </div>
-            <div class="SylSection__column SylSection__column--right u-flows">
+            <div
+              class="SylSection__column SylSection__column--right u-flows SylSection__column--right--{{
+                'leading-image' if leadingImageRight else 'no-leading-image'
+              }}"
+            >
               {{
                 CustomContentBlocks(section.rightColumnContent)
               }}

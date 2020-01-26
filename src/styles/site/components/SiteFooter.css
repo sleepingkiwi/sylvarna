@@ -8,6 +8,7 @@
   color: var(--colour-subtle);
   background-color: var(--colour-background-subtle);
   text-align: center;
+  overflow: hidden;
 
   & svg path {
     fill: var(--colour-subtle);
@@ -17,19 +18,20 @@
   /** general list styling for nav and social icons
    *  ----------------------------------------------------------------------------------------------
   **/
-  & ul {
+  & .nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
   }
 
-  & li {
+  & .nav li {
     display: block;
     text-transform: uppercase;
   }
 
-  & li a {
+  & .nav li a {
     display: inline-block;
     vertical-align: top;
     padding: var(--bsu);
@@ -71,20 +73,24 @@
 /** Footer nav
  *  ------------------------------------------------------------------------------------------------
 **/
-.SiteFooter__nav,
-.SiteFooter__sub-nav {
 
-  & li {
+@media (--edge-to-edge-ends) {
 
-    &::after {
-      content: '|';
-      display: inline-block;
-      vertical-align: top;
-      padding: var(--bsu) 0;
-    }
+  .SiteFooter__nav,
+  .SiteFooter__sub-nav {
 
-    &:last-child::after {
-      content: none;
+    & li {
+
+      &::after {
+        content: '|';
+        display: inline-block;
+        vertical-align: top;
+        padding: var(--bsu) 0;
+      }
+
+      &:last-child::after {
+        content: none;
+      }
     }
   }
 }
@@ -93,12 +99,48 @@
 /** Social icons
  *  ------------------------------------------------------------------------------------------------
 **/
+.SiteFooter__social {
+  --gap: var(--bsu-l);
+
+  & ul {
+    justify-content: center;
+  }
+
+  & li {
+    display: block;
+  }
+}
+
 .SiteFooter__social .SvgWrap {
   width: var(--s1);
 }
 
 .SiteFooter__social li a {
-  padding-top: 0;
+  padding: 0;
+}
+
+
+/** Footer back to top link
+ *  ------------------------------------------------------------------------------------------------
+**/
+.SiteFooter__back-to-top.CTA {
+  --flow-space: var(--bsu-l);
+
+  width: 150%;
+  margin-left: -25%;
+
+  & .CTA__a {
+    background-color: var(--colour-subtle);
+    font-family: var(--ff-body);
+    font-weight: normal;
+    color: var(--colour-invert);
+    font-size: var(--s-1);
+
+    &:hover,
+    &:focus {
+      background-color: var(--colour-secondary);
+    }
+  }
 }
 
 
@@ -109,11 +151,11 @@
   font-size: var(--s-1);
   margin-top: var(--bsu-s);
 
-  & li::after {
+  & .nav li::after {
     padding: 0;
   }
 
-  & li a {
+  & .nav li a {
     padding: 0 var(--bsu-xs);
     text-transform: none;
   }

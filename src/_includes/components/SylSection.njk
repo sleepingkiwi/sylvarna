@@ -34,7 +34,9 @@
   id='',
   lazy=false,
   collapseTop=false,
-  isAChild=false
+  isAChild=false,
+  leadingImage=false,
+  endsWithCollapsible=false
 ) %}
 {% set content = caller() %} {# ref: https://github.com/mozilla/nunjucks/issues/664 #}
 
@@ -47,6 +49,10 @@
       'secondary' if secondaryColour else 'primary'
     }} SylSection--{{
       'top-collapse' if collapseTop else 'uncollapsed'
+    }} SylSection--{{
+      'leading-image' if leadingImage else 'no-leading-image'
+    }} SylSection--{{
+      'bottom-collapse' if endsWithCollapsible else 'uncollapsed-bottom'
     }}"
 
     {% if id %}

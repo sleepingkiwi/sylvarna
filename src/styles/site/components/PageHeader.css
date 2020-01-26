@@ -3,7 +3,14 @@
  *  there's not a lot of custom styling on top of the default syl-section stuff
 **/
 
-/* overwrite top padding to be twice the normal syl-section if there's a floating header */
-.with-transparent-header .PageHeader {
-  padding-top: calc(var(--section-padding) * 1.5);
+/*
+  overwrite top padding to be twice the normal syl-section if there's a floating header
+  only after the menu starts floating
+*/
+
+@media (--menu-floats) {
+
+  .with-transparent-header .PageHeader {
+    padding-top: calc(var(--section-padding) * 1.5);
+  }
 }

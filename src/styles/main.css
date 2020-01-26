@@ -49,7 +49,7 @@
 @import 'site/components/QuoteText.css';
 @import 'site/components/CTA.css';
 
-@import 'site/components/BrochurePopup.css';
+@import 'site/components/GenericPopup.css';
 
 @import 'site/components/StyleLanding.css';
 @import 'site/components/KitchenGrid.css';
@@ -72,6 +72,8 @@
 @import 'site/components/Kitchen/Kitchen.css';
 
 @import 'site/components/Bespoke/Bespoke.css';
+@import 'site/components/Bespoke/BespokeIntroduction.css';
+@import 'site/components/Bespoke/BespokeMaterials.css';
 
 @import 'site/components/Style/Style.css';
 @import 'site/components/Style/StyleKitchenCarousel.css';

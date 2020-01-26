@@ -3,14 +3,27 @@
 **/
 
 .CTA {
+  text-align: center;
+
+  /* when we are edge to edge we pad above by a little extra... */
+  --flow-space: var(--bsu-l);
+
+  & .Wrap {
+    padding: 0;
+  }
+
+  & > .Wrap--readable {
+    max-width: none;
+  }
 
   & .CTA__a {
-    display: inline-block;
+    text-align: center;
+    display: block;
     vertical-align: top;
-    padding: var(--bsu-s) var(--bsu-l);
+    padding: var(--bsu) var(--bsu-l);
     background: var(--colour-secondary);
     color: var(--colour-primary);
-    border-radius: var(--radius-button);
+    border-radius: 0;
     font-family: var(--ff-heading);
     font-weight: bold;
     font-size: var(--s1);
@@ -29,10 +42,75 @@
   }
 }
 
-.CTA--align-right {
-  text-align: right;
+/* CTA that follow images on edge-to-edge should be seamless */
+.u-flows > .InlineImage + .CTA {
+  --flow-space: 0;
 }
 
-.CTA--align-center {
-  text-align: center;
+/* CTA that follow other CTA on edge-to-edge should have a tiny margin(?) */
+.u-flows > .CTA + .CTA {
+  --flow-space: var(--bsu-xs);
+}
+
+/* we only go edge to edge on very slim screens */
+
+@media (--edge-to-edge-ends) {
+
+  .u-flows > .InlineImage + .CTA,
+  .u-flows > .CTA + .CTA {
+    --flow-space: var(--bsu);
+  }
+
+  .CTA {
+    --flow-space: var(--bsu);
+
+    & .Wrap {
+      padding: 0 var(--bsu);
+    }
+
+    & > .Wrap--readable {
+      max-width: var(--layout-readable);
+      max-width: calc(var(--layout-readable) + calc(var(--bsu) * 2));
+    }
+
+    & .CTA__a {
+      border-radius: var(--radius-button);
+      padding: var(--bsu-s) var(--bsu-l);
+    }
+  }
+}
+
+
+@media (--column-break) {
+
+  .CTA {
+
+    & .CTA__a {
+      display: inline-block;
+    }
+  }
+
+  .CTA--align-right {
+    text-align: right;
+  }
+
+  .CTA--align-left {
+    text-align: left;
+  }
+}
+
+/** Some CTA buttons never want to go edge to edge
+ *  ------------------------------------------------------------------------------------------------
+**/
+.CTA--never-edge-to-edge {
+
+  & .Wrap {
+    padding: 0 var(--bsu);
+  }
+
+  & .CTA__a {
+    display: inline-block;
+    border-radius: var(--radius-button);
+    padding: var(--bsu-s) var(--bsu-l);
+  }
 }

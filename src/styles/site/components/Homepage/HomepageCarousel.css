@@ -18,11 +18,18 @@
   }
 }
 
-/* overwrite top padding to be twice the normal syl-section if there's a floating header */
-/* This is only for the first section if js is disabled. If js is enabled it should apply to all */
-.no-js .with-transparent-header .HomepageCarousel__slide:first-child,
-.js .with-transparent-header .HomepageCarousel__slide {
-  padding-top: calc(var(--section-padding) * 1.5);
+/*
+  overwrite top padding to be twice the normal syl-section if there's a floating header
+  This is only for the first section if js is disabled. If js is enabled it should apply to all
+  only after the menu starts floating
+*/
+
+@media (--menu-floats) {
+
+  .no-js .with-transparent-header .HomepageCarousel__slide:first-child,
+  .js .with-transparent-header .HomepageCarousel__slide {
+    padding-top: calc(var(--section-padding) * 1.5);
+  }
 }
 
 /** Displaying slides when JS is enabled

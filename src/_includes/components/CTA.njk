@@ -19,6 +19,7 @@
     newTab=false,
     dummy=false
     submit=false
+    neverEdge=false
   ---
 #}
 
@@ -31,11 +32,12 @@
   align='left',
   newTab=false,
   dummy=false,
-  submit=false
+  submit=false,
+  neverEdge=false
 ) %}
 {% if text %}
   <div
-    class="CTA CTA--align-{{ align }}{{ ' js--launch-popup' if not url }}"
+    class="CTA CTA--align-{{ align }}{{ ' js--launch-popup' if not url }}{{ ' CTA--never-edge-to-edge' if neverEdge }}"
   >
     {% call Wrap(flavour='readable', flows=true) %} {# readable width Wrap with flow #}
       {% if dummy %}

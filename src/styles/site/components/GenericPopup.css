@@ -1,8 +1,8 @@
-/** BrochurePopup
+/** GenericPopup
  *  ------------------------------------------------------------------------------------------------
 **/
 
-.js .BrochurePopup {
+.js .GenericPopup {
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@
     we need this to be a separate node because the root popup has a fixed 100% height which
     causes large flex children to overflow over the top etc.
   */
-  & .BrochurePopup__container {
+  & .GenericPopup__container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,7 @@
     padding: var(--bsu-l) 0;
   }
 
-  & .BrochurePopup__wrap {
+  & .GenericPopup__wrap {
     transition:
       opacity var(--time-transition) var(--ease-default),
       transform var(--time-transition) var(--ease-default);
@@ -41,12 +41,12 @@
     transform: scale(0.9);
   }
 
-  &.js--popup-active-trans-in .BrochurePopup__wrap {
+  &.js--popup-active-trans-in .GenericPopup__wrap {
     opacity: 1;
     transform: scale(1);
   }
 
-  & .BrochurePopup__back-close {
+  & .GenericPopup__back-close {
     /* background: rgba(0, 0, 0, 0.8); */
     background: var(--colour-subtler);
     position: absolute;
@@ -101,7 +101,7 @@
 
 @media (--column-break) {
 
-  .js .BrochurePopup {
+  .js .GenericPopup {
 
     & .SylSection__column--left {
       width: 50%;
@@ -140,7 +140,7 @@
   }
 }
 
-.BrochurePopup__wrap {
+.GenericPopup__wrap {
   /* full width if there's no js... */
   max-width: var(--layout-max);
   margin: 0 auto;
@@ -149,17 +149,17 @@
   z-index: 2;
 }
 
-.no-js .BrochurePopup .js--popup-close {
+.no-js .GenericPopup .js--popup-close {
   display: none;
 }
 
-.js .BrochurePopup__wrap {
+.js .GenericPopup__wrap {
   width: 90%;
   max-width: var(--layout-content);
   background: var(--colour-subtler);
   padding: var(--bsu-s);
 }
 
-.BrochurePopup__content {
+.GenericPopup__content {
   background: var(--colour-background-body);
 }

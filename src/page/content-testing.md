@@ -58,7 +58,7 @@ genericContentBlocks:
   - backgroundColour: false
     content:
       - header: To test images and CTA
-        preHeader: Another single column
+        preHeader: Images and CTAs should collapse together when they go edge-to-edge...
         textAlign: left
         type: header
       - image:
@@ -82,6 +82,20 @@ genericContentBlocks:
       - cta: And one popup launcher
         textAlign: center
         type: cta
+      - image:
+          alt: ''
+          base: 'https://res.cloudinary.com/coolguy/image/upload/'
+          dominant:
+            - 44
+            - 44
+            - 44
+          filename: example%20images/download_sfq8ot.png
+          height: 1080
+          src: >-
+            https://res.cloudinary.com/coolguy/image/upload/v1577102523/example%20images/download_sfq8ot.png
+          version: v1577102523
+          width: 1920
+        type: image
     type: oneColumn
   - backgroundColour: true
     backgroundImage:
@@ -113,7 +127,7 @@ genericContentBlocks:
     columnAlignment: center
     columnWeighting: right
     leftColumnContent:
-      - text: A few words and CTA buttons on the left
+      - text: A few words and CTA buttons on the left. CTA buttons and images need to collapse between columns too!
         textAlign: left
         type: text
       - cta: A Button...

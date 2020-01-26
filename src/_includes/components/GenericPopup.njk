@@ -1,5 +1,5 @@
 {#
-  BrochurePopup
+  GenericPopup
   -
   Renders everything in the popup collection.
   Currently that's just the brochure page!
@@ -25,20 +25,20 @@
 {% from "components/InlineImage.njk" import InlineImage with context %}
 {% from "components/BrochureRequestForm.njk" import BrochureRequestForm with context %}
 
-{% macro BrochurePopup() %}
+{% macro GenericPopup() %}
   {% for popup in collections.popup %}
-    <div id="brochure" class="BrochurePopup BrochurePopup--brochure js--popup">
-      <div class="BrochurePopup__container">
-        <button class="BrochurePopup__back-close js--popup-close"><span class="visuallyhidden">close</span></button>
+    <div id="brochure" class="GenericPopup GenericPopup--brochure js--popup">
+      <div class="GenericPopup__container">
+        <button class="GenericPopup__back-close js--popup-close"><span class="visuallyhidden">close</span></button>
 
-        <div class="BrochurePopup__wrap">
+        <div class="GenericPopup__wrap">
           {{
             CloseButton(
               class='js--popup-close'
             )
           }}
           {% call SylSection(
-            class='BrochurePopup__content',
+            class='GenericPopup__content',
             secondaryColour=false
           ) %}
             <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">

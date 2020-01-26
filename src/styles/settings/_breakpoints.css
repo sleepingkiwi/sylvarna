@@ -31,3 +31,11 @@
 /* this one is when our columns generally break */
 
 @custom-media --column-break --squire;
+
+/* this is where we stop displaying edge-to-edge content for slim devices */
+
+@custom-media --edge-to-edge-ends --yeoman;
+
+/* this is where the menu starts floating (it's always relative/solid back on mobile) */
+
+@custom-media --menu-floats --yeoman;

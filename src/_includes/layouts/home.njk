@@ -24,7 +24,8 @@
 
     {% call SylSection(
       class='HomepageMain',
-      secondaryColour=true
+      secondaryColour=true,
+      endsWithCollapsible=true
     ) %}
       {% call Wrap(flavour='maximum', flows=true) %}
         <div class="HomepageMain__primary u-flows">
@@ -64,7 +65,8 @@
 
     {% call SylSection(
       class='HomepagePartnerships',
-      secondaryColour=false
+      secondaryColour=false,
+      leadingImage=true
     ) %}
         <div class="HomepagePartnerships__columns u-flows">
           <div class="HomepagePartnerships__column HomepagePartnerships__column--one u-flows">

@@ -9,9 +9,24 @@
   & .Wrap {
     position: relative;
   }
+
+  & .HomepageMain__image {
+    /* no top margin on mobile because we want to meet the cta from above */
+    --flow-space: 0;
+  }
 }
 
-/** More terchnical layout at larger sizes
+@media (--edge-to-edge-ends) {
+
+  .HomepageMain {
+
+    & .HomepageMain__image {
+      --flow-space: var(--bsu);
+    }
+  }
+}
+
+/** More technical layout at larger sizes
  *  ------------------------------------------------------------------------------------------------
  *  The primary section adds padding at desktop sizes to accomodate the image
  *  which is positioned absolutely.
@@ -37,6 +52,9 @@
     right: 0;
     top: 25%;
     width: var(--column-light);
+
+    /* no top margin on mobile because we want to meet the cta from above */
+    --flow-space: 0;
 
     & .Wrap {
       padding: 0;

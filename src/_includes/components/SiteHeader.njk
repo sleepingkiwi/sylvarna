@@ -14,11 +14,12 @@
 {% from "components/Logo.njk" import Logo with context %}
 {% from "components/Nav.njk" import Nav with context %}
 {% from "components/Wrap.njk" import Wrap with context %}
+{% from "components/CTA.njk" import CTA with context %}
 
 {% macro SiteHeader(
   transparent = false
 ) %}
-<header role="banner" class="SiteHeader{{ ' SiteHeader--transparent' if transparent else ' SiteHeader--opaque' }}">
+<header role="banner" class="SiteHeader{{ ' SiteHeader--transparent' if transparent else ' SiteHeader--opaque' }}{{ ' SiteHeader--with-cta' if navigation.cta else ' SiteHeader--no-cta' }}">
 
   {% call Wrap() %} {# maximum width Wrap #}
 
@@ -47,6 +48,20 @@
         Nav()
       }}
     </div>
+
+    {#
+    Header CTA
+    #}
+    {% if navigation.cta %}
+    <div class="SiteHeader__cta">
+      {{
+        CTA(
+          text=navigation.cta,
+          url=navigation.ctaURL
+        )
+      }}
+    </div>
+    {% endif %}
 
   {% endcall %} {# Wrap #}
 </header>

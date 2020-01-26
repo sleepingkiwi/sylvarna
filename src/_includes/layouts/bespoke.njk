@@ -10,12 +10,13 @@
 {% from "components/CustomContent.njk" import CustomContent with context %}
 {% from "components/HeaderText.njk" import HeaderText with context %}
 {% from "components/RichText.njk" import RichText with context %}
-{% from "components/QuoteText.njk" import QuoteText with context %}
 {% from "components/InlineImage.njk" import InlineImage with context %}
 {% from "components/CTA.njk" import CTA with context %}
 {% from "components/SylSection.njk" import SylSection with context %}
 {% from "components/KitchenGrid.njk" import KitchenGrid with context %}
 {% from "components/CloseButton.njk" import CloseButton with context %}
+{% from "components/BespokeMaterials.njk" import BespokeMaterials with context %}
+{% from "components/BespokeIntroduction.njk" import BespokeIntroduction with context %}
 
 {% block content %}
   <main id="main-content" class="site-main site-main--bespoke" tabindex="-1">
@@ -30,95 +31,9 @@
     {#
       introduction
     #}
-    <section class="BespokeIntroduction">
-      {% call SylSection(
-        class='BespokeIntroduction__one',
-        secondaryColour=false,
-        isAChild=true
-      ) %}
-        <div class="SylSection__columns SylSection__columns--weighted-right SylSection__columns--image-match-content--left u-flows">
-          <div class="SylSection__column SylSection__column--left u-flows">
-            {{
-              InlineImage(
-                img=introductionBlock.primaryImage
-              )
-            }}
-          </div>
-          <div class="SylSection__column SylSection__column--right u-flows">
-            {{
-              HeaderText(
-                pre=introductionBlock.preHeader,
-                header=introductionBlock.header,
-                priority='h2',
-                align='left'
-              )
-            }}
-            {{
-              RichText(
-                content=introductionBlock.text,
-                align='left'
-              )
-            }}
-          </div>
-        </div>
-      {% endcall %} {# SylSection #}
-
-      {% call SylSection(
-        class='BespokeIntroduction__two',
-        secondaryColour=false,
-        isAChild=true,
-        collapseTop=true
-      ) %}
-        <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
-          <div class="SylSection__column SylSection__column--left BespokeIntroduction__two__left u-flows">
-            <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
-              <div class="SylSection__column SylSection__column--left u-flows">
-                {{
-                  InlineImage(
-                    img=introductionBlock.subImages.one,
-                    lazy=true
-                  )
-                }}
-                {{
-                  InlineImage(
-                    img=introductionBlock.subImages.two,
-                    lazy=true
-                  )
-                }}
-              </div>
-              <div class="SylSection__column SylSection__column--right u-flows">
-                {{
-                  InlineImage(
-                    img=introductionBlock.subImages.three,
-                    lazy=true
-                  )
-                }}
-              </div>
-            </div>
-          </div>
-          <div class="SylSection__column SylSection__column--right BespokeIntroduction__two__right u-flows">
-            <div class="SylSection__columns SylSection__columns--weighted-left SylSection__columns--aligned-center u-flows">
-              <div class="SylSection__column SylSection__column--left u-flows">
-                {{
-                  InlineImage(
-                    img=introductionBlock.subImages.four,
-                    lazy=true
-                  )
-                }}
-              </div>
-              <div class="SylSection__column SylSection__column--right u-flows">
-                {{
-                  InlineImage(
-                    img=introductionBlock.subImages.five,
-                    lazy=true
-                  )
-                }}
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endcall %} {# SylSection #}
-    </section>
+    {{
+      BespokeIntroduction()
+    }}
     {#
       end introduction
     #}
@@ -127,123 +42,9 @@
     {#
       bespoke materials
     #}
-    <section
-      class="BespokeMaterials"
-    >
-      {% call SylSection(
-        class='BespokeMaterials__header',
-        secondaryColour=true,
-        backgroundImage=materialsBlock.hero.hero,
-        isAChild=true
-      ) %}
-        {{
-          HeaderText(
-            post=materialsBlock.hero.subHeader,
-            header=materialsBlock.hero.header,
-            priority='h2',
-            align='center'
-          )
-        }}
-      {% endcall %} {# SylSection #}
-
-      <div class="BespokeMaterials__diamond-wrap">
-      {% call SylSection(
-        class='BespokeMaterials__materials',
-        secondaryColour=false,
-        isAChild=true
-      ) %}
-        <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
-          <div class="SylSection__column SylSection__column--left u-flows">
-            {{
-              HeaderText(
-                pre=materialsBlock.preHeader,
-                header=materialsBlock.header,
-                priority='h2',
-                align='left'
-              )
-            }}
-            {{
-              RichText(
-                content=materialsBlock.text,
-                align='left'
-              )
-            }}
-            {{
-              CTA(
-                text=materialsBlock.cta,
-                url=materialsBlock.ctaURL,
-                align='left'
-              )
-            }}
-          </div>
-          <div class="SylSection__column SylSection__column--right u-flows">
-            {% for materialTitle in materialsBlock.materials %}
-              {% set material = collections.keyedMaterials[materialTitle] %}
-              <span class="BespokeMaterials__material">
-                <div class="BespokeMaterials__material__pad"></div>
-                <a
-                  class="BespokeMaterials__material__link js--popup-trigger"
-                  data-target="{{['BespokeMaterials__material--', material.fileSlug] | join}}"
-                  href="{{ material.url }}"
-                >
-                  {{
-                    InlineImage(
-                      img=material.data.hero.hero,
-                      lazy=true,
-                      forcePadding=100
-                    )
-                  }}
-                </a>
-              </span>
-            {% endfor %}
-          </div>
-        </div>
-      {% endcall %} {# SylSection #}
-
-      {% for materialTitle in materialsBlock.materials %}
-        {% set material = collections.keyedMaterials[materialTitle] %}
-        <div id="{{['BespokeMaterials__material--', material.fileSlug] | join}}" class="BrochurePopup BrochurePopup--brochure js--popup">
-          <div class="BrochurePopup__container">
-            <button class="BrochurePopup__back-close js--popup-close"><span class="visuallyhidden">close</span></button>
-
-            <div class="BrochurePopup__wrap">
-              {{
-                CloseButton(
-                  class='js--popup-close'
-                )
-              }}
-              {% call SylSection(
-                class='BrochurePopup__content BespokeMaterials__material-info',
-                secondaryColour=false,
-                isAchild=true
-              ) %}
-                {{
-                  HeaderText(
-                    header=material.data.title,
-                    priority='h2',
-                    align='left'
-                  )
-                }}
-                {{
-                  RichText(
-                    content=material.data.materialInformation.text,
-                    align='left'
-                  )
-                }}
-                {{
-                  CTA(
-                    text=[material.data.kitchensTitle, material.data.kitchensSubTitle] | join(' '),
-                    url=material.url,
-                    align='left'
-                  )
-                }}
-              {% endcall %}
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-      </div> {# .BespokeMaterials__diamond-wrap #}
-    </section>
+    {{
+      BespokeMaterials()
+    }}
     {#
       end bespoke materials
     #}

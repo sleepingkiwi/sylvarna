@@ -4,6 +4,7 @@
 **/
 
 .HeaderText {
+  text-align: center;
 
   & p {
     /* larger font size for pre/post headers */
@@ -15,10 +16,13 @@
   line-height: 1.2;
 }
 
-.HeaderText--align-right {
-  text-align: right;
-}
+@media (--column-break) {
 
-.HeaderText--align-center {
-  text-align: center;
+  .HeaderText--align-right {
+    text-align: right;
+  }
+
+  .HeaderText--align-left {
+    text-align: left;
+  }
 }
