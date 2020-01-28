@@ -5,8 +5,12 @@
 /** Bigger headers
  *  ------------------------------------------------------------------------------------------------
 **/
-.site-main--style > .PageHeader {
-  min-height: 60vh; /* taller than normal SylSections */
+
+@media (--edge-to-edge-ends) {
+
+  .site-main--style > .PageHeader {
+    min-height: 60vh; /* taller than normal SylSections */
+  }
 }
 
 
@@ -18,9 +22,6 @@
  *  -
  *  We only apply this when two columns are used.
 **/
-.StyleBigPicture__one {
-  padding-bottom: var(--bsu);
-}
 
 @media (--column-break) {
 
@@ -29,7 +30,7 @@
   }
 
   .StyleBigPicture__one {
-    padding-bottom: calc(var(--section-padding) * 0.5);
+    padding-bottom: var(--bsu-l);
     position: relative;
     z-index: 2;
 
@@ -92,19 +93,25 @@
 /** Details - align image bottoms and draw lines to text!
  *  ------------------------------------------------------------------------------------------------
 **/
+.StyleDetails__primary {
+  padding-top: 0;
+}
+
+.StyleDetails__primary__flexed-image {
+  margin-top: var(--bsu-l);
+}
+
+@media (--edge-to-edge-ends) {
+
+  .StyleDetails__primary {
+    padding-top: var(--bsu-l);
+  }
+}
 
 @media (--column-break) {
-  /** positioning
+  /** right side positioning
    *  ----------------------------------------------------------------------------------------------
   **/
-  .StyleDetails__primary .SylSection__column--left .SylSection__column--left .Wrap {
-    padding-left: 0;
-  }
-
-  .StyleDetails__primary .SylSection__column--left .SylSection__column--right .Wrap {
-    padding-right: 0;
-  }
-
   .StyleDetails__primary__flex-columns {
     align-items: stretch;
 
@@ -112,7 +119,7 @@
       display: flex;
       flex-direction: column;
 
-      & > .Wrap {
+      & .InlineImage {
         width: 100%;
         flex: 1;
         position: relative;
@@ -138,6 +145,22 @@
     }
   }
 
+  /** left image positioning
+   *  ----------------------------------------------------------------------------------------------
+  **/
+  .StyleDetails__primary__flex-columns .SylSection__column--left .HorizontalReel {
+    display: flex;
+    flex-wrap: wrap;
+
+    & .InlineImage {
+      flex: 1 0 50%;
+    }
+
+    & .InlineImage:first-child {
+      flex: 1 0 100%;
+    }
+  }
+
   /** lines
    *  ----------------------------------------------------------------------------------------------
   **/
@@ -148,7 +171,7 @@
       content: ' ';
       position: absolute;
       z-index: 1;
-      height: calc(100% + (var(--section-padding) * 0.5)); /* this could be computed probably... */
+      height: calc(100% + (var(--bsu-l))); /* this could be computed probably... */
       left: var(--bsu);
       bottom: 0;
       width: 2px;

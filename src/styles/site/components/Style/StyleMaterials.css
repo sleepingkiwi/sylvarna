@@ -178,7 +178,7 @@
 @media (--column-break) {
 
   .StyleMaterials {
-    padding: var(--section-padding) 0;
+    padding: var(--section-padding) 0 0;
 
     @supports (position: sticky) {
       overflow: visible;

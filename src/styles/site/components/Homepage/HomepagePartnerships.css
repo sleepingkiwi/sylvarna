@@ -44,7 +44,15 @@
   }
 }
 
+.HomepagePartnerships__column--two {
+  margin-top: var(--bsu-l);
+}
+
 @media (--edge-to-edge-ends) {
+
+  .HomepagePartnerships__column--two {
+    margin-top: var(--bsu);
+  }
 
   .HomepagePartnerships__columns {
     padding-left: var(--bsu);

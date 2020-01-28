@@ -57,7 +57,7 @@
               )
             }}
           </div>
-          <div class="SylSection__column SylSection__column--right u-flows">
+          <div class="SylSection__column SylSection__column--right SylSection__column--right--leading-image u-flows">
             {{
               InlineImage(
                 img=styleBigPicture.imageOne
@@ -71,10 +71,11 @@
         class='StyleBigPicture__two',
         secondaryColour=false,
         collapseTop=true,
-        isAChild=true
+        isAChild=true,
+        endsWithCollapsible=true
       ) %}
         <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
-          <div class="SylSection__column SylSection__column--left u-flows">
+          <div class="SylSection__column SylSection__column--left SylSection__column--left--bottom-collapse u-flows">
             {{
               InlineImage(
                 img=styleBigPicture.imageTwo
@@ -146,33 +147,30 @@
       {% call SylSection(
         class='StyleDetails__primary',
         secondaryColour=false,
-        isAChild=true
+        isAChild=true,
+        leadingImage=true
       ) %}
         <div class="StyleDetails__primary__flex-columns SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-top u-flows">
           <div class="SylSection__column SylSection__column--left u-flows">
+            <div class="HorizontalReel u-flows">
               {{
                 InlineImage(
                   img=styleDetails.imageOne,
                   forcePadding=100
                 )
               }}
-            <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-top u-flows">
-              <div class="SylSection__column SylSection__column--left u-flows">
-                {{
-                  InlineImage(
-                    img=styleDetails.imageTwo,
-                    forcePadding=128
-                  )
-                }}
-              </div>
-              <div class="SylSection__column SylSection__column--right u-flows">
-                {{
-                  InlineImage(
-                    img=styleDetails.imageThree,
-                    forcePadding=128
-                  )
-                }}
-              </div>
+              {{
+                InlineImage(
+                  img=styleDetails.imageTwo,
+                  forcePadding=128
+                )
+              }}
+              {{
+                InlineImage(
+                  img=styleDetails.imageThree,
+                  forcePadding=128
+                )
+              }}
             </div>
           </div>
           <div class="SylSection__column SylSection__column--right StyleDetails__primary__flexed-image u-flows">
@@ -339,7 +337,7 @@
 
     {{
       CustomContent(quoteGenericTwo.genericContentBlocks)
-    }}/
+    }}
     {#
       end of second quote and generic content
     #}

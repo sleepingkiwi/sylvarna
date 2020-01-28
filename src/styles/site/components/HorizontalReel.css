@@ -1,0 +1,117 @@
+/** Horizontal scrolling reels on mobile
+ *  ------------------------------------------------------------------------------------------------
+**/
+
+.HorizontalReel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--colour-primary) var(--colour-background-subtle);
+  background-color: var(--colour-background-subtle);
+
+  & .Wrap {
+    padding: 0;
+  }
+}
+
+.HorizontalReel > * {
+  flex-shrink: 0;
+}
+
+.HorizontalReel > * + *,
+.HorizontalReel > .InlineImage + .InlineImage {
+  --flow-space: 0;
+
+  margin-left: var(--bsu);
+}
+
+@media (--column-break) {
+
+  .HorizontalReel {
+    display: block;
+    background: transparent;
+
+    & .Wrap {
+      padding-left: var(--bsu);
+      padding-right: var(--bsu);
+    }
+  }
+
+  .HorizontalReel > * + *,
+  .HorizontalReel > .InlineImage + .InlineImage {
+    --flow-space: var(--bsu);
+
+    margin-left: auto;
+  }
+}
+
+
+/** Scrollbar styling
+ *  ------------------------------------------------------------------------------------------------
+**/
+.HorizontalReel::-webkit-scrollbar {
+  height: 1rem;
+}
+
+.HorizontalReel::-webkit-scrollbar-track {
+  background-color: var(--colour-background-subtle);
+}
+
+.HorizontalReel::-webkit-scrollbar-thumb {
+  background-color: var(--colour-background-subtle);
+  background-image: linear-gradient(var(--colour-background-subtle) 0, var(--colour-background-subtle) 0.25rem, var(--colour-primary) 0.25rem, var(--colour-primary) 0.75rem, var(--colour-background-subtle) 0.75rem);
+}
+
+.HorizontalReel--no-bar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/** we override some image styles in horizontal reels
+ *  ------------------------------------------------------------------------------------------------
+**/
+.HorizontalReel img {
+  display: block;
+  height: 500px;
+  max-height: 80vh;
+  width: auto;
+  -webkit-user-drag: none;
+}
+
+.HorizontalReel .PaddedImage img {
+  position: static;
+  display: block;
+  height: 500px;
+  max-height: 80vh;
+  width: auto;
+  object-fit: fill;
+}
+
+.HorizontalReel .PaddedImage__padder {
+  display: none;
+}
+
+@media (--column-break) {
+
+  .HorizontalReel img {
+    display: block;
+    height: auto;
+    max-height: none;
+  }
+
+  .HorizontalReel .PaddedImage img {
+    position: absolute;
+    display: block;
+    height: 100%;
+    max-height: none;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .HorizontalReel .PaddedImage__padder {
+    display: block;
+  }
+}

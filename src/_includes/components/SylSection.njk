@@ -52,7 +52,7 @@
     }} SylSection--{{
       'leading-image' if leadingImage else 'no-leading-image'
     }} SylSection--{{
-      'bottom-collapse' if endsWithCollapsible else 'uncollapsed-bottom'
+      'bottom-collapse' if (endsWithCollapsible and not backgroundImage.src) else 'uncollapsed-bottom'
     }}"
 
     {% if id %}

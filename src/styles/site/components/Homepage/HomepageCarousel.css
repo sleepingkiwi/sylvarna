@@ -9,12 +9,18 @@
 }
 
 .HomepageCarousel__slide {
-  min-height: 60vh; /* taller than normal SylSections */
   overflow: hidden;
   transition: opacity var(--time-transition-slow) var(--ease-default);
 
   & .SylSection__back {
     transition: transform var(--time-transition-slow) var(--ease-default);
+  }
+}
+
+@media (--edge-to-edge-ends) {
+
+  .HomepageCarousel__slide {
+    min-height: 60vh; /* taller than normal SylSections */
   }
 }
 

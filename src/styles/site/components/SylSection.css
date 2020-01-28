@@ -5,7 +5,6 @@
 
 .SylSection {
   padding: var(--section-padding) 0;
-  min-height: 40vh;
   position: relative;
   z-index: var(--z-sections);
 
@@ -38,7 +37,7 @@
 
 .SylSection--no-back {
   min-height: 0;
-  padding: calc(var(--section-padding) * 0.5) 0;
+  padding: var(--bsu-l) 0;
 
   &::after {
     content: none;
@@ -53,18 +52,31 @@
 /*
   we possibly want to collapse the top of leading image sections but only if they follow sections that already have collapsed bottoms!?
 */
-.SylSection--bottom-collapse + .SylSection--leading-image {
+.SylSection--bottom-collapse + .SylSection--leading-image,
+.SylSection--with-back + .SylSection--leading-image {
   padding-top: 0;
 }
 
 @media (--edge-to-edge-ends) {
 
   .SylSection {
+    min-height: 40vh;
     padding-bottom: var(--section-padding);
   }
 
   .SylSection--no-back {
-    padding-bottom: calc(var(--section-padding) * 0.5);
+    min-height: 0;
+    padding-bottom: var(--bsu-l);
+  }
+
+  .SylSection--bottom-collapse + .SylSection--leading-image,
+  .SylSection--with-back + .SylSection--leading-image {
+    padding-top: var(--section-padding);
+  }
+
+  .SylSection--bottom-collapse + .SylSection--leading-image.SylSection--no-back,
+  .SylSection--with-back + .SylSection--leading-image.SylSection--no-back {
+    padding-top: var(--bsu-l);
   }
 }
 
@@ -136,9 +148,11 @@
 }
 
 /* extra or collapsed padding for specific columns that should act like stacked content on mobile */
-.SylSection__column--right--leading-image {
+.SylSection__column--right--leading-image,
+.u-flows > .SylSection__column--left--bottom-collapse + .SylSection__column--right {
   /* when we are edge to edge we pad above by a little extra... */
-  --flow-space: var(--bsu-l);
+  /* we can't set flow space because these may have multiple children... */
+  margin-top: var(--bsu-l);
 }
 
 .u-flows > .SylSection__column--left--bottom-collapse + .SylSection__column--right--leading-image {
@@ -150,6 +164,11 @@
   .SylSection__column--right--leading-image,
   .u-flows > .SylSection__column--left--bottom-collapse + .SylSection__column--right--leading-image {
     --flow-space: var(--bsu);
+  }
+
+  .SylSection__column--right--leading-image,
+  .u-flows > .SylSection__column--left--bottom-collapse + .SylSection__column--right {
+    margin-top: var(--flow-space);
   }
 }
 
