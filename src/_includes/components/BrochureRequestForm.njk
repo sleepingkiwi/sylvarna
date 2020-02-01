@@ -86,7 +86,8 @@
           CTA(
             text=labels.requestPrintedBrochure | default('Request Printed Brochure'),
             align='left',
-            submit=true
+            submit=true,
+            neverEdge=true
           )
         }}
 
@@ -96,7 +97,8 @@
               text=cta,
               url=ctaURL,
               align='left',
-              newTab=true
+              newTab=true,
+              neverEdge=true
             )
           }}
         {% endif %}

@@ -22,7 +22,7 @@
 ) %}
 {% if currentStyle %}
 <div
-  class="StyleKitchenCarousel js--carousel u-flows"
+  class="StyleKitchenCarousel HorizontalReel js--carousel u-flows"
   data-active-slide="StyleKitchenCarousel-1"
   data-trans="400"
 >
@@ -61,7 +61,8 @@
           CTA(
             text=(collections.keyedKitchens[kitchen.title].data.kitchenInformation.ctaText | default('See kitchen info')),
             url=collections.keyedKitchens[kitchen.title].url,
-            align='left'
+            align='left',
+            neverEdge=true
           )
         }}
 

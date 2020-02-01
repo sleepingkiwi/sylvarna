@@ -64,53 +64,39 @@
     isAChild=true,
     collapseTop=true
   ) %}
-    <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
-      <div class="SylSection__column SylSection__column--left BespokeIntroduction__two__left u-flows">
-        <div class="SylSection__columns SylSection__columns--weighted-even SylSection__columns--aligned-center u-flows">
-          <div class="SylSection__column SylSection__column--left u-flows">
-            {{
-              InlineImage(
-                img=introductionBlock.subImages.one,
-                lazy=true
-              )
-            }}
-            {{
-              InlineImage(
-                img=introductionBlock.subImages.two,
-                lazy=true
-              )
-            }}
-          </div>
-          <div class="SylSection__column SylSection__column--right u-flows">
-            {{
-              InlineImage(
-                img=introductionBlock.subImages.three,
-                lazy=true
-              )
-            }}
-          </div>
-        </div>
+    <div class="HorizontalReel">
+      <div class="HorizontalReel__ignore-me BespokeIntroduction__two__vertical">
+        {{
+          InlineImage(
+            img=introductionBlock.subImages.one,
+            lazy=true
+          )
+        }}
+        {{
+          InlineImage(
+            img=introductionBlock.subImages.two,
+            lazy=true
+          )
+        }}
       </div>
-      <div class="SylSection__column SylSection__column--right BespokeIntroduction__two__right u-flows">
-        <div class="SylSection__columns SylSection__columns--weighted-left SylSection__columns--aligned-center u-flows">
-          <div class="SylSection__column SylSection__column--left u-flows">
-            {{
-              InlineImage(
-                img=introductionBlock.subImages.four,
-                lazy=true
-              )
-            }}
-          </div>
-          <div class="SylSection__column SylSection__column--right u-flows">
-            {{
-              InlineImage(
-                img=introductionBlock.subImages.five,
-                lazy=true
-              )
-            }}
-          </div>
-        </div>
-      </div>
+      {{
+        InlineImage(
+          img=introductionBlock.subImages.three,
+          lazy=true
+        )
+      }}
+      {{
+        InlineImage(
+          img=introductionBlock.subImages.four,
+          lazy=true
+        )
+      }}
+      {{
+        InlineImage(
+          img=introductionBlock.subImages.five,
+          lazy=true
+        )
+      }}
     </div>
   {% endcall %} {# SylSection #}
 </section>

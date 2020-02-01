@@ -49,13 +49,18 @@
   padding-bottom: 0;
 }
 
+/* we don't want them to butt up against image background sections though */
+.SylSection--bottom-collapse + .SylSection--with-back {
+  margin-top: var(--bsu-l);
+}
+
 /*
   we possibly want to collapse the top of leading image sections but only if they follow sections that already have collapsed bottoms!?
 */
-.SylSection--bottom-collapse + .SylSection--leading-image,
+/* .SylSection--bottom-collapse + .SylSection--leading-image,
 .SylSection--with-back + .SylSection--leading-image {
   padding-top: 0;
-}
+} */
 
 @media (--edge-to-edge-ends) {
 
@@ -77,6 +82,10 @@
   .SylSection--bottom-collapse + .SylSection--leading-image.SylSection--no-back,
   .SylSection--with-back + .SylSection--leading-image.SylSection--no-back {
     padding-top: var(--bsu-l);
+  }
+
+  .SylSection--bottom-collapse + .SylSection--with-back {
+    margin-top: 0;
   }
 }
 
@@ -155,9 +164,9 @@
   margin-top: var(--bsu-l);
 }
 
-.u-flows > .SylSection__column--left--bottom-collapse + .SylSection__column--right--leading-image {
+/* .u-flows > .SylSection__column--left--bottom-collapse + .SylSection__column--right--leading-image {
   --flow-space: 0;
-}
+} */
 
 @media (--edge-to-edge-ends) {
 
@@ -221,47 +230,52 @@
 
 /** Columns where an image is forced to match content height
  *  ------------------------------------------------------------------------------------------------
+ *  only needs to kick in when columns are active
 **/
-.SylSection__columns--image-match-content--left,
-.SylSection__columns--image-match-content--right {
-  align-items: stretch;
-}
 
-.SylSection__columns--image-match-content--left .SylSection__column--left,
-.SylSection__columns--image-match-content--right .SylSection__column--right {
-  position: relative;
-  overflow: hidden;
+@media (--column-break) {
 
-  & img {
-    height: 100%;
-    width: auto;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
+  .SylSection__columns--image-match-content--left,
+  .SylSection__columns--image-match-content--right {
+    align-items: stretch;
+  }
 
-    @supports (object-fit: cover) {
-      left: 0;
-      transform: none;
-      object-fit: cover;
-      width: 100%;
+  .SylSection__columns--image-match-content--left .SylSection__column--left,
+  .SylSection__columns--image-match-content--right .SylSection__column--right {
+    position: relative;
+    overflow: hidden;
+
+    & img {
+      height: 100%;
+      width: auto;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+
+      @supports (object-fit: cover) {
+        left: 0;
+        transform: none;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    /*
+      if we used a padded image we can disable some of it's functionality
+      better just not use one
+    */
+    & .PaddedImage {
+      position: static;
+    }
+
+    & .PaddedImage__padder {
+      display: none;
     }
   }
 
-  /*
-    if we used a padded image we can disable some of it's functionality
-    better just not use one
-  */
-  & .PaddedImage {
-    position: static;
+  .SylSection__columns--image-match-content--left .SylSection__column--right,
+  .SylSection__columns--image-match-content--right .SylSection__column--left {
+    padding: var(--section-padding) 0;
   }
-
-  & .PaddedImage__padder {
-    display: none;
-  }
-}
-
-.SylSection__columns--image-match-content--left .SylSection__column--right,
-.SylSection__columns--image-match-content--right .SylSection__column--left {
-  padding: var(--section-padding) 0;
 }

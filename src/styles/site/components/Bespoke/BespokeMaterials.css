@@ -4,31 +4,24 @@
 **/
 
 .BespokeMaterials__materials {
-  padding: 0;
-  overflow: hidden;
-
   /* used as a background on mobile - this probably isn-t great for perf? */
-  position: absolute;
+  /* position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.5; */
 
   & .SylSection__columns {
     padding-right: 0;
     align-items: center;
   }
 
-  .BespokeMaterials__materials__padder {
+  & .BespokeMaterials__materials__padder {
     /* padding bottom set inline */
     width: 100%;
     display: none;
-  }
-
-  & .SylSection__column--left {
-    padding: var(--section-padding) 0;
   }
 
   & .SylSection__column--right {
@@ -93,8 +86,11 @@
 @media (--column-break) {
 
   .BespokeMaterials__materials {
-    position: static;
-    pointer-events: all;
-    opacity: 1;
+    padding: 0;
+    overflow: hidden;
+
+    & .SylSection__column--left {
+      padding: var(--section-padding) 0;
+    }
   }
 }

@@ -93,9 +93,9 @@
 /** Details - align image bottoms and draw lines to text!
  *  ------------------------------------------------------------------------------------------------
 **/
-.StyleDetails__primary {
+/* .StyleDetails__primary {
   padding-top: 0;
-}
+} */
 
 .StyleDetails__primary__flexed-image {
   margin-top: var(--bsu-l);

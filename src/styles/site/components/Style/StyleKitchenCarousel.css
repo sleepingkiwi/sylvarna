@@ -9,10 +9,14 @@
 /** StyleKitchenCarousel
  *  ------------------------------------------------------------------------------------------------
 **/
-
 .StyleKitchenCarousel {
-  position: relative;
-  overflow: hidden;
+  align-items: flex-start;
+
+  & > * {
+    width: 100vw;
+    max-width: var(--layout-readable);
+    padding-bottom: var(--bsu);
+  }
 }
 
 .StyleKitchenCarousel__slide {
@@ -21,79 +25,102 @@
     transform var(--time-transition-slow) var(--ease-default);
 }
 
-
-/** Displaying slides when JS is enabled
- *  ------------------------------------------------------------------------------------------------
-**/
-.js .StyleKitchenCarousel__slide {
-  display: none;
-  opacity: 0;
-  margin-top: 0;
-
-  /* transform: scale(1.05); */
-}
-
-.StyleKitchenCarousel__slide.js--carousel__slide--trans-in {
-  opacity: 1;
-
-  /* transform: scale(1); */
-}
-
-.js .StyleKitchenCarousel__slide.js--carousel__slide--active {
-  display: flex;
-}
-
-
-/** Nav elements
- *  ------------------------------------------------------------------------------------------------
-**/
 .StyleKitchenCarousel nav {
+  display: none;
+}
 
-  & ul {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    padding: 0 var(--bsu);
-  }
+/** displays as a reel until we hit desktop sizes.
+ *  ------------------------------------------------------------------------------------------------
+**/
 
-  & li {
-    display: block;
-    padding: var(--bsu-s) var(--bsu-xs);
-  }
+@media (--column-break) {
 
-  & button {
-    display: block;
-    background: transparent;
-    color: var(--colour-primary);
-    border: 2px solid;
-    outline: 0;
-    cursor: pointer;
-    width: var(--bsu-s);
-    height: var(--bsu-s);
-    transition:
-      color var(--time-transition) var(--ease-default),
-      background-color var(--time-transition) var(--ease-default);
-    transform: rotate(45deg);
+  .StyleKitchenCarousel {
+    position: relative;
+    overflow: hidden;
+    align-items: center;
 
-    &:hover,
-    &:focus {
-      color: var(--colour-secondary);
+    & > * {
+      width: auto;
+      max-width: var(--layout-columns);
+      padding-bottom: 0;
     }
   }
 
-  & .js--carousel__nav-link--active {
-    background-color: currentColor;
+  /** Displaying slides when JS is enabled
+  *  -----------------------------------------------------------------------------------------------
+  **/
+  .js .StyleKitchenCarousel__slide {
+    display: none;
+    opacity: 0;
+    margin-top: 0;
+
+    /* transform: scale(1.05); */
   }
 
-  /* next-prev */
-  & .js--carousel__nav-link--prev {
-    border-top: 0;
-    border-right: 0;
+  .StyleKitchenCarousel__slide.js--carousel__slide--trans-in {
+    opacity: 1;
+
+    /* transform: scale(1); */
   }
 
-  & .js--carousel__nav-link--next {
-    border-bottom: 0;
-    border-left: 0;
+  .js .StyleKitchenCarousel__slide.js--carousel__slide--active {
+    display: flex;
+  }
+
+
+  /** Nav elements
+  *  -----------------------------------------------------------------------------------------------
+  **/
+  .StyleKitchenCarousel nav {
+    display: block;
+
+    & ul {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 0 var(--bsu);
+    }
+
+    & li {
+      display: block;
+      padding: var(--bsu-s) var(--bsu-xs);
+    }
+
+    & button {
+      display: block;
+      background: transparent;
+      color: var(--colour-primary);
+      border: 2px solid;
+      outline: 0;
+      cursor: pointer;
+      width: var(--bsu-s);
+      height: var(--bsu-s);
+      transition:
+        color var(--time-transition) var(--ease-default),
+        background-color var(--time-transition) var(--ease-default);
+      transform: rotate(45deg);
+
+      &:hover,
+      &:focus {
+        color: var(--colour-secondary);
+      }
+    }
+
+    & .js--carousel__nav-link--active {
+      background-color: currentColor;
+    }
+
+    /* next-prev */
+    & .js--carousel__nav-link--prev {
+      border-top: 0;
+      border-right: 0;
+    }
+
+    & .js--carousel__nav-link--next {
+      border-bottom: 0;
+      border-left: 0;
+    }
   }
 }
 

@@ -17,13 +17,23 @@
 **/
 .BespokeAppliances__appliances .SylSection__column--left {
 
-  & .Wrap:nth-child(1) {
+  & .InlineImage:nth-child(1) {
     padding-right: 20%;
   }
 
-  & .Wrap:nth-child(2) {
+  & .InlineImage:nth-child(2) {
     position: relative;
-    margin-top: -15%;
+    margin-top: -40%;
     padding-left: 50%;
+  }
+}
+
+@media (--colunm-break) {
+
+  .BespokeAppliances__appliances .SylSection__column--left {
+
+    & .InlineImage:nth-child(2) {
+      margin-top: -15%;
+    }
   }
 }

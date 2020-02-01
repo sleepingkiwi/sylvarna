@@ -12,16 +12,25 @@
   scrollbar-color: var(--colour-primary) var(--colour-background-subtle);
   background-color: var(--colour-background-subtle);
 
-  & .Wrap {
+  & > .InlineImage .Wrap,
+  & .HorizontalReel__ignore-me > .InlineImage .Wrap {
     padding: 0;
   }
 }
 
-.HorizontalReel > * {
+.HorizontalReel__ignore-me {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.HorizontalReel > *,
+.HorizontalReel .HorizontalReel__ignore-me > * {
   flex-shrink: 0;
 }
 
 .HorizontalReel > * + *,
+.HorizontalReel .HorizontalReel__ignore-me > * + *,
 .HorizontalReel > .InlineImage + .InlineImage {
   --flow-space: 0;
 
@@ -34,13 +43,15 @@
     display: block;
     background: transparent;
 
-    & .Wrap {
+    & > .InlineImage .Wrap,
+    & .HorizontalReel__ignore-me > .InlineImage .Wrap {
       padding-left: var(--bsu);
       padding-right: var(--bsu);
     }
   }
 
   .HorizontalReel > * + *,
+  .HorizontalReel .HorizontalReel__ignore-me > * + *,
   .HorizontalReel > .InlineImage + .InlineImage {
     --flow-space: var(--bsu);
 
@@ -73,7 +84,8 @@
 /** we override some image styles in horizontal reels
  *  ------------------------------------------------------------------------------------------------
 **/
-.HorizontalReel img {
+.HorizontalReel > img,
+.HorizontalReel .HorizontalReel__ignore-me > img {
   display: block;
   height: 500px;
   max-height: 80vh;
@@ -81,7 +93,8 @@
   -webkit-user-drag: none;
 }
 
-.HorizontalReel .PaddedImage img {
+.HorizontalReel > .InlineImage .PaddedImage img,
+.HorizontalReel .HorizontalReel__ignore-me > .InlineImage .PaddedImage img {
   position: static;
   display: block;
   height: 500px;
@@ -90,19 +103,22 @@
   object-fit: fill;
 }
 
-.HorizontalReel .PaddedImage__padder {
+.HorizontalReel > .InlineImage .PaddedImage__padder,
+.HorizontalReel .HorizontalReel__ignore-me > .InlineImage .PaddedImage__padder {
   display: none;
 }
 
 @media (--column-break) {
 
-  .HorizontalReel img {
+  .HorizontalReel > img,
+  .HorizontalReel .HorizontalReel__ignore-me > img {
     display: block;
     height: auto;
     max-height: none;
   }
 
-  .HorizontalReel .PaddedImage img {
+  .HorizontalReel > .InlineImage .PaddedImage img,
+  .HorizontalReel .HorizontalReel__ignore-me > .InlineImage .PaddedImage img {
     position: absolute;
     display: block;
     height: 100%;
@@ -111,7 +127,8 @@
     object-fit: cover;
   }
 
-  .HorizontalReel .PaddedImage__padder {
+  .HorizontalReel > .InlineImage .PaddedImage__padder,
+  .HorizontalReel .HorizontalReel__ignore-me > .InlineImage .PaddedImage__padder {
     display: block;
   }
 }
