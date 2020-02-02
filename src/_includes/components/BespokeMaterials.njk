@@ -77,25 +77,27 @@
         }}
       </div>
       <div class="SylSection__column SylSection__column--right u-flows">
-        {% for materialTitle in materialsBlock.materials %}
-          {% set material = collections.keyedMaterials[materialTitle] %}
-          <span class="BespokeMaterials__material">
-            <div class="BespokeMaterials__material__pad"></div>
-            <a
-              class="BespokeMaterials__material__link js--popup-trigger"
-              data-target="{{['BespokeMaterials__material--', material.fileSlug] | join}}"
-              href="{{ material.url }}"
-            >
-              {{
-                InlineImage(
-                  img=material.data.hero.hero,
-                  lazy=true,
-                  forcePadding=100
-                )
-              }}
-            </a>
-          </span>
-        {% endfor %}
+        <div class="HorizontalReel">
+          {% for materialTitle in materialsBlock.materials %}
+            {% set material = collections.keyedMaterials[materialTitle] %}
+            <span class="BespokeMaterials__material">
+              <div class="BespokeMaterials__material__pad"></div>
+              <a
+                class="BespokeMaterials__material__link js--popup-trigger"
+                data-target="{{['BespokeMaterials__material--', material.fileSlug] | join}}"
+                href="{{ material.url }}"
+              >
+                {{
+                  InlineImage(
+                    img=material.data.hero.hero,
+                    lazy=true,
+                    forcePadding=100
+                  )
+                }}
+              </a>
+            </span>
+          {% endfor %}
+        </div>
       </div>
     </div>
   {% endcall %} {# SylSection #}

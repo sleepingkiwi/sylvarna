@@ -18,95 +18,11 @@
 }
 
 
-/** Displaying slides when JS is enabled
+/** No and mobile Javascript styles
  *  ------------------------------------------------------------------------------------------------
+ *  presented as blocks on small screens and if there's no js
 **/
-.js .KitchenCarousel__slide {
-  display: none;
-  opacity: 0;
-
-  /* transform: scale(1.05); */
-}
-
-.KitchenCarousel__slide.js--carousel__slide--trans-in {
-  opacity: 1;
-
-  /* transform: scale(1); */
-}
-
-.js .KitchenCarousel__slide.js--carousel__slide--active {
-  display: block;
-}
-
-
-/** Nav elements
- *  ------------------------------------------------------------------------------------------------
-**/
-.KitchenCarousel nav {
-
-  & .js--carousel__nav__links {
-    position: absolute;
-    z-index: var(--z-section-nav);
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 0;
-  }
-
-  & ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-
-  & li {
-    display: block;
-    padding: var(--bsu-s) var(--bsu-xs);
-  }
-
-  & button {
-    display: block;
-    background: transparent;
-    color: var(--colour-primary);
-    border: 2px solid;
-    outline: 0;
-    cursor: pointer;
-    width: var(--bsu-s);
-    height: var(--bsu-s);
-    transition:
-      color var(--time-transition) var(--ease-default),
-      background-color var(--time-transition) var(--ease-default);
-    transform: rotate(45deg);
-
-    &:hover,
-    &:focus {
-      color: var(--colour-secondary);
-    }
-  }
-
-  & .js--carousel__nav-link--active {
-    background-color: currentColor;
-  }
-
-  /* next-prev */
-  & .js--carousel__nav-link--prev {
-    border-top: 0;
-    border-right: 0;
-  }
-
-  & .js--carousel__nav-link--next {
-    border-bottom: 0;
-    border-left: 0;
-  }
-}
-
-
-/** No Javascript styles
- *  ------------------------------------------------------------------------------------------------
- *  presented as a reel if there's no js
-**/
-.no-js .KitchenInformation {
+.KitchenInformation {
 
   & .SylSection__column {
     flex-basis: 100%;
@@ -133,12 +49,139 @@
     flex: 0 0 auto;
 
     & .Wrap {
-      padding: var(--bsu-s);
       margin: 0;
     }
   }
 
   & .KitchenCarousel nav {
     display: none;
+  }
+}
+
+@media (--edge-to-edge-ends) {
+
+  .KitchenInformation .KitchenCarousel__slide .Wrap {
+    padding: var(--bsu-s);
+  }
+}
+
+
+@media (--column-break) {
+
+  .js .KitchenInformation {
+
+    & .SylSection__column {
+      flex-basis: 50%;
+    }
+
+    & .SylSection__column--right {
+      order: 2;
+    }
+
+    & .SylSection__column--left {
+      order: 1;
+      margin-top: 0;
+    }
+
+    & .KitchenCarousel {
+      display: block;
+    }
+
+    & .KitchenCarousel__slide {
+      width: 100%;
+      flex: 0 0 auto;
+
+      & .Wrap {
+        padding: 0 var(--bsu);
+      }
+    }
+  }
+
+  /** Displaying slides when JS is enabled
+  *  -----------------------------------------------------------------------------------------------
+  **/
+  .js .KitchenCarousel__slide {
+    display: none;
+    opacity: 0;
+
+    /* transform: scale(1.05); */
+  }
+
+  .KitchenCarousel__slide.js--carousel__slide--trans-in {
+    opacity: 1;
+
+    /* transform: scale(1); */
+  }
+
+  .js .KitchenCarousel__slide.js--carousel__slide--active {
+    display: block;
+  }
+
+
+  /** Nav elements
+  *  -----------------------------------------------------------------------------------------------
+  **/
+  .KitchenCarousel nav {
+    display: none;
+  }
+
+  .js .KitchenCarousel nav {
+    display: block;
+
+    & .js--carousel__nav__links {
+      position: absolute;
+      z-index: var(--z-section-nav);
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0;
+    }
+
+    & ul {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    & li {
+      display: block;
+      padding: var(--bsu-s) var(--bsu-xs);
+    }
+
+    & button {
+      display: block;
+      background: transparent;
+      color: var(--colour-primary);
+      border: 2px solid;
+      outline: 0;
+      cursor: pointer;
+      width: var(--bsu-s);
+      height: var(--bsu-s);
+      transition:
+        color var(--time-transition) var(--ease-default),
+        background-color var(--time-transition) var(--ease-default);
+      transform: rotate(45deg);
+
+      &:hover,
+      &:focus {
+        color: var(--colour-secondary);
+      }
+    }
+
+    & .js--carousel__nav-link--active {
+      background-color: currentColor;
+    }
+
+    /* next-prev */
+    & .js--carousel__nav-link--prev {
+      border-top: 0;
+      border-right: 0;
+    }
+
+    & .js--carousel__nav-link--next {
+      border-bottom: 0;
+      border-left: 0;
+    }
   }
 }

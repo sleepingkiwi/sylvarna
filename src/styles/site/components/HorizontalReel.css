@@ -9,7 +9,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  scrollbar-color: var(--colour-primary) var(--colour-background-subtle);
+  scrollbar-color: var(--colour-secondary) var(--colour-background-subtle);
   background-color: var(--colour-background-subtle);
 
   & > .InlineImage .Wrap,
@@ -64,7 +64,7 @@
  *  ------------------------------------------------------------------------------------------------
 **/
 .HorizontalReel::-webkit-scrollbar {
-  height: 1rem;
+  height: var(--bsu-xs);
 }
 
 .HorizontalReel::-webkit-scrollbar-track {
@@ -73,7 +73,7 @@
 
 .HorizontalReel::-webkit-scrollbar-thumb {
   background-color: var(--colour-background-subtle);
-  background-image: linear-gradient(var(--colour-background-subtle) 0, var(--colour-background-subtle) 0.25rem, var(--colour-primary) 0.25rem, var(--colour-primary) 0.75rem, var(--colour-background-subtle) 0.75rem);
+  background-image: linear-gradient(var(--colour-background-subtle) 0, var(--colour-background-subtle) calc(var(--bsu-xs) * 0.25), var(--colour-secondary) calc(var(--bsu-xs) * 0.25), var(--colour-secondary) calc(var(--bsu-xs) * 0.75), var(--colour-background-subtle) calc(var(--bsu-xs) * 0.75));
 }
 
 .HorizontalReel--no-bar::-webkit-scrollbar {
