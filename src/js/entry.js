@@ -5,6 +5,7 @@ import { init as carouselInit } from './carousels';
 import { init as popupsInit, closePopups } from './popups';
 import { init as formsInit } from './forms';
 import { init as materialObserverInit } from './material-observer';
+import { init as menuInit, closeMenu } from './menu';
 
 
 /** Init everything
@@ -18,16 +19,8 @@ popupsInit();
 formsInit();
 // observing materials in lists on style pages (if relevant)
 materialObserverInit();
-
-
-// TODO this needs to flesh out in it's own file!
-const menuTrigger = document.querySelector('.SiteHeader__nav-trigger');
-menuTrigger.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  const menu = document.querySelector('.SiteHeader__nav');
-  menu.classList.toggle('js--show--SiteHeader__nav');
-}, false);
+// menu toggles and expanders
+menuInit();
 
 
 /** Cancel/close stuff with the esc key
@@ -43,5 +36,6 @@ document.onkeydown = (e) => {
 
   if (pressedEsc) {
     closePopups();
+    closeMenu();
   }
 };

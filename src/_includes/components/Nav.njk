@@ -27,6 +27,8 @@
   ---
 #}
 
+{% from "components/CloseButton.njk" import CloseButton with context %}
+
 {% macro Nav(
   currentNavigation
 ) %}
@@ -51,6 +53,13 @@
           <a href="{{ item.url }}" {{ currentAttribute | safe }}>{{ item.text }}</a>
         </li>
       {% endfor %}
+      {% if currentNavigation === navigation %}
+        <li class="SiteHeader__nav-close-container">
+          {{
+            CloseButton(class='SiteHeader__nav-close')
+          }}
+        </li>
+      {% endif %}
     </ul>
   </nav>
 {% endif %}
