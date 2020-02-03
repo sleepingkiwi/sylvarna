@@ -75,6 +75,10 @@
 **/
 .SiteFooter__nav {
   display: none;
+
+  & .nav .SiteHeader__nav-close-container {
+    display: none;
+  }
 }
 
 @media (--edge-to-edge-ends) {
