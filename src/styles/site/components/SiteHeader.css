@@ -149,10 +149,11 @@
   & ul {
     position: absolute;
     z-index: var(--z-fixed-header-nav);
-    right: -1px;
+    right: 0;
     width: 1px;
     max-height: 1px;
     overflow: hidden;
+    opacity: 0;
     top: calc(var(--bsu) * -1);
     padding-top: calc(var(--s0) + var(--bsu) + var(--bsu) + var(--bsu));
     padding-bottom: var(--bsu);
@@ -164,7 +165,7 @@
       transform var(--time-transition-fast) cubic-bezier(0.55, 0.055, 0.675, 0.19),
       width 0ms var(--time-transition-fast),
       max-height 0ms var(--time-transition-fast),
-      visibility 0ms var(--time-transition-fast),
+      opacity 0ms var(--time-transition-fast),
       right 0ms var(--time-transition-fast);
   }
 
@@ -220,12 +221,13 @@
   width: 100vw;
   max-height: 9999px;
   visibility: visible;
+  opacity: 1;
   transform: translateX(0);
   transition:
     transform var(--time-transition-fast) cubic-bezier(0.215, 0.61, 0.355, 1),
     width 0ms,
     max-height 0ms,
-    visibility 0ms,
+    opacity 0ms,
     right 0ms;
 
   & li {
@@ -377,6 +379,7 @@
     width: 100%;
     max-height: 9999px;
     visibility: visible;
+    opacity: 1;
   }
 
   & li {
@@ -425,6 +428,7 @@
       align-items: center;
       width: 100%;
       max-height: 9999px;
+      opacity: 1;
       visibility: visible;
       transform: none;
       background: transparent;
