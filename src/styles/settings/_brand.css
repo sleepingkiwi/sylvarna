@@ -11,6 +11,7 @@
   --time-transition: 600ms;
   --time-transition-slow: calc(var(--time-transition) * 1.5);
   --time-transition-fast: calc(var(--time-transition) * 0.5);
+  --time-transition-snap: calc(var(--time-transition) * 0.25);
 
 
   /** eases

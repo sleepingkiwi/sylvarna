@@ -159,8 +159,8 @@
     box-shadow: var(--box-shadow-default);
     transform: translateX(100%);
     transition:
-      transform var(--time-transition) var(--ease-default),
-      right 0ms var(--time-transition);
+      transform var(--time-transition-fast) cubic-bezier(0.55, 0.055, 0.675, 0.19),
+      right 0ms var(--time-transition-fast);
   }
 
   & li {
@@ -172,6 +172,28 @@
     text-align: center;
     background-color: var(--colour-invert);
     color: var(--colour-primary);
+    opacity: 0;
+    transition: opacity 400ms 100ms ease-out;
+  }
+
+  & li:nth-child(2) {
+    transition: opacity 400ms 140ms ease-out;
+  }
+
+  & li:nth-child(3) {
+    transition: opacity 400ms 180ms ease-out;
+  }
+
+  & li:nth-child(4) {
+    transition: opacity 400ms 220ms ease-out;
+  }
+
+  & li:nth-child(5) {
+    transition: opacity 400ms 260ms ease-out;
+  }
+
+  & li:nth-child(1n+6) {
+    transition: opacity 400ms 300ms ease-out;
   }
 
   & li a {
@@ -192,8 +214,12 @@
   right: 0;
   transform: translateX(0);
   transition:
-    transform var(--time-transition) var(--ease-default),
+    transform var(--time-transition-fast) cubic-bezier(0.215, 0.61, 0.355, 1),
     right 0ms;
+
+  & li {
+    opacity: 1;
+  }
 }
 
 /* if you focus an item in the menu it snaps in without transition */
@@ -344,6 +370,7 @@
     text-align: center;
     background-color: transparent;
     color: inherit;
+    opacity: 1;
   }
 }
 
@@ -391,6 +418,7 @@
       text-align: right;
       background-color: transparent;
       color: inherit;
+      opacity: 1;
     }
   }
 }
