@@ -30,7 +30,8 @@
             >
               {% call PaddedImage(
                 dominant=[],
-                padding=((partner.logo.height/partner.logo.width)*100)
+                padding=((partner.logo.height/partner.logo.width)*100),
+                wantsIntersection=false
               ) %}
                 <img
                   src="{{ partner.logo.base }}h_16,c_limit,q_auto:best/{{ partner.logo.version }}/{{ partner.logo.filename }}"

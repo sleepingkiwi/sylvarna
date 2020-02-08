@@ -18,7 +18,7 @@
     id=''
       String
       Optional
-    lazy=false,
+    lazy=true, // we default to lazy loading the background - page headers opt out of this automatically
     collapseTop=false,
     isAChild=false // is this a smaller part of a parent section?
   ---
@@ -32,7 +32,7 @@
   secondaryColour=false,
   backgroundImage={},
   id='',
-  lazy=false,
+  lazy=true,
   collapseTop=false,
   isAChild=false,
   leadingImage=false,
@@ -82,9 +82,7 @@
       see comments in BackgroundImageFull for details
     #}
     {% if backgroundImage.src %}
-      <div class="SylSection__back">
-        {{ BackgroundImageFull(backgroundImage, lazy) }}
-      </div>
+      {{ BackgroundImageFull(backgroundImage, lazy) }}
     {% endif %}
   </{{ 'section' if not isAChild else 'div'}}>
 

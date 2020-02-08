@@ -27,6 +27,10 @@
 
   .StyleBigPicture {
     overflow: hidden;
+
+    /* & .PaddedImage {
+      background-color: var(--colour-background-body);
+    } */
   }
 
   .StyleBigPicture__one {
@@ -123,6 +127,8 @@
         width: 100%;
         flex: 1;
         position: relative;
+        margin-left: var(--bsu);
+        margin-right: var(--bsu);
       }
 
       & .PaddedImage {
@@ -131,7 +137,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: transparent !important;
+
+        /* background: transparent !important; */
       }
 
       & .PaddedImage__padder {
@@ -140,7 +147,6 @@
 
       & img {
         object-fit: cover;
-        padding: 0 var(--bsu);
       }
     }
   }

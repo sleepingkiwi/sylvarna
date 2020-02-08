@@ -23,7 +23,8 @@
 {% call SylSection(
   class='FooterCTA',
   secondaryColour=false,
-  backgroundImage=footerRecurring.ctaBackground
+  backgroundImage=footerRecurring.ctaBackground,
+  lazy=true
 ) %}
   <a class="{{ 'js--popup-trigger' if not footerRecurring.ctaUrl }}" href="{{ footerRecurring.ctaUrl if footerRecurring.ctaUrl else '/brochure'}}" {{ 'data-target="brochure"' if not footerRecurring.ctaUrl }}>
     {{

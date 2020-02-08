@@ -5,6 +5,7 @@ import { init as carouselInit } from './carousels';
 import { init as popupsInit, closePopups } from './popups';
 import { init as formsInit } from './forms';
 import { init as materialObserverInit } from './material-observer';
+import { init as genericIntersectionInit } from './generic-intersection';
 import { init as menuInit, closeMenu } from './menu';
 
 
@@ -19,6 +20,8 @@ popupsInit();
 formsInit();
 // observing materials in lists on style pages (if relevant)
 materialObserverInit();
+// allowing elements to opt in to generic interesection observation by adding .js--wants-interestion
+genericIntersectionInit();
 // menu toggles and expanders
 menuInit();
 
