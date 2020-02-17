@@ -1,7 +1,7 @@
 ---
 layout: layouts/style
 tags: style
-title: Modern Classic
+title: Contemporary
 hero:
   carousel:
     alt: View across a white marble counter top in a Modern Classic style kitchen
@@ -32,7 +32,7 @@ hero:
       https://res.cloudinary.com/coolguy/image/upload/v1577883236/stock%20images/rustic-vegan-z3QZ6gjGRt4-unsplash_n0tzew.jpg
     version: v1577883236
     width: 3000
-  preHeader: Elegant design with a contemporary twist
+  preHeader: Elegant design with a modern twist
 styleBigPicture:
   ctas:
     ctaOne: Order a brochure
