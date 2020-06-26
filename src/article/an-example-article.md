@@ -274,8 +274,8 @@ genericContentBlocks:
         textAlign: center
         text: You can basically do quite a lot to make these pages look distinctive.
 transparentHeader: true
-footerPartners: true
-footerCTA: true
+footerPartners: false
+footerCTA: false
 meta:
   title: An Example Article
   description: This is an article about how articles look and work.
