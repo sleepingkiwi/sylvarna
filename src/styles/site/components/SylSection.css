@@ -46,7 +46,7 @@
 
 /* on very small screens we collapse the bottom padding for certain sections */
 .SylSection--bottom-collapse {
-  padding-bottom: 0;
+  /* padding-bottom: 0; */
 }
 
 /* we don't want them to butt up against image background sections though */
@@ -74,7 +74,7 @@
     padding-bottom: var(--bsu-l);
   }
 
-  .SylSection--bottom-collapse + .SylSection--leading-image,
+  /* .SylSection--bottom-collapse + .SylSection--leading-image,
   .SylSection--with-back + .SylSection--leading-image {
     padding-top: var(--section-padding);
   }
@@ -82,7 +82,7 @@
   .SylSection--bottom-collapse + .SylSection--leading-image.SylSection--no-back,
   .SylSection--with-back + .SylSection--leading-image.SylSection--no-back {
     padding-top: var(--bsu-l);
-  }
+  } */
 
   .SylSection--bottom-collapse + .SylSection--with-back {
     margin-top: 0;
@@ -177,6 +177,10 @@
     & .SylSection__column--right {
       margin-top: 0;
     }
+  }
+
+  .u-flows > .SylSection__column--left--bottom-collapse + .SylSection__column--right {
+    margin-top: 0;
   }
 
   .SylSection__columns--weighted-left {
