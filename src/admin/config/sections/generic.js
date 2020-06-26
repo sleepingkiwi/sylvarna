@@ -304,3 +304,75 @@ export const genericPageConfig = [
   // include general page settings
   ...pageSettings,
 ];
+
+
+/** And for articles which are incredibly similar just tagged differently!
+ *  ------------------------------------------------------------------------------------------------
+**/
+export const articleConfig = [
+  {
+    label: 'Article',
+    name: 'genericPageInstructions',
+    widget: 'instructions',
+    instructions: 'Articles, thought pieces, guides etc. - anything that does not cleanly fit into other sections can be published here! Content is completely custom - these are functionally equivalent to Custom Pages but are categorised differently so that they can be grouped together in future.',
+    flavour: 'header',
+    required: false,
+  },
+  {
+    label: 'Layout',
+    name: 'layout',
+    widget: 'hidden',
+    default: 'layouts/page.njk',
+  },
+  {
+    label: 'Tags',
+    name: 'tags',
+    widget: 'hidden',
+    default: 'article',
+  },
+  {
+    label: 'Title',
+    name: 'title',
+    widget: 'string',
+    hint: 'for articles this also sets the URL. By default the URL will be a base level of /title. For that reason the following titles are not allowed: admin, bespoke, brochure, contact, index, style',
+    pattern: ['^(?!admin$)(?!bespoke$)(?!brochure$)(?!contact$)(?!index$)(?!style$)(?!Admin$)(?!Bespoke$)(?!Brochure$)(?!Contact$)(?!Index$)(?!Style$).*', 'The following titles are not allowed: admin, bespoke, brochure, contact, index, style'],
+  },
+  {
+    label: 'Permalink Override (Pattern: /your-slug/index.html)',
+    name: 'permalink',
+    widget: 'string',
+    required: false,
+    hint: 'You probably don\'t need to set this but you can force a different link for this page if you would like including subdirectories. i.e. some/deep/path/index.html',
+  },
+  {
+    label: 'Hero Image and Article Title',
+    name: 'hero',
+    widget: 'object',
+    fields: [
+      {
+        label: 'Hero Image',
+        name: 'hero',
+        widget: 'extraImage',
+        showDetails: true,
+        required: true,
+        hint: 'Minimum width of 1,920px recommended. Anything above 3,000px will be cropped to 3,000px',
+      },
+      {
+        label: 'Pre-Header',
+        name: 'preHeader',
+        widget: 'string',
+        required: false,
+        hint: 'smaller text that appears above the header',
+      },
+      {
+        label: 'Header',
+        name: 'header',
+        widget: 'string',
+        required: false,
+      },
+    ],
+  },
+  ...genericContentBlocks,
+  // include general page settings
+  ...pageSettings,
+];

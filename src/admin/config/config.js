@@ -18,7 +18,7 @@ import kitchenConfig from './sections/kitchen';
 import kitchenStyleConfig from './sections/kitchenStyle';
 import siteDetailsConfig from './sections/siteDetails';
 import socialAccountsConfig from './sections/socialAccounts';
-import { genericPageConfig } from './sections/generic';
+import { genericPageConfig, articleConfig } from './sections/generic';
 import footerRecurringConfig from './sections/footerRecurring';
 
 const config = {
@@ -33,8 +33,8 @@ const config = {
 
   // logo_url: https://your-site.com/images/logo.svg,
 
-  site_url: 'https://eloquent-shaw-bcc683.netlify.com/',
-  display_url: 'https://eloquent-shaw-bcc683.netlify.com/',
+  site_url: 'https://eloquent-shaw-bcc683.netlify.app/',
+  display_url: 'https://eloquent-shaw-bcc683.netlify.app/',
 
   // Media files will be stored in the repo under this dir
   // however because we use cloudinary currently this is ignored
@@ -92,6 +92,26 @@ const config = {
       description: 'Empty pages with no fixed content. You can add whatever you want by stacking content blocks.',
       fields: [
         ...genericPageConfig,
+      ], // fields
+    }, // END CUSTOM PAGES
+
+
+    /** Articles
+     *  --------------------------------------------------------------------------------------------
+     *  These are functionally identical to Custom Pages
+     *  However they are tagged as 'article'
+     *  To allow for future feature drift and listing/category pages
+    **/
+    {
+      name: 'article',
+      label: 'Article',
+      folder: 'src/article',
+      slug: '{{slug}}',
+      preview_path: '{{slug}}',
+      create: true,
+      description: 'Articles, thought pieces, guides etc. - anything that does not cleanly fit into other sections can be published here!',
+      fields: [
+        ...articleConfig,
       ], // fields
     }, // END CUSTOM PAGES
 

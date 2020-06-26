@@ -53,6 +53,7 @@ CMS.registerWidget('instructions', InstructionsControl);
  *  ------------------------------------------------------------------------------------------------
 **/
 CMS.registerPreviewTemplate('generic_page', PagePreview);
+CMS.registerPreviewTemplate('article', PagePreview);
 CMS.registerPreviewTemplate('bespoke', BespokePreview);
 CMS.registerPreviewTemplate('brochure', BrochurePreview);
 CMS.registerPreviewTemplate('contact', ContactPreview);
