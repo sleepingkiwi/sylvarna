@@ -167,6 +167,35 @@ const contentBlockContentTypes = {
         },
       ],
     },
+    {
+      label: 'Article Link',
+      name: 'articleLink',
+      widget: 'object',
+      fields: [
+        {
+          label: 'Article',
+          name: 'article',
+          widget: 'relationWrapped',
+          collection: 'article',
+          multiple: false,
+          searchFields: ['title'],
+          valueField: 'title',
+          optionsLength: 50,
+        },
+        {
+          label: 'Type',
+          name: 'flavour',
+          widget: 'select',
+          options: [
+            { label: 'Left Image, Right Text', value: 'left' },
+            { label: 'Right Image, Left Text', value: 'right' },
+            { label: 'Just Text', value: 'text' },
+          ],
+          default: 'left',
+          hint: 'Controls how the link is rendered. The `Just Text` option looks good in a section with image background.',
+        },
+      ],
+    },
   ],
 };
 
@@ -334,7 +363,7 @@ export const articleConfig = [
     label: 'Title',
     name: 'title',
     widget: 'string',
-    hint: 'for articles this also sets the URL. By default the URL will be a base level of /title. For that reason the following titles are not allowed: admin, bespoke, brochure, contact, index, style',
+    hint: 'Page title (shown in browser tab). For articles this also sets the URL. By default the URL will be a base level of /title. For that reason the following titles are not allowed: admin, bespoke, brochure, contact, index, style',
     pattern: ['^(?!admin$)(?!bespoke$)(?!brochure$)(?!contact$)(?!index$)(?!style$)(?!Admin$)(?!Bespoke$)(?!Brochure$)(?!Contact$)(?!Index$)(?!Style$).*', 'The following titles are not allowed: admin, bespoke, brochure, contact, index, style'],
   },
   {
@@ -343,6 +372,21 @@ export const articleConfig = [
     widget: 'string',
     required: false,
     hint: 'You probably don\'t need to set this but you can force a different link for this page if you would like including subdirectories. i.e. some/deep/path/index.html',
+  },
+  {
+    label: 'Article description',
+    name: 'articleDescription',
+    widget: 'text',
+    required: false,
+    hint: 'Shown only if you link to this article using an `article link` block on another page.',
+  },
+  {
+    label: 'Article preview image',
+    name: 'articleImage',
+    widget: 'extraImage',
+    showDetails: true,
+    required: false,
+    hint: 'Shown only if you link to this article using an `article link` block on another page. If you leave this blank we will try to use the hero image instead.',
   },
   {
     label: 'Hero Image and Article Title',
