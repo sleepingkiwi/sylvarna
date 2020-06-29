@@ -9,16 +9,16 @@ articleDescription: This is the article description. It is only shown when the
   ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 articleImage:
-  src: https://res.cloudinary.com/coolguy/image/upload/v1593181741/highlights/_S1A2658_jm8v7d.jpg
+  src: https://res.cloudinary.com/coolguy/image/upload/v1593180904/highlights/_S1A2153_gmkxew.jpg
   base: https://res.cloudinary.com/coolguy/image/upload/
-  version: v1593181741
-  filename: highlights/_S1A2658_jm8v7d.jpg
-  width: 2500
-  height: 1667
+  version: v1593180904
+  filename: highlights/_S1A2153_gmkxew.jpg
+  width: 1667
+  height: 2500
   dominant:
-    - 214
-    - 198
-    - 190
+    - 212
+    - 199
+    - 195
   alt: ""
 articleCTA: Find Out More
 hero:
