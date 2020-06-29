@@ -2,6 +2,7 @@
  *  ------------------------------------------------------------------------------------------------
 **/
 import pageSettings from './pageSettings';
+import genericContentBlocks from './generic';
 
 const homeConfig = {
   name: 'index',
@@ -230,6 +231,7 @@ const homeConfig = {
         },
       ],
     },
+    ...genericContentBlocks,
     // we also include all of the regular page settings!
     ...pageSettings,
   ], // fields

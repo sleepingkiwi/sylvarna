@@ -13,6 +13,7 @@
 {% from "components/CTA.njk" import CTA with context %}
 {% from "components/Wrap.njk" import Wrap with context %}
 {% from "components/HomepageCarousel.njk" import HomepageCarousel with context %}
+{% from "components/CustomContent.njk" import CustomContent with context %}
 
 
 {% block content %}
@@ -108,5 +109,9 @@
           </div>
         </div>
     {% endcall %} {# SylSection #}
+
+    {{
+      CustomContent(genericContentBlocks)
+    }}
   </main>
 {% endblock %}
