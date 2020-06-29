@@ -389,6 +389,14 @@ export const articleConfig = [
     hint: 'Shown only if you link to this article using an `article link` block on another page. If you leave this blank we will try to use the hero image instead.',
   },
   {
+    label: 'Article Read More CTA',
+    name: 'articleCTA',
+    widget: 'string',
+    default: 'Read More',
+    required: true,
+    hint: 'You can customise the text in the `Read More` CTA, which appears when this article is linked to, if you would like to!',
+  },
+  {
     label: 'Hero Image and Article Title',
     name: 'hero',
     widget: 'object',
