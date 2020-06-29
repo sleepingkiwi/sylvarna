@@ -5,20 +5,48 @@ title: Content Testing
 hero:
   header: A whole lot of content
   hero:
-    alt: ''
-    base: 'https://res.cloudinary.com/coolguy/image/upload/'
+    alt: ""
+    base: https://res.cloudinary.com/coolguy/image/upload/
     dominant:
       - 216
       - 209
       - 207
     filename: stock%20images/erol-ahmed-q9Vt4pVnGzc-unsplash_fijcx7.jpg
     height: 2000
-    src: >-
-      https://res.cloudinary.com/coolguy/image/upload/v1577885105/stock%20images/erol-ahmed-q9Vt4pVnGzc-unsplash_fijcx7.jpg
+    src: https://res.cloudinary.com/coolguy/image/upload/v1577885105/stock%20images/erol-ahmed-q9Vt4pVnGzc-unsplash_fijcx7.jpg
     version: v1577885105
     width: 3000
   preHeader: We got content
 genericContentBlocks:
+  - type: oneColumn
+    backgroundColour: false
+    collapseTop: false
+    content:
+      - type: articleLink
+        flavour: left
+        article: An Example Article
+      - type: articleLink
+        flavour: right
+        article: An Example Article
+  - type: oneColumn
+    backgroundColour: false
+    collapseTop: false
+    backgroundImage:
+      src: https://res.cloudinary.com/coolguy/image/upload/v1593181985/highlights/_S1A3125_ngqp5x.jpg
+      base: https://res.cloudinary.com/coolguy/image/upload/
+      version: v1593181985
+      filename: highlights/_S1A3125_ngqp5x.jpg
+      width: 2500
+      height: 1667
+      dominant:
+        - 208
+        - 193
+        - 187
+      alt: ""
+    content:
+      - type: articleLink
+        flavour: text
+        article: An Example Article
   - backgroundColour: false
     content:
       - header: Test Single Header
@@ -62,53 +90,50 @@ genericContentBlocks:
         textAlign: left
         type: header
       - image:
-          alt: ''
-          base: 'https://res.cloudinary.com/coolguy/image/upload/'
+          alt: ""
+          base: https://res.cloudinary.com/coolguy/image/upload/
           dominant:
             - 44
             - 44
             - 44
           filename: example%20images/download_sfq8ot.png
           height: 1080
-          src: >-
-            https://res.cloudinary.com/coolguy/image/upload/v1577102523/example%20images/download_sfq8ot.png
+          src: https://res.cloudinary.com/coolguy/image/upload/v1577102523/example%20images/download_sfq8ot.png
           version: v1577102523
           width: 1920
         type: image
       - cta: One external link
-        ctaURL: 'https://sleeping.kiwi'
+        ctaURL: https://sleeping.kiwi
         textAlign: center
         type: cta
       - cta: And one popup launcher
         textAlign: center
         type: cta
       - image:
-          alt: ''
-          base: 'https://res.cloudinary.com/coolguy/image/upload/'
+          alt: ""
+          base: https://res.cloudinary.com/coolguy/image/upload/
           dominant:
             - 44
             - 44
             - 44
           filename: example%20images/download_sfq8ot.png
           height: 1080
-          src: >-
-            https://res.cloudinary.com/coolguy/image/upload/v1577102523/example%20images/download_sfq8ot.png
+          src: https://res.cloudinary.com/coolguy/image/upload/v1577102523/example%20images/download_sfq8ot.png
           version: v1577102523
           width: 1920
         type: image
     type: oneColumn
   - backgroundColour: true
     backgroundImage:
-      alt: ''
-      base: 'https://res.cloudinary.com/coolguy/image/upload/'
+      alt: ""
+      base: https://res.cloudinary.com/coolguy/image/upload/
       dominant:
         - 193
         - 195
         - 194
       filename: stock%20images/marcin-galusz-Xq0lte4P7rQ-unsplash_t8z03i.jpg
       height: 2002
-      src: >-
-        https://res.cloudinary.com/coolguy/image/upload/v1577892357/stock%20images/marcin-galusz-Xq0lte4P7rQ-unsplash_t8z03i.jpg
+      src: https://res.cloudinary.com/coolguy/image/upload/v1577892357/stock%20images/marcin-galusz-Xq0lte4P7rQ-unsplash_t8z03i.jpg
       version: v1577892357
       width: 3000
     columnAlignment: center
@@ -127,7 +152,8 @@ genericContentBlocks:
     columnAlignment: center
     columnWeighting: right
     leftColumnContent:
-      - text: A few words and CTA buttons on the left. CTA buttons and images need to collapse between columns too!
+      - text: A few words and CTA buttons on the left. CTA buttons and images need to
+          collapse between columns too!
         textAlign: left
         type: text
       - cta: A Button...
@@ -135,16 +161,15 @@ genericContentBlocks:
         type: cta
     rightColumnContent:
       - image:
-          alt: ''
-          base: 'https://res.cloudinary.com/coolguy/image/upload/'
+          alt: ""
+          base: https://res.cloudinary.com/coolguy/image/upload/
           dominant:
             - 203
             - 162
             - 143
           filename: stock%20images/toa-heftiba-do6ouuCdsto-unsplash_wop3u2.jpg
           height: 2000
-          src: >-
-            https://res.cloudinary.com/coolguy/image/upload/v1577895800/stock%20images/toa-heftiba-do6ouuCdsto-unsplash_wop3u2.jpg
+          src: https://res.cloudinary.com/coolguy/image/upload/v1577895800/stock%20images/toa-heftiba-do6ouuCdsto-unsplash_wop3u2.jpg
           version: v1577895800
           width: 3000
         type: image
