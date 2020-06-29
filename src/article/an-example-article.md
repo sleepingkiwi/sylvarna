@@ -20,6 +20,7 @@ articleImage:
     - 199
     - 195
   alt: ""
+articleCTA: Find Out More
 hero:
   hero:
     src: https://res.cloudinary.com/coolguy/image/upload/v1593180250/cooking/_S1A2669_htjv4h.jpg
