@@ -2,6 +2,24 @@
 layout: layouts/page.njk
 tags: article
 title: An Example Article
+articleDescription: This is the article description. It is only shown when the
+  article is linked to from another page or location and allows us to pull in
+  some text summary without guessing which content is important! Lorem ipsum
+  dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+articleImage:
+  src: https://res.cloudinary.com/coolguy/image/upload/v1593180904/highlights/_S1A2153_gmkxew.jpg
+  base: https://res.cloudinary.com/coolguy/image/upload/
+  version: v1593180904
+  filename: highlights/_S1A2153_gmkxew.jpg
+  width: 1667
+  height: 2500
+  dominant:
+    - 212
+    - 199
+    - 195
+  alt: ""
 hero:
   hero:
     src: https://res.cloudinary.com/coolguy/image/upload/v1593180250/cooking/_S1A2669_htjv4h.jpg
