@@ -18,6 +18,33 @@ hero:
     width: 3000
   preHeader: We got content
 genericContentBlocks:
+  - type: articleLink
+    backgroundColour: false
+    collapseTop: false
+    flavour: left
+    article: An Example Article
+  - type: articleLink
+    backgroundColour: true
+    collapseTop: false
+    flavour: right
+    article: An Example Article
+  - type: articleLink
+    backgroundColour: false
+    collapseTop: false
+    flavour: text
+    article: An Example Article
+    backgroundImage:
+      src: https://res.cloudinary.com/coolguy/image/upload/v1593181985/highlights/_S1A3125_ngqp5x.jpg
+      base: https://res.cloudinary.com/coolguy/image/upload/
+      version: v1593181985
+      filename: highlights/_S1A3125_ngqp5x.jpg
+      width: 2500
+      height: 1667
+      dominant:
+        - 208
+        - 193
+        - 187
+      alt: ""
   - backgroundColour: false
     content:
       - header: Test Single Header
