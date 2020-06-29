@@ -80,7 +80,7 @@ genericContentBlocks:
   - type: articleLink
     backgroundColour: true
     collapseTop: false
-    flavour: left
+    flavour: right
     article: An Example Article
 transparentHeader: true
 footerPartners: true
