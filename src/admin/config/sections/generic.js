@@ -167,35 +167,6 @@ const contentBlockContentTypes = {
         },
       ],
     },
-    {
-      label: 'Article Link',
-      name: 'articleLink',
-      widget: 'object',
-      fields: [
-        {
-          label: 'Article',
-          name: 'article',
-          widget: 'relationWrapped',
-          collection: 'article',
-          multiple: false,
-          searchFields: ['title'],
-          valueField: 'title',
-          optionsLength: 50,
-        },
-        {
-          label: 'Type',
-          name: 'flavour',
-          widget: 'select',
-          options: [
-            { label: 'Left Image, Right Text', value: 'left' },
-            { label: 'Right Image, Left Text', value: 'right' },
-            { label: 'Just Text', value: 'text' },
-          ],
-          default: 'left',
-          hint: 'Controls how the link is rendered. The `Just Text` option looks good in a section with image background.',
-        },
-      ],
-    },
   ],
 };
 
@@ -253,6 +224,36 @@ const genericContentBlocks = [
             ...contentBlockContentTypes,
             label: 'Right Column Content',
             name: 'rightColumnContent',
+          },
+        ],
+      },
+      {
+        label: 'Article Link',
+        name: 'articleLink',
+        widget: 'object',
+        fields: [
+          ...contentBlockOptions,
+          {
+            label: 'Article',
+            name: 'article',
+            widget: 'relationWrapped',
+            collection: 'article',
+            multiple: false,
+            searchFields: ['title'],
+            valueField: 'title',
+            optionsLength: 50,
+          },
+          {
+            label: 'Type',
+            name: 'flavour',
+            widget: 'select',
+            options: [
+              { label: 'Left Image, Right Text', value: 'left' },
+              { label: 'Right Image, Left Text', value: 'right' },
+              { label: 'Just Text', value: 'text' },
+            ],
+            default: 'left',
+            hint: 'Controls how the link is rendered. The `Just Text` option looks good in a section with image background.',
           },
         ],
       },
