@@ -1,0 +1,151 @@
+{#
+  Article Link
+  Link to an existing article
+  Appears in custom content sections
+  -
+  The collection used here is created in .eleventy.js
+  ---
+  CMS _data:
+    collections.keyedArticles
+  ---
+  args:
+    article: 'Article Title',
+    flavour: oneOf['left', 'right', 'text']
+  ---
+#}
+
+{# import components #}
+{% from "components/InlineImage.njk" import InlineImage with context %}
+{% from "components/HeaderText.njk" import HeaderText with context %}
+{% from "components/RichText.njk" import RichText with context %}
+{% from "components/CTA.njk" import CTA with context %}
+{% from "components/Wrap.njk" import Wrap with context %}
+
+{% macro ArticleLink(
+  article='',
+  flavour='left'
+) %}
+{% if flavour === 'right' %}
+  <div class="SylSection__columns SylSection__columns--weighted-left SylSection__columns--aligned-center u-flows">
+    <div
+      class="SylSection__column SylSection__column--left u-flows SylSection__column--left--uncollapsed-bottom"
+    >
+      {{
+        HeaderText(
+          header=collections.keyedArticles[article].data.hero.header,
+          pre=collections.keyedArticles[article].data.hero.preHeader,
+          priority='h3',
+          align='left'
+        )
+      }}
+
+      {% if collections.keyedArticles[article].data.articleDescription %}
+      {{
+        RichText(
+          content=collections.keyedArticles[article].data.articleDescription,
+          align='left'
+        )
+      }}
+      {% endif %}
+
+      {% if collections.keyedArticles[article].data.articleCTA %}
+      {{
+        CTA(
+          text=collections.keyedArticles[article].data.articleCTA,
+          url=collections.keyedArticles[article].url,
+          align='left'
+        )
+      }}
+      {% endif %}
+    </div>
+    <div
+      class="SylSection__column SylSection__column--right u-flows SylSection__column--right--leading-image"
+    >
+      <a href="{{ collections.keyedArticles[article].url }}">
+        {{
+          InlineImage(
+            img=collections.keyedArticles[article].data.articleImage,
+            lazy=true,
+            contain=false
+          )
+        }}
+      </a>
+    </div>
+  </div>
+{% elif flavour === 'left' %}
+  <div class="SylSection__columns SylSection__columns--weighted-right SylSection__columns--aligned-center u-flows">
+    <div
+      class="SylSection__column SylSection__column--left u-flows SylSection__column--left--bottom-collapse"
+    >
+      <a href="{{ collections.keyedArticles[article].url }}">
+        {{
+          InlineImage(
+            img=collections.keyedArticles[article].data.articleImage,
+            lazy=true,
+            contain=false
+          )
+        }}
+      </a>
+    </div>
+    <div
+      class="SylSection__column SylSection__column--right u-flows SylSection__column--right--no-leading-image"
+    >
+      {{
+        HeaderText(
+          header=collections.keyedArticles[article].data.hero.header,
+          pre=collections.keyedArticles[article].data.hero.preHeader,
+          priority='h3',
+          align='left'
+        )
+      }}
+
+      {% if collections.keyedArticles[article].data.articleDescription %}
+      {{
+        RichText(
+          content=collections.keyedArticles[article].data.articleDescription,
+          align='left'
+        )
+      }}
+      {% endif %}
+
+      {% if collections.keyedArticles[article].data.articleCTA %}
+      {{
+        CTA(
+          text=collections.keyedArticles[article].data.articleCTA,
+          url=collections.keyedArticles[article].url,
+          align='left'
+        )
+      }}
+      {% endif %}
+    </div>
+  </div>
+{% else %}
+  {{
+    HeaderText(
+      header=collections.keyedArticles[article].data.hero.header,
+      pre=collections.keyedArticles[article].data.hero.preHeader,
+      priority='h3',
+      align='center'
+    )
+  }}
+
+  {% if collections.keyedArticles[article].data.articleDescription %}
+  {{
+    RichText(
+      content=collections.keyedArticles[article].data.articleDescription,
+      align='center'
+    )
+  }}
+  {% endif %}
+
+  {% if collections.keyedArticles[article].data.articleCTA %}
+  {{
+    CTA(
+      text=collections.keyedArticles[article].data.articleCTA,
+      url=collections.keyedArticles[article].url,
+      align='center'
+    )
+  }}
+  {% endif %}
+{% endif %}
+{% endmacro %}

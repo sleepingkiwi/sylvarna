@@ -13,7 +13,7 @@
         backgroundImage:
           ExtraImageWidget object
         type:
-          oneOf['oneColumn', 'twoColumns']
+          oneOf['oneColumn', 'twoColumns', 'articleLink']
         columnWeighting:
           oneOf['left', 'even', 'right']
         columnAlignment:
@@ -28,6 +28,12 @@
         // IF oneColumn
         content:
           GenericContentBlock objects
+
+        // IF articleLink
+        article:
+          title of an existing article on the site
+        flavour:
+          oneOf['left', 'right', 'text']
       }
   ---
 #}
@@ -35,6 +41,7 @@
 {# import components #}
 {% from "components/SylSection.njk" import SylSection with context %}
 {% from "components/CustomContentBlocks.njk" import CustomContentBlocks with context %}
+{% from "components/ArticleLink.njk" import ArticleLink with context %}
 
 {% macro CustomContent(
   customContent=[]
@@ -57,11 +64,15 @@
         section.rightColumnContent[(section.rightColumnContent | length) - 1].type === 'cta' or section.rightColumnContent[(section.rightColumnContent | length) - 1].type === 'image'
       ) %}
         {% set endsWithCollapsibleContent = true %}
+      {% elif section.type === 'articleLink' and (section.flavour === 'right') %}
+        {% set endsWithCollapsibleContent = true %}
       {% endif %}
 
       {% if section.type === 'twoColumns' and (
         section.leftColumnContent[(section.leftColumnContent | length) - 1].type === 'cta' or section.leftColumnContent[(section.leftColumnContent | length) - 1].type === 'image'
       ) %}
+        {% set endsWithCollapsibleContentLeft = true %}
+      {% elif section.type === 'articleLink' and (section.flavour === 'left') %}
         {% set endsWithCollapsibleContentLeft = true %}
       {% endif %}
 
@@ -79,11 +90,15 @@
         section.leftColumnContent[0].type === 'image'
       ) %}
         {% set leadingImageMain = true %}
+      {% elif section.type === 'articleLink' and (section.flavour === 'left') %}
+        {% set leadingImageMain = true %}
       {% endif %}
 
       {% if section.type === 'twoColumns' and (
         section.rightColumnContent[0].type === 'image'
       ) %}
+        {% set leadingImageRight = true %}
+      {% elif section.type === 'articleLink' and (section.flavour === 'right') %}
         {% set leadingImageRight = true %}
       {% endif %}
 
@@ -100,7 +115,7 @@
           {{
             CustomContentBlocks(section.content)
           }}
-        {% else %}
+        {% elif section.type === 'twoColumns' %}
           <div class="SylSection__columns SylSection__columns--weighted-{{
             section.columnWeighting | default('left')
           }} SylSection__columns--aligned-{{
@@ -125,6 +140,13 @@
               }}
             </div>
           </div>
+        {% elif section.type === 'articleLink' %}
+          {{
+            ArticleLink(
+              flavour=section.flavour,
+              article=section.article
+            )
+          }}
         {% endif %}
       {% endcall %} {# SylSection #}
 

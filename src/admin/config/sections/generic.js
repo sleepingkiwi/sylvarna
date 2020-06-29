@@ -387,7 +387,7 @@ export const articleConfig = [
     widget: 'extraImage',
     showDetails: true,
     required: false,
-    hint: 'Shown only if you link to this article using an `article link` block on another page. If you leave this blank we will try to use the hero image instead.',
+    hint: 'Shown only if you link to this article using an `article link` block on another page. Image is required if you want to use article link style that has a preview image.',
   },
   {
     label: 'Article Read More CTA',

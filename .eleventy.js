@@ -97,6 +97,22 @@ module.exports = (eleventyConfig) => {
     );
   });
 
+  eleventyConfig.addCollection('keyedArticles', function(collection) {
+    return collection.getFilteredByTag('article').reduce(
+      (accumulator, current) => {
+        return {
+          ...accumulator,
+          [current.data.title]: {
+            data: current.data,
+            url: current.url,
+            fileSlug: current.fileSlug,
+          },
+        };
+      },
+      {},
+    );
+  });
+
 
   /** Similar Kitchens
    *  ----------------------------------------------------------------------------------------------
