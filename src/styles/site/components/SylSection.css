@@ -218,6 +218,7 @@
 /** Columns where an image is forced to match content height
  *  ------------------------------------------------------------------------------------------------
  *  only needs to kick in when columns are active
+ *  An example of where this happens is for the ArticleLink components
 **/
 
 @media (--column-break) {
@@ -266,5 +267,18 @@
   .SylSection__columns--image-match-content--left .SylSection__column--right,
   .SylSection__columns--image-match-content--right .SylSection__column--left {
     padding: var(--section-padding) 0;
+  }
+
+  /*
+    For article links:
+    we use half section-padding for top/bottom padding
+    and add slightly more horizontal pad because the image gets bigger
+  */
+  .CustomContent--articleLink .SylSection__columns--image-match-content--left .SylSection__column--right {
+    padding: var(--bsu-xl) 0 var(--bsu-xl) var(--bsu);
+  }
+
+  .CustomContent--articleLink .SylSection__columns--image-match-content--right .SylSection__column--left {
+    padding: var(--bsu-xl) var(--bsu) var(--bsu-xl) 0;
   }
 }
