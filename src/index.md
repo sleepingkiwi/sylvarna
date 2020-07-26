@@ -6,54 +6,54 @@ carousel:
   ctaURL: /styles
   header: Sylvarna Kitchen Design
   hero:
-    alt: Two people cooking on the hob of a range cooker in a stylish modern kitchen
+    src: https://res.cloudinary.com/coolguy/image/upload/v1595773966/Jake%27s%20shots/designershots/Sylvarna%20Kitchen%20Design%20Consultation.jpg
     base: https://res.cloudinary.com/coolguy/image/upload/
+    version: v1595773966
+    filename: Jake%27s%20shots/designershots/Sylvarna%20Kitchen%20Design%20Consultation.jpg
+    width: 2048
+    height: 1366
     dominant:
-      - 206
-      - 200
-      - 195
-    filename: stock%20images/becca-tapert-O7sK3d3TPWQ-unsplash_p6rbxm.jpg
-    height: 2000
-    src: https://res.cloudinary.com/coolguy/image/upload/v1577974587/stock%20images/becca-tapert-O7sK3d3TPWQ-unsplash_p6rbxm.jpg
-    version: v1577974587
-    width: 3000
-  preHeader: Bespoke and fully customisable kitchens
+      - 212
+      - 201
+      - 197
+    alt: A Designer Showing a Customer a Bespoke Kitchen Design
+  preHeader: Bespoke Kitchens Designed to last
 firstContentArea:
   cta: Request a brochure
   header: Get inspired
   image:
-    alt: ""
+    src: https://res.cloudinary.com/coolguy/image/upload/v1595773995/Jake%27s%20shots/details/_S1A2225_yb71kf.jpg
     base: https://res.cloudinary.com/coolguy/image/upload/
+    version: v1595773995
+    filename: Jake%27s%20shots/details/_S1A2225_yb71kf.jpg
+    width: 1667
+    height: 2500
     dominant:
-      - 215
-      - 215
-      - 214
-    filename: stock%20images/Screenshot_2019-11-07_at_12.38.13_jbvc96.png
-    height: 1197
-    src: https://res.cloudinary.com/coolguy/image/upload/v1578485522/stock%20images/Screenshot_2019-11-07_at_12.38.13_jbvc96.png
-    version: v1578485522
-    width: 951
+      - 193
+      - 161
+      - 128
+    alt: ""
   preHeader: Unlimited possibilities
-  text: Dui sapien eget mi proin sed libero enim sed. Quam vulputate dignissim
-    suspendisse in est ante in. Nec sagittis aliquam malesuada bibendum arcu
-    vitae elementum curabitur vitae. Sollicitudin tempor id eu nisl nunc. Elit
-    at imperdiet dui accumsan sit amet nulla. Lacinia quis vel eros donec.
-    Rhoncus mattis rhoncus urna neque. Sit amet consectetur adipiscing elit. Non
-    diam phasellus vestibulum lorem sed risus ultricies.
+  text: At Sylvarna we have over 30 years of experience in delivering a bespoke
+    kitchen to fit your needs and dreams. We have built a reputation for
+    delivering the finest quality kitchens, from our imaginative designs down to
+    our in house fitting team. We make sure that every kitchen we deliver
+    benefits from our collective experience and we pride ourselves in ensuring
+    that the finished product is every bit as impressive as your expectations.
 partnershipsContentArea:
   header: Our partnerships
   image:
-    alt: ""
+    src: https://res.cloudinary.com/coolguy/image/upload/v1595774021/Jake%27s%20shots/highlights/_S1A2692_u1yq8j.jpg
     base: https://res.cloudinary.com/coolguy/image/upload/
+    version: v1595774021
+    filename: Jake%27s%20shots/highlights/_S1A2692_u1yq8j.jpg
+    width: 2048
+    height: 1366
     dominant:
-      - 58
-      - 49
-      - 48
-    filename: stock%20images/Screenshot_2019-11-07_at_12.38.17_porup4.png
-    height: 804
-    src: https://res.cloudinary.com/coolguy/image/upload/v1577892372/stock%20images/Screenshot_2019-11-07_at_12.38.17_porup4.png
-    version: v1577892372
-    width: 964
+      - 193
+      - 169
+      - 148
+    alt: ""
   logos:
     - image:
         alt: 5 Star Neff Master Partner logo
@@ -69,13 +69,13 @@ partnershipsContentArea:
         width: 200
       title: 5 Star Neff Master Partner
   preHeader: Only the best
-  text: Tortor condimentum lacinia quis vel eros donec ac odio. Lectus quam id leo
-    in vitae turpis massa sed elementum. Augue lacus viverra vitae congue eu
-    consequat ac felis donec. Sit amet est placerat in egestas. Orci nulla
-    pellentesque dignissim enim sit amet venenatis. Lectus proin nibh nisl
-    condimentum id venenatis a condimentum. Lacus sed turpis tincidunt id
-    aliquet risus feugiat in ante. Luctus accumsan tortor posuere ac ut
-    consequat semper viverra nam.
+  text: At Sylvarna we pride ourselves in our ability to deliver any kitchen you
+    can dream of. We are happy to bring your dreams into reality and if you are
+    unsure as to what you are looking for, guide you to make the best decision
+    based on your requirements. In order to make sure that our kitchens live up
+    to our reputation of quality, we have close relationships with the best
+    brands in the business. This means that whatever your needs or preference,
+    we can deliver.
 genericContentBlocks:
   - type: articleLink
     backgroundColour: true
