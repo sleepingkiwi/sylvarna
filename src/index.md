@@ -17,7 +17,7 @@ carousel:
     src: https://res.cloudinary.com/coolguy/image/upload/v1577974587/stock%20images/becca-tapert-O7sK3d3TPWQ-unsplash_p6rbxm.jpg
     version: v1577974587
     width: 3000
-  preHeader: Bespoke and fully customisable kitchens
+  preHeader: Over 35 years of experience goes in to every Bespoke kitchen we make
 firstContentArea:
   cta: Request a brochure
   header: Get inspired
