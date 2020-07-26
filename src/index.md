@@ -6,17 +6,17 @@ carousel:
   ctaURL: /styles
   header: Sylvarna Kitchen Design
   hero:
-    alt: Two people cooking on the hob of a range cooker in a stylish modern kitchen
+    src: https://res.cloudinary.com/coolguy/image/upload/v1595773966/Jake%27s%20shots/designershots/Sylvarna%20Kitchen%20Design%20Consultation.jpg
     base: https://res.cloudinary.com/coolguy/image/upload/
+    version: v1595773966
+    filename: Jake%27s%20shots/designershots/Sylvarna%20Kitchen%20Design%20Consultation.jpg
+    width: 2048
+    height: 1366
     dominant:
-      - 206
-      - 200
-      - 195
-    filename: stock%20images/becca-tapert-O7sK3d3TPWQ-unsplash_p6rbxm.jpg
-    height: 2000
-    src: https://res.cloudinary.com/coolguy/image/upload/v1577974587/stock%20images/becca-tapert-O7sK3d3TPWQ-unsplash_p6rbxm.jpg
-    version: v1577974587
-    width: 3000
+      - 212
+      - 201
+      - 197
+    alt: A Designer Showing a Customer a Bespoke Kitchen Design
   preHeader: Bespoke Kitchens Designed to last
 firstContentArea:
   cta: Request a brochure
