@@ -34,12 +34,12 @@ firstContentArea:
     version: v1578485522
     width: 951
   preHeader: Unlimited possibilities
-  text: Dui sapien eget mi proin sed libero enim sed. Quam vulputate dignissim
-    suspendisse in est ante in. Nec sagittis aliquam malesuada bibendum arcu
-    vitae elementum curabitur vitae. Sollicitudin tempor id eu nisl nunc. Elit
-    at imperdiet dui accumsan sit amet nulla. Lacinia quis vel eros donec.
-    Rhoncus mattis rhoncus urna neque. Sit amet consectetur adipiscing elit. Non
-    diam phasellus vestibulum lorem sed risus ultricies.
+  text: At Sylvarna we have over 30 years of experience in delivering a bespoke
+    kitchen to fit your needs and dreams. We have built a reputation for
+    delivering the finest quality kitchens, from our imaginative designs down to
+    our in house fitting team. We make sure that every kitchen we deliver
+    benefits from our collective experience and we pride ourselves in ensuring
+    that the finished product is every bit as impressive as your expectations.
 partnershipsContentArea:
   header: Our partnerships
   image:
@@ -69,13 +69,13 @@ partnershipsContentArea:
         width: 200
       title: 5 Star Neff Master Partner
   preHeader: Only the best
-  text: Tortor condimentum lacinia quis vel eros donec ac odio. Lectus quam id leo
-    in vitae turpis massa sed elementum. Augue lacus viverra vitae congue eu
-    consequat ac felis donec. Sit amet est placerat in egestas. Orci nulla
-    pellentesque dignissim enim sit amet venenatis. Lectus proin nibh nisl
-    condimentum id venenatis a condimentum. Lacus sed turpis tincidunt id
-    aliquet risus feugiat in ante. Luctus accumsan tortor posuere ac ut
-    consequat semper viverra nam.
+  text: At Sylvarna we pride ourselves in our ability to deliver any kitchen you
+    can dream of. We are happy to bring your dreams into reality and if you are
+    unsure as to what you are looking for, guide you to make the best decision
+    based on your requirements. In order to make sure that our kitchens live up
+    to our reputation of quality, we have close relationships with the best
+    brands in the business. This means that whatever your needs or preference,
+    we can deliver.
 genericContentBlocks:
   - type: articleLink
     backgroundColour: true
