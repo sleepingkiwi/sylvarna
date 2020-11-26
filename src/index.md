@@ -6,16 +6,16 @@ carousel:
   ctaURL: /styles
   header: Sylvarna Kitchen Design
   hero:
-    src: https://res.cloudinary.com/coolguy/image/upload/v1595773966/Jake%27s%20shots/designershots/Sylvarna%20Kitchen%20Design%20Consultation.jpg
+    src: https://res.cloudinary.com/coolguy/image/upload/v1595774068/Jake%27s%20shots/showroomshots/_S1A3167_qtw9sa.jpg
     base: https://res.cloudinary.com/coolguy/image/upload/
-    version: v1595773966
-    filename: Jake%27s%20shots/designershots/Sylvarna%20Kitchen%20Design%20Consultation.jpg
+    version: v1595774068
+    filename: Jake%27s%20shots/showroomshots/_S1A3167_qtw9sa.jpg
     width: 2048
     height: 1366
     dominant:
-      - 212
-      - 201
       - 197
+      - 182
+      - 177
     alt: A Designer Showing a Customer a Bespoke Kitchen Design
   preHeader: Bespoke Kitchens Designed to last
 firstContentArea:
